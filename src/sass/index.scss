@@ -1,0 +1,19 @@
+@import './_variables.scss';
+@import './_mixins.scss';
+@import './_base.scss'; 
+
+@import './components/mainLayoutStyles/header';
+@import './components/mainLayoutStyles/_footer.scss';
+@import './components/mainLayoutStyles/heroSlides.scss';
+@import './components/mainLayoutStyles/_button.scss';
+@import './components/mainLayoutStyles/_police.scss';
+@import './components/mainLayoutStyles/_section.scss';
+@import './components/mainLayoutStyles/product-cart';
+@import './components/mainLayoutStyles/banner';
+@import './components/mainLayoutStyles/not-found';
+@import './components/mainLayoutStyles/search';
+@import './components/PurchaseOrder/purchase-order';
+
+
+@import './components/LoginStyles/login-form';
+@import './components/FirebaseEmulator/firebase-enmulator';

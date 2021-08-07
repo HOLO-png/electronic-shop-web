@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+// font-family: 'Roboto Condensed', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap");
+// font-family: 'M PLUS Rounded 1c', sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 13px;
+}
+
+body {
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none !important;
+    color: unset;
+}
+
+a:hover {
+    color: $main-color;
+}
+
+strong {
+    margin: 5px;
+    &:hover {
+        color: $main-color;
+    }
+}
+
+@each $color, $val in $colors {
+    .color-#{$color} {
+        color: $val;
+    }
+    .bg-#{$color} {
+        background-color: $val;
+    }
+}
+
+@each $val in $number {
+    .grid-col-#{$val} {
+        grid-template-columns: repeat($val, 1fr);
+    }
+}
+
+@each $val in $number {
+    .grid-col-md-#{$val} {
+        @include tablet {
+            grid-template-columns: repeat($val, 1fr);
+        }
+    }
+}
+
+@each $val in $number {
+    .grid-col-sm-#{$val} {
+        @include mobile {
+            grid-template-columns: repeat($val, 1fr);
+        }
+    }
+}
+
+@for $i from 1 through 12 {
+    #_#{$i} {
+        @include setColor($i);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1620px;
+    padding: 0 150px;
+    margin: auto;
+    @include tablet {
+        padding: 0 20px;
+    }
+
+    @include mobile {
+        padding: 0 10px;
+    }
+}
+.ant-modal-title {
+    font-size: 22px;
+    text-align: center;
+}
+.ant-card-body {
+    height: 155px;
+}
+.ant-card-head-title {
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+.main {
+    margin-top: $header-height;
+    margin-bottom: 2rem;
+    min-height: auto;
+
+    @include tablet {
+        margin-top: calc(#{$header-tablet-height} + 20px);
+    }
+
+    @include mobile {
+        margin-top: calc(#{$header-mobile-height} + 10px);
+    }
+}
+
+.grid {
+    display: grid;
+}

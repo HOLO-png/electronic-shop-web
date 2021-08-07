@@ -1,0 +1,6 @@
+1) setup hinh anh vao assets(slide, logo, product, font,...)
+2) setup forder gom pages, component, routes, 
+3) o forder component create Layout 
+4) setup font, icon, layout o file index.js, ko sai app nua
+5) setup sass
+6) setup routes
