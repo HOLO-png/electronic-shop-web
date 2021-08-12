@@ -20,7 +20,12 @@ import Work from '../Components/User/Notification/Work';
 import Promotion from '../Components/User/Notification/Promotion';
 import WalletUpdate from '../Components/User/Notification/WalletUpdate';
 import WheelUser from '../Components/User/WheelUser';
-
+import Cart from '../pages/Cart';
+import Mobile from '../pages/Mobile';
+import Laptop from '../pages/Laptop';
+import Tablet from '../pages/Tablet';
+import Accessory1 from '../pages/Accessories/Accessory1';
+import Accessory2 from '../pages/Accessories/Accessory2';
 const Home = React.lazy(() => import('../pages/Home'));
 
 export const MAIN_ROUTES = [
@@ -60,6 +65,42 @@ export const MAIN_ROUTES = [
         exact: false,
         component: PurchaseOrder,
     },
+    {
+        name: 'Cart',
+        path: '/cart',
+        exact: false,
+        component: Cart,
+    },
+    {
+        name: 'Mobile',
+        path: '/category/mobile',
+        exact: false,
+        component: Mobile,
+    },
+    {
+        name: 'Laptop',
+        path: '/category/laptop',
+        exact: false,
+        component: Laptop,
+    },
+    {
+        name: 'Tablet',
+        path: '/category/tablet',
+        exact: false,
+        component: Tablet,
+    },
+    {
+        name: 'AccessoryMobile',
+        path: '/category/accessory-mobile',
+        exact: false,
+        component: Accessory1,
+    },
+    {
+        name: 'AccessoryLaptop',
+        path: '/category/accessory-laptop',
+        exact: false,
+        component: Accessory2,
+    },
 ];
 
 export const LOGIN_ROUTES = [
@@ -82,6 +123,7 @@ export const NOTFOUND_ROUTES = [
         component: NotFound,
     },
 ];
+
 export const FILE_USER = [
     {
         name: 'UserAccount',

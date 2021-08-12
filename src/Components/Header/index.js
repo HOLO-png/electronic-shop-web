@@ -7,19 +7,19 @@ import User from './User';
 
 const mainNav = [
     {
-        display: 'Home',
+        display: 'HOME',
         path: '/home',
     },
     {
-        display: 'Catalog',
+        display: 'CATALOG',
         path: '/catalog',
     },
     {
-        display: 'Accessories',
+        display: 'ACCESSORIES',
         path: '/accessories',
     },
     {
-        display: 'Contact',
+        display: 'CONTACT',
         path: '/contact',
     },
 ];

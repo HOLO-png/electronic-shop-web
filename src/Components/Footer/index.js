@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Grid from '../Grid';
-import logo from '../../assets/images/apple_logo_PNG19682.png';
+import logo from '../../assets/images/logo2.png';
 
 const footerAboutLink = [
     { display: 'Introduce', path: '/about' },

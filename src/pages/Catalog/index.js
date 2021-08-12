@@ -2,5 +2,5 @@ import React from 'react';
 import Helmet from '../../Components/Helmet';
 
 export default function Catalog() {
-    return <Helmet title="Catalog">Catalog</Helmet>;
+    return <Helmet title="Catalog"></Helmet>;
 }

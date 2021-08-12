@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Button from '../Button';
 import numberWithCommas from '../../utils/numberWithCommas';
-
+import styled from 'styled-components';
 function ProductCart(props) {
     const { img01, img02, name, price, slug } = props;
     return (

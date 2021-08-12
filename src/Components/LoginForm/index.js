@@ -71,7 +71,7 @@ function LoginForm(props) {
                             photoURL: null,
                             uid: val.name,
                         });
-                        history.push('/home');
+                        // history.push('/home');
                     })
                     .catch((err) => {
                         toast.error(

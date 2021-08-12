@@ -4,6 +4,7 @@
 // font-family: 'M PLUS Rounded 1c', sans-serif;
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -32,7 +33,9 @@ a {
 a:hover {
     color: $main-color;
 }
-
+.ant-drawer-body {
+    padding: 10px 0;
+}
 strong {
     margin: 5px;
     &:hover {

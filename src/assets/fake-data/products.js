@@ -230,5 +230,7 @@ const productData = {
     getAllProducts,
     getProducts,
 };
+export const product_common =
+    require('../images/products/tải xuống.jfif').default;
 
 export default productData;
