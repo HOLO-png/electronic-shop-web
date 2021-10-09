@@ -75,7 +75,7 @@ export default function Home() {
 
     useEffect(() => {
         setLoading(true);
-        // document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
         setTimeout(() => {
             if (mobile_api.length && laptop_api.length && tablet_api.length) {
                 setLoading(false);
