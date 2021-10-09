@@ -1,10 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Button from '../../Button';
 import CartProducts from './CartProducts';
+import { Empty } from 'antd';
 
 function Cart(props) {
+    const { cartProduct } = props;
     const cartDrawerRef = useRef(null);
 
     const someHandler = () => {
@@ -33,6 +35,7 @@ function Cart(props) {
             window.removeEventListener('mousemove', null);
         };
     }, []);
+
     return (
         <div className="header__menu__item header__menu__right__item">
             <div
@@ -44,7 +47,8 @@ function Cart(props) {
                 <Link to="/cart">
                     <i className="fab fa-opencart"></i>
                 </Link>
-                <p>1</p>
+
+                {cartProduct.length ? <p>{cartProduct.length}</p> : null}
 
                 <div
                     className="header__menu__item__cart-drawer"
@@ -55,14 +59,24 @@ function Cart(props) {
                         Add new product
                     </span>
                     <div className="header__menu__item__cart-drawer__products">
-                        <CartProducts />
-                        <CartProducts />
-                        <CartProducts />
-                        <CartProducts />
+                        {cartProduct.length ? (
+                            cartProduct.map((item, index) => (
+                                <CartProducts key={index} product={item} />
+                            ))
+                        ) : (
+                            <Empty style={{ marginTop: 40 }} />
+                        )}
                     </div>
-                    <Button size="sm" icon="shopping-basket" animate={true}>
-                        View cart
-                    </Button>
+                    <Link to="/cart" style={{ width: '100%' }}>
+                        <Button
+                            size="sm"
+                            icon="shopping-basket"
+                            animate={true}
+                            width="100%"
+                        >
+                            View cart
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </div>

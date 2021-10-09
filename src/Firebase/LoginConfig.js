@@ -18,6 +18,7 @@ export const handleFbLogin = async () => {
         }
     }, 1000);
 };
+
 export const handleGgLogin = async () => {
     const { additionalUserInfo, user } = await auth.signInWithPopup(ggProvider);
     setTimeout(() => {

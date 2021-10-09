@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import * as Yup from 'yup';
 import { FastField, Form, Formik, isEmptyChildren } from 'formik';
@@ -29,11 +30,6 @@ function Signin(props) {
             .required('This field is required !'),
     });
 
-    const handleReset = (resetForm) => {
-        if (window.confirm('Reset?')) {
-            resetForm();
-        }
-    };
     return (
         <div className="form__container sign-in-container">
             <Formik
@@ -49,14 +45,12 @@ function Signin(props) {
                             <h1 className="form__title">Sign in</h1>
                             <div className="form__social-container">
                                 <a
-                                    href
                                     className="form__social"
                                     onClick={handleFbLogin}
                                 >
                                     <i className="fab fa-facebook-f" />
                                 </a>
                                 <a
-                                    href
                                     className="form__social"
                                     onClick={handleGgLogin}
                                 >
@@ -79,7 +73,7 @@ function Signin(props) {
                                 placeholder="Password ..."
                             />
                             <Link to="/forgot-password">
-                                <a href="true">Forgot your password?</a>
+                                <p>Forgot your password?</p>
                             </Link>
                             <FormGroup>
                                 <Button type="submit" color="primary">

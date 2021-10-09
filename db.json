@@ -1,0 +1,2197 @@
+{
+  "mobile_api": [
+    {
+      "id": 1,
+      "name": "Điện Thoại Vsmart Joy 4 - Hàng Chính Hãng",
+      "category": "mobile",
+      "description": {
+        "insurance": 24,
+        "format": "smartPhone",
+        "battery": "5000 mAh",
+        "bluetooth": "V5.0",
+        "trademark": "Vsmart",
+        "origin_trademark": "Việt Nam",
+        "rear_camera": "Chính 16 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "front_camera": "13MP",
+        "support": "Micro SD",
+        "Chip": "adreno 610",
+        "other_func": "Mở khóa bằng vân tay, Mở khoá khuôn mặt",
+        "film": "film FullHD 1080p@30fps, film FullHD 1080p@60fps, film FullHD 1080p@120fps, film 4K 2160p@30fps",
+        "RAM": "4GB/3GB",
+        "resolution": "Full HD+ (1080 x 2340 Pixels)",
+        "details": {
+          "Điện thoại Vsmart chính hãng giá rẻ": "Vsmart là thương hiệu điện thoại Việt gây tiếng vang lớn trong thời gian vừa qua và đồng thời mở ra chương tiếp theo của câu chuyện smartphone Made in VietNam theo một cách hoàn toàn khác. Đánh vào phân khúc điện thoại phổ thông và điện thoại tầm trung. Vsmart không chỉ có uy tín bởi tập đoàn phát triển Vingroup, Vsmart còn cùng lúc đáp ứng những đòi hỏi của người dùng về một chiếc điện thoại đẹp, mạnh và giá cả phải chăng. Không nặng về thông điệp truyền thông “người Việt dùng hàng Việt”, Vsmart thoải mái chấp nhận xu hướng của toàn cầu, đó là việc một sản phẩm công nghệ được tạo ra từ các nguồn linh kiện từ nhiều nhà cung cấp khác nhau. Vsmart mang đến những sản phẩm chất lượng Châu Âu và được sản xuất ngay tại Việt Nam, bởi một thương hiệu Việt. ",
+          "Vsmart sở hữu thiết kế hiện đại, bắt kịp xu hướng": "Cả 4 mẫu smartphone Vsmart đều thể hiện sự hiện đại, bắt kịp xu hướng trong thiết kế hiện nay. Là sản phẩm thuộc phân khúc phổ thông, nhưng Vsmart Joy 1 được chăm chút kỹ càng. Thiết kế nguyên khối unibody đẹp mắt, hoàn thiện tốt cho cảm giác nhìn liền mạch, kiểu dáng trẻ trung. Máy nhỏ gọn, khung viền bo cong cho cảm giác cầm thoải mái, dễ chịu cả khi sử dụng máy trong thời gian dài. Cùng thuộc phân khúc phổ thông, nhưng đến Vsmart Joy1+ người dùng lại có một smartphone với thiết kế Notch tai thỏ, tối ưu diện tích hiển thị màn hình.",
+          "Vsmart trang bị phần cứng tốt": "Không chỉ chỉnh chu trong thiết kế, điện thoại Vsmart còn trang bị phần cứng tốt, sức mạnh hiệu năng cạnh tranh sòng phẳng với các sản phẩm khác trong cùng tầm giá. Vsmart đặc biệt gây sốc với mẫu Active 1 với mức giá trên 4 triệu đồng nhưng được trang bị vi xử lý Snapdragon 660 tiết kiệm năng lượng, đi kèm RAM 4GB và bộ nhớ trong 64GB, máy có cả cổng USB-C tiên tiến, chưa hết còn được tặng kèm sạc nhanh Quick Charge 3.0. Chắc chắn, những bước tiến của Vsmart sẽ còn xa và vững chắc hơn nữa."
+        }
+      },
+      "amount": 35440,
+      "star": 4,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/c6/88/35/d37390d534ab2a13b63d823755f0693c.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/28/7d/2b/d0697e6eb02ee97b18d53c3c84f42aa9.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/89/2b/76/4e26f97c04bf8a2447381cddb703c457.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/a3/5b/4c/1a0e48f94798e708585c451b5d9d27db.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/63/8a/fc/7e9a5148d6bca287b29d20e6746d6ad6.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/52/db/ed/250ed1f223e0711ac9f3ea93ade7074d.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/98/bc/d6/4753efd88927369b437819931b6c5c91.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/da/54/79/d8db1c46a6066637239c93bf226ec076.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/05/a9/42/88f0f0c445af5fb3a9e7d25959a15a0b.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/92/9c/56/5e03bf303e73b956e0b2d7de405f78ae.jpg.webp"
+        ]
+      ],
+      "price": [
+        2250000,
+        1997000
+      ],
+      "priceOld": [
+        3250000,
+        2997000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Xanh Ngọc Lam",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/c6/88/35/d37390d534ab2a13b63d823755f0693c.jpg.webp"
+        },
+        {
+          "count": 1,
+          "title": "Đen Cẩm Thạch",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/52/db/ed/250ed1f223e0711ac9f3ea93ade7074d.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "3GB/64GB",
+        "4GB/64GB"
+      ],
+      "shop": {
+        "image": "https://www.kiotviet.vn/wp-content/uploads/2017/10/cua-hang-dien-thoai-hut-khach-nho-thiet-ke-an-tuong-508x500.jpg",
+        "address": "43 Bàu Tràm 1 - Khuê Trung - Đà Nẵng",
+        "name": "Điện Máy Xanh",
+        "evaluate": 171000,
+        "response_rate": 97,
+        "response_time": 2,
+        "participation": 26,
+        "monitor": 1100
+      },
+      "sold": 1940
+    },
+    {
+      "id": 2,
+      "name": "Điện Thoại Samsung Galaxy S20 FE - Hàng Chính Hãng",
+      "category": "mobile",
+      "description": {
+        "insurance": 12,
+        "format": "smartPhone",
+        "battery": "4500 mAh",
+        "bluetooth": "V5.0",
+        "trademark": "Samsung",
+        "origin_trademark": "Hàn Quốc",
+        "rear_camera": "Chính 12 MP & Phụ 12 MP, 8 MP",
+        "front_camera": "32 MP",
+        "support": "Micro SD",
+        "Chip": "adreno 610",
+        "other_func": "Mở khóa bằng vân tay, Mở khoá khuôn mặt",
+        "film": "film FullHD 1080p@30fps, film FullHD 1080p@60fps, film FullHD 1080p@120fps, film 4K 2160p@30fps",
+        "RAM": "4GB/3GB",
+        "resolution": "Full HD+ (1080 x 2340 Pixels)",
+        "details": {
+          "Giới thiệu Galaxy S20 FE - phiên bản cho mọi cá tính để sống đậm chất riêng": "Thu hút mọi ánh nhìn và trở nên khác biệt với chiếc smartphone được thiết kế dành riêng cho bạn. Với các gam màu thời thượng hoàn thiện cùng lớp phủ mờ sang trọng mang lại một phiên bản đầy cá tính để mỗi fan tự tin thể hiện chất riêng của mình.1",
+          "Thu Hút Mọi Ánh Nhìn Với Màn Hình Tràn Viền Sống Động Infinity-O": "Nâng tầm trải nghiệm xem với màn hình FHD Infinity-O 6.5 inch. Sở hữu cạnh viền mỏng và camera nhỏ2, màn hình Galaxy S20 FE cho bạn thỏa thích chơi game, phát trực tuyến và đàm thoại video với trải nghiệm sống động, chân thực đáng kinh ngạc.",
+          "Mở Rộng Khung Hình, Thu Phóng Ấn Tượng Và Chụp Một Chạm, Đa Kết Quả": "Kiến tạo những khung hình đắt giá không cần chỉnh sửa với cụm ba camera chuyên nghiệp từ Galaxy S20 FE. Lấy trọn khung hình bằng Camera Góc Rộng và Góc Siêu Rộng hoặc phóng to để bắt mọi khoảnh khắc từ xa bằng ống kính Optical Zoom 3x trên Camera Telephoto.",
+          "Trở thành Tâm Điểm, Dù Bạn Ở Đâu": "Phóng to thoải mái mọi chi tiết với chất lượng hình ảnh rõ nét nhờ tính năng Space Zoom 30x. Sự kết hợp giữa ống kính Zoom quang học 3x và Thu phóng siêu phân giải lên đến 30x cho phép bạn chụp cận cảnh một cách dễ dàng mà không phải di chuyển.3, 4"
+        }
+      },
+      "amount": 285,
+      "star": 4,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/ff/0f/ea/133202c6b9749279e7241a7b6e85c246.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/8a/ff/d1/c4c9ca3ce7861adf64e8f8944025e71c.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/f7/b7/df/e5a2de4cf813bc56fd3972b110c2382a.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/ea/66/b0/4475140497eed1e491f3ce58df94f78f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/ea/66/b0/4475140497eed1e491f3ce58df94f78f.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/19/5e/21/e9545516e51437aa3266c8a684c83f1d.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/26/8a/fd/aaab1da632cf77eea2b21d24c4c3abd1.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/cd/85/00/bb45274a0f6131e1ec4c80b332a19f4d.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/29/8f/df/5f7e180138331e0fcbdf23bf70ed56c8.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/f7/df/3d/3f16c7958f38936f3ed5ff95033cab98.jpg.webp"
+        ]
+      ],
+      "price": [
+        11350000,
+        21990000
+      ],
+      "priceOld": [
+        26500000,
+        29970000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Xanh Khí Chất",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/ff/0f/ea/133202c6b9749279e7241a7b6e85c246.jpg.webp"
+        },
+        {
+          "count": 1,
+          "title": "Xanh Thanh Mát",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/19/5e/21/e9545516e51437aa3266c8a684c83f1d.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "8GB/256GB"
+      ],
+      "shop": {
+        "image": "https://www.noithatmasta.com/uploaded/thiet-ke-shop-dien-thoai-anh-hai-dong-nai-1.jpg",
+        "address": "82 Hai Bà Trưng - Cẩm Lệ - Đà Nẵng",
+        "name": "Shop Điện Thoại",
+        "evaluate": 123000,
+        "response_rate": 65,
+        "response_time": 1,
+        "participation": 46,
+        "monitor": 6700
+      },
+      "sold": 1120
+    },
+    {
+      "id": 3,
+      "name": "Điện Thoại Samsung Galaxy S21 Plus 5G (8GB-128GB) - ĐÃ KÍCH HOẠT BẢO HÀNH ĐIỆN TỬ - Hàng Chính Hãng",
+      "category": "mobile",
+      "description": {
+        "insurance": 4,
+        "format": "smartPhone",
+        "battery": "4500 mAh",
+        "bluetooth": "V5.0",
+        "trademark": "Samsung",
+        "origin_trademark": "Hàn Quốc",
+        "rear_camera": "Chính 12 MP & Phụ 12 MP, 8 MP",
+        "front_camera": "32 MP",
+        "support": "Micro SD",
+        "Chip": "adreno 610",
+        "other_func": "Mở khóa bằng vân tay, Mở khoá khuôn mặt",
+        "film": "film FullHD 1080p@30fps, film FullHD 1080p@60fps, film FullHD 1080p@120fps, film 4K 2160p@30fps",
+        "RAM": "4GB/3GB",
+        "resolution": "Full HD+ (1080 x 2340 Pixels)",
+        "details": {
+          "Thiết kế mới, tinh tế đến từng chi tiết": "Samsung Galaxy S21+ 5G sở hữu thiết kế mới lạ chưa từng có trên các smartphone trước đây với phần cụm camera gắn liền với cạnh mang vẻ đẹp độc đáo, tạo sự kết nối hài hòa, liền mạch. Galaxy S21+ 5G tiếp tục khẳng định đẳng cấp siêu phẩm qua chất lượng hoàn thiện cao, từng chi tiết nhỏ nhất đều được hoàn thành một cách tỉ mỉ tạo sự nhẹ nhàng, không hề thô cứng.",
+          "Đắm chìm mọi giác quan trong màn hình tràn cạnh": "Màn hình Galaxy S21+ 5G sử dụng thiết kế Infinity-O với camera đục lỗ rất nhỏ nằm sát góc trên, để lại một không gian hiển thị rộng đến 6.7 inch tràn cạnh hoàn hảo với 4 cạnh viền gần như gần bằng nhau. Galaxy S21+ trang bị màn hình Dynamic AMOLED 2X cao cấp, độ phân giải Full HD+ hứa hẹn chất lượng hiển vô cùng xuất sắc, tạo nên những khung hình hoàn hảo với màu sắc sống động, màu đen sâu, chi tiết ấn tượng để bạn thật sự đắm chìm vào nội dung giải trí đỉnh cao. ",
+          "Hiệu năng cực khủng đến từ vi xử lý siêu nhỏ": "Galaxy S21+ 5G được trang bị chipset 5 nm của Samsung đó là Exynos 2100 tốc độ đạt 2.9 GHz, cung cấp hiệu suất CPU cao hơn tới 30%, GPU Mali-G78 mạnh hơn 40% so với GPU Mali-G77 của Exynos 990. Exynos 2100 còn hỗ trợ kết nối 5G với tốc độ mạng dữ liệu nhanh, tăng cường sức mạnh AI giúp xử lý ảnh video nhanh hơn, rút ngắn thời gian học thói quen để tối ưu trải nghiệm người dùng."
+        }
+      },
+      "amount": 9323,
+      "star": 5,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/e0/16/13/77cc617417166f77abf24130ab8a015f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/2d/2f/c2/ff94e689c06888e596f5f5a6f2b1c4e7.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/76/e2/34/dfe9d1127d74b9e1519ab4fd8cf07606.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/ae/0d/27/49543ccfab77f475a591db9912f10838.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/c1/a6/52/9c59d43a88f57e9bb389fd8b75243706.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/c1/a6/52/9c59d43a88f57e9bb389fd8b75243706.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/00/f9/64/14f32269152bc61b46d27880c99f5cf9.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/30/14/fb/48023a81d4224e24215f606918057e8a.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/8a/e8/a6/f79eaaaabfe3d05ffc5c50a5f0e7b762.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/8d/7d/79/fdf27c2c8ec1ec0623707c16c0a2b8ad.jpg.webp"
+        ]
+      ],
+      "price": [
+        15890000,
+        19990000
+      ],
+      "priceOld": [
+        17500000,
+        29970000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Bạc",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/e0/16/13/77cc617417166f77abf24130ab8a015f.jpg.webp"
+        },
+        {
+          "count": 1,
+          "title": "Đen",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/c1/a6/52/9c59d43a88f57e9bb389fd8b75243706.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "8GB/128GB"
+      ],
+      "shop": {
+        "image": "https://lh3.googleusercontent.com/proxy/pY3q5YsX4j-F04xeR-TC9ht8z_qfAM5WAngyx8LqGskNoEza90deklHg71stVhINkgtflHuvJgTEnIItLIgSbUoVL7bewp5RNxWJ4RkqFpAOcZgsI1I7YA",
+        "address": "79 Thủ Đức - Niên Chiểu - Đà Nẵng",
+        "name": "Iphone MAC",
+        "evaluate": 223000,
+        "response_rate": 64,
+        "response_time": 3,
+        "participation": 7,
+        "monitor": 27000
+      },
+      "sold": 1940
+    },
+    {
+      "id": 4,
+      "name": "Điện Thoại Samsung Galaxy Note 20 Ultra (8GB-256GB) - ĐÃ KÍCH HOẠT BẢO HÀNH ĐIỆN TỬ - Hàng Chính Hãng",
+      "category": "mobile",
+      "description": {
+        "insurance": 44,
+        "format": "smartPhone",
+        "battery": "4500 mAh",
+        "bluetooth": "V5.0",
+        "trademark": "Samsung",
+        "origin_trademark": "Hàn Quốc",
+        "rear_camera": "Chính 16 MP & Phụ 12 MP, 8 MP",
+        "front_camera": "14 MP",
+        "support": "Micro SD",
+        "Chip": "adreno 610",
+        "other_func": "Mở khóa bằng vân tay, Mở khoá khuôn mặt",
+        "film": "film FullHD 1080p@30fps, film FullHD 1080p@60fps, film FullHD 1080p@120fps, film 4K 2160p@30fps",
+        "RAM": "4GB/3GB",
+        "resolution": "Full HD+ (1080 x 2340 Pixels)",
+        "details": {
+          "Đánh giá chi tiết Samsung Galaxy Note 20 Ultra": "Chiếc Galaxy Note màn hình lớn nhất, bút S Pen thông minh nhất và những tính năng mạnh mẽ nhất đã xuất hiện. Samsung Galaxy Note 20 Ultra sẽ định nghĩa lại smartphone, thay đổi những trải nghiệm của bạn theo cách thú vị hơn bao giờ hết.",
+          "Kiệt tác công nghệ với màu sắc huyền bí": "Samsung Galaxy Note 20 Ultra được chế tác từ những vật liệu cao cấp hàng đầu hiện nay, với sự tỉ mỉ và chất lượng gia công thượng thừa, tạo nên chiếc điện thoại đẹp hơn những gì bạn có thể tưởng tượng. Không chỉ có kiểu dáng thanh lịch, màn hình không viền Infinity-O quyến rũ, Galaxy Note20 Ultra còn thể hiện sự cao cấp ở từng chi tiết nhỏ như các phần viền cạnh sáng bóng, họa tiết phay xước độc đáo trên khung máy, mang đến niềm cảm hứng cho người dùng ở mọi góc cạnh.",
+          "Hiển thị tuyệt đẹp, mượt mà đến khó tin": "Note 20 Ultra chắc chắn là mẫu smartphone có màn hình đẹp bậc nhất thế giới hiện nay. Trước mắt bạn là một màn hình cực lớn 6,9 inch tràn cạnh Infinity-O, độ phân giải QHD+ siêu nét, hỗ trợ HDR10+ và công nghệ màn hình Dynamic AMOLED 2X. Mọi thứ đều hiển thị lớn, sống động, đẹp rực rỡ và độ chi tiết hoàn hảo. Không chỉ đẹp, màn hình này còn có độ mượt mà vượt trội với tần số quét 120Hz, cho những thao tác vuốt chạm của bạn phản hồi ngay lập tức, đưa hiệu quả công việc và giải trí lên tối đa."
+        }
+      },
+      "amount": 12300,
+      "star": 3,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/dc/f7/b7/2e705574301fe2c9c6ee91d1189e7bc3.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/f7/a7/48/cd73e51d6e1e3bd85b09cea6113f5646.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/19/dc/a6/638512d877d9cb21842bd3da24741133.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/1c/87/02/87d75ff063969ffbfb71111481f3be97.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/1f/6f/3d/0e59fcea1b7b175ec093fdca1f9fa7a7.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/a2/0e/21/0f367fa057ac7d67e002e6e7ff82f8b5.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/a2/0e/21/0f367fa057ac7d67e002e6e7ff82f8b5.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/cf/e6/63/e2fd262dd5d83d7dabe6ab07111c7532.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/57/e4/92/e4bcf311e73fe5ec888cb750c6d8d086.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/57/e4/92/e4bcf311e73fe5ec888cb750c6d8d086.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/eb/41/b9/e23a26d60d86f0afc23cd991dd602174.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/ae/bb/8d/5a93691e85bf03b7231e450401d7c941.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/0d/9f/07/0e97b29f0dc03ed1e439df62ff4270fc.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/0e/62/9e/bc0d80816a65b6dce3247f0286b3ccc4.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/0e/62/9e/bc0d80816a65b6dce3247f0286b3ccc4.jpg.webp"
+        ]
+      ],
+      "price": [
+        18590000,
+        29990000,
+        49990000
+      ],
+      "priceOld": [
+        32500000,
+        29970000,
+        59990000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Trắng",
+          "image": "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/dc/f7/b7/2e705574301fe2c9c6ee91d1189e7bc3.jpg.webp"
+        },
+        {
+          "count": 1,
+          "title": "Đen",
+          "image": "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/a2/0e/21/0f367fa057ac7d67e002e6e7ff82f8b5.jpg.webp"
+        },
+        {
+          "count": 2,
+          "title": "Đồng",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/eb/41/b9/e23a26d60d86f0afc23cd991dd602174.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "8GB/256GB"
+      ],
+      "shop": {
+        "image": "https://lh3.googleusercontent.com/proxy/pY3q5YsX4j-F04xeR-TC9ht8z_qfAM5WAngyx8LqGskNoEza90deklHg71stVhINkgtflHuvJgTEnIItLIgSbUoVL7bewp5RNxWJ4RkqFpAOcZgsI1I7YA",
+        "address": "96 Mai Hoá - Sơn Trà - Đà Nẵng",
+        "name": "SELL LA MOBILE",
+        "evaluate": 93000,
+        "response_rate": 35,
+        "response_time": 2,
+        "participation": 46,
+        "monitor": 6700
+      },
+      "sold": 140
+    },
+    {
+      "id": 5,
+      "name": "Điện Thoại Samsung Galaxy S21 Ultra 5G (12GB-128GB) - ĐÃ KÍCH HOẠT BẢO HÀNH ĐIỆN TỬ - Hàng Chính Hãng",
+      "category": "mobile",
+      "description": {
+        "insurance": 8,
+        "format": "smartPhone",
+        "battery": "5000 mAh",
+        "trademark": "Samsung",
+        "bluetooth": "V5.0",
+        "origin_trademark": "Việt Nam",
+        "rear_camera": "Chính 12 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "front_camera": "8MP",
+        "details": {
+          "Đột phá trong thiết kế thời thượng": "Không chỉ đơn thuần phục vụ giao tiếp và giải trí, Samsung Galaxy S21 Ultra 5G còn chính là món phụ kiện thời trang khẳng định vị thế của người sở hữu. Vẻ ngoài mảnh mai và thon gọn đến bất ngờ chỉ 165.1 x 75.6 x 8.9 mm và trọng lượng 228 g dù phải “vác” một viên pin lớn."
+        }
+      },
+      "amount": 35250,
+      "star": 5,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/e1/0f/a2/6fbd59d964b0ae3d96f20013192abefe.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/35/38/60/fcc30897a8f72cd9493f2f9fb4a8ff6d.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/35/38/60/fcc30897a8f72cd9493f2f9fb4a8ff6d.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/87/0c/9a/de6b4d6d4339187a098a89646bb69c52.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/87/0c/9a/de6b4d6d4339187a098a89646bb69c52.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/7f/10/73/2a0fe150d3686d94cea485c75ed340aa.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/03/ea/68/a98f67a78215a38ca28895374d68e549.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/0e/cb/21/62062f22bc74913f6fc4d0973182d589.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/1f/7f/45/517964463036ad9409c47baeb5c7f4f1.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/34/d8/40/78fb91efb9bea89bf7cee1a6a5f31fa5.jpg.webp"
+        ]
+      ],
+      "price": [
+        20650000,
+        19900000
+      ],
+      "priceOld": [
+        32500000,
+        29970000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Bạc",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/e1/0f/a2/6fbd59d964b0ae3d96f20013192abefe.jpg.webp"
+        },
+        {
+          "count": 1,
+          "title": "Đen",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/7f/10/73/2a0fe150d3686d94cea485c75ed340aa.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "12GB/128GB"
+      ],
+      "shop": {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjunMEaJXYAM0vcx2w9hIDeEkPnKMgRwPyuw&usqp=CAU",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Hoàng Long Shop",
+        "evaluate": 73000,
+        "response_rate": 35,
+        "response_time": 2,
+        "participation": 46,
+        "monitor": 1700
+      },
+      "sold": 1200
+    },
+    {
+      "id": 6,
+      "name": "Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng",
+      "category": "mobile",
+      "description": {
+        "insurance": 8,
+        "format": "smartPhone",
+        "battery": "5.0, A2DP, LE",
+        "bluetooth": "V5.0",
+        "trademark": "Apple",
+        "origin_trademark": "Mỹ",
+        "rear_camera": "Chính 16 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "front_camera": "12 MP, f/1.6, 26mm (wide), 1.4µm, dual pixel PDAF, OIS; 12 MP, f/2.0, 52mm (telephoto), 1/3.4, 1.0µm, PDAF, OIS, 2x optical zoom; 12 MP, f/2.4, 120˚, 13mm (ultrawide), 1/3.6; TOF 3D LiDAR scanner (depth)",
+        "3G": "HSPA 42.2/5.76 Mbps, EV-DO Rev.A 3.1 Mbps",
+        "CPU": "Apple GPU (4-core graphics)",
+        "ChipSet": "Apple A14 Bionic (5 nm)",
+        "ortherFunction": "Face ID, cảm biến gia tốc, cảm biến tiệm cận, con quay hồi chuyển, cảm biên sáng",
+        "size": "146.7 x 71.5 x 7.4 mm",
+        "ROM": "128GB",
+        "details": {
+          "Đột phá trong thiết kế thời thượng": "Không chỉ đơn thuần phục vụ giao tiếp và giải trí, Samsung Galaxy S21 Ultra 5G còn chính là món phụ kiện thời trang khẳng định vị thế của người sở hữu. Vẻ ngoài mảnh mai và thon gọn đến bất ngờ chỉ 165.1 x 75.6 x 8.9 mm và trọng lượng 228 g dù phải “vác” một viên pin lớn."
+        }
+      },
+      "amount": 21590,
+      "star": 2,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/b0/39/57/cdce3bcbefd3a319be3847bf73ad2f84.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/c4/bc/93/a6c8edf3032c5ccf50c0e82e4e4c2c8b.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/c5/15/ba/245ee2fafe1e5fd5cee886876a93d53f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/c5/15/ba/245ee2fafe1e5fd5cee886876a93d53f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/27/55/4e/de17f04656c5cbfd86eb49dbbfb3fe3a.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/ce/fb/33/59195cb31738541fa62c30cd1c7c6455.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/56/83/a1/e6e674363af14993fbf21a9d556cb9f6.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/6a/9c/c4/f3eec6d74faeca76dcb8478008db567d.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/14/f0/60/eb03fe0d4f10f4d445b7904cff260794.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/18/4e/cb/3560a26e2710caf52b0881dc4659c157.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/a0/ed/8a/fd1be88001380ae25706b93b984eeca5.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/59/ed/cc/087d1b2f50e7d8b3b8138bdfd5fde6a4.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/59/ed/cc/087d1b2f50e7d8b3b8138bdfd5fde6a4.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/86/dd/0c/8948ec0e37381d80d7daf5f8c24062ed.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/af/4b/5c/98095f0153935d70891d1d9126700f42.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/1b/b0/9c/35a4702db7224b37eba549ef54f0b1d0.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/6a/9c/c4/f3eec6d74faeca76dcb8478008db567d.jpg.webp"
+        ]
+      ],
+      "price": [
+        20650000,
+        21900000,
+        25990000,
+        24990000
+      ],
+      "priceOld": [
+        32500000,
+        29970000,
+        30000000,
+        32990000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Xanh Dương",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/b0/39/57/cdce3bcbefd3a319be3847bf73ad2f84.jpg.webp"
+        },
+        {
+          "count": 1,
+          "title": "Bạc",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/27/55/4e/de17f04656c5cbfd86eb49dbbfb3fe3a.jpg.webp"
+        },
+        {
+          "count": 2,
+          "title": "Vàng",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/14/f0/60/eb03fe0d4f10f4d445b7904cff260794.jpg.webp"
+        },
+        {
+          "count": 3,
+          "title": "Xám",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/86/dd/0c/8948ec0e37381d80d7daf5f8c24062ed.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "16GB/128GB",
+        "12GB/128GB",
+        "8GB/128GB",
+        "12GB/128GB"
+      ],
+      "shop": {
+        "image": "https://bmcdesign.vn/wp-content/uploads/2015/03/shopIphone_2.jpg",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Iphone Shop",
+        "evaluate": 13000,
+        "response_rate": 85,
+        "response_time": 4,
+        "participation": 146,
+        "monitor": 8700
+      },
+      "sold": 5200
+    },
+    {
+      "id": 7,
+      "name": "Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng",
+      "category": "mobile",
+      "description": {
+        "insurance": 8,
+        "format": "smartPhone",
+        "battery": "5.0, A2DP, LE",
+        "bluetooth": "V5.0",
+        "trademark": "Apple",
+        "origin_trademark": "Mỹ",
+        "rear_camera": "Chính 16 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "front_camera": "12 MP, f/1.6, 26mm (wide), 1.4µm, dual pixel PDAF, OIS; 12 MP, f/2.0, 52mm (telephoto), 1/3.4, 1.0µm, PDAF, OIS, 2x optical zoom; 12 MP, f/2.4, 120˚, 13mm (ultrawide), 1/3.6; TOF 3D LiDAR scanner (depth)",
+        "3G": "HSPA 42.2/5.76 Mbps, EV-DO Rev.A 3.1 Mbps",
+        "CPU": "Apple GPU (4-core graphics)",
+        "ChipSet": "Apple A14 Bionic (5 nm)",
+        "ortherFunction": "Face ID, cảm biến gia tốc, cảm biến tiệm cận, con quay hồi chuyển, cảm biên sáng",
+        "size": "146.7 x 71.5 x 7.4 mm",
+        "ROM": "128GB",
+        "details": {
+          "Đột phá trong thiết kế thời thượng": "Không chỉ đơn thuần phục vụ giao tiếp và giải trí, Samsung Galaxy S21 Ultra 5G còn chính là món phụ kiện thời trang khẳng định vị thế của người sở hữu. Vẻ ngoài mảnh mai và thon gọn đến bất ngờ chỉ 165.1 x 75.6 x 8.9 mm và trọng lượng 228 g dù phải “vác” một viên pin lớn."
+        }
+      },
+      "amount": 19000,
+      "star": 2,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/b0/39/57/cdce3bcbefd3a319be3847bf73ad2f84.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/c4/bc/93/a6c8edf3032c5ccf50c0e82e4e4c2c8b.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/c5/15/ba/245ee2fafe1e5fd5cee886876a93d53f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/c5/15/ba/245ee2fafe1e5fd5cee886876a93d53f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/27/55/4e/de17f04656c5cbfd86eb49dbbfb3fe3a.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/ce/fb/33/59195cb31738541fa62c30cd1c7c6455.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/56/83/a1/e6e674363af14993fbf21a9d556cb9f6.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/6a/9c/c4/f3eec6d74faeca76dcb8478008db567d.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/14/f0/60/eb03fe0d4f10f4d445b7904cff260794.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/18/4e/cb/3560a26e2710caf52b0881dc4659c157.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/a0/ed/8a/fd1be88001380ae25706b93b984eeca5.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/59/ed/cc/087d1b2f50e7d8b3b8138bdfd5fde6a4.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/59/ed/cc/087d1b2f50e7d8b3b8138bdfd5fde6a4.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/86/dd/0c/8948ec0e37381d80d7daf5f8c24062ed.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/af/4b/5c/98095f0153935d70891d1d9126700f42.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/1b/b0/9c/35a4702db7224b37eba549ef54f0b1d0.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/6a/9c/c4/f3eec6d74faeca76dcb8478008db567d.jpg.webp"
+        ]
+      ],
+      "price": [
+        20650000,
+        21900000,
+        25990000,
+        24990000
+      ],
+      "priceOld": [
+        32500000,
+        29970000,
+        30000000,
+        32990000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Xanh Dương",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/b0/39/57/cdce3bcbefd3a319be3847bf73ad2f84.jpg.webp"
+        },
+        {
+          "count": 1,
+          "title": "Bạc",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/27/55/4e/de17f04656c5cbfd86eb49dbbfb3fe3a.jpg.webp"
+        },
+        {
+          "count": 2,
+          "title": "Vàng",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/14/f0/60/eb03fe0d4f10f4d445b7904cff260794.jpg.webp"
+        },
+        {
+          "count": 3,
+          "title": "Xám",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/86/dd/0c/8948ec0e37381d80d7daf5f8c24062ed.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "16GB/128GB",
+        "12GB/128GB",
+        "8GB/128GB",
+        "12GB/128GB"
+      ],
+      "shop": {
+        "image": "https://bmcdesign.vn/wp-content/uploads/2015/03/shopIphone_2.jpg",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Iphone Shop",
+        "evaluate": 13000,
+        "response_rate": 85,
+        "response_time": 4,
+        "participation": 146,
+        "monitor": 8700
+      },
+      "sold": 1240
+    },
+    {
+      "id": 8,
+      "name": "Điện Thoại Nokia 150 (2020) - Hàng Chính Hãng",
+      "category": "mobile",
+      "description": {
+        "insurance": 8,
+        "format": "common",
+        "battery": "Pin chuẩn Li-Ion,1020 mAh",
+        "bluetooth": "V5.0",
+        "trademark": "Nokia",
+        "origin_trademark": "Trung Quốc",
+        "rear_camera": "VGA (480 x 640 pixels)",
+        "front_camera": "Không",
+        "details": {
+          "Thông tin sản phẩm": "Chính hãng, Nguyên seal, Mới 100% Màn hình: TFT, 2., 65.536 màu Danh bạ: 800 số Thẻ nhớ ngoài: MicroSD, hỗ trợ tối đa 32 GB Camera: VGA (480 x 640 pixels) Jack cắm tai nghe: 3.5 mm Radio FM: Có Dung lượng pin: 1020 mAh",
+          "Thiết kế hoài cổ nhưng đầy hiện đại": "Điện Thoại Nokia 150 (2020) - Hàng Chính Hãng mang hơi hướng hiện đại, gọn gàng với trọng lượng nhẹ chỉ khoảng 90.54g (khoàng 1/2 chiếc smartphone thông thường), với màu sắc trẻ trung, đẹp mắt phù hợp hầu hết đối tượng.",
+          "Màn hình TFT 2.4 inch": "Màn hình TFT 2.4 inch của Nokia 150 (2020) có đến 65.536 điểm màu, mang đến trải nghiệm về màu tốt nhất và nhìn rõ hơn trong điều kiện ánh sáng mạnh.",
+          "Camera và đèn flash hữu dụng, dễ dùng": "Nokia vẫn trang bị cho sản phẩm của mình camera sau với độ phân giải VGA (480 x 640 pixels) và đèn flash, giúp bạn có thể ghi lại những khoảnh khắc đơn giản trong điều kiện đủ sáng. Ngoài ra đèn flash của máy cũng đóng vai trò như một chiếc đèn pin nhỏ gọn và tiện dụng."
+        }
+      },
+      "amount": 2159,
+      "star": 4,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/ef/a3/88/06252fddabb2e4eccafcdca258728376.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/8d/6d/06/e927feb7e9da7627744066834accf0ff.png.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/18/29/04/bf487e940533d9d554687b875bd367a8.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/2d/f4/59/e78b34a25ec2ca2e2adebcc61f1830b8.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/93/43/64/23f32c1577c0afca5ee35517e31dfe7b.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/e3/40/3b/84afa800b2eb4ea376e6a5087651a699.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/74/a8/4f/44319fa94f2e0ab81aed359f24a74164.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/32/8f/2d/7dd744891ad9f38141cac3abd68a17b2.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/media/catalog/producttmp/40/20/42/7937ce9304e965807dd2a5a5317b25f2.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/0e/a0/ba/326beb945cdc4e581af187ace71e6fe1.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/5f/b8/29/7100dd3cebb3a6b084d0171544a19280.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/bf/dd/0c/0535b510f87495fe0e7af68bedca62b2.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/ee/b6/ad/d931e7b66b2f52a705eb54560a66400f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/0f/7d/74/51ba92300c450cee4db3d6c30f9266a9.jpg.webp"
+        ]
+      ],
+      "price": [
+        629000,
+        589000,
+        629000
+      ],
+      "priceOld": [
+        660000,
+        660000,
+        660000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Xanh",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/8d/6d/06/e927feb7e9da7627744066834accf0ff.png.webp"
+        },
+        {
+          "count": 1,
+          "title": "Đen",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/93/43/64/23f32c1577c0afca5ee35517e31dfe7b.jpg.webp"
+        },
+        {
+          "count": 2,
+          "title": "Đỏ",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/0e/a0/ba/326beb945cdc4e581af187ace71e6fe1.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "2GB/64GB",
+        "2GB/64GB",
+        "8GB/64GB"
+      ],
+      "shop": {
+        "image": "https://bmcdesign.vn/wp-content/uploads/2015/03/shopIphone_2.jpg",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Iphone Shop",
+        "evaluate": 13000,
+        "response_rate": 85,
+        "response_time": 4,
+        "participation": 146,
+        "monitor": 8700
+      },
+      "sold": 240
+    },
+    {
+      "id": 9,
+      "name": "Điện Thoại Xiaomi MI 10T LITE (6GB-128GB) - Hàng Chính Hãng",
+      "category": "mobile",
+      "description": {
+        "insurance": 8,
+        "format": "smartPhone",
+        "battery": "4820 mAh",
+        "bluetooth": "Có",
+        "trademark": "Xiaomi",
+        "origin_trademark": "Trung Quốc",
+        "rear_camera": "Chính 64 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "front_camera": "16 MP",
+        "3G": "HSPA 42.2/5.76 Mbps, EV-DO Rev.A 3.1 Mbps",
+        "CPU": "Apple GPU (4-core graphics)",
+        "ChipSet": "Apple A14 Bionic (5 nm)",
+        "ortherFunction": "Face ID, cảm biến gia tốc, cảm biến tiệm cận, con quay hồi chuyển, cảm biên sáng",
+        "size": "146.7 x 71.5 x 7.4 mm",
+        "ROM": "128GB",
+        "details": {
+          "Đột phá trong thiết kế thời thượng": "Không chỉ đơn thuần phục vụ giao tiếp và giải trí, Samsung Galaxy S21 Ultra 5G còn chính là món phụ kiện thời trang khẳng định vị thế của người sở hữu. Vẻ ngoài mảnh mai và thon gọn đến bất ngờ chỉ 165.1 x 75.6 x 8.9 mm và trọng lượng 228 g dù phải “vác” một viên pin lớn.",
+          "Cụm 4 camera nổi bật, đa tính năng": "Mặt sau của thiết bị nổi bật lên với 4 ống kính được thiết kế trong modul hình tròn với thông số lần lượt là: Cảm biến chính 64 MP, camera góc siêu rộng 8 MP, cuối cùng là camera macro và camera đo độ sâu có cùng độ phân giải 2 MP",
+          "Chip 'rồng' chiến game mạnh mẽ": "Tăng phần sức mạnh cho máy, Mi 10T Lite được trang bị chip Snapdragon 750G 5G 8 nhân mạnh mẽ đi kèm chip đồ họa GPU Adreno 619 mang lại hiệu suất xử lý hình ảnh tối ưu cho trải nghiệm game ấn tượng",
+          "Pin khỏe kèm sạc nhanh 33 W": "Bổ trợ cho viên pin lớn là công nghệ sạc pin nhanh Mi Fast Charge 33 W tránh giảm dòng điện đột ngột cũng như giúp cho máy hồi phục đầy năng lượng chỉ trong khoảng một giờ"
+        }
+      },
+      "amount": 9159,
+      "star": 4,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/2f/98/17/277c3b2ddc8fc76a4e8c2f623ef80b71.JPG.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/7a/f3/f1/bfbd51cb78fd3e9387bd2379a6d4dd1f.JPG.webp"
+        ]
+      ],
+      "price": [
+        7990000,
+        7990000
+      ],
+      "priceOld": [
+        0,
+        0
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Xanh Dương",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/2f/98/17/277c3b2ddc8fc76a4e8c2f623ef80b71.JPG.webp"
+        },
+        {
+          "count": 1,
+          "title": "Xám (Grey)",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/7a/f3/f1/bfbd51cb78fd3e9387bd2379a6d4dd1f.JPG.webp"
+        }
+      ],
+      "capacity": [
+        "16GB/128GB",
+        "12GB/128GB"
+      ],
+      "shop": {
+        "image": "https://bmcdesign.vn/wp-content/uploads/2015/03/shopIphone_2.jpg",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Iphone Shop",
+        "evaluate": 13000,
+        "response_rate": 85,
+        "response_time": 4,
+        "participation": 146,
+        "monitor": 8700
+      },
+      "sold": 1200
+    },
+    {
+      "id": 10,
+      "name": "Điện Thoại Oppo Find X3 Pro 5G (12GB-256G) - Hàng Chính Hãng",
+      "category": "mobile",
+      "description": {
+        "insurance": 8,
+        "format": "smartPhone",
+        "battery": "4500 mAh",
+        "bluetooth": "A2DP, LE, v5.2",
+        "trademark": "OPPO",
+        "origin_trademark": "Trung Quốc",
+        "rear_camera": "Chính 50 MP & Phụ 50 MP, 13 MP, 3 MP",
+        "front_camera": "32 MP",
+        "3G": "HSPA 42.2/5.76 Mbps, EV-DO Rev.A 3.1 Mbps",
+        "CPU": "Apple GPU (4-core graphics)",
+        "ChipSet": "Apple A14 Bionic (5 nm)",
+        "ortherFunction": "Face ID, cảm biến gia tốc, cảm biến tiệm cận, con quay hồi chuyển, cảm biên sáng",
+        "size": "146.7 x 71.5 x 7.4 mm",
+        "ROM": "128GB",
+        "details": {
+          "Màn hình 1 tỷ màu, độ sâu màu 10-bit": "Khám phá màn hình smartphone sở hữu màu sắc phong phú và trung thực bậc nhất từ trước đến nay trên Điện Thoại Oppo Find X3 Pro 5G. Bạn sẽ được tận hưởng mọi hình ảnh ở 1 tỷ màu sắc, độ sâu màu 10-bit, độ bao phủ màu 100% P3 cho màu sắc chính xác đáng kinh ngạc. Công nghệ độ sâu màu 10-bit chỉ dành cho những màn hình chuyên dụng và cao cấp đảm bảo độ chuyển màu hoàn hảo, từ tông màu da đến màu bầu trời. Cả thế giới ngoài đời thực được tái hiện ngập tràn màu sắc ngay trên tay bạn.",
+          "Camera kép 50MP, đánh thức sắc màu": "Không chỉ thưởng thức, bạn còn có thể tự ghi lại thế giới màu sắc trung thực nhờ bộ đôi camera 50MP trên OPPO Find X3 Pro 5G. Sử dụng cảm biến Sony IMX 766 cao cấp, hỗ trợ chống rung quang học OIS, camera góc rộng và góc siêu rộng của Find X3 Pro có khả năng chụp ảnh 1 tỷ màu, độ sâu màu 10-bit chất lượng tuyệt hảo.",
+          "Sức mạnh của 4 camera": "4 camera với 4 vai trò riêng biệt của OPPO Find X3 Pro 5G mang đến cho bạn đầy đủ tính năng chụp hình thời thượng nhất hiện nay. Camera góc siêu rộng sẽ mở rộng khung hình tới 110.3 độ, cho bức ảnh phong cảnh trọn vẹn. Trong khi đó camera micro mang tới góc nhìn cận cảnh với khả năng lấy nét gần hơn tới 60 lần, chụp ảnh các vật thể cực nhỏ mà mắt thường khó lòng nhìn rõ.",
+          "Làm phim chuyên nghiệp": "Hệ thống camera đỉnh cao và chế độ điện ảnh chuyên nghiệp giúp OPPO Find X3 Pro 5G có thể quay phim chất lượng xuất sắc với khả năng tái tạo màu tốt nhất từ trước đến nay. Tính năng quay video AI là tập hợp của các công nghệ tiên tiến bao gồm chống rung, chế độ ban đêm, ghi âm từ xa và độ sâu màu 8-bit."
+        }
+      },
+      "amount": 21159,
+      "star": 5,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/a8/37/63/0982a662768eedee9c378caafb1b6ebf.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/c6/ab/a8/7b3d97e849d1207bd46ec4a5014e694d.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/d3/2c/35/0bffb4fe4a0feb6fdd884df97fa28b4c.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/8a/60/40/1049a92a0b8078e980fbd7825feabdb8.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/8c/7f/12/9c46ed5b5fcf49b7922b84a60b572178.jpg.webp"
+        ]
+      ],
+      "price": [
+        23990000
+      ],
+      "priceOld": [
+        26990000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Xanh",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/03/7c/34/4f2b671da17aa8a4c7612f19c1d9760d.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "16GB/128GB"
+      ],
+      "shop": {
+        "image": "https://bmcdesign.vn/wp-content/uploads/2015/03/shopIphone_2.jpg",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Iphone Shop",
+        "evaluate": 13000,
+        "response_rate": 85,
+        "response_time": 4,
+        "participation": 146,
+        "monitor": 8700
+      },
+      "sold": 190
+    },
+    {
+      "id": 11,
+      "name": "Điện Thoại Huawei P30 Lite - Hàng Chính Hãng",
+      "category": "mobile",
+      "description": {
+        "insurance": 8,
+        "battery": "5.0, A2DP, LE",
+        "bluetooth": "V5.0",
+        "format": "smartPhone",
+        "trademark": "Huawei",
+        "origin_trademark": "Trung Quốc",
+        "rear_camera": "24MP + 8MP + 2MP",
+        "front_camera": "32MP",
+        "3G": "HSPA 42.2/5.76 Mbps, EV-DO Rev.A 3.1 Mbps",
+        "CPU": "Apple GPU (4-core graphics)",
+        "ChipSet": "Apple A14 Bionic (5 nm)",
+        "ortherFunction": "Face ID, cảm biến gia tốc, cảm biến tiệm cận, con quay hồi chuyển, cảm biên sáng",
+        "size": "146.7 x 71.5 x 7.4 mm",
+        "ROM": "128GB",
+        "details": {
+          "Đột phá trong thiết kế thời thượng": "Không chỉ đơn thuần phục vụ giao tiếp và giải trí, Samsung Galaxy S21 Ultra 5G còn chính là món phụ kiện thời trang khẳng định vị thế của người sở hữu. Vẻ ngoài mảnh mai và thon gọn đến bất ngờ chỉ 165.1 x 75.6 x 8.9 mm và trọng lượng 228 g dù phải “vác” một viên pin lớn."
+        }
+      },
+      "amount": 22159,
+      "star": 2,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/73/b7/30/3c99ffe7b0debc22f87f3025082021f6.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/31/bc/0b/33e0f8507e68b3f049c219210fcbe570.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/8a/94/c6/48826d62abd7f79d567c944a486cfc31.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/11/52/fe/eefe87ccbccd41479d0207a66554b9e1.jpg.webp"
+        ]
+      ],
+      "price": [
+        5490000
+      ],
+      "priceOld": [
+        7490000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Xanh",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/73/b7/30/3c99ffe7b0debc22f87f3025082021f6.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "12GB/128GB"
+      ],
+      "shop": {
+        "image": "https://bmcdesign.vn/wp-content/uploads/2015/03/shopIphone_2.jpg",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Iphone Shop",
+        "evaluate": 13000,
+        "response_rate": 85,
+        "response_time": 4,
+        "participation": 146,
+        "monitor": 8700
+      },
+      "sold": 1200
+    }
+  ],
+  "laptop_api": [
+    {
+      "id": 1,
+      "sold": 1200,
+      "name": "Apple Macbook Pro 2020 M1 - 13 Inchs (Apple M1-8GB-256GB) - Hàng Chính Hãng",
+      "category": "laptop",
+      "description": {
+        "audioArt": "Stereo speakers with high dynamic range, Three microphones, 3.5 mm Headphone jack",
+        "battery": "5000 mAh",
+        "format": "laptop",
+        "bluetooth": "Bluetooth 5.0 wireless technology",
+        "trademark": "Apple",
+        "origin_trademark": "Mỹ",
+        "rear_camera": "720p FaceTime HD camera",
+        "front_camera": "13MP",
+        "support": "Micro SD",
+        "Card": "The 8-core GPU in M1 chip",
+        "Chip": "Apple M1",
+        "size": "1.56 cm x 30.41 cm x 21.24 cm",
+        "other_func": "Mở khóa bằng vân tay, Mở khoá khuôn mặt",
+        "film": "film FullHD 1080p@30fps, film FullHD 1080p@60fps, film FullHD 1080p@120fps, film 4K 2160p@30fps",
+        "RAM": "4GB/3GB",
+        "resolution": "Full HD+ (1080 x 2340 Pixels)",
+        "details": {
+          "Thiết kế trau chuốt từng đường nét, trải nghiệm hình ảnh sắc nét với màn hình Retina": "Vẫn kế thừa thiết kế từ người tiềm nhiệm trước đó của mình, Macbook Pro 2020 M1 vẫn sở hữu thiết kế nhôm nguyên khối, các đường viền trên máy được cắt CNC tỉ mỉ, sắc xảo.Màn hình Retina 13.3 inches sắc nét, tấm nền LED mang đến màu đen sâu. Hỗ trợ dải màu rộng P3, công nghệ True Tone cân bằng màu trắng tự động để phù hợp với nhiệt độ màu của ánh sáng tự nhiên xung quanh, đem đến trải nghiệm hiển thị tự nhiên nhất.",
+          "Phản hồi siêu tốc với vi xử lý M1 mạnh mẽ, macOS Big Sur nhiều tính năng mạnh mẽ": "MacOS Big Sur mới nhất trên Macbook Pro M1 2020 giúp tối ưu cho vi xử lý mới. Hệ điều hành mới nâng cấp giao diện người dùng, thay đổi biểu tượng ứng dụng theo hướng tối giản, bổ sung Control Center, Notification Center để tùy chỉnh nhanh một số thiết lập, quản lý thông báo đến.",
+          "Thời lượng pin lên đến 20 giờ, quạt tản nhiệt thế hệ mới": "Quạt tản nhiệt trên Apple Macbook Pro 13 Touch Bar M1 là điểm nâng cấp mới so với thế hệ trước đó. Trang bị quạt tản nhiệt hiệu suất cao được gọi là Active Cooling, cho phép duy trì hiệu suất hoạt động của vi xử lý giúp máy vận hành tốt nhất trong thời gian dài.Giá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Tuy nhiên tuỳ vào từng loại sản phẩm hoặc phương thức, địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, ....."
+        }
+      },
+      "amount": 4354,
+      "star": 5,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/90/c1/c8/5dd3cb13601f8a2d1ede1c6af5a18862.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/76/41/eb/b63ba12b55f04a5b3566df8fe009381e.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/1d/34/0f/da5f0bf017d275f4b0706e8d83bd442d.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/1d/34/0f/da5f0bf017d275f4b0706e8d83bd442d.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/30/f8/f4/21ba3db95e55f6bdd7fdc120430403a7.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/a7/e8/d6/33d72e8efc6ef58d5fbe0cb1770c797e.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/1f/2a/f2/a492af42515c7f171f45e8388d7f791e.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/4e/52/9f/8ec7905d96e44fa9bfcc2b812c8b578f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/80/16/3b/6475acf15e3be85e665a6e18ae588a48.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/b3/59/5a/4d177a706cc78316cea3ad08e656dc0c.jpg.webp"
+        ]
+      ],
+      "price": [
+        30990000,
+        31199000
+      ],
+      "priceOld": [
+        32500000,
+        39970000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Silver",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/90/c1/c8/5dd3cb13601f8a2d1ede1c6af5a18862.jpg.webp"
+        },
+        {
+          "count": 1,
+          "title": "Space Grey",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/90/c1/c8/5dd3cb13601f8a2d1ede1c6af5a18862.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "8GB/264GB",
+        "16GB/264GB"
+      ],
+      "shop": {
+        "image": "https://www.top10danang.com/wp-content/uploads/2018/08/macbook-da-nang-7.png",
+        "address": "43 Bàu Tràm 1 - Khuê Trung - Đà Nẵng",
+        "name": "Điện Máy Xanh",
+        "evaluate": 171000,
+        "response_rate": 97,
+        "response_time": 2,
+        "participation": 26,
+        "monitor": 1100
+      }
+    },
+    {
+      "id": 2,
+      "sold": 1200,
+      "name": "Microsoft Surface Laptop Core i5 -Win10 S 13.5 inch 8GB RAM (Đỏ) - Hàng Nhập Khẩu",
+      "category": "laptop",
+      "description": {
+        "audioArt": "Omnisonic speakers with Dolby® Audio™ Premium",
+        "battery": "14.5 giờ",
+        "format": "laptop",
+        "bluetooth": "Bluetooth 4.0 LE wireless technology",
+        "trademark": "Microsoft",
+        "origin_trademark": "Hàn Quốc",
+        "rear_camera": "720p HD camera (front-facing)",
+        "front_camera": "32 MP",
+        "support": "Micro SD",
+        "Chip": "adreno 610",
+        "other_func": "Mở khóa bằng vân tay, Mở khoá khuôn mặt",
+        "film": "film FullHD 1080p@30fps, film FullHD 1080p@60fps, film FullHD 1080p@120fps, film 4K 2160p@30fps",
+        "RAM": "4GB/3GB",
+        "resolution": "Full HD+ (1080 x 2340 Pixels)",
+        "details": {
+          "Thiết kế mỏng và tinh tế": "Microsoft Surface Laptop Core i5 được thiết kế nổi bật với hình dáng vuông vức, mỏng nhẹ cùng các đường bo góc tinh tế. Phía ngoài máy là logo Window ở chính giữa đẹp mắt. Bên cạnh đó, bàn phím máy được phủ vải Alcantara - chất liệu bền bỉ, mềm mại. Tất cả đem đến cho người dùng trải nghiệm độc đáo khi sử dụng chiếc laptop này. Hơn nữa, chiếc máy tính chỉ nặng khoảng 1.25 kg, bạn có thể dẫ dàng bỏ vào balo và mang theo bất cứ đâu.",
+          "Màn hình cảm ứng 13.5 inch": "Chiếc laptop được trang bị màn hình cảm ứng viền bezel siêu mỏng, 13,5-inch PixelSense Display với độ phân giải 2K (2256 x 1504 pixels), mật độ điểm ảnh 201 PPI cho bạn thao tác điều khiển tự nhiên, nhanh, và dễ dàng hơn. Surface Laptop phù hợp với việc trình chiếu, xem hình ảnh và video,…",
+          "Hiệu năng vượt trội": "Microsoft Surface Laptop Core i5 đi kèm với những gì tốt nhất của Microsoft, gồm Windows và Office. Máy trang bị chip Intel Core i5, RAM 8GB DDR3L, dung lượng địa cứng SSD 256GB, đủ sức xử lý nhiều phần mềm máy tính, máy chạy đa nhiệm mượt mà. Bên cạnh đó, card đồ họa Intel HD Graphics 620 sẽ cho bạn trải nhiệm các ứng dụng game một cách ổn định.",
+          "Bàn phím phủ vải Alcantara": "Một nét đặc trưng của dòng laptop Microsoft Surface là bán phím được phủ vải Alcantara – chất liệu bền bỉ, mềm mại mang lại trải nghiệm gõ phím tự nhiên, nhẹ nhàng. Bên cạnh đó, bàn phím phủ vải sẽ mang đến nét độc đáo và sang trọng cho chiếc máy.",
+          "Hệ điều hành Window 10 S": "Surface Laptop đi kèm với Windows 10 S - hệ điều hành chú trọng vào tính bảo mật và hiệu năng tuyệt vời. Về cơ bản, hệ điều hành này không khác gì Window 10 nhưng Win 10 S phát triển các tính năng cao cấp hơn như đăng nhập nhanh hơn, tuổi thọ pin tốt hơn, khả năng chạy ứng dụng dành cho máy tính, quản lý dễ dàng trên nhiều thiết bị và phần mềm chỉ chạy các ứng dụng đã được xác minh."
+        }
+      },
+      "amount": 2285,
+      "star": 4,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/d6/2f/aa/ade31e7b8a0118ebd041aa72fa0183be.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/07/d6/92/9f21c920a55793b656f904632890b566.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/1f/3b/14/9b7dce7028e6600e13d8ad721953d570.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/35/d1/87/1397932eb44777fd4be6d38a69679758.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/35/d1/87/1397932eb44777fd4be6d38a69679758.jpg.webp"
+        ]
+      ],
+      "price": [
+        27600000
+      ],
+      "priceOld": [
+        32500000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Đỏ Đen",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/d6/2f/aa/ade31e7b8a0118ebd041aa72fa0183be.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "18GB/256GB"
+      ],
+      "shop": {
+        "image": "https://bizweb.dktcdn.net/100/318/659/files/lam-phong.jpg?v=1568714258941",
+        "address": "82 Hai Bà Trưng - Cẩm Lệ - Đà Nẵng",
+        "name": "Shop Điện Thoại",
+        "evaluate": 123000,
+        "response_rate": 65,
+        "response_time": 1,
+        "participation": 46,
+        "monitor": 6700
+      }
+    },
+    {
+      "id": 3,
+      "name": "Laptop LG Gram 2021 16ZD90P-G.AX54A5 (Core i7-1165G7-8GB LPDDR4X-512GB SSD NVMe-16 WQXGA IPS-NonOS) - Hàng Chính Hãng",
+      "category": "laptop",
+      "sold": 1200,
+      "description": {
+        "audioArt": "HD Audio with DTS X Ultra",
+        "battery": "MobileMark 2018: Up to 16.5 hours; MobileMark 2014: Up to 22 hours; Video playback: Up to 24.5 hours; JEITA 2.0: Up to 30 hours",
+        "bluetooth": "BT 5.1",
+        "format": "laptop",
+        "trademark": "LG",
+        "origin_trademark": "Hàn Quốc",
+        "rear_camera": "HD Webcam with Dual Mic.",
+        "front_camera": "32 MP",
+        "support": "Micro SD",
+        "Chip": "adreno 610",
+        "other_func": "Intel 11th Generation i5(Quad Core) i5-1135G7 (2.4 GHz, Turbo up to 4.2 GHz, L3 Cache 8MB, 28 W) - QC",
+        "film": "film FullHD 1080p@30fps, film FullHD 1080p@60fps, film FullHD 1080p@120fps, film 4K 2160p@30fps",
+        "RAM": "4GB/3GB",
+        "resolution": "Full HD+ (1080 x 2340 Pixels)",
+        "details": {
+          "Mỏng nhẹ hơn bao giờ hết": "Laptop LG Gram 2021 16ZD90P-G.AX54A5 (Core i7-1165G7-8GB LPDDR4X-512GB SSD NVMe-16 WQXGA IPS-NonOS) - Hàng Chính Hãng với thiết kế hoàn toàn mới sẽ giúp tối ưu hóa năng suất làm việc của người dùng nhờ vào sự hiển thị chuyên nghiệp từ tỉ lệ 16:10, thiết kế nâng cao hiệu quả làm việc và bộ vi xử lý mạnh mẽ mà vẫn trung thành với thân máy siêu nhẹ đặc trưng của LG gram.",
+          "Bộ xử lý Intel thế hệ 11 (11th Gen. Intel Core) khả thi hơn": "Mỏng nhẹ nhưng mạnh mẽ - LG gram có bộ vi xử lý hàng đầu - bộ xử lý Intel Core thế hệ thứ 11 với chip đồ họa Intel Iris Xe. LG gram mang đến khả năng tạo nội dung nhanh hơn tới 2,7 lần (1), năng suất làm việc nhanh hơn 20% (2), khả năng chơi game nhanh hơn gấp 2 lần (3) và tính năng phát trực tuyến.",
+          "Bộ nhớ LPDDR4X 4266MHz, NVMe, khe cắm SSD kép xử lý nhanh hơn, lưu trữ nhiều hơn": "LG gram 2021 được trang bị bộ nhớ LPDDR4X 4266MHz mới, xử lý nhanh hơn 33% so với loại 3200MHz trước đó. Người dung sẽ được trải nghiệm hiệu suất nhanh hơn với dung lượng lớn hơn của thẻ SSD NVMe và Khe cắm kép.",
+          "Thiết kế liền mạch, bản lề ẩn hoàn hảo cho sự chìm đắm thị giác tối đa": "17Z90P có thiết kế bản lề ẩn hoàn hảo giúp che giấu bản lề khi được mở hoàn toàn. Thiết kế bản lề ẩn hoàn hảo không chỉ mang lại vẻ ngoài thẩm mỹ hơn mà còn cho phép người dung tập trung tối đa để nâng cao năng suất làm việc.",
+          "Touchpad lớn hơn, không gian rộng hơn mang đến tự do bất tận": "Bàn di chuột 16: 9 trước đó đã được thay đổi với tỉ lệ mới 16:10 . Với touchpad1 rộng hơn 11%, bạn có thể điều khiển con trỏ thoải mái ngay cả khi không sử dụng chuột.",
+          "Pin siêu lâu, thời lượng pin được duy trì": "Giữ nguyên thế mạnh của LG gram, pin lithium-ion 80 Wh có khả năng duy trì thời gian làm việc của bạn dài hơn với thời lượng pin lên đến 19,5 giờ chỉ với một lần sạc.",
+          "Viền mỏng hơn cho tầm nhìn rộng hơn": "Màn hình rộng trong chiếc laptop nhỏ gọn — LG gram 21Y được thiết kế lại với viền 4 cạnh hẹp hơn. Với LG gram 17inch, kích thước viền dưới đã giảm từ 15,9mm xuống 11,2mm còn với LG gram 14inch kích thước viền dưới của đã giảm từ 7,1mm xuống 5,9mm. Thiết kế viền mỏng hơn mang đến trải nghiệm thị giác sống động hơn."
+        }
+      },
+      "amount": 24323,
+      "star": 5,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/d5/03/82/8c11dcbb35e206817bf19a5abb1b9011.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/d5/03/82/8c11dcbb35e206817bf19a5abb1b9011.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/d5/03/82/8c11dcbb35e206817bf19a5abb1b9011.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/74/c2/49/82e571b5f7941cb39b3d1d0a61d1cf53.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/74/c2/49/82e571b5f7941cb39b3d1d0a61d1cf53.jpg.webp"
+        ]
+      ],
+      "price": [
+        39900000
+      ],
+      "priceOld": [
+        42500000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Bạc Trắng",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/d5/03/82/8c11dcbb35e206817bf19a5abb1b9011.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "16GB/128GB"
+      ],
+      "shop": {
+        "image": "https://bizweb.dktcdn.net/100/318/659/files/store.jpg?v=1530090898295",
+        "address": "79 Thủ Đức - Niên Chiểu - Đà Nẵng",
+        "name": "Iphone MAC",
+        "evaluate": 223000,
+        "response_rate": 64,
+        "response_time": 3,
+        "participation": 7,
+        "monitor": 27000
+      }
+    },
+    {
+      "id": 4,
+      "name": "Laptop Acer Aspire 5 A515-56-54PK NX.A1GSV.002 (Core i5-1135G7-8GB (4GBx2) DDR4 2666MHz-512GB SSD M.2 PCIE-15.6 FHD IPS-Win10) - Hàng Chính Hãng",
+      "category": "laptop",
+      "sold": 1200,
+      "description": {
+        "audioArt": "Acer TrueHarmony",
+        "battery": "4500 mAh",
+        "bluetooth": "v5.1",
+        "format": "laptop",
+        "trademark": "Acer",
+        "origin_trademark": "Đài Loan",
+        "rear_camera": "Chính 12 MP & Phụ 12 MP, 8 MP",
+        "front_camera": "32 MP",
+        "support": "Micro SD",
+        "Chip": "adreno 610",
+        "other_func": "Mở khóa bằng vân tay, Mở khoá khuôn mặt",
+        "film": "film FullHD 1080p@30fps, film FullHD 1080p@60fps, film FullHD 1080p@120fps, film 4K 2160p@30fps",
+        "RAM": "4GB/3GB",
+        "resolution": "Full HD+ (1080 x 2340 Pixels)",
+        "details": {
+          "Thiết kế cao cấp": "Lớp vỏ Laptop Acer Aspire 5 A515-56-54PK NX.A1GSV.002 được chế tạo từ chất liệu cao cấp với các họa tiết phây xước đem lại vẻ ngoài cực kỳ sang trọng từ cái nhìn đầu tiên. Phần viền màn hình còn được thiết kế theo xu hướng viền mỏng hiện nay cho trải nghiệm hình ảnh rộng hơn và giúp giảm thiểu đáng kể kích thước và trọng lượng của máy.",
+          "Cấu hình mạnh mẽ, chip thế hệ mới": "Trang bị bộ Intel Core i5-1135G7 thế hệ mới nhất với sức mạnh xử lý mạnh mẽ hơn 20% so với thế hệ trước. Với hiệu năng vượt trội đáng mong đợi này, bạn có thể tự tin khai thác mọi tính năng đáp ứng cho hành trình của riêng mình. Ram 8GB DDR4 2400Mhz đảm bảo hoạt động trơn tru. Ổ cứng 512GB PCIe NVMe SSD sẽ giúp máy hoạt động tốt hơn, khởi động các ứng dụng nhanh hơn.",
+          "Màn hình Full HD sắc nét": "Được trang bị màn hình độ phân giải Full HD, Acer ComfyView IPS LED LCD, 60Hz  giúp thể hiện hình ảnh cực kỳ sắc nét, mãn nhãn người dùng hơn với độ hiển thị màu sắc chân thực trong các điều kiện môi trường ánh sáng khác nhau, mang lại trải nghiệm xem thăng hoa hơn.",
+          "Bàn phím hỗ trợ đèn nền tiện lợi": "Bàn phím được thiết kế đầy đủ bán phìm số riêng biệt, có đèn nền phím. Phím bấm được thiết kế khá nhỏ, thay vào đó là khoảng cách giữa các phím được phân bổ liền mạch, rõ ràng rễ nhận biết. Nút nguồn được tích hợp luôn trên góc bên phải của bàn phím. Phím bấm có độ nảy khá tốt, tốc độ phản hồi nhanh, tuy nhiên phím bấm mũi tên lên xuống thiết kế khá hẹp, việc thao tác sẽ gặp một chút khó khăn khi bạn tiếp xúc lần đầu.Touchpad được thiết kế rộng rãi với bề mặt nhẵn mịn, không có vạch ngăn cách bàn di chuột. Tuy nhiên, khi thao tác với bàn di chuột, phím bấm chuột trái và chuột phải cũng khá linh hoạt."
+        }
+      },
+      "amount": 2123,
+      "star": 3,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/3d/5e/65/6893563572832b8ae74d605c0ab8c3a1.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/0a/50/8d/ddb461f413dcbcdf0e0b12fb80a93369.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/5f/b9/70/409ef0f3f30a751a8b920c98d638879e.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/86/3d/d5/843f48edcfbee187ef31a289b5f7a0ab.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/d8/b4/25/e57f9cb4ec51a8bd656e9b213f0f1ab8.jpg.webp"
+        ]
+      ],
+      "price": [
+        17600000
+      ],
+      "priceOld": [
+        32500000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Xám Sang Trọng",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/3d/5e/65/6893563572832b8ae74d605c0ab8c3a1.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "8GB/256GB"
+      ],
+      "shop": {
+        "image": "https://bizweb.dktcdn.net/100/318/659/articles/thu-doi-mac-cu-postfb-800x600-739b177b-a58e-4713-a56e-50219b818eec.png?v=1529835316337",
+        "address": "96 Mai Hoá - Sơn Trà - Đà Nẵng",
+        "name": "SELL LA MOBILE",
+        "evaluate": 93000,
+        "response_rate": 35,
+        "response_time": 2,
+        "participation": 46,
+        "monitor": 6700
+      }
+    },
+    {
+      "id": 5,
+      "name": "Jumper EZbook X3 13.3 inch Portable Business Laptop with Intel Celeron J3455 CPU 1920*1080 IPS Screen 8GB+128GB Memory",
+      "category": "laptop",
+      "sold": 1200,
+      "description": {
+        "audioArt": "HD Audio with DTS X Ultra",
+        "battery": "5000 mAh",
+        "bluetooth": "V5.0",
+        "format": "laptop",
+        "trademark": "China",
+        "origin_trademark": "China",
+        "rear_camera": "Chính 16 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "front_camera": "13MP",
+        "details": {
+          "Đột phá trong thiết kế thời thượng": "Không chỉ đơn thuần phục vụ giao tiếp và giải trí, Samsung Galaxy S21 Ultra 5G còn chính là món phụ kiện thời trang khẳng định vị thế của người sở hữu. Vẻ ngoài mảnh mai và thon gọn đến bất ngờ chỉ 165.1 x 75.6 x 8.9 mm và trọng lượng 228 g dù phải “vác” một viên pin lớn."
+        }
+      },
+      "amount": 352,
+      "star": 5,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/a2/01/e0/944320345d07a11ee2bcccd8e612614b.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/a2/01/e0/d74243f98c2719257be3f7265da51da8.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/2c/66/46/a52914751f990979974856d1605691cf.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/b6/f9/e1/8a82fade863fc4868e50b754e7eb4029.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/69/e6/e9/ab0d04d7a1946ca33e48ff2ada086689.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/a2/01/e0/944320345d07a11ee2bcccd8e612614b.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/a2/01/e0/d74243f98c2719257be3f7265da51da8.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/2c/66/46/a52914751f990979974856d1605691cf.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/b6/f9/e1/8a82fade863fc4868e50b754e7eb4029.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/69/e6/e9/ab0d04d7a1946ca33e48ff2ada086689.jpg.webp"
+        ]
+      ],
+      "price": [
+        8662000,
+        9132000
+      ],
+      "priceOld": [
+        10250000,
+        11132000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "4GB&64GB",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/a2/01/e0/944320345d07a11ee2bcccd8e612614b.jpg.webp"
+        },
+        {
+          "count": 1,
+          "title": "8GB&128G",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/a2/01/e0/7860aa4c8efd67b15a0383e93aa564a1.jpg.webp"
+        }
+      ],
+      "capacity": [
+        "4GB/64GB",
+        "8GB/128GB"
+      ],
+      "shop": {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYzeqIvRaVq68013nRoOCQAoezYI4nnpPDUG2eiVTbJ7egWB0zwqrhHR2FYnIykkwbEKg&usqp=CAU",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Hoàng Long Shop",
+        "evaluate": 73000,
+        "response_rate": 35,
+        "response_time": 2,
+        "participation": 46,
+        "monitor": 1700
+      }
+    }
+  ],
+  "tablet_api": [
+    {
+      "id": 1,
+      "name": "iPad Air 10.9 Wi-Fi 64GB New 2020 - Hàng Chính Hãng",
+      "category": "tablet",
+      "sold": 1200,
+      "description": {
+        "audioArt": "HD Audio with DTS X Ultra",
+        "battery": "5000 mAh",
+        "format": "tablet",
+        "bluetooth": "A2DP, EDR, 5.0",
+        "trademark": "Apple",
+        "origin_trademark": "Mỹ",
+        "rear_camera": "7MP",
+        "front_camera": "12 MP",
+        "chip": "Apple GPU 6 nhân",
+        "details": {
+          "iPad Air 10.9 Wi-Fi New 2020 – Chip A14 mạnh mẽ cho trải nghiệm hoàn hảo": "Apple luôn khiến cho cộng đồng công nghệ đứng ngồi không yên mỗi khi cho ra mắt những sản phẩm Tablet mới. Với mẫu iPad Air 10.9 Wi-Fi New 2020 được dự kiến cho ra mắt năm 2020 sẽ mang những thay đổi về mặt thiết kế cũng như những tính năng mới được tích hợp để tối ưu hóa về hiệu năng, mang đến cho người dùng những trải nghiệm tốt hơn.",
+          "Thiết kế tinh tế, màu sắc thời thượng với độ mỏng 6.1mm": "iPad Air 10.9 Wi-Fi New 2020 sẽ có thiết kế hoàn toàn mới với kiểu dáng tương tự với iPad Pro 2020 nhưng với kích thước nhỏ gọn hơn 247.6 x 178.5 mm và độ mỏng chỉ 6.1 mm cùng trọng lượng chưa đến 500g giúp bạn dễ dàng mang theo iPad để sử dụng ở bất cứ đâu. Thiết kế nguyên khối mang đến tổng thể sang trọng cho iPad Air 10.9 Wi-Fi New 2020 cùng với gam màu mới thời thượng, nút home được loại bỏ để tạo nên không gian hiển thị rộng hơn.",
+          "Màn hình có tần số quét 60Hz, tấm nền IPS LCD và kích thước 10.9 inch": "Để mang đến không gian hiển thị tuyệt vời cho người dùng, Apple đã trang bị màn hình có tần số quét đến 60Hz cho iPad Air 10.9 Wi-Fi New 2020, giúp hình ảnh hiển thị mượt mà, các chuyển động hình ảnh trơn tru cũng như hạn chế tình trạng giật lag. Nhờ vậy bạn có thể tận hưởng những thước phim ấn tượng, chơi game (đặc biệt là những game có góc nhìn thứ nhất) một cách tuyệt vời nhất. Độ phân giải 2360 x 1640 pixels cho hình ảnh sắc nét và chân thực."
+        }
+      },
+      "amount": 1052,
+      "star": 4,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/22/ae/75/80d146eb7aeec8604dfa143e4212bb53.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/63/7e/c2/fc78304d937382dd87e5e1385c665172.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/a2/ba/38/03513d8545b25aef3980d2b72f0266a0.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/dc/8a/a0/1cda272052fbd4743268694f7a8cb021.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/d1/d0/58/f82a7ce86c8b49bfe9797bfc0adf85cc.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/61/f3/84/b5cb361735fbd2384eeccc2a31ad051e.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/52/aa/a3/d70de06f41238a22e436209bd83ad329.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/47/d6/71/61c2511b97351a573f03b8b59929b3c7.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/9b/4e/69/9f209d727597e82960652b0aef8782b3.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/7d/6c/be/f5e616d4779f27393a45a49b0abcebc0.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/31/66/c3/3da8a0de4111b6c965a410c54a1eb644.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/2d/15/42/aa838d363fd8c8f4115fd5c3d03e7964.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/5e/26/d6/381a9a53b7b4aca7d497b6d8e998ff0c.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/5e/26/d6/381a9a53b7b4aca7d497b6d8e998ff0c.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/ae/c0/b5/71c5412b0ec6a3422a92313ede554a55.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/e4/75/d1/03f761ba119302bdc46aa2635c0938bb.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/47/d6/71/61c2511b97351a573f03b8b59929b3c7.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/47/d6/71/61c2511b97351a573f03b8b59929b3c7.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/9b/4e/69/9f209d727597e82960652b0aef8782b3.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/9b/4e/69/9f209d727597e82960652b0aef8782b3.jpg.webp"
+        ]
+      ],
+      "price": [
+        14990000,
+        14250000,
+        14990000,
+        13990000
+      ],
+      "priceOld": [
+        17990000,
+        17990000,
+        17990000,
+        17990000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Space Grey",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/22/ae/75/80d146eb7aeec8604dfa143e4212bb53.jpg.webp"
+        },
+        {
+          "count": 1,
+          "title": "Green",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/61/f3/84/b5cb361735fbd2384eeccc2a31ad051e.jpg.webp"
+        },
+        {
+          "count": 2,
+          "title": "Rose Gold",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/31/66/c3/3da8a0de4111b6c965a410c54a1eb644.jpg.webp"
+        },
+        {
+          "count": 3,
+          "title": "Silver",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/e4/75/d1/03f761ba119302bdc46aa2635c0938bb.jpg.webp"
+        }
+      ],
+      "capacity": [],
+      "shop": {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYzeqIvRaVq68013nRoOCQAoezYI4nnpPDUG2eiVTbJ7egWB0zwqrhHR2FYnIykkwbEKg&usqp=CAU",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Hoàng Long Shop",
+        "evaluate": 73000,
+        "response_rate": 35,
+        "response_time": 2,
+        "participation": 46,
+        "monitor": 1700
+      }
+    },
+    {
+      "id": 2,
+      "name": "Máy Tính Bảng Samsung Galaxy Tab A8 8 T295 - Hàng Chính Hãng",
+      "category": "tablet",
+      "sold": 1200,
+      "description": {
+        "audioArt": "HD Audio with DTS X Ultra",
+        "battery": "5000 mAh",
+        "format": "tablet",
+        "bluetooth": "A2DP, EDR, 5.0",
+        "trademark": "Samsung",
+        "origin_trademark": "Hàn Quốc",
+        "rear_camera": "7MP",
+        "front_camera": "12 MP",
+        "chip": "Apple GPU 6 nhân",
+        "details": {
+          "iPad Air 10.9 Wi-Fi New 2020 – Chip A14 mạnh mẽ cho trải nghiệm hoàn hảo": "Apple luôn khiến cho cộng đồng công nghệ đứng ngồi không yên mỗi khi cho ra mắt những sản phẩm Tablet mới. Với mẫu iPad Air 10.9 Wi-Fi New 2020 được dự kiến cho ra mắt năm 2020 sẽ mang những thay đổi về mặt thiết kế cũng như những tính năng mới được tích hợp để tối ưu hóa về hiệu năng, mang đến cho người dùng những trải nghiệm tốt hơn.",
+          "Thiết kế tinh tế, màu sắc thời thượng với độ mỏng 6.1mm": "iPad Air 10.9 Wi-Fi New 2020 sẽ có thiết kế hoàn toàn mới với kiểu dáng tương tự với iPad Pro 2020 nhưng với kích thước nhỏ gọn hơn 247.6 x 178.5 mm và độ mỏng chỉ 6.1 mm cùng trọng lượng chưa đến 500g giúp bạn dễ dàng mang theo iPad để sử dụng ở bất cứ đâu. Thiết kế nguyên khối mang đến tổng thể sang trọng cho iPad Air 10.9 Wi-Fi New 2020 cùng với gam màu mới thời thượng, nút home được loại bỏ để tạo nên không gian hiển thị rộng hơn.",
+          "Màn hình có tần số quét 60Hz, tấm nền IPS LCD và kích thước 10.9 inch": "Để mang đến không gian hiển thị tuyệt vời cho người dùng, Apple đã trang bị màn hình có tần số quét đến 60Hz cho iPad Air 10.9 Wi-Fi New 2020, giúp hình ảnh hiển thị mượt mà, các chuyển động hình ảnh trơn tru cũng như hạn chế tình trạng giật lag. Nhờ vậy bạn có thể tận hưởng những thước phim ấn tượng, chơi game (đặc biệt là những game có góc nhìn thứ nhất) một cách tuyệt vời nhất. Độ phân giải 2360 x 1640 pixels cho hình ảnh sắc nét và chân thực."
+        }
+      },
+      "amount": 1052,
+      "star": 4,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/8a/33/13/dba026779cfdd095f1978b324821ce18.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/d9/7a/32/0996fcf1395e3120d6dba80583ff6cd9.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/d9/7a/32/0996fcf1395e3120d6dba80583ff6cd9.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/0f/e4/2d/0e3c769783dabde09531b676d5b169c1.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/15/78/40/5aaff823948802f9893fe5a86125322b.jpg.webp"
+        ]
+      ],
+      "price": [
+        3650000
+      ],
+      "priceOld": [
+        3690000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Đen",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/d9/7a/32/0996fcf1395e3120d6dba80583ff6cd9.jpg.webp"
+        }
+      ],
+      "capacity": [],
+      "shop": {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYzeqIvRaVq68013nRoOCQAoezYI4nnpPDUG2eiVTbJ7egWB0zwqrhHR2FYnIykkwbEKg&usqp=CAU",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Hoàng Long Shop",
+        "evaluate": 73000,
+        "response_rate": 35,
+        "response_time": 2,
+        "participation": 46,
+        "monitor": 1700
+      }
+    },
+    {
+      "id": 3,
+      "name": "iPad Pro 11 inch Wifi 2020 - Hàng Nhập Khẩu",
+      "category": "tablet",
+      "sold": 1200,
+      "description": {
+        "audioArt": "HD Audio with DTS X Ultra",
+        "battery": "5000 mAh",
+        "format": "tablet",
+        "bluetooth": "A2DP, EDR, 5.0",
+        "trademark": "Apple",
+        "origin_trademark": "Mỹ",
+        "rear_camera": "7MP",
+        "front_camera": "12 MP",
+        "chip": "Apple GPU 6 nhân",
+        "details": {
+          "iPad Air 10.9 Wi-Fi New 2020 – Chip A14 mạnh mẽ cho trải nghiệm hoàn hảo": "Apple luôn khiến cho cộng đồng công nghệ đứng ngồi không yên mỗi khi cho ra mắt những sản phẩm Tablet mới. Với mẫu iPad Air 10.9 Wi-Fi New 2020 được dự kiến cho ra mắt năm 2020 sẽ mang những thay đổi về mặt thiết kế cũng như những tính năng mới được tích hợp để tối ưu hóa về hiệu năng, mang đến cho người dùng những trải nghiệm tốt hơn.",
+          "Thiết kế tinh tế, màu sắc thời thượng với độ mỏng 6.1mm": "iPad Air 10.9 Wi-Fi New 2020 sẽ có thiết kế hoàn toàn mới với kiểu dáng tương tự với iPad Pro 2020 nhưng với kích thước nhỏ gọn hơn 247.6 x 178.5 mm và độ mỏng chỉ 6.1 mm cùng trọng lượng chưa đến 500g giúp bạn dễ dàng mang theo iPad để sử dụng ở bất cứ đâu. Thiết kế nguyên khối mang đến tổng thể sang trọng cho iPad Air 10.9 Wi-Fi New 2020 cùng với gam màu mới thời thượng, nút home được loại bỏ để tạo nên không gian hiển thị rộng hơn.",
+          "Màn hình có tần số quét 60Hz, tấm nền IPS LCD và kích thước 10.9 inch": "Để mang đến không gian hiển thị tuyệt vời cho người dùng, Apple đã trang bị màn hình có tần số quét đến 60Hz cho iPad Air 10.9 Wi-Fi New 2020, giúp hình ảnh hiển thị mượt mà, các chuyển động hình ảnh trơn tru cũng như hạn chế tình trạng giật lag. Nhờ vậy bạn có thể tận hưởng những thước phim ấn tượng, chơi game (đặc biệt là những game có góc nhìn thứ nhất) một cách tuyệt vời nhất. Độ phân giải 2360 x 1640 pixels cho hình ảnh sắc nét và chân thực."
+        }
+      },
+      "amount": 1052,
+      "star": 5,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/9b/9e/d3/1953e8355af2d43840ae1a9d3b35ef18.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/83/65/38/dddf15a57246c9741e9138b5c38d2078.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/dc/01/18/0342203900251e8d43e169df52150bd9.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/8d/d5/e3/4c73bf983eb39b61f4e855069bd477a1.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/e7/c6/1a/cc31763b3cbef5e0f1a387ff3eea243f.jpg.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/16/95/56/a9290102b1959e9b8f5acde61d169723.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/83/65/38/dddf15a57246c9741e9138b5c38d2078.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/83/65/38/dddf15a57246c9741e9138b5c38d2078.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/8d/d5/e3/4c73bf983eb39b61f4e855069bd477a1.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/review/e7/c6/1a/cc31763b3cbef5e0f1a387ff3eea243f.jpg.webp"
+        ]
+      ],
+      "price": [
+        20100000,
+        21100000
+      ],
+      "priceOld": [
+        23990000,
+        32990000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Silver",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/9b/9e/d3/1953e8355af2d43840ae1a9d3b35ef18.jpg.webp"
+        },
+        {
+          "count": 1,
+          "title": "Space Gray",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/16/95/56/a9290102b1959e9b8f5acde61d169723.jpg.webp"
+        }
+      ],
+      "capacity": [],
+      "shop": {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYzeqIvRaVq68013nRoOCQAoezYI4nnpPDUG2eiVTbJ7egWB0zwqrhHR2FYnIykkwbEKg&usqp=CAU",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Hoàng Long Shop",
+        "evaluate": 73000,
+        "response_rate": 35,
+        "response_time": 2,
+        "participation": 46,
+        "monitor": 1700
+      }
+    },
+    {
+      "id": 4,
+      "name": "Máy Tính Bảng Samsung Galaxy Tab S7 FE LTE T735 (4GB-64GB) - ĐÃ KÍCH HOẠT BẢO HÀNH ĐIỆN TỬ - Hàng Chính Hãng",
+      "category": "tablet",
+      "sold": 1200,
+      "description": {
+        "audioArt": "HD Audio with DTS X Ultra",
+        "battery": "5000 mAh",
+        "format": "tablet",
+        "bluetooth": "A2DP, EDR, 5.0",
+        "trademark": "Samsung",
+        "origin_trademark": "Mỹ",
+        "rear_camera": "7MP",
+        "front_camera": "12 MP",
+        "chip": "Apple GPU 6 nhân",
+        "details": {
+          "iPad Air 10.9 Wi-Fi New 2020 – Chip A14 mạnh mẽ cho trải nghiệm hoàn hảo": "Apple luôn khiến cho cộng đồng công nghệ đứng ngồi không yên mỗi khi cho ra mắt những sản phẩm Tablet mới. Với mẫu iPad Air 10.9 Wi-Fi New 2020 được dự kiến cho ra mắt năm 2020 sẽ mang những thay đổi về mặt thiết kế cũng như những tính năng mới được tích hợp để tối ưu hóa về hiệu năng, mang đến cho người dùng những trải nghiệm tốt hơn.",
+          "Thiết kế tinh tế, màu sắc thời thượng với độ mỏng 6.1mm": "iPad Air 10.9 Wi-Fi New 2020 sẽ có thiết kế hoàn toàn mới với kiểu dáng tương tự với iPad Pro 2020 nhưng với kích thước nhỏ gọn hơn 247.6 x 178.5 mm và độ mỏng chỉ 6.1 mm cùng trọng lượng chưa đến 500g giúp bạn dễ dàng mang theo iPad để sử dụng ở bất cứ đâu. Thiết kế nguyên khối mang đến tổng thể sang trọng cho iPad Air 10.9 Wi-Fi New 2020 cùng với gam màu mới thời thượng, nút home được loại bỏ để tạo nên không gian hiển thị rộng hơn.",
+          "Màn hình có tần số quét 60Hz, tấm nền IPS LCD và kích thước 10.9 inch": "Để mang đến không gian hiển thị tuyệt vời cho người dùng, Apple đã trang bị màn hình có tần số quét đến 60Hz cho iPad Air 10.9 Wi-Fi New 2020, giúp hình ảnh hiển thị mượt mà, các chuyển động hình ảnh trơn tru cũng như hạn chế tình trạng giật lag. Nhờ vậy bạn có thể tận hưởng những thước phim ấn tượng, chơi game (đặc biệt là những game có góc nhìn thứ nhất) một cách tuyệt vời nhất. Độ phân giải 2360 x 1640 pixels cho hình ảnh sắc nét và chân thực."
+        }
+      },
+      "amount": 1052,
+      "star": 4,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/20/36/53/2637edb01d9017e1eaa49150075acaf6.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/17/3c/e6/64f907c4acea500d7e273431dced572a.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/29/c6/5a/235785b0bf6e5ba745c97cf6190d5f87.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/3c/c5/ef/6fd4cb83b9d202c88f960a03fa313489.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/43/2c/4d/efd57599139e35a69dabdab70bc88de9.jpg.webp"
+        ]
+      ],
+      "price": [
+        11290000
+      ],
+      "priceOld": [
+        13990000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Đen",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/20/36/53/2637edb01d9017e1eaa49150075acaf6.jpg.webp"
+        }
+      ],
+      "capacity": [],
+      "shop": {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYzeqIvRaVq68013nRoOCQAoezYI4nnpPDUG2eiVTbJ7egWB0zwqrhHR2FYnIykkwbEKg&usqp=CAU",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Hoàng Long Shop",
+        "evaluate": 73000,
+        "response_rate": 35,
+        "response_time": 2,
+        "participation": 46,
+        "monitor": 1700
+      }
+    },
+    {
+      "id": 5,
+      "name": "Máy tính bảng Samsung Galaxy Tab A7 Lite LTE SM-T225) - Hàng Chính Hãng",
+      "category": "tablet",
+      "sold": 1200,
+      "description": {
+        "audioArt": "HD Audio with DTS X Ultra",
+        "battery": "5000 mAh",
+        "format": "tablet",
+        "bluetooth": "A2DP, EDR, 5.0",
+        "trademark": "Samsung",
+        "origin_trademark": "Mỹ",
+        "rear_camera": "7MP",
+        "front_camera": "12 MP",
+        "chip": "Apple GPU 6 nhân",
+        "details": {
+          "iPad Air 10.9 Wi-Fi New 2020 – Chip A14 mạnh mẽ cho trải nghiệm hoàn hảo": "Apple luôn khiến cho cộng đồng công nghệ đứng ngồi không yên mỗi khi cho ra mắt những sản phẩm Tablet mới. Với mẫu iPad Air 10.9 Wi-Fi New 2020 được dự kiến cho ra mắt năm 2020 sẽ mang những thay đổi về mặt thiết kế cũng như những tính năng mới được tích hợp để tối ưu hóa về hiệu năng, mang đến cho người dùng những trải nghiệm tốt hơn.",
+          "Thiết kế tinh tế, màu sắc thời thượng với độ mỏng 6.1mm": "iPad Air 10.9 Wi-Fi New 2020 sẽ có thiết kế hoàn toàn mới với kiểu dáng tương tự với iPad Pro 2020 nhưng với kích thước nhỏ gọn hơn 247.6 x 178.5 mm và độ mỏng chỉ 6.1 mm cùng trọng lượng chưa đến 500g giúp bạn dễ dàng mang theo iPad để sử dụng ở bất cứ đâu. Thiết kế nguyên khối mang đến tổng thể sang trọng cho iPad Air 10.9 Wi-Fi New 2020 cùng với gam màu mới thời thượng, nút home được loại bỏ để tạo nên không gian hiển thị rộng hơn.",
+          "Màn hình có tần số quét 60Hz, tấm nền IPS LCD và kích thước 10.9 inch": "Để mang đến không gian hiển thị tuyệt vời cho người dùng, Apple đã trang bị màn hình có tần số quét đến 60Hz cho iPad Air 10.9 Wi-Fi New 2020, giúp hình ảnh hiển thị mượt mà, các chuyển động hình ảnh trơn tru cũng như hạn chế tình trạng giật lag. Nhờ vậy bạn có thể tận hưởng những thước phim ấn tượng, chơi game (đặc biệt là những game có góc nhìn thứ nhất) một cách tuyệt vời nhất. Độ phân giải 2360 x 1640 pixels cho hình ảnh sắc nét và chân thực."
+        }
+      },
+      "amount": 1052,
+      "star": 3,
+      "status": true,
+      "image": [
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/7a/f8/05/48a7e3e54bd32fe5867b4eb12603097c.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/35/58/7b/9737a281ca0a15fb3bdd04e6d33524cc.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/7d/b0/79/a379aad008001f92eac3de6ea307b3f0.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/9e/e5/12/d702a1bf979e3c4ed3a20f74107fa93f.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/a5/9f/1e/a98b66f72977eb9e6a7f4514455e09d5.png.webp"
+        ],
+        [
+          "https://salt.tikicdn.com/cache/100x100/ts/product/85/32/38/ccfce7f77fe6458e71fff453b0d9ded7.png.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/24/26/e0/8c40c80d79be274e8c5c0d83ef0015e6.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/2c/99/ee/36d4baeb47b8b5662f94cb8a18f472ef.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/7a/09/86/8d6982ed8fd4b5fb43b2f7995598cc4e.jpg.webp",
+          "https://salt.tikicdn.com/cache/100x100/ts/product/7a/09/86/8d6982ed8fd4b5fb43b2f7995598cc4e.jpg.webp"
+        ]
+      ],
+      "price": [
+        3990000,
+        4059000
+      ],
+      "priceOld": [
+        4490000,
+        4490000
+      ],
+      "varation": [
+        {
+          "count": 0,
+          "title": "Bạc",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/a5/9f/1e/a98b66f72977eb9e6a7f4514455e09d5.png.webp"
+        },
+        {
+          "count": 1,
+          "title": "Xám",
+          "image": "https://salt.tikicdn.com/cache/100x100/ts/product/84/2a/4e/54c148aebb38509227c413a0ba9a8685.png.webp"
+        }
+      ],
+      "capacity": [],
+      "shop": {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYzeqIvRaVq68013nRoOCQAoezYI4nnpPDUG2eiVTbJ7egWB0zwqrhHR2FYnIykkwbEKg&usqp=CAU",
+        "address": "68 Lý Thường Kiệt - Tam Đảo - Đà Nẵng",
+        "name": "Hoàng Long Shop",
+        "evaluate": 73000,
+        "response_rate": 35,
+        "response_time": 2,
+        "participation": 46,
+        "monitor": 1700
+      }
+    }
+  ],
+  "cart_product": [
+    {
+      "id": "v37D--i4NLCVr9mps5OWA",
+      "count": 3,
+      "name": "Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng",
+      "image": [
+        "https://salt.tikicdn.com/cache/100x100/ts/product/86/dd/0c/8948ec0e37381d80d7daf5f8c24062ed.jpg.webp",
+        "https://salt.tikicdn.com/cache/100x100/ts/product/af/4b/5c/98095f0153935d70891d1d9126700f42.jpg.webp",
+        "https://salt.tikicdn.com/cache/100x100/ts/product/1b/b0/9c/35a4702db7224b37eba549ef54f0b1d0.jpg.webp",
+        "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp",
+        "https://salt.tikicdn.com/cache/100x100/ts/review/6a/9c/c4/f3eec6d74faeca76dcb8478008db567d.jpg.webp"
+      ],
+      "price": 24990000,
+      "priceOld": 32990000,
+      "capacity": "12GB/128GB",
+      "amount": 1,
+      "isChecked": true
+    }
+  ],
+  "comments_user": [
+    {
+      "id_product": 1,
+      "id": 1,
+      "id_user": "TAR100590",
+      "author": "Trần Anh Trung",
+      "avatar": "https://hinhgaixinh.com/wp-content/uploads/2021/03/20210312-hinh-gai-xinh-14-600x800.jpg",
+      "address": "45 Kì Xã - Tam Kỳ - Đà Nẵng",
+      "star": 5,
+      "like": 10,
+      "dislike": 5,
+      "datetime": "2019-9-2 10:02:46",
+      "content": "Sản phẩm chất lượng tốt đấy !😍",
+      "orther": {
+        "image": [],
+        "video": []
+      },
+      "cmt_item": [
+        {
+          "id": 1,
+          "id_user": "NT280301",
+          "author": "Ngoc Tran",
+          "avatar": "https://1.bp.blogspot.com/-taNL4-qb6UA/XoBShx5H8mI/AAAAAAAAabY/dIHUXHJUJZ4VrDTbdGNnCbPAOY50vCCcwCLcBGAsYHQ/s1600/Hinh-anh-con-gai-cute-de-thuong%2B%25285%2529.jpg",
+          "address": "xã Bình Chương - huyện Bình Sơn - tỉnh Quảng Ngãi",
+          "like": 10,
+          "dislike": 5,
+          "datetime": "2019-9-2 10:02:46",
+          "content": "Ko mua thi thoi😄"
+        }
+      ]
+    },
+    {
+      "id_product": 2,
+      "id": 2,
+      "id_user": "TAR100590",
+      "author": "Trần Anh Trung",
+      "avatar": "https://hinhgaixinh.com/wp-content/uploads/2021/03/20210312-hinh-gai-xinh-14-600x800.jpg",
+      "address": "45 Kì Xã - Tam Kỳ - Đà Nẵng",
+      "star": 5,
+      "like": 10,
+      "dislike": 5,
+      "datetime": "2019-9-2 10:02:46",
+      "content": "Sản phẩm chất lượng tốt đấy !😍",
+      "orther": {
+        "image": [],
+        "video": []
+      },
+      "cmt_item": [
+        {
+          "id": 1,
+          "id_user": "NT280301",
+          "author": "Ngoc Tran",
+          "avatar": "https://1.bp.blogspot.com/-taNL4-qb6UA/XoBShx5H8mI/AAAAAAAAabY/dIHUXHJUJZ4VrDTbdGNnCbPAOY50vCCcwCLcBGAsYHQ/s1600/Hinh-anh-con-gai-cute-de-thuong%2B%25285%2529.jpg",
+          "address": "xã Bình Chương - huyện Bình Sơn - tỉnh Quảng Ngãi",
+          "like": 10,
+          "dislike": 5,
+          "datetime": "2019-9-2 10:02:46",
+          "content": "Ko mua thi thoi😄"
+        }
+      ]
+    },
+    {
+      "id_product": 1,
+      "id": 3,
+      "id_user": "BHL190101",
+      "author": "Bùi Hoàng Long",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQng390txB70CtE3ZNJXGB6pAtxpWmYWKsdGNvtILR350sWu3Kr62sXy-A6ZX1M20En7a8&usqp=CAU",
+      "address": "Thôn Xuân Quý - Xã Tam Thăng - Tp Tam kỳ - tỉnh Quảng Nam",
+      "star": 3,
+      "like": 10,
+      "dislike": 5,
+      "datetime": "2019-9-2 10:02:46",
+      "content": "Sài lâu thì có hiện tượng chai pin, cần fix gấp !😅",
+      "orther": {
+        "image": [],
+        "video": []
+      },
+      "cmt_item": [
+        {
+          "id_user": "BTN_DWA0192",
+          "id_author": "BHL190101",
+          "Address": "Thôn Xuân Quý - Xã Tam Thăng - Tp Tam kỳ - tỉnh Quảng Nam",
+          "like": 0,
+          "dislike": 0,
+          "type_product": "Điện Thoại Vsmast Joy 4 - Hàng Chính Hãng",
+          "author": "Bui Hoang Long",
+          "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+          "content": "chánghe",
+          "datetime": "a few seconds ago"
+        },
+        {
+          "id_user": "BTN_DWA0192",
+          "id_author": "BHL190101",
+          "Address": "Thôn Xuân Quý - Xã Tam Thăng - Tp Tam kỳ - tỉnh Quảng Nam",
+          "like": 0,
+          "dislike": 0,
+          "type_product": "Điện Thoại Vsmast Joy 4 - Hàng Chính Hãng",
+          "author": "Bui Hoang Long",
+          "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+          "content": "12",
+          "datetime": "a few seconds ago"
+        },
+        {
+          "id": 1,
+          "id_user": "NT280301",
+          "author": "Ngoc Tran",
+          "avatar": "https://1.bp.blogspot.com/-taNL4-qb6UA/XoBShx5H8mI/AAAAAAAAabY/dIHUXHJUJZ4VrDTbdGNnCbPAOY50vCCcwCLcBGAsYHQ/s1600/Hinh-anh-con-gai-cute-de-thuong%2B%25285%2529.jpg",
+          "address": "xã Bình Chương - huyện Bình Sơn - tỉnh Quảng Ngãi",
+          "like": 10,
+          "dislike": 5,
+          "datetime": "2019-9-2 10:02:46",
+          "content": "Ko mua thi thoi😄"
+        }
+      ]
+    },
+    {
+      "id_product": 5,
+      "id": 4,
+      "id_user": "HTKC280301",
+      "author": "Hồ Thị Kim Chi",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp_ezRMzjMwPWpAAzDFnZ_QoZZQ07gkqojC13y_KaA09hYAjgrUzmCq_7cuehKuGr6RqY&usqp=CAU",
+      "address": "xã Bình Chương - huyện Bình Sơn - tỉnh Quảng Ngãi",
+      "star": 5,
+      "like": 10,
+      "dislike": 5,
+      "datetime": "2019-9-2 10:02:46",
+      "content": "Mua cho anh người yêu thì gọi là vip pro !😄",
+      "orther": {
+        "image": [],
+        "video": []
+      },
+      "cmt_item": [
+        {
+          "id": 1,
+          "id_user": "NT280301",
+          "author": "Ngoc Tran",
+          "avatar": "https://1.bp.blogspot.com/-taNL4-qb6UA/XoBShx5H8mI/AAAAAAAAabY/dIHUXHJUJZ4VrDTbdGNnCbPAOY50vCCcwCLcBGAsYHQ/s1600/Hinh-anh-con-gai-cute-de-thuong%2B%25285%2529.jpg",
+          "address": "xã Bình Chương - huyện Bình Sơn - tỉnh Quảng Ngãi",
+          "like": 10,
+          "dislike": 5,
+          "datetime": "2019-9-2 10:02:46",
+          "content": "Ko mua thi thoi😄"
+        }
+      ]
+    },
+    {
+      "id_product": 5,
+      "id": 5,
+      "id_user": "HTKC280301",
+      "author": "Mai Vinh Trung",
+      "avatar": "https://3.bp.blogspot.com/-dAzi-MCokYI/XJdYY-wlfvI/AAAAAAAAACw/2GvfoASnP3I269v9mzSv4VkbCNHj36WpQCLcBGAs/s1600/Emxinh2k__nhung-hinh-anh-girl-xinh-khoe-vong-1%2B%25281%2529.jpg",
+      "address": "19 Nghe An - Ha Tinh",
+      "star": 2,
+      "like": 10,
+      "dislike": 5,
+      "datetime": "2019-9-2 10:02:46",
+      "content": "San Pham Nhu C!🥵",
+      "orther": {
+        "image": [],
+        "video": []
+      },
+      "cmt_item": [
+        {
+          "id": 1,
+          "id_user": "NT280301",
+          "author": "Ngoc Tran",
+          "avatar": "https://1.bp.blogspot.com/-taNL4-qb6UA/XoBShx5H8mI/AAAAAAAAabY/dIHUXHJUJZ4VrDTbdGNnCbPAOY50vCCcwCLcBGAsYHQ/s1600/Hinh-anh-con-gai-cute-de-thuong%2B%25285%2529.jpg",
+          "address": "xã Bình Chương - huyện Bình Sơn - tỉnh Quảng Ngãi",
+          "like": 10,
+          "dislike": 5,
+          "datetime": "2019-9-2 10:02:46",
+          "content": "Ko mua thi thoi😄"
+        }
+      ]
+    },
+    {
+      "id_product": 2,
+      "id": 6,
+      "id_user": "NTHN280301",
+      "author": "Nguyen Thi Hong Ngoc",
+      "avatar": "http://1.bp.blogspot.com/-k6VJp9A6em4/U4e6cqDqjGI/AAAAAAAAnGs/99K9apS2HGE/s1600/1.jpg",
+      "address": "xã Bình Chương - huyện Bình Sơn - tỉnh Quảng Ngãi",
+      "star": 5,
+      "like": 10,
+      "dislike": 5,
+      "datetime": "2019-9-2 10:02:46",
+      "content": "Mua cho anh người yêu thì gọi là vip pro !😄",
+      "orther": {
+        "image": [],
+        "video": []
+      },
+      "cmt_item": [
+        {
+          "id": 1,
+          "id_user": "NT280301",
+          "author": "Ngoc Tran",
+          "avatar": "https://1.bp.blogspot.com/-taNL4-qb6UA/XoBShx5H8mI/AAAAAAAAabY/dIHUXHJUJZ4VrDTbdGNnCbPAOY50vCCcwCLcBGAsYHQ/s1600/Hinh-anh-con-gai-cute-de-thuong%2B%25285%2529.jpg",
+          "address": "xã Bình Chương - huyện Bình Sơn - tỉnh Quảng Ngãi",
+          "like": 10,
+          "dislike": 5,
+          "datetime": "2019-9-2 10:02:46",
+          "content": "Ko mua thi thoi😄"
+        }
+      ]
+    },
+    {
+      "id_product": 2,
+      "id": 6,
+      "id_user": "NTHN280301",
+      "author": "Nguyen Thi Hong Ngoc",
+      "avatar": "http://1.bp.blogspot.com/-k6VJp9A6em4/U4e6cqDqjGI/AAAAAAAAnGs/99K9apS2HGE/s1600/1.jpg",
+      "address": "xã Bình Chương - huyện Bình Sơn - tỉnh Quảng Ngãi",
+      "star": 5,
+      "like": 10,
+      "dislike": 5,
+      "datetime": "2019-9-2 10:02:46",
+      "content": "Mua cho anh người yêu thì gọi là vip pro !😄",
+      "orther": {
+        "image": [],
+        "video": []
+      },
+      "cmt_item": [
+        {
+          "id": 1,
+          "id_user": "NT280301",
+          "author": "Ngoc Tran",
+          "avatar": "https://1.bp.blogspot.com/-taNL4-qb6UA/XoBShx5H8mI/AAAAAAAAabY/dIHUXHJUJZ4VrDTbdGNnCbPAOY50vCCcwCLcBGAsYHQ/s1600/Hinh-anh-con-gai-cute-de-thuong%2B%25285%2529.jpg",
+          "address": "xã Bình Chương - huyện Bình Sơn - tỉnh Quảng Ngãi",
+          "like": 10,
+          "dislike": 5,
+          "datetime": "2019-9-2 10:02:46",
+          "content": "Ko mua thi thoi😄"
+        }
+      ]
+    },
+    {
+      "id": "Swj_qrK8p0x8WvCReus9R",
+      "star": 4,
+      "id_product": 4,
+      "id_user": "BHL190101",
+      "address": "Thôn Xuân Quý - Xã Tam Thăng - Tp Tam kỳ - tỉnh Quảng Nam",
+      "like": 0,
+      "dislike": 0,
+      "type_product": "Điện Thoại Vsmast Joy 4 - Hàng Chính Hãng",
+      "author": "Bui Hoang Long",
+      "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      "content": "chan ghe",
+      "datetime": "2021-09-20 11:14:13",
+      "orther": {
+        "image": [],
+        "video": []
+      },
+      "cmt_item": [
+        {
+          "id_user": "BTN_DWA0192",
+          "id_author": "BHL190101",
+          "Address": "Thôn Xuân Quý - Xã Tam Thăng - Tp Tam kỳ - tỉnh Quảng Nam",
+          "like": 0,
+          "dislike": 0,
+          "type_product": "Điện Thoại Vsmast Joy 4 - Hàng Chính Hãng",
+          "author": "Bui Hoang Long",
+          "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+          "content": "ook",
+          "datetime": "a few seconds ago"
+        }
+      ]
+    },
+    {
+      "cmt_item": [
+        {
+          "id_user": "BTN_DWA0192",
+          "id_author": "BHL190101",
+          "Address": "Thôn Xuân Quý - Xã Tam Thăng - Tp Tam kỳ - tỉnh Quảng Nam",
+          "like": 0,
+          "dislike": 0,
+          "type_product": "Điện Thoại Vsmast Joy 4 - Hàng Chính Hãng",
+          "author": "Bui Hoang Long",
+          "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+          "content": "dădwada",
+          "datetime": "a few seconds ago"
+        }
+      ]
+    },
+    {
+      "id": "O5yLTXfPmLxCwKhCzLh91",
+      "star": 4,
+      "id_product": 9,
+      "id_user": "BHL190101",
+      "address": "Thôn Xuân Quý - Xã Tam Thăng - Tp Tam kỳ - tỉnh Quảng Nam",
+      "like": 0,
+      "dislike": 0,
+      "type_product": "Điện Thoại Vsmast Joy 4 - Hàng Chính Hãng",
+      "author": "Bui Hoang Long",
+      "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      "content": "dw",
+      "datetime": "2021-10-09 16:30:56",
+      "orther": {
+        "image": [
+          {
+            "uid": "rc-upload-1633771720628-15",
+            "lastModified": 1633411867201,
+            "lastModifiedDate": "2021-10-05T05:31:07.201Z",
+            "name": "Capture001.png",
+            "size": 156789,
+            "type": "image/png",
+            "percent": 100,
+            "originFileObj": {
+              "uid": "rc-upload-1633771720628-15"
+            },
+            "status": "done",
+            "response": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\" />\n        <link rel=\"icon\" href=\"/home/favicon.ico\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n        <meta name=\"theme-color\" content=\"#000000\" />\n        <meta\n            name=\"description\"\n            content=\"Web site created using create-react-app\"\n        />\n        <link rel=\"apple-touch-icon\" href=\"/home/logo192.png\" />\n        <link\n            href=\"https://pro.fontawesome.com/releases/v5.10.0/css/all.css\"\n            rel=\"stylesheet\"\n        />\n        <link rel=\"stylesheet\" href=\"bower_components/aos/dist/aos.css\" />\n        <!--\n      manifest.json provides metadata used when your web app is installed on a\n      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/\n    -->\n        <link rel=\"manifest\" href=\"/home/manifest.json\" />\n        <!--\n      Notice the use of /home in the tags above.\n      It will be replaced with the URL of the `public` folder during the build.\n      Only files inside the `public` folder can be referenced from the HTML.\n\n      Unlike \"/favicon.ico\" or \"favicon.ico\", \"/home/favicon.ico\" will\n      work correctly both with client-side routing and a non-root public URL.\n      Learn how to configure a non-root public URL by running `npm run build`.\n    -->\n        <!-- link-icons -->\n        <script src=\"https://unpkg.com/boxicons@2.0.8/dist/boxicons.js\"></script>\n        <link\n            rel=\"stylesheet\"\n            href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\"\n            integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\"\n            crossorigin=\"anonymous\"\n        />\n        <link href=\"https://fonts.googleapis.com/css?family=Raleway:800\" rel=\"stylesheet\">\n        <title>React App</title>\n    </head>\n\n    <body>\n        <noscript>You need to enable JavaScript to run this app.</noscript>\n        <div id=\"root\"></div>\n        <!--\n      This HTML file is a template.\n      If you open it directly in the browser, you will see an empty page.\n\n      You can add webfonts, meta tags, or analytics to this file.\n      The build step will place the bundled scripts into the <body> tag.\n\n      To begin the development, run `npm start` or `yarn start`.\n      To create a production bundle, use `npm run build` or `yarn build`.\n    -->\n        <script\n            src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\"\n            integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\"\n            crossorigin=\"anonymous\"\n        ></script>\n        <script\n            src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\"\n            integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\"\n            crossorigin=\"anonymous\"\n        ></script>\n        <script\n            src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"\n            integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\"\n            crossorigin=\"anonymous\"\n        ></script>\n        <script async defer src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyCzsNZgbU_84jY3pGuW6RPCT7-0Zt19Hh8&callback=initMap\"></script>\n    <script src=\"/home/static/js/bundle.js\"></script><script src=\"/home/static/js/vendors~main.chunk.js\"></script><script src=\"/home/static/js/main.chunk.js\"></script></body>\n</html>\n",
+            "xhr": {},
+            "thumbUrl": "data:image/png;base64,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"
+          }
+        ],
+        "video": []
+      },
+      "cmt_item": []
+    }
+  ],
+  "search_item": [
+    {
+      "id": "gidBYhKtry0ZVHH9YSIsq",
+      "content": "Macbook Pro",
+      "status": "searchUser"
+    },
+    {
+      "id": "CJGW5EYFAHoaXlRbwgnZ9",
+      "content": "Macbook Pro",
+      "status": "searchUser"
+    },
+    {
+      "id": "4xkUNOX75I8EftOR88tso",
+      "content": "Macbook Pro",
+      "status": "searchUser"
+    },
+    {
+      "id": "9KaTR9ZBs_MF34pitBHlY",
+      "content": "iphone",
+      "status": "searchUser"
+    },
+    {
+      "id": "shCtGvWXzSe_WCZkDwvmb",
+      "content": "Macbook Pro",
+      "status": "searchUser"
+    },
+    {
+      "id": "bgMQmRSGWpltt4DHNl9Fq",
+      "content": "Điện thoại IPhone",
+      "status": "searchUser"
+    }
+  ],
+  "user_api": [
+    {
+      "id": "wD3glPjmnuRcAEAmTfGIMiTCw0m1",
+      "name": "Long Hoàng",
+      "email": "wwwlong91@gmail.com",
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "image": "https://lh3.googleusercontent.com/a-/AOh14GgslMndYQab24RJUQw6TWSWFMvE4zm4cPRC-oY3BQ=s96-c"
+    },
+    {
+      "id": "3XMnUFGfskhauZUD9fegAMawoOn2",
+      "name": "Long Hoàng",
+      "email": "hoanglong19015312@gmail.com",
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "image": "https://graph.facebook.com/209815144408052/picture"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "qZJuVzh"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "lYGmIVq"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "wcuUKUE"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "QMZ3jra"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "C3QJvlU"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "Fikb-6L"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "U2buAY7"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "brzECyP"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "LkBX6I3"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "zwl9DRO"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "aAbfQLY"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "3OOxles"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "fLl7IV4"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "i8jKsgC"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "nvXCIhp"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "yJpO_eB"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "yVvshyx"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "pQrK0Gi"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "J4ppr1_"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "Sts8BfX"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "ueYvIaK"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "TLxs07N"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "4VewzLX"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "jOVo1aN"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "8aiZjEz"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "djO0Lbu"
+    },
+    {
+      "sex": "",
+      "date_of_birth": "",
+      "number_phone": "",
+      "id": "itcbguP"
+    }
+  ],
+  "address_api": [
+    {
+      "tinh": "Tỉnh Hà Giang",
+      "quan": "Huyện Đồng Văn",
+      "xa": "Thị trấn Đồng Văn",
+      "mota": "43-Bau Tra",
+      "id": "MPh4zzAFuzlx_vduIkOBD",
+      "name_user": "Bui Hoang Long",
+      "number_phone": "0397348149"
+    }
+  ]
+}

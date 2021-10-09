@@ -1,22 +1,22 @@
 const police = [
     {
         name: 'Free ship',
-        description: 'Free shipping with orders over 300k',
+        description: 'Miễn Phí Vận Chuyển',
         icon: 'shopping-bag',
     },
     {
         name: 'COD payment',
-        description: 'Payment on delivery (COD)',
+        description: 'Thanh Toán Khi Nhận Hàng',
         icon: 'credit-card',
     },
     {
         name: 'VIP customers',
-        description: 'Many attractive offers for vip customers',
+        description: 'Ưu Đãi Hấp Dẫn Cho Khách Vip',
         icon: 'gem',
     },
     {
         name: 'Warranty support',
-        description: 'Change, fix things at the store',
+        description: 'Tiết Kiệm Được Nhiều Tiền Hơn',
         icon: 'hand-holding-usd',
     },
 ];

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {
@@ -11,9 +11,18 @@ import {
     DatePicker,
     Upload,
     InputNumber,
+    message,
 } from 'antd';
 import Avatar from 'antd/lib/avatar/avatar';
-import { SaveOutlined, UploadOutlined } from '@ant-design/icons';
+import { SaveOutlined, UploadOutlined, UserOutlined } from '@ant-design/icons';
+import { AuthContext } from '../../../../Context/AuthProvider';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    getUserApi,
+    insertUserApi,
+    userApiSelector,
+} from '../../../../Store/Reducer/userApi';
+import UploadFileImg from './UploadFileImg';
 
 const FileUserContent = styled.div`
     .file-user-title {
@@ -34,29 +43,53 @@ const FileUserContent = styled.div`
         margin: 10px;
     }
 `;
-const FileUserEdit = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    button {
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-`;
-function FileUser(props) {
-    const [loadings, setLoadings] = useState(false);
 
+function FileUser(props) {
+    const data = React.useContext(AuthContext);
+    const dispatch = useDispatch();
+    const use_api = useSelector(userApiSelector);
+    const [loadings, setLoadings] = useState(false);
+    const [sex, setSex] = useState('');
+    const [dateOfBirth, setDateOfBirth] = useState('');
+    const [numberPhone, setNumberPhone] = useState('');
     const [value, setValue] = useState(1);
+    const [img, setImg] = useState(null);
+    const { email, photoURL, uid, displayName } = data.user;
+
+    useEffect(() => {
+        dispatch(getUserApi());
+        dispatch(
+            insertUserApi({
+                id: uid,
+                name: displayName,
+                email: email,
+                sex: sex,
+                date_of_birth: dateOfBirth,
+                number_phone: numberPhone,
+                image: photoURL,
+            }),
+        );
+    }, [dateOfBirth, data.user]);
+
     const enterLoading = () => {
         setLoadings(true);
         setTimeout(() => {
             setLoadings(false);
         }, 2000);
     };
+
     const onChange = (e) => {
         console.log('radio checked', e.target.value);
         setValue(e.target.value);
     };
+
+    console.log(data.user);
+
+    const importImg = (img) => {
+        setImg(img);
+    };
+    console.log(img);
+
     return (
         <FileUserContent>
             <div className="file-user-title">
@@ -77,23 +110,22 @@ function FileUser(props) {
                             }}
                             layout="horizontal"
                             size="large"
-                            // onValuesChange={onFormLayoutChange}
                         >
                             <Form.Item
                                 label="Tên Đăng Nhập"
                                 style={{ margin: 0, fontSize: '16px' }}
                             >
-                                <p className="user-name">Bui Hoang Long</p>
+                                <p className="user-name">{displayName}</p>
                             </Form.Item>
                             <Form.Item label="Tên">
                                 <Input />
                             </Form.Item>
                             <Form.Item label="Email">
-                                <Input value="wwwlong91@gmail.com" />
+                                <Input value={email} />
                             </Form.Item>
                             <Form.Item label="Tên Shop">
                                 <Input
-                                    value="Bui Hoang Long"
+                                    value={displayName}
                                     placeholder="Nhập tên Shop"
                                 />
                             </Form.Item>
@@ -118,6 +150,7 @@ function FileUser(props) {
                                 size="large"
                                 icon={<SaveOutlined />}
                                 style={{ marginLeft: '144px' }}
+                                disabled
                             >
                                 Lưu
                             </Button>
@@ -133,14 +166,11 @@ function FileUser(props) {
                         alignItems: 'center',
                     }}
                 >
-                    <FileUserEdit className="file-user-edit">
-                        <Avatar size="large" size={150} />
-                        <Upload {...props}>
-                            <Button icon={<UploadOutlined />}>Chọn Ảnh</Button>
-                        </Upload>
-                        ,<p>Dụng lượng file tối đa 1 MB</p>
-                        <p>Định dạng:.JPEG, .PNG</p>
-                    </FileUserEdit>
+                    <UploadFileImg
+                        photoURL={photoURL}
+                        use_api={use_api}
+                        importImg={importImg}
+                    />
                 </Col>
             </Row>
         </FileUserContent>

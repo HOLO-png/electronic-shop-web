@@ -12,13 +12,9 @@ import {
     UserOutlined,
 } from '@ant-design/icons';
 import SubMenu from 'antd/lib/menu/SubMenu';
-import {
-    FILE_USER,
-    NOTIFICATION_USER,
-    ORDER,
-    ORDER_WHEEL,
-} from '../../constans';
+import { FILE_USER, NOTIFICATION_USER, ORDER_WHEEL } from '../../constans';
 import Userlayout from '../../Common/UserLayout';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const UserSetting = styled.div`
     display: flex;
@@ -38,6 +34,9 @@ const UserSetting = styled.div`
             font-size: 17px;
             font-weight: 600;
         }
+    }
+    ul#rc-menu-uuid-92169-1-sub3-popup {
+        background: #fff;
     }
 `;
 
@@ -97,6 +96,8 @@ const renderNotificationUser = () => {
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub3', 'sub4'];
 function PurchaseOrder(props) {
     const [openKeys, setOpenKeys] = React.useState(['sub2']);
+    const data = React.useContext(AuthContext);
+    const { email, photoURL, uid, displayName } = data.user;
 
     const handleClick = (e) => {
         console.log('click ', e);
@@ -111,14 +112,21 @@ function PurchaseOrder(props) {
     };
     return (
         <Helmet title="User">
-            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                <Col className="gutter-row" span={6}>
+            <Row
+                gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
+                style={{ transform: 'translateY(20px)' }}
+            >
+                <Col
+                    className="gutter-row"
+                    span={6}
+                    style={{ background: '#fff', padding: '20px' }}
+                >
                     <UserSetting>
-                        <Avatar size={50} />
+                        <Avatar size={50} src={photoURL} />
                         <div className="user-settings">
-                            <p className="user-title">Bui Hoang Long</p>
+                            <p className="user-title">{displayName}</p>
                             <Button type="text" icon={<EditOutlined />}>
-                                Sửa Hồ Sơ
+                                <Link to="/user/profile">Sửa Hồ Sơ</Link>
                             </Button>
                         </div>
                     </UserSetting>
@@ -142,23 +150,17 @@ function PurchaseOrder(props) {
                                 title="Tài khoản của tôi"
                             >
                                 <Menu.Item key="1">
-                                    <Link to="/user/account/profile">
-                                        Hồ sơ
-                                    </Link>
+                                    <Link to="/user/profile">Hồ sơ</Link>
                                 </Menu.Item>
 
                                 <Menu.Item key="2">
-                                    <Link to="/user/account/payment">
-                                        Ngân hàng
-                                    </Link>
+                                    <Link to="/user/payment">Ngân hàng</Link>
                                 </Menu.Item>
                                 <Menu.Item key="3">
-                                    <Link to="/user/account/address">
-                                        Địa chỉ
-                                    </Link>
+                                    <Link to="/user/address">Địa chỉ</Link>
                                 </Menu.Item>
                                 <Menu.Item key="4">
-                                    <Link to="/user/account/password">
+                                    <Link to="/user/password">
                                         Đổi mật khẩu
                                     </Link>
                                 </Menu.Item>

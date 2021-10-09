@@ -1,41 +1,84 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import Button from '../Button';
+import { Link, useParams } from 'react-router-dom';
 import numberWithCommas from '../../utils/numberWithCommas';
-import styled from 'styled-components';
+import { Badge, Rate, Tag } from 'antd';
 function ProductCart(props) {
-    const { img01, img02, name, price, slug } = props;
+    const {
+        id,
+        name,
+        price,
+        status,
+        star,
+        category,
+        image,
+        priceOld,
+        height,
+        img_width,
+        right,
+    } = props;
+    const handleStatus = () => {
+        if (status) {
+            return 'block';
+        } else {
+            return 'none';
+        }
+    };
+    const name_url = name.replace(/ /g, '-');
+
     return (
-        <div className="product-cart">
-            <Link to={`/catalog/${slug}`}>
-                <div className="product-cart__image">
-                    <img src={img01} alt={name} />
-                    <img src={img02} alt={name} />
-                </div>
-                <h3 className="product-cart__name">{name}</h3>
-                <div className="product-cart__price">
-                    {numberWithCommas(price)}$
-                    <div className="product-cart__price-old">
-                        <del>{numberWithCommas('350')}$</del>
+        <Badge.Ribbon
+            text="Hot"
+            color="red"
+            style={{ right: right, display: handleStatus() }}
+        >
+            <div className="product-cart" style={{ height: height + 'px' }}>
+                <Link to={`/${category}/${name_url}/${id}`}>
+                    <div className="product-cart__image">
+                        <img
+                            src={image[0][0]}
+                            alt={name}
+                            style={{ height: img_width }}
+                        />
+                        {image[1] ? (
+                            <img
+                                src={image[1][0]}
+                                alt={name}
+                                style={{ height: img_width }}
+                            />
+                        ) : (
+                            <img
+                                src={image[0][0]}
+                                alt={name}
+                                style={{ height: img_width }}
+                            />
+                        )}
                     </div>
-                </div>
-            </Link>
-            <div className="product-cart__btn">
-                <Button size="sm" icon="shopping-bag" animate={true}>
-                    Add to cart
-                </Button>
+                    <h3 className="product-cart__name">{name}</h3>
+                    <div className="product-cart-evaluate">
+                        <Rate
+                            disabled
+                            defaultValue={star ? +star : 0}
+                            style={{ marginTop: '12px' }}
+                        />
+                        <p className="product-cart-sold">đã bán 100+</p>
+                    </div>
+                    <div className="product-cart__price">
+                        {numberWithCommas(price[0])} <sup> đ</sup>
+                        <Tag color="#ff4c4c">- 40%</Tag>
+                        <div className="product-cart__price-old">
+                            <del>{numberWithCommas(priceOld[0])} đ</del>
+                        </div>
+                    </div>
+                </Link>
             </div>
-        </div>
+        </Badge.Ribbon>
     );
 }
 
 ProductCart.propTypes = {
-    img01: PropTypes.string.isRequired,
-    img02: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    slug: PropTypes.string.isRequired,
+    price: PropTypes.array.isRequired,
 };
 
 export default ProductCart;

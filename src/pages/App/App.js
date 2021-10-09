@@ -1,7 +1,7 @@
 import './App.css';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import { Suspense, useEffect } from 'react';
-import { LOGIN_ROUTES, MAIN_ROUTES, NOTFOUND_ROUTES } from '../../constans';
+import { BrowserRouter, Redirect, Switch } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { LOGIN_ROUTES, MAIN_ROUTES } from '../../constans';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -9,26 +9,44 @@ import Layout from '../../Common/Layout';
 import Footer from '../../Components/Footer';
 import Header from '../../Components/Header';
 import LoginLayout from '../../Common/LoginLayout';
-import NotFound from '../NotFound';
-import NotFoundLayout from '../../Common/NotFound';
 import AuthProvider from '../../Context/AuthProvider';
+import ScrollToTop from '../../utils/scroll';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartProductsSelector, getCartProduct } from '../../Store/Reducer/cart';
+import {
+    addSearchItemUserApi,
+    deleteSearchItemUserApi,
+    getSearchItemUserApi,
+    searchItemSelector,
+} from '../../Store/Reducer/searchItem';
+import { handleUpdateTheme } from '../../Store/Reducer/setTheme';
 
 function App() {
-    const renderNotFound = () => {
-        let xhtml = null;
-        xhtml = NOTFOUND_ROUTES.map((route, index) => {
-            return (
-                <NotFoundLayout
-                    name={route.name}
-                    key={index}
-                    component={route.component}
-                    path={route.path}
-                />
-            );
-        });
-        return xhtml;
+    const cartProduct = useSelector(cartProductsSelector);
+    const searchItem = useSelector(searchItemSelector);
+    // const themeItem = useSelector(themeSelector);
+
+    const [theme, setTheme] = useState(true);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getCartProduct());
+        dispatch(getSearchItemUserApi());
+    }, [dispatch]);
+
+    const handleChangeTheme = () => {
+        console.log(theme);
+
+        dispatch(handleUpdateTheme(theme));
+        theme ? setTheme(!theme) : setTheme(!theme);
     };
 
+    const insertSearchItemUser = (data) => {
+        dispatch(addSearchItemUserApi(data));
+    };
+    const removeSearchItem = (id) => {
+        dispatch(deleteSearchItemUserApi(id));
+    };
     const renderAdminRoute = () => {
         let xhtml = null;
         xhtml = MAIN_ROUTES.map((route, index) => {
@@ -62,13 +80,26 @@ function App() {
         return xhtml;
     };
 
+    // useEffect((nextProps, nextState) => {
+    //     return nextProps.location.search === this.props.location.search;
+    // }, []);
+
     const renderMain = () => (
         <>
-            <div className="container">
-                <Header />
+            <div
+                className="container"
+                // style={{ background: themeItem.bgr_main }}
+            >
+                <Header
+                    cartProduct={cartProduct}
+                    searchItem={searchItem}
+                    insertSearchItemUser={insertSearchItemUser}
+                    removeSearchItem={removeSearchItem}
+                    handleChangeTheme={handleChangeTheme}
+                    // themeItem={themeItem}
+                />
                 <div className="main">
-                    {renderAdminRoute()}
-                    {/* {renderNotFound()} */}
+                    <Switch>{renderAdminRoute()}</Switch>
                 </div>
             </div>
             <Footer />
@@ -76,18 +107,17 @@ function App() {
     );
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <BrowserRouter>
-                <AuthProvider>
-                    <ToastContainer />
-                    <Switch>
-                        <Redirect exact from="/" to="home" />
-                        {renderLoginRoute()}
-                        {renderMain()}
-                    </Switch>
-                </AuthProvider>
-            </BrowserRouter>
-        </Suspense>
+        <BrowserRouter>
+            <ToastContainer />
+            <AuthProvider>
+                <ScrollToTop />
+                <Switch>
+                    <Redirect exact from="/" to="home" />
+                    {renderLoginRoute()}
+                    {renderMain()}
+                </Switch>
+            </AuthProvider>
+        </BrowserRouter>
     );
 }
 

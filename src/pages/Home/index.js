@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import heroSlides from '../../assets/fake-data';
+import heroSlides, { slide_home } from '../../assets/fake-data';
 import police from '../../assets/fake-data/policeCartApi';
 
 import Helmet from '../../Components/Helmet';
@@ -9,13 +9,27 @@ import HeroSlides from '../../Components/HeroSlides.js';
 import PoliceCart from '../../Components/PoliceCart';
 import Section, { SectionBody, SectionTitle } from '../../Components/Section';
 import Grid from '../../Components/Grid';
-import productData from '../../assets/fake-data/products';
 import ProductCart from '../../Components/ProductCart';
-import banner_iphone from '../../assets/images/banner/banner1.jpg';
-import Banner from '../../Components/Banner';
 import { BackTop, Carousel, Col, Divider, Row, Tooltip } from 'antd';
-import { UpOutlined } from '@ant-design/icons';
+import { VerticalAlignTopOutlined } from '@ant-design/icons';
 import Sidebar from '../../Components/Sidebar';
+import { useDispatch, useSelector } from 'react-redux';
+import GenuineBrand from '../../Components/GenuineBrand';
+import SriceShock from '../../Components/SriceShock';
+import CatgorySelect from '../../Components/CatgorySelect';
+import { getMobilesApi, mobilesSelector } from '../../Store/Reducer/mobile_api';
+import { getProducts } from '../../utils/randomProduct';
+import { getLaptopsApi, laptopsSelector } from '../../Store/Reducer/laptop_api';
+import { getTabletsApi, tabletsSelector } from '../../Store/Reducer/tablet_api';
+import ScaleLoader from 'react-spinners/ScaleLoader';
+
+import AOS from 'aos';
+import { loadingProductHome } from '../../utils/loadingProductHome';
+import ButtonLoading from '../../Components/ButtonLoading';
+import { css } from 'styled-components';
+import { themeSelector } from '../../Store/Reducer/setTheme';
+import { openNotification } from '../../utils/messageAlear';
+import EvaluateWebs from '../../Components/EvaluateWebs';
 
 const text = <span>Cuộn lên đầu trang</span>;
 
@@ -27,146 +41,289 @@ const style = {
     backgroundColor: '#1088e9',
     color: '#fff',
     textAlign: 'center',
-    fontSize: 14,
+    fontSize: 33,
 };
-const contentStyle = {
-    height: '160px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-};
+
+const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+    transition: display 0.5s ease;
+`;
+
 export default function Home() {
+    const [height, setHeight] = useState(760);
+    const [productAll, setProductAll] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const mobile_api = useSelector(mobilesSelector);
+    const laptop_api = useSelector(laptopsSelector);
+    const tablet_api = useSelector(tabletsSelector);
+    // const theme = useSelector(themeSelector);
+    const [minHeight, setMinHeight] = useState(0);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const min = loadingProductHome(productAll);
+        setMinHeight(min);
+    }, [minHeight, productAll]);
+
+    useEffect(() => {
+        AOS.init({
+            duration: 500,
+        });
+    }, []);
+
+    useEffect(() => {
+        setLoading(true);
+        // document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            if (mobile_api.length && laptop_api.length && tablet_api.length) {
+                setLoading(false);
+                document.body.style.overflow = '';
+            }
+        }, 600);
+    }, [laptop_api, mobile_api, tablet_api]);
+
+    useEffect(() => {
+        dispatch(getMobilesApi());
+        dispatch(getLaptopsApi());
+        dispatch(getTabletsApi());
+    }, [dispatch]);
+
+    useEffect(() => {
+        setProductAll([...laptop_api, ...mobile_api, ...tablet_api]);
+    }, [laptop_api, mobile_api, tablet_api]);
+
+    const mobileTabletTop = [...mobile_api, ...tablet_api];
+
+    const handleLoadingProductCart = () => {
+        if (height < minHeight) {
+            setHeight(height + 380);
+        }
+    };
+
+    const handleImportProduct = (products) => {
+        const min = loadingProductHome(products);
+        setMinHeight(min);
+        setProductAll(products);
+        setHeight(loadingProductHome(products));
+    };
+    // handle category product Home
+
+    const handleShowMessage = () => {
+        openNotification(
+            'Nhát làm quá nên chưa làm trang này hihi!',
+            'Dỡn chứ để check trang notFound có hoạt động ko á mà',
+        );
+    };
     return (
         <Helmet title="Home">
+            {loading && (
+                <div className="loading__container">
+                    <ScaleLoader
+                        color={'#2963B3'}
+                        loading={loading}
+                        css={override}
+                        size={200}
+                    />
+                </div>
+            )}
             {/* Show heroSlides */}
-            <HeroSlides
-                data={heroSlides}
-                control={true}
-                auto={true}
-                timeOut={6000}
-            />
-            {/* end show heroslides */}
-            {/* section */}
-            <Section>
+            <div className="Home">
+                <HeroSlides
+                    data={heroSlides}
+                    control={true}
+                    auto={true}
+                    timeOut={6000}
+                />
+                {/* end show heroslides */}
+                {/* section */}
+                <Section>
+                    <SectionBody>
+                        <Grid col={4} mdCol={2} smCol={1} gap={20}>
+                            {police.map((item, index) => (
+                                <Link
+                                    to="/policy"
+                                    key={index}
+                                    data-aos="fade-up"
+                                    data-aos-duration="1000"
+                                >
+                                    <PoliceCart
+                                        name={item.name}
+                                        description={item.description}
+                                        icon={item.icon}
+                                        onClick={handleShowMessage}
+                                    />
+                                </Link>
+                            ))}
+                        </Grid>
+                    </SectionBody>
+                </Section>
+                {/* end section */}
+                <SriceShock slideStatus={true} />
+                <GenuineBrand />
+                {/* selling section */}
+                <Section data-aos="fade-up">
+                    <SectionTitle icon="crown">MUA NHIỀU NHẤT</SectionTitle>
+
+                    <Divider
+                        orientation="center"
+                        style={{
+                            transform: 'translateY(30px)',
+                            color: '#c3c3c3',
+                        }}
+                    >
+                        <i className="fad fa-mobile"></i> IPHONE + TABLET
+                    </Divider>
+                    <SectionBody>
+                        <Grid col={4} mdCol={2} smCol={1} gap={20}>
+                            {getProducts(4, mobileTabletTop).map(
+                                (item, index) => (
+                                    <div data-aos="fade-up" key={index}>
+                                        <ProductCart
+                                            id={item.id}
+                                            name={item.name}
+                                            price={item.price}
+                                            status={item.status}
+                                            star={item.star}
+                                            amount={item.amount}
+                                            category={item.category}
+                                            capacity={item.capacity}
+                                            varation={item.varation}
+                                            image={item.image}
+                                            description={item.description}
+                                            priceOld={item.priceOld}
+                                            height="400"
+                                            img_width="95%"
+                                            right="11px"
+                                        ></ProductCart>
+                                    </div>
+                                ),
+                            )}
+                        </Grid>
+                    </SectionBody>
+                    <Divider
+                        orientation="center"
+                        style={{
+                            transform: 'translateY(30px)',
+                            color: '#c3c3c3',
+                        }}
+                    >
+                        <i className="fad fa-laptop"></i> LAPTOP
+                    </Divider>
+                    <SectionBody>
+                        <Grid col={4} mdCol={2} smCol={1} gap={20}>
+                            {getProducts(4, laptop_api).map((item, index) => (
+                                <div data-aos="fade-up" key={index}>
+                                    <ProductCart
+                                        data-aos="fade-up"
+                                        id={item.id}
+                                        name={item.name}
+                                        price={item.price}
+                                        status={item.status}
+                                        star={item.star}
+                                        amount={item.amount}
+                                        category={item.category}
+                                        capacity={item.capacity}
+                                        varation={item.varation}
+                                        image={item.image}
+                                        description={item.description}
+                                        priceOld={item.priceOld}
+                                        height="400"
+                                        img_width="95%"
+                                        right="11px"
+                                    ></ProductCart>
+                                </div>
+                            ))}
+                        </Grid>
+                    </SectionBody>
+                </Section>
+                {/* end selling section */}
+                {/* new arrival section */}
+                <CatgorySelect
+                    // handleCategorySamSung={handleCategorySamSung}
+                    // handleProductAll={handleProductAll}
+                    handleImportProduct={handleImportProduct}
+                    productAll={[...laptop_api, ...mobile_api, ...tablet_api]}
+                />
                 <SectionBody>
-                    <Grid col={4} mdCol={2} smCol={1} gap={20}>
-                        {police.map((item, index) => (
-                            <Link to="/policy" key={index}>
-                                <PoliceCart
-                                    name={item.name}
-                                    description={item.description}
-                                    icon={item.icon}
-                                />
-                            </Link>
-                        ))}
-                    </Grid>
+                    <div
+                        className="cart-products"
+                        style={{ height: height, overflow: 'hidden' }}
+                    >
+                        <Grid col={5} mdCol={2} smCol={1} gap={0}>
+                            {getProducts(21, productAll).map((item, index) => (
+                                <div data-aos="fade-up" key={index}>
+                                    <ProductCart
+                                        id={item.id}
+                                        name={item.name}
+                                        price={item.price}
+                                        status={item.status}
+                                        star={item.star}
+                                        amount={item.amount}
+                                        category={item.category}
+                                        capacity={item.capacity}
+                                        varation={item.varation}
+                                        image={item.image}
+                                        description={item.description}
+                                        priceOld={item.priceOld}
+                                        height="350"
+                                        img_width="90%"
+                                        right="5px"
+                                    ></ProductCart>
+                                </div>
+                            ))}
+                        </Grid>
+                    </div>
                 </SectionBody>
-            </Section>
-            {/* end section */}
-
-            {/* selling section */}
-            <Section>
-                <SectionTitle icon="stars">ĐIỆN THOẠI IPHONE</SectionTitle>
-
+                {/* end arrival section */}
+                <ButtonLoading
+                    name="Xem Thêm"
+                    handleLoadingProductCart={handleLoadingProductCart}
+                    className={
+                        height === minHeight
+                            ? 'btn-loading-product hidden'
+                            : 'btn-loading-product'
+                    }
+                />
+                {/* banner */}
+                {/* end banner */}
+                <Tooltip
+                    placement="top"
+                    title={text}
+                    style={{ right: '76px', bottom: '100px' }}
+                    color="#4267b2"
+                >
+                    <BackTop>
+                        <div style={style}>
+                            <VerticalAlignTopOutlined />
+                        </div>
+                    </BackTop>
+                </Tooltip>
+                <Sidebar />
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                    <Col className="gutter-row" span={12}>
+                    <Col className="gutter-row" span={12} data-aos="fade-right">
                         <Carousel autoplay>
-                            <div>
-                                <img
-                                    alt=""
-                                    src="https://media.istockphoto.com/photos/apple-iphone-during-ios-update-picture-id1226728983?k=6&m=1226728983&s=612x612&w=0&h=63OVcdhRoMFDCG0_Ppo_V2zBHdBkgH1ze1NaHkBQ1tg="
-                                />
-                            </div>
-                            <div>
-                                <img
-                                    alt=""
-                                    src="https://media.istockphoto.com/photos/apple-iphone-11-pro-picture-id1195561906?k=6&m=1195561906&s=612x612&w=0&h=BZTnE8YLuGDNOWQ85cLhjz6W1uyVw9fydwl9vORsacY="
-                                />
-                            </div>
-                            <div>
-                                <img
-                                    alt=""
-                                    src="https://media.istockphoto.com/photos/apple-iphone-11-pro-on-a-wooden-surface-apples-new-smartphone-closeup-picture-id1181690502?k=6&m=1181690502&s=612x612&w=0&h=WQUe5Cd3vaDtk_MJ-MdQONsjzcee_wL7nMnC4uNnzAM="
-                                />
-                            </div>
-                            <div>
-                                <img
-                                    alt=""
-                                    src="https://media.istockphoto.com/photos/iphone-11-pro-max-on-a-dark-background-picture-id1183970747?k=6&m=1183970747&s=612x612&w=0&h=MCvFbF-ZfHi15qdGILtBPibRD3cd_gJ37FlaoLdr-Vo="
-                                />
-                            </div>
+                            {slide_home.map((item, index) => (
+                                <div key={index}>
+                                    <img alt={item.title} src={item.img} />
+                                </div>
+                            ))}
                         </Carousel>
                     </Col>
-                    <Col className="gutter-row" span={12}>
+                    <Col className="gutter-row" span={12} data-aos="fade-left">
                         <iframe
                             style={{ width: '100%', height: '100%' }}
                             src="https://www.youtube.com/embed/ikzXR2iV7Zs"
                             title="YouTube video player"
-                            frameborder="0"
+                            frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
+                            allowFullScreen
                         ></iframe>
                     </Col>
                 </Row>
-                <Divider
-                    orientation="center"
-                    style={{ transform: 'translateY(30px)', color: '#c3c3c3' }}
-                >
-                    IPHONE
-                </Divider>
-                <SectionBody>
-                    <Grid col={4} mdCol={2} smCol={1} gap={20}>
-                        {productData.getProducts(4).map((item, index) => (
-                            <ProductCart
-                                key={index}
-                                img01={item.image01}
-                                img02={item.image02}
-                                name={item.title}
-                                price={+item.price}
-                                slug={item.slug}
-                            ></ProductCart>
-                        ))}
-                    </Grid>
-                </SectionBody>
-            </Section>
-            {/* end selling section */}
-            {/* new arrival section */}
-            <Section>
-                <SectionTitle icon="stars"></SectionTitle>
-                <SectionBody>
-                    <Grid col={4} mdCol={2} smCol={1} gap={20}>
-                        {productData.getProducts(8).map((item, index) => (
-                            <ProductCart
-                                key={index}
-                                img01={item.image01}
-                                img02={item.image02}
-                                name={item.title}
-                                price={+item.price}
-                                slug={item.slug}
-                            ></ProductCart>
-                        ))}
-                    </Grid>
-                </SectionBody>
-            </Section>
-            {/* end arrival section */}
-
-            {/* banner */}
-
-            {/* end banner */}
-            <Tooltip
-                placement="top"
-                title={text}
-                style={{ right: '76px', bottom: '100px' }}
-                color="#4267b2"
-            >
-                <BackTop>
-                    <div style={style}>
-                        <UpOutlined />
-                    </div>
-                </BackTop>
-            </Tooltip>
-            <Sidebar />
+                <EvaluateWebs />
+            </div>
         </Helmet>
     );
 }

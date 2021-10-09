@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Grid(props) {
-    const { col, mdCol, smCol, gap, children } = props;
+    const { col, mdCol, smCol, gap, children, bgr } = props;
 
     const styles = {
         gap: gap ? `${gap}px` : '0',
+        background: bgr ? '#fff' : '',
     };
 
     const colVl = col ? `grid-col-${col}` : '';

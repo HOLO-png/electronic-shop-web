@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Form, Input, Button, Row, Col, Divider, Tag, Cascader } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Modal from 'antd/lib/modal/Modal';
 import TextArea from 'antd/lib/input/TextArea';
+import { AuthContext } from '../../../../Context/AuthProvider';
+import { useDispatch, useSelector } from 'react-redux';
+import SelecteValue from '../../../Pay/DeliveryAddress/ModalAddress/SelecteValue';
+import {
+    addressApiSelector,
+    getAddressApi,
+} from '../../../../Store/Reducer/apiAddress';
+import {
+    addressUserApiSelector,
+    getAddressUserApi,
+    insertAddressUserApi,
+} from '../../../../Store/Reducer/addressUserApi';
 
 const FileUserAddress = styled.div`
     display: flex;
@@ -53,50 +65,56 @@ const FileUserInfo = styled.div`
         display: flex;
     }
 `;
-const residences = [
-    {
-        value: 'Quảng Nam',
-        label: 'Quảng Nam',
-        children: [
-            {
-                value: 'Tam Kỳ',
-                label: 'Tam Kỳ',
-                children: [
-                    {
-                        value: 'Tam Thăng',
-                        label: 'Tam Thăng',
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        value: 'Quảng Ngãi',
-        label: 'Quảng Ngãi',
-        children: [
-            {
-                value: 'Bình Chương',
-                label: 'Bình Chương',
-                children: [
-                    {
-                        value: 'Gò Vấp',
-                        label: 'Gò Vấp',
-                    },
-                ],
-            },
-        ],
-    },
-];
 function AddressUser(props) {
+    const data = React.useContext(AuthContext);
+    const dispatch = useDispatch();
+    const address_api = useSelector(addressApiSelector);
+    const address_user_api = useSelector(addressUserApiSelector);
     const [modal, setModal] = useState(false);
     const [value, setValue] = useState(1);
+    const [nameUser, setNameUser] = useState('');
+    const [numberPhone, setNumberPhone] = useState('');
+    const [objAddress, setObjAddress] = useState({});
+
+    const { uid } = data.user;
+
+    useEffect(() => {
+        dispatch(getAddressUserApi());
+    }, [dispatch]);
+
+    console.log('dia chi', address_user_api);
 
     const onChange = (e) => {
         console.log('radio checked', e.target.value);
         setValue(e.target.value);
     };
+
+    const onChangeName = (e) => {
+        setNameUser(e.target.value);
+    };
+
+    const onChangeNumberPhone = (e) => {
+        setNumberPhone(e.target.value);
+    };
+
     const setModal1Visible = (modal1Visible) => {
         setModal(modal1Visible);
+        dispatch(getAddressApi());
+    };
+
+    const onHandleValueImportAddress = (obj) => {
+        setObjAddress(obj);
+    };
+
+    const handleImportAddressUser = () => {
+        const addressUserObj = {
+            ...objAddress,
+            id_user: uid,
+            name_user: nameUser,
+            number_phone: numberPhone,
+        };
+        setModal(false);
+        dispatch(insertAddressUserApi(addressUserObj));
     };
     return (
         <FileUserAddress>
@@ -122,14 +140,14 @@ function AddressUser(props) {
                             icon={<PlusOutlined />}
                             onClick={() => setModal1Visible(true)}
                         >
-                            Thêm Thẻ Mới
+                            Thêm Địa Chỉ Mới
                         </Button>
                         <Modal
                             title="Địa chỉ mới"
                             centered
                             style={{ top: 20 }}
                             visible={modal}
-                            onOk={() => setModal1Visible(false)}
+                            onOk={() => handleImportAddressUser()}
                             onCancel={() => setModal1Visible(false)}
                         >
                             <Form
@@ -147,43 +165,45 @@ function AddressUser(props) {
                                     label="Họ và Tên"
                                     style={{ margin: 0, fontSize: '16px' }}
                                 >
-                                    <Input placeholder="Họ và tên" />
+                                    <Input
+                                        placeholder="Họ và tên"
+                                        onChange={onChangeName}
+                                    />
                                 </Form.Item>
                                 <Form.Item
                                     label="Số điện thoại"
                                     style={{ margin: 0 }}
                                 >
-                                    <Input placeholder="Số điện thoại" />
+                                    <Input
+                                        placeholder="Số điện thoại"
+                                        onChange={onChangeNumberPhone}
+                                    />
                                 </Form.Item>
                                 <Form.Item
-                                    name="residence"
-                                    label="Địa chỉ"
-                                    rules={[
-                                        {
-                                            type: 'array',
-                                            required: true,
-                                            message:
-                                                'Tỉnh - Thành Phố - Huyện/Xã',
-                                        },
-                                    ]}
+                                    label="Địa Chỉ"
+                                    style={{ margin: 0 }}
                                 >
-                                    <Cascader options={residences} />
-                                </Form.Item>
-                                <Form.Item label="Địa chỉ cụ thể">
-                                    <TextArea
-                                        rows={4}
-                                        placeholder="Địa chỉ cụ thể"
+                                    <SelecteValue
+                                        active={1}
+                                        address_api={address_api}
+                                        onHandleValueImportAddress={
+                                            onHandleValueImportAddress
+                                        }
+                                        widthInput="160px"
                                     />
                                 </Form.Item>
 
                                 <Form.Item label="Loại Địa Chỉ">
                                     <Button
                                         type="dashed"
-                                        style={{ marginRight: '10px' }}
+                                        style={{ margin: '10px 10px' }}
+                                        disabled
                                     >
                                         Nhà Riêng
                                     </Button>
-                                    <Button type="dashed">Văn Phòng</Button>
+                                    <Button type="dashed" disabled>
+                                        Văn Phòng
+                                    </Button>
                                 </Form.Item>
                             </Form>
                         </Modal>
@@ -227,7 +247,9 @@ function AddressUser(props) {
                                     display: 'flex',
                                 }}
                             >
-                                <p className="user-name">Bui Hoang Long</p>
+                                <p className="user-name">
+                                    {address_user_api[0].name_user}
+                                </p>
                                 <Tag color="green">Mặc Định</Tag>
                             </Form.Item>
 
@@ -235,12 +257,16 @@ function AddressUser(props) {
                                 label="Số Điện Thoại"
                                 style={{ margin: 0 }}
                             >
-                                <p className="user-name">(+84) 396533849</p>
+                                <p className="user-name">
+                                    (+84) {address_user_api[0].number_phone}
+                                </p>
                             </Form.Item>
                             <Form.Item label="Địa Chỉ">
                                 <p className="user-name">
-                                    43-Bàu Tràm 1 Phường Khuê Trung Quận Cẩm Lệ
-                                    Đà Nẵng
+                                    {address_user_api[0].mota} ~{' '}
+                                    {address_user_api[0].xa} ~{' '}
+                                    {address_user_api[0].quan} ~{' '}
+                                    {address_user_api[0].tinh}
                                 </p>
                             </Form.Item>
                         </Form>
@@ -266,9 +292,6 @@ function AddressUser(props) {
                                 Xoá
                             </Button>
                         </div>
-                        <Button disabled style={{ marginTop: '20px' }}>
-                            Thiết Lập Mặc Định
-                        </Button>
                     </FileUserInfo>
                 </Col>
             </Row>

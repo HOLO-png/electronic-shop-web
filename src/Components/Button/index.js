@@ -2,7 +2,7 @@ import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 
 function Button(props) {
-    const { bgBtn, size, icon, animate, onclick, children } = props;
+    const { bgBtn, size, icon, animate, onclick, children, width } = props;
     const bg = bgBtn ? `bg-${bgBtn}` : 'bg-main';
     const sz = size ? `btn-${size}` : '';
     const anmt = animate ? 'btn-animate' : '';
@@ -11,6 +11,7 @@ function Button(props) {
         <button
             className={`btn ${bg} ${sz} ${anmt}`}
             onClick={onclick ? () => onclick() : null}
+            style={{ width: width }}
         >
             <span className="btn__txt">{children}</span>
             {icon ? (

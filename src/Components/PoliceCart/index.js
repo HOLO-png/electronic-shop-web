@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function PoliceCart(props) {
-    const { name, description, icon } = props;
+    const { name, description, icon, onClick } = props;
     return (
-        <div className="police-cart">
+        <div className="police-cart" onClick={onClick}>
             <div className="police-cart__icon">
                 <i className={`fas fa-${icon}`}></i>
             </div>

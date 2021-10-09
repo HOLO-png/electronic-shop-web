@@ -19,9 +19,16 @@ const footerCustomLink = [
 export default function Footer() {
     return (
         <footer className="footer">
-            <div className="container">
-                <Grid col={4} mdCol={2} smCol={1} gap={10}>
-                    <div>
+            <div className="container container-footer">
+                <Grid
+                    col={4}
+                    mdCol={2}
+                    smCol={1}
+                    gap={10}
+                    bgr={false}
+                    className="footer-item"
+                >
+                    <div className="footer-item">
                         <div className="footer__title">Support call center</div>
                         <div className="footer__content">
                             <p>
@@ -36,7 +43,7 @@ export default function Footer() {
                             </p>
                         </div>
                     </div>
-                    <div>
+                    <div className="footer-item">
                         <div className="footer__title">About Iphone</div>
                         <div className="footer__content">
                             {footerAboutLink.map((item, index) => (
@@ -46,7 +53,7 @@ export default function Footer() {
                             ))}
                         </div>
                     </div>
-                    <div>
+                    <div className="footer-item">
                         <div className="footer__title">Customer care</div>
                         <div className="footer__content">
                             {footerCustomLink.map((item, index) => (
@@ -56,12 +63,12 @@ export default function Footer() {
                             ))}
                         </div>
                     </div>
-                    <div className="footer__about">
+                    <div className="footer__about footer-item">
                         <p>
                             <Link to="/">
                                 <img
                                     alt=""
-                                    src={logo}
+                                    src="https://www.gameartguppy.com/wp-content/uploads/2017/06/logo-apple.png"
                                     className="footer__logo"
                                 />
                             </Link>

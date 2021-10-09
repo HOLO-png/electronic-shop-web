@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Affix, Alert, Button, Col, Row, Checkbox } from 'antd';
+import { Affix, Alert, Button, Col, Row, Checkbox, message } from 'antd';
 import styled from 'styled-components';
+import numberWithCommas from '../../../utils/numberWithCommas';
+import { Link } from 'react-router-dom';
+import SummaryVoucher from './SummaryVoucher';
+import SummaryCoin from './SummaryCoin';
+import SummaryProductQerarion from './SummaryProductQerarion';
 
 const SummaryStyled = styled.div`
+    margin-bottom: 20px;
     margin-top: 10px;
     background: #fff;
     padding: 10px 0;
@@ -52,95 +58,32 @@ const SummaryStyled = styled.div`
     }
 `;
 function Summary(props) {
-    const [bottom, setBottom] = useState(10);
+    const {
+        totalProducts,
+        onChangeAllProduct,
+        cartProduct,
+        deleteProductToCart,
+        handleBuyProductCheck,
+        handleBuyProductToPay,
+        handleTextInfoAllSelect,
+        handleTextInfoDelete,
+    } = props;
 
     return (
-        <Affix offsetBottom={bottom}>
+        <Affix offsetBottom={10}>
             <SummaryStyled>
-                <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                    <Col className="gutter-row" span={12}></Col>
-                    <Col className="gutter-row" span={12}>
-                        <div className="summary-voucher">
-                            <i
-                                class="fad fa-hand-holding-usd"
-                                style={{ color: 'red' }}
-                            ></i>
-                            <p className="summary-voucher-name">
-                                Shopee Voucher
-                            </p>
-                        </div>
-                        <div className="summary-btn">
-                            <Button>Chọn Hoặc Nhập Mã</Button>
-                        </div>
-                    </Col>
-                </Row>
-                <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                    <Col className="gutter-row" span={12}></Col>
-                    <Col className="gutter-row" span={12}>
-                        <Checkbox
-                            // indeterminate={indeterminate}
-                            // onChange={onCheckAllChange}
-                            // checked={checkAll}
-                            disabled
-                        >
-                            Shopee Xu
-                        </Checkbox>
-                        <div className="summary-coin">
-                            <i
-                                class="fad fa-usd-circle"
-                                style={{ color: '#c7c700' }}
-                            ></i>
-                            <p className="summary-voucher-name">
-                                Shopee Voucher
-                            </p>
-                        </div>
-                        <div className="summary-check-title">
-                            <i
-                                class="fad fa-question-circle"
-                                style={{ color: '#0000b8' }}
-                            ></i>
-                            <p className="summary-voucher-name">
-                                Bạn chưa có Shopee Xu
-                            </p>
-                        </div>
-                        <div className="summary-check-title">
-                            <p> -đ0</p>
-                        </div>
-                    </Col>
-                </Row>
-                <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                    <Col className="gutter-row" span={4}>
-                        <Checkbox
-                        // indeterminate={indeterminate}
-                        // onChange={onCheckAllChange}
-                        // checked={checkAll}
-                        >
-                            Chọn Tất Cả (5)
-                        </Checkbox>
-                    </Col>
-                    <Col className="gutter-row" span={1}>
-                        <Button type="text">Xoá</Button>
-                    </Col>
-                    <Col className="gutter-row" span={5}>
-                        <Button type="text">Bỏ Sản Phẩm Không Hoạt động</Button>
-                    </Col>
-                    <Col className="gutter-row" span={4}>
-                        <Button type="text">Lưu Vào Mục Đã Thêm</Button>
-                    </Col>
-                    <Col
-                        className="gutter-row"
-                        span={6}
-                        style={{ display: 'flex', alignItems: 'center' }}
-                    >
-                        Tổng thanh toán (0 Sản phẩm):
-                        <p className="summary-coin-value">₫0</p>
-                    </Col>
-                    <Col className="gutter-row" span={4}>
-                        <Button type="danger" size="large">
-                            Mua Hàng
-                        </Button>
-                    </Col>
-                </Row>
+                <SummaryVoucher />
+                <SummaryCoin />
+                <SummaryProductQerarion
+                    handleTextInfoAllSelect={handleTextInfoAllSelect}
+                    handleTextInfoDelete={handleTextInfoDelete}
+                    totalProducts={totalProducts}
+                    cartProduct={cartProduct}
+                    handleBuyProductCheck={handleBuyProductCheck}
+                    onChangeAllProduct={onChangeAllProduct}
+                    deleteProductToCart={deleteProductToCart}
+                    handleBuyProductToPay={handleBuyProductToPay}
+                />
             </SummaryStyled>
         </Affix>
     );

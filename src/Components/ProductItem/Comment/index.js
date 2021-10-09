@@ -1,37 +1,37 @@
-import React, { createElement, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import {
-    Comment,
-    Avatar,
-    Form,
-    Button,
-    Input,
-    Rate,
-    Tooltip,
-    Pagination,
-} from 'antd';
+import Paginations from './Pagination/index';
+import { Comment, Avatar, Form, Button, Input, Rate } from 'antd';
 import moment from 'moment';
-import {
-    DislikeFilled,
-    DislikeOutlined,
-    LikeFilled,
-    LikeOutlined,
-} from '@ant-design/icons';
 import UploadItem from './Upload';
+import CommentItem from './CommentItem';
+import { desc } from '../../../assets/fake-data';
 const { TextArea } = Input;
 
-const Editor = ({ onChange, onSubmit, submitting, value }) => (
+const Editor = ({
+    onChange,
+    onSubmit,
+    submitting,
+    value,
+    star,
+    handleChangeStar,
+    importImg,
+    img,
+    video,
+}) => (
     <>
-        <Rate />
+        <p className="comment_author-name">Bùi Hoàng Long</p>
+        <Rate tooltips={desc} onChange={handleChangeStar} defaultValue={star} />
+        {star ? <span className="ant-rate-text">{desc[star - 1]}</span> : ''}
         <Form.Item>
             <TextArea
                 rows={4}
                 onChange={onChange}
-                value={value}
+                defaultValue={value}
                 placeholder="Nhập bình luận của bạn..."
             />
         </Form.Item>
-        <UploadItem />
+        <UploadItem importImg={importImg} img={img} video={video} />
         <Form.Item>
             <Button
                 htmlType="submit"
@@ -45,96 +45,69 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
         </Form.Item>
     </>
 );
-function onShowSizeChange(current, pageSize) {
-    console.log(current, pageSize);
-}
 function Comments(props) {
+    const { commentsUser, product, handleInSertCmt, handleComments } = props;
     const [comments, setComments] = useState([]);
     const [submitting, setSubmitting] = useState(false);
     const [value, setValue] = useState('');
     const [star, setStar] = useState(0);
-    const [likes, setLikes] = useState(0);
-    const [dislikes, setDislikes] = useState(0);
-    const [action, setAction] = useState(null);
-    const [pagina, setPagina] = useState(false);
+    const [img, setimg] = useState([]);
+    const [video, setvideo] = useState([]);
 
-    const CommentList = ({ comments }) =>
-        comments.map((item, key) => (
-            <Comment
-                actions={actions}
-                author={<a>{item.author}</a>}
-                avatar={<Avatar src={item.avatar} alt={item.author} />}
-                content={item.content}
-                datetime={
-                    <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
-                        <span>{item.datetime}</span>
-                    </Tooltip>
-                }
-            />
-        ));
+    useEffect(() => {
+        setComments(commentsUser);
+    }, [commentsUser]);
 
     const handleSubmit = () => {
         if (!value) {
             return;
         }
-
         setSubmitting(true);
-
         setTimeout(() => {
             setSubmitting(false);
             setValue('');
-            setComments([
-                ...comments,
-                {
-                    star: star,
-                    type_product: 'Bamboo - Tre',
-                    author: 'Han Solo',
-                    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-                    content: <p>{value}</p>,
-                    datetime: moment().fromNow(),
+            setStar(0);
+            setimg([]);
+            setvideo([]);
+            handleInSertCmt({
+                star: star,
+                id_product: product.id,
+                id_user: 'BHL190101',
+                address:
+                    'Thôn Xuân Quý - Xã Tam Thăng - Tp Tam kỳ - tỉnh Quảng Nam',
+                like: 0,
+                dislike: 0,
+                type_product: 'Điện Thoại Vsmast Joy 4 - Hàng Chính Hãng',
+                author: 'Bui Hoang Long',
+                avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+                content: value,
+                datetime: moment().format('YYYY-MM-DD HH:mm:ss'),
+                orther: {
+                    image: img,
+                    video: video,
                 },
-            ]);
+                cmt_item: [],
+            });
         }, 1000);
     };
+
     const handleChange = (e) => {
         setValue(e.target.value);
     };
-    const handleChangeStar = (e) => {
-        setStar(e.target.value);
-    };
-    const like = () => {
-        setLikes(1);
-        setDislikes(0);
-        setAction('liked');
+
+    const handleChangeStar = (value) => {
+        setStar(value);
     };
 
-    const dislike = () => {
-        setLikes(0);
-        setDislikes(1);
-        setAction('disliked');
+    const importImg = (img) => {
+        img.forEach((element) => {
+            if (element.type === 'video/mp4') {
+                setvideo([element]);
+            } else {
+                setimg([element]);
+            }
+        });
     };
-    const actions = [
-        <Tooltip key="comment-basic-Star" title="Star">
-            <span onClick={star}>
-                <Rate defaultValue={5} disabled />
-            </span>
-        </Tooltip>,
-        <Tooltip key="comment-basic-like" title="Like">
-            <span onClick={like}>
-                {createElement(action === 'liked' ? LikeFilled : LikeOutlined)}
-                <span className="comment-action">{likes}</span>
-            </span>
-        </Tooltip>,
-        <Tooltip key="comment-basic-dislike" title="Dislike">
-            <span onClick={dislike}>
-                {React.createElement(
-                    action === 'disliked' ? DislikeFilled : DislikeOutlined,
-                )}
-                <span className="comment-action">{dislikes}</span>
-            </span>
-        </Tooltip>,
-        <span key="comment-basic-reply-to">Reply to</span>,
-    ];
     return (
         <>
             <Comment
@@ -150,17 +123,16 @@ function Comments(props) {
                         onSubmit={handleSubmit}
                         submitting={submitting}
                         value={value}
+                        star={star}
+                        handleChangeStar={handleChangeStar}
+                        importImg={importImg}
+                        img={img}
+                        video={video}
                     />
                 }
             />
-            {comments.length > 0 && <CommentList comments={comments} />}
-            <Pagination
-                showSizeChanger
-                onShowSizeChange={onShowSizeChange}
-                defaultCurrent={3}
-                total={500}
-                style={{ padding: '20px', marginLeft: '30%' }}
-            />
+            <CommentItem comments={comments} handleComments={handleComments} />
+            <Paginations />
             <br />
         </>
     );

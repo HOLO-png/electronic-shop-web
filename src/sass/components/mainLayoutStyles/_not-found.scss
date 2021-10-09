@@ -1,12 +1,12 @@
 .not-found {
-    background-color: $main-bg;
     width: 81%;
     height: 100vh;
     color: $txt-second-color;
     font-size: 100%;
     line-height: 1.5;
     font-family: $font-family;
-    position: fixed;
+    position: relative;
+    left: 10%;
 
     &__btn {
         font-weight: 300;

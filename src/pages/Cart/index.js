@@ -1,14 +1,37 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Helmet from '../../Components/Helmet';
-import { Alert, Col, Row, Checkbox, Affix, Button } from 'antd';
-import CartItems from '../../Components/Cart/CartItems';
-import Summary from '../../Components/Cart/Summary';
-const CheckboxGroup = Checkbox.Group;
-
-const plainOptions = ['Apple'];
-const defaultCheckedList = ['Apple', 'Orange'];
+import { message } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    cartProductsSelector,
+    deleteCartProductAllApi,
+    getCartProduct,
+    updateCartProduct,
+} from '../../Store/Reducer/cart';
+import {
+    handleAddCoinsProduct,
+    handleRemoveCoinsProduct,
+    handleUpdateCoinsProduct,
+    resetProductCoints,
+    totalProductsSelector,
+} from '../../Store/Reducer/totalProduct';
+import Popup from '../../Components/Cart/Popup';
+import CartEmpty from '../../Components/Cart/CartEmpty';
+import CartItemProducts from '../../Components/Cart/CartItemProducts';
+import CartSummary from '../../Components/Cart/CartSummary';
+import ScaleLoader from 'react-spinners/ScaleLoader';
+import SriceShock from '../../Components/SriceShock';
+import { getMobilesApi, mobilesSelector } from '../../Store/Reducer/mobile_api';
+import { getTabletsApi, tabletsSelector } from '../../Store/Reducer/tablet_api';
+import { getLaptopsApi, laptopsSelector } from '../../Store/Reducer/laptop_api';
+import {
+    handleSearchLaptopSimilar,
+    handleSearchMobileSimilar,
+    handleSearchTabletSimilar,
+    searchSimilarSelector,
+} from '../../Store/Reducer/searchSimilar';
 
 const CartPage = styled.div`
     display: flex;
@@ -34,7 +57,7 @@ const CartPage = styled.div`
         justify-content: center;
         display: flex;
         align-items: center;
-        background: #f4f4f4;
+        background: #ffffff;
         margin: 10px 0;
     }
     .ant-checkbox + span {
@@ -55,76 +78,322 @@ const CartPage = styled.div`
     }
     p.cart-title {
         margin: 0 10px;
-        width: 75%;
+        width: 90%;
         padding: 10px;
     }
     .cart-product {
-        width: 60%;
+        width: 50%;
     }
     .cart-footer {
         display: flex;
         justify-content: center;
         align-items: baseline;
     }
+    .ant-col.ant-col-3.gutter-row {
+        text-align: center;
+    }
+    .ant-skeleton.ant-skeleton-element.ant-skeleton-active {
+        width: 100%;
+        height: 60px;
+    }
+    .cart-seklentor {
+        width: 100%;
+        height: 200px !important;
+        margin-bottom: 20px;
+    }
+    .ant-dropdown.ant-dropdown-placement-bottomLeft {
+        width: 100%;
+        padding: 20px 176px;
+        position: absolute;
+        transform: translateX(-13px);
+    }
+    .btn-show-search-product-similar {
+        &:after {
+            content: '';
+            width: 74%;
+            height: 10px;
+            background: #fefefe;
+            position: absolute;
+            top: 75px;
+            z-index: 2;
+            right: 19px;
+        }
+    }
+    .input-product-checkbox {
+        .ant-checkbox {
+            transform: scale(1.5);
+            .ant-checkbox-inner {
+                top: -30px;
+            }
+        }
+    }
+`;
+
+const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+    transition: display 0.5s ease;
 `;
 function Cart(props) {
-    const [checkedList, setCheckedList] = useState(defaultCheckedList);
-    const [indeterminate, setIndeterminate] = useState(true);
-    const [checkAll, setCheckAll] = useState(false);
+    const dispatch = useDispatch();
+    const cartProducts = useSelector(cartProductsSelector);
+    const totalProducts = useSelector(totalProductsSelector);
+    const searchSimilarProducts = useSelector(searchSimilarSelector);
 
-    const onCheckAllChange = (e) => {
-        setCheckedList(e.target.checked ? plainOptions : []);
-        setIndeterminate(false);
-        setCheckAll(e.target.checked);
+    const mobile_api = useSelector(mobilesSelector);
+    const tablet_api = useSelector(tabletsSelector);
+    const laptop_api = useSelector(laptopsSelector);
+
+    const [modal, setModal] = useState(false);
+    const [currentProduct, setCurrentProduct] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [cartProduct, setCartProduct] = useState([]);
+    const [activeSearchSimilar, setActiveSearchSimilar] = useState(null);
+    const [statusSearchSimilar, setStatusSearchSimilar] = useState(false);
+    // console.info(totalProducts);
+    console.info(cartProduct);
+
+    console.info(searchSimilarProducts);
+
+    useEffect(() => {
+        setLoading(true);
+        document.body.style.overflow = 'hidden';
+        setCartProduct(cartProducts);
+        setTimeout(() => {
+            if (cartProduct.length) {
+                setLoading(false);
+                document.body.style.overflow = '';
+            }
+        }, 500);
+        !cartProduct.length && setLoading(false);
+    }, [cartProduct.length, cartProducts]);
+
+    useEffect(() => {
+        dispatch(getCartProduct());
+        return () => {
+            dispatch(resetProductCoints([]));
+        };
+    }, [dispatch]);
+
+    useEffect(() => {
+        dispatch(getMobilesApi());
+        dispatch(getLaptopsApi());
+        dispatch(getTabletsApi());
+    }, [dispatch]);
+
+    const handleAmount = (obj) => {
+        if (obj.amount === 0) {
+            setModal(true);
+            setCurrentProduct([obj]);
+        } else {
+            dispatch(updateCartProduct(obj));
+            dispatch(handleUpdateCoinsProduct(obj));
+        }
+    };
+
+    const setModalVisibleAlear = () => {
+        currentProduct.forEach(async (element) => {
+            await dispatch(deleteCartProductAllApi(element));
+            await dispatch(handleRemoveCoinsProduct(element));
+        });
+        setModal(false);
+    };
+
+    const setModalVisibleCancel = () => {
+        setModal(false);
+    };
+
+    const onChangeAllProduct = (e) => {
+        handleStatusChange('allSelect', e.target.checked);
+    };
+
+    const deleteProductToCart = () => {
+        if (totalProducts.length) {
+            setModal(true);
+            setCurrentProduct(totalProducts);
+        } else {
+            messageToCart(true);
+        }
+    };
+
+    const messageToCart = (status) => {
+        if (status) {
+            message.warning({
+                content: 'Vui Lòng Chọn Sản Phẩm!',
+                className: 'custom-class',
+                style: {
+                    marginTop: '0vh',
+                },
+            });
+        }
+    };
+
+    const handleBuyProductCheck = () => {
+        !totalProducts.length && messageToCart(true);
+    };
+
+    const handleBuyProductToPay = () => {
+        const linkText = totalProducts.reduce((accumulator, item) => {
+            return accumulator + `${item.id}=`;
+        }, '');
+
+        if (!totalProducts.length) {
+            return '#';
+        } else {
+            return `/checkout/${linkText}`;
+        }
+    };
+
+    const handleStatusChange = (id, status) => {
+        if (id === 'allSelect') {
+            let tempSelectAll = cartProduct.map((item) => {
+                return { ...item, isChecked: status };
+            });
+            setCartProduct(tempSelectAll);
+        } else {
+            let tempProducts = cartProduct.map((item) =>
+                item.id === id ? { ...item, isChecked: status } : item,
+            );
+            setCartProduct(tempProducts);
+        }
+    };
+
+    const handleImportProductToTotal = (obj, status) => {
+        if (status) {
+            dispatch(handleAddCoinsProduct(obj));
+        } else {
+            dispatch(handleRemoveCoinsProduct(obj));
+        }
+    };
+
+    const handleTextInfoDelete = () => {
+        const text1 = (
+            <span>
+                Xoá {totalProducts.length} Sản Phẩm{' '}
+                <i className="fad fa-trash-alt"></i>
+            </span>
+        );
+
+        const text2 = (
+            <span>
+                Bạn Chưa Có Sản Phẩm Nào <i className="fad fa-sad-tear"></i>
+            </span>
+        );
+
+        return totalProducts.length ? text1 : text2;
+    };
+
+    const handleTextInfoAllSelect = () => {
+        const text1 = (
+            <span>
+                Nhấn vào để chọn tất cả <i className="fad fa-hand-pointer"></i>
+            </span>
+        );
+
+        const text2 = (
+            <span>
+                Nhấn vào để bỏ chọn tất cả{' '}
+                <i className="fad fa-hand-pointer"></i>
+            </span>
+        );
+
+        return totalProducts.length === cartProduct.length ? text2 : text1;
+    };
+
+    const handleShowSearchProductActive = (index, product) => {
+        const dataSearchToObj = {
+            category: product.category,
+            trademark: product.trademark,
+            name: product.name,
+        };
+
+        switch (dataSearchToObj.category) {
+            case 'tablet':
+                tablet_api.length &&
+                    dispatch(
+                        handleSearchTabletSimilar({
+                            tablet_api,
+                            dataSearchToObj,
+                        }),
+                    );
+                break;
+            case 'mobile':
+                mobile_api.length &&
+                    dispatch(
+                        handleSearchMobileSimilar({
+                            mobile_api,
+                            dataSearchToObj,
+                        }),
+                    );
+                break;
+            case 'laptop':
+                laptop_api.length &&
+                    dispatch(
+                        handleSearchLaptopSimilar({
+                            laptop_api,
+                            dataSearchToObj,
+                        }),
+                    );
+                break;
+            default:
+                break;
+        }
+        setActiveSearchSimilar(index);
+        setStatusSearchSimilar(!statusSearchSimilar);
     };
 
     return (
         <Helmet title="Cart">
+            {loading && (
+                <div className="loading__container">
+                    <ScaleLoader
+                        color={'#2963B3'}
+                        loading={loading}
+                        css={override}
+                        size={200}
+                    />
+                </div>
+            )}
             <CartPage>
-                <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                    <Col className="gutter-row" span={24}>
-                        <Alert
-                            message="Thông báo"
-                            description="Nhấn vào mục Mã giảm giá ở cuối trang để hưởng miễn phí vận chuyển bạn nhé!"
-                            type="warning"
-                            showIcon
-                            closable
-                        />
-                    </Col>
-                </Row>
-                <Row
-                    gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
-                    className="header-row"
-                >
-                    <Col className="gutter-row" span={12}>
-                        <Checkbox
-                            indeterminate={indeterminate}
-                            onChange={onCheckAllChange}
-                            checked={checkAll}
-                        >
-                            Sản Phẩm
-                        </Checkbox>
-                    </Col>
-                    <Col className="gutter-row" span={3}>
-                        Đơn Giá
-                    </Col>
-                    <Col className="gutter-row" span={3}>
-                        Số Lượng
-                    </Col>
-                    <Col className="gutter-row" span={3}>
-                        Số Tiền
-                    </Col>
-                    <Col className="gutter-row" span={3}>
-                        Thao Tác
-                    </Col>
-                </Row>
-                <CartItems />
-                <CartItems />
-                <CartItems />
-                <CartItems />
-                <CartItems />
-                <CartItems />
-                <Summary />
+                <CartEmpty cartProduct={cartProduct} loading={loading} />
+
+                <CartItemProducts
+                    cartProduct={cartProduct}
+                    handleAmount={handleAmount}
+                    totalProducts={totalProducts}
+                    loading={loading}
+                    handleStatusChange={handleStatusChange}
+                    handleImportProductToTotal={handleImportProductToTotal}
+                    activeSearchSimilar={activeSearchSimilar}
+                    handleShowSearchProductActive={
+                        handleShowSearchProductActive
+                    }
+                    statusSearchSimilar={statusSearchSimilar}
+                    mobile_api={mobile_api}
+                    searchSimilarProducts={searchSimilarProducts}
+                />
+
+                <CartSummary
+                    cartProduct={cartProduct}
+                    totalProducts={totalProducts}
+                    onChangeAllProduct={onChangeAllProduct}
+                    deleteProductToCart={deleteProductToCart}
+                    loading={loading}
+                    handleBuyProductCheck={handleBuyProductCheck}
+                    handleBuyProductToPay={handleBuyProductToPay}
+                    handleTextInfoAllSelect={handleTextInfoAllSelect}
+                    handleTextInfoDelete={handleTextInfoDelete}
+                />
+
+                <Popup
+                    modal={modal}
+                    setModalVisibleAlear={setModalVisibleAlear}
+                    currentproduct={currentProduct}
+                    setModalVisibleCancel={setModalVisibleCancel}
+                />
+
+                <SriceShock title="CÓ THỂ BẠN CŨNG THÍCH" slideStatus={false} />
             </CartPage>
         </Helmet>
     );

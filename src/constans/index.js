@@ -24,20 +24,23 @@ import Cart from '../pages/Cart';
 import Mobile from '../pages/Mobile';
 import Laptop from '../pages/Laptop';
 import Tablet from '../pages/Tablet';
-import Accessory1 from '../pages/Accessories/Accessory1';
-import Accessory2 from '../pages/Accessories/Accessory2';
-const Home = React.lazy(() => import('../pages/Home'));
+import News from '../pages/News';
+import Search from '../pages/Search';
+import Pay from '../pages/Pay';
+import Home from '../pages/Home';
+import { DashboardFilled } from '@ant-design/icons';
+// const Home = React.lazy(() => import('../pages/Home'));
 
 export const MAIN_ROUTES = [
     {
         name: 'Home',
         path: '/home',
-        exact: false,
+        exact: true,
         component: Home,
     },
     {
         name: 'Products',
-        path: '/catalog/:slug',
+        path: '/:category/:name/:id',
         exact: false,
         component: Products,
     },
@@ -54,10 +57,10 @@ export const MAIN_ROUTES = [
         component: Accessories,
     },
     {
-        name: 'Contact',
-        path: '/contact',
+        name: 'News',
+        path: '/news',
         exact: false,
-        component: Contact,
+        component: News,
     },
     {
         name: 'PurchaseOrder',
@@ -73,33 +76,39 @@ export const MAIN_ROUTES = [
     },
     {
         name: 'Mobile',
-        path: '/category/mobile',
+        path: '/mobile/:keyWork',
         exact: false,
         component: Mobile,
     },
     {
         name: 'Laptop',
-        path: '/category/laptop',
+        path: '/laptop/:keyWork',
         exact: false,
         component: Laptop,
     },
     {
         name: 'Tablet',
-        path: '/category/tablet',
+        path: '/tablet/:keyWork',
         exact: false,
         component: Tablet,
     },
     {
-        name: 'AccessoryMobile',
-        path: '/category/accessory-mobile',
+        name: 'OrderProducts',
+        path: '/checkout/:linkText',
         exact: false,
-        component: Accessory1,
+        component: Pay,
     },
     {
-        name: 'AccessoryLaptop',
-        path: '/category/accessory-laptop',
+        name: 'SearchProduct',
+        path: '/search/:keyWord',
         exact: false,
-        component: Accessory2,
+        component: Search,
+    },
+    {
+        name: 'NotFound',
+        path: '*',
+        exact: false,
+        component: NotFound,
     },
 ];
 
@@ -107,10 +116,12 @@ export const LOGIN_ROUTES = [
     {
         name: 'Login',
         path: '/login',
+        exact: true,
         component: LoginPage,
     },
     {
         name: 'Fogot Password',
+        exact: true,
         path: '/forgot-password',
         component: ForgotPassword,
     },
@@ -127,25 +138,25 @@ export const NOTFOUND_ROUTES = [
 export const FILE_USER = [
     {
         name: 'UserAccount',
-        path: '/user/account/profile',
+        path: '/user/profile',
         exact: true,
         component: FileUser,
     },
     {
         name: 'Payment',
-        path: '/user/account/payment',
+        path: '/user/payment',
         exact: false,
         component: PaymentUser,
     },
     {
         name: 'Address',
-        path: '/user/account/address',
+        path: '/user/address',
         exact: false,
         component: AddressUser,
     },
     {
         name: 'Password',
-        path: '/user/account/password',
+        path: '/user/password',
         exact: false,
         component: PasswordUser,
     },
@@ -154,7 +165,7 @@ export const FILE_USER = [
 export const ORDER_WHEEL = [
     {
         name: 'AllProduct',
-        path: '/user/purchase/all',
+        path: '/user/all',
         exact: true,
         component: OrderUser,
     },
@@ -169,32 +180,41 @@ export const ORDER_WHEEL = [
 export const NOTIFICATION_USER = [
     {
         name: 'OrderUpdate',
-        path: '/user/notification/order-update',
+        path: '/user/order-update',
         exact: true,
         component: OrderUpdate,
     },
     {
         name: 'Promotion',
-        path: '/user/notification/promotion',
+        path: '/user/promotion',
         exact: false,
         component: Promotion,
     },
     {
         name: 'WalletUpdate',
-        path: '/user/notification/wallet-update',
+        path: '/user/wallet-update',
         exact: false,
         component: WalletUpdate,
     },
     {
         name: 'Work',
-        path: '/user/notification/work',
+        path: '/user/work',
         exact: false,
         component: Work,
     },
     {
         name: 'UpdatedReview',
-        path: '/user/notification/updated-review',
+        path: '/user/updated-review',
         exact: false,
         component: UpdatedReview,
+    },
+];
+
+export const DASHBOARD_MAIN = [
+    {
+        name: 'Dashboard Main',
+        path: '/dashboard/dashboard',
+        exact: true,
+        component: FileUser,
     },
 ];

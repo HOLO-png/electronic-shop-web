@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Upload, Modal } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
@@ -12,23 +12,21 @@ function getBase64(file) {
     });
 }
 function UploadItem(props) {
+    const { importImg, img, video } = props;
     const [previewVisible, setPreviewVisible] = useState(false);
     const [previewImage, setPreviewImage] = useState('');
     const [previewTitle, setPreviewTitle] = useState('');
-    const [fileList, setFileList] = useState([
-        {
-            uid: '-1',
-            name: 'image.png',
-            status: 'done',
-            url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-        },
-    ]);
+    const [fileList, setFileList] = useState([]);
+
+    useEffect(() => {
+        img || video ? setFileList([...img, ...video]) : setFileList([]);
+    }, [img, video]);
 
     const handleCancel = () => setPreviewVisible(false);
 
     const handlePreview = async (file) => {
         if (!file.url && !file.preview) {
-            file.preview = await getBase64(file.originFileObj);
+            file.preview = await getBase64(file.response);
         }
 
         setPreviewImage(file.url || file.preview);
@@ -37,10 +35,10 @@ function UploadItem(props) {
             file.name || file.url.substring(file.url.lastIndexOf('/') + 1),
         );
     };
-    console.log(fileList);
 
     const handleChange = ({ fileList }) => {
-        fileList.push({ fileList });
+        setFileList(fileList);
+        importImg(fileList);
     };
 
     const uploadButton = (
@@ -52,7 +50,6 @@ function UploadItem(props) {
     return (
         <>
             <Upload
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                 listType="picture-card"
                 fileList={fileList}
                 onPreview={handlePreview}

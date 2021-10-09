@@ -10,7 +10,7 @@ export const SectionTitle = (props) => {
     return (
         <div className="section__title">
             {/* <i className={`fas fa-stars`}></i> */}
-            <i className="fas fa-stars"></i>
+            <i className="fad fa-crown"></i>
             {children}
         </div>
     );

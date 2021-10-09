@@ -4,7 +4,7 @@
 // font-family: 'M PLUS Rounded 1c', sans-serif;
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&display=swap");
 * {
     padding: 0;
     margin: 0;
@@ -15,6 +15,7 @@
 
 html {
     font-size: 13px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -33,9 +34,11 @@ a {
 a:hover {
     color: $main-color;
 }
+
 .ant-drawer-body {
     padding: 10px 0;
 }
+
 strong {
     margin: 5px;
     &:hover {
@@ -85,6 +88,7 @@ strong {
     max-width: 1620px;
     padding: 0 150px;
     margin: auto;
+    background: #f8f8f8;
     @include tablet {
         padding: 0 20px;
     }
@@ -121,4 +125,128 @@ strong {
 
 .grid {
     display: grid;
+}
+
+.popup-product-cart {
+    .ant-modal-title {
+        color: rgb(21, 21, 193);
+    }
+    .ant-modal-body {
+        font-size: 20px;
+        color: #7d7d7d;
+    }
+}
+
+.category-select-card.active {
+    border: 1px solid #3673fa;
+    border-radius: 4px;
+}
+
+button.ant-btn.ant-btn-primary.btn-loading-product {
+    margin: 0 46.5%;
+    margin-bottom: 5%;
+    &.hidden {
+        display: none;
+    }
+}
+
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    width: 100%;
+    height: 40px;
+    padding: 4px 12px;
+}
+.info-user {
+    display: flex;
+    align-items: baseline;
+    font-size: 18px;
+    font-weight: 600;
+    p {
+        margin-left: 10px;
+    }
+}
+.info-address {
+    display: flex;
+    align-items: baseline;
+    font-size: 18px;
+    font-weight: 600;
+    p {
+        margin-left: 10px;
+    }
+}
+
+.rs_marker {
+    height: 35px;
+    width: 23px;
+    z-index: 99;
+    color: orangered;
+    /*background: url('./images/img_marker.png');*/
+}
+
+label.ant-radio-wrapper {
+    margin-right: 40px;
+}
+
+.search-address {
+    width: 100%;
+    max-width: 400px;
+    z-index: 10;
+    margin-bottom: 5px;
+}
+
+.search-address input {
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    width: 118%;
+
+}
+.loading__container {
+    position: fixed;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    min-height: 100vh;
+    background: #c5ccf45f;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+}
+
+.popup-product-cart {
+    p {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        font-size: 15px;
+    }
+    .ant-modal-body {
+        min-height: auto;
+        max-height: 210px;
+        overflow-y: auto;
+    }
+}
+
+
+ul.slick-dots.slick-dots-bottom {
+    visibility: hidden;
+}
+
+.ant-drawer-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: visible;
+}
+.ant-btn > .anticon + span, .ant-btn > span + .anticon {
+    margin-left: 8px;
+    display: inline;
+    margin-right: 75%;
+}
+.ant-drawer-content {
+    overflow: visible;
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
@@ -17,6 +17,7 @@ function LoginForm(props) {
     const handleLoginSignin = async (val) => {
         return new Promise((resolve) => {
             console.log('Form Submit:', val);
+
             setTimeout(() => {
                 firebase
                     .auth()
@@ -40,12 +41,11 @@ function LoginForm(props) {
 
     const handleLoginSignup = (val) => {
         return new Promise((resolve) => {
-            console.log('email:', val.email);
             setTimeout(() => {
                 auth.createUserWithEmailAndPassword(val.email, val.password)
                     .then((result) => {
                         let config = {
-                            url: process.env.REACT_APP_REGISTER_REDIRECT_URL,
+                            url: 'https://localhost:1901',
                             handleCodeInApp: true,
                         };
                         auth.sendSignInLinkToEmail(val.email, config)
@@ -71,7 +71,7 @@ function LoginForm(props) {
                             photoURL: null,
                             uid: val.name,
                         });
-                        // history.push('/home');
+                        // history.push('/');
                     })
                     .catch((err) => {
                         toast.error(
@@ -130,7 +130,7 @@ function LoginForm(props) {
             <footer className="form__footer">
                 <p>
                     Shop điện tử Iphone <i className="fa fa-heart" /> của
-                    <a href="true"> Hoàng Long</a> - Xin chân thành cảm ơn quý
+                    <a type="link"> Hoàng Long</a> - Xin chân thành cảm ơn quý
                     khách đã ghé qua ạ
                 </p>
             </footer>

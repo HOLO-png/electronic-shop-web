@@ -6,6 +6,8 @@ import 'firebase/firestore';
 const firebaseConfig = {
     apiKey: 'AIzaSyBb22KAS-aGhg75gtHQKKfxAp0YFI65EBY',
     authDomain: 'shop-iphone-2de26.firebaseapp.com',
+    databaseURL:
+        'https://shop-iphone-2de26-default-rtdb.asia-southeast1.firebasedatabase.app',
     projectId: 'shop-iphone-2de26',
     storageBucket: 'shop-iphone-2de26.appspot.com',
     messagingSenderId: '839668187552',

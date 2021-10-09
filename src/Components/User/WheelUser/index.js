@@ -296,7 +296,7 @@ function WheelUser(props) {
                 </Row>
             </Modal>
             <div className="luckywheel">
-                <i class="fas fa-location-arrow"></i>
+                <i className="fas fa-location-arrow"></i>
                 <svg
                     viewBox="0 0 730 730"
                     style={{

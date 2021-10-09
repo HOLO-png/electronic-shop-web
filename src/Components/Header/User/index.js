@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -77,7 +78,7 @@ function User(props) {
                 onMouseLeave={someOtherHandler}
                 id="userId"
             >
-                <Link to="/user/purchase/all">
+                <Link to="/user/all">
                     <div className="header__menu__item__user-icon">
                         {renderPhotoAccout(50)}
                     </div>
@@ -89,7 +90,7 @@ function User(props) {
                 >
                     <div className="header__menu__item__user-drawer-accout">
                         {renderPhotoAccout(25)}
-                        <span>{displayName}</span>
+                        <span className="display-name-user">{displayName}</span>
                     </div>
                     <div className="header__menu__item__user-drawer-accout">
                         <i className="fad fa-calendar-week"></i>
@@ -97,7 +98,7 @@ function User(props) {
                     </div>
                     <div className="header__menu__item__user-drawer-accout">
                         <i className="fad fa-sign-in-alt"></i>
-                        <a href onClick={() => auth.signOut()}>
+                        <a onClick={() => auth.signOut()}>
                             <span>Đăng xuất</span>
                         </a>
                     </div>

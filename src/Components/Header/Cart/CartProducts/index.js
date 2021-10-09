@@ -1,25 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import numberWithCommas from '../../../../utils/numberWithCommas';
 
 function CartProducts(props) {
+    const { product } = props;
+
     return (
         <div className="header__menu__item__cart-drawer__products__item">
             <div className="header__menu__item__cart-drawer__products__img">
-                <img
-                    alt=""
-                    src="http://assets.stickpng.com/thumbs/5e90a834c7c8f9000434dd96.png"
-                />
+                <img alt={product.name} src={product.image[0]} />
             </div>
             <div className="header__menu__item__cart-drawer__products__title">
-                Iphone 12 Promax
+                {product.name}
             </div>
             <div className="header__menu__item__cart-drawer__products__price">
-                200$
+                {numberWithCommas(product.price)} <sub>đ</sub>
             </div>
         </div>
     );
 }
 
-CartProducts.propTypes = {};
+CartProducts.propTypes = {
+    product: PropTypes.object,
+};
 
 export default CartProducts;
