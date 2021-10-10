@@ -47,15 +47,19 @@ function UploadFileImg(props) {
             var reader = new FileReader();
             reader.onload = function (e) {
                 setImgUser(e.target.result);
+                importImg(e.target.result);
             };
             reader.readAsDataURL(fileInput.files[0]);
         }
     }
+
     return (
         <FileUserEdit className="file-user-edit">
             <Avatar
                 size={150}
-                src={imgUser ? imgUser : photoURL}
+                src={
+                    imgUser ? imgUser : use_api.image ? use_api.image : photoURL
+                }
                 icon={use_api.length && !use_api[0].image && <UserOutlined />}
             />
             <input

@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const getUserApi = createAsyncThunk('userApi/userApiFetch', async () => {
-    const response = await axios.get(`http://localhost:3000/user_api`);
+    const response = await axios.get(`http://localhost:3000/user_api/`);
     return response.data;
 });
 
@@ -23,6 +23,8 @@ export const updateUserApi = createAsyncThunk(
         const newUserApi = {
             ...obj,
         };
+        console.log(newUserApi);
+
         await axios.put(`http://localhost:3000/user_api/${obj.id}`, newUserApi);
         return newUserApi;
     },
