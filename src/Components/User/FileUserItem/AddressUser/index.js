@@ -248,7 +248,9 @@ function AddressUser(props) {
                                 }}
                             >
                                 <p className="user-name">
-                                    {address_user_api[0].name_user}
+                                    {address_user_api.length
+                                        ? address_user_api[0].name_user
+                                        : ''}
                                 </p>
                                 <Tag color="green">Mặc Định</Tag>
                             </Form.Item>
@@ -258,16 +260,23 @@ function AddressUser(props) {
                                 style={{ margin: 0 }}
                             >
                                 <p className="user-name">
-                                    (+84) {address_user_api[0].number_phone}
+                                    (+84){' '}
+                                    {address_user_api.length
+                                        ? address_user_api[0].number_phone
+                                        : ''}
                                 </p>
                             </Form.Item>
                             <Form.Item label="Địa Chỉ">
-                                <p className="user-name">
-                                    {address_user_api[0].mota} ~{' '}
-                                    {address_user_api[0].xa} ~{' '}
-                                    {address_user_api[0].quan} ~{' '}
-                                    {address_user_api[0].tinh}
-                                </p>
+                                {address_user_api.length ? (
+                                    <p className="user-name">
+                                        {address_user_api[0].mota} ~{' '}
+                                        {address_user_api[0].xa} ~{' '}
+                                        {address_user_api[0].quan} ~{' '}
+                                        {address_user_api[0].tinh}
+                                    </p>
+                                ) : (
+                                    ''
+                                )}
                             </Form.Item>
                         </Form>
                     </FileUserInfo>
@@ -292,6 +301,9 @@ function AddressUser(props) {
                                 Xoá
                             </Button>
                         </div>
+                        <Button type="" success style={{ marginTop: '10px' }}>
+                            Đặt làm Mặc Định
+                        </Button>
                     </FileUserInfo>
                 </Col>
             </Row>

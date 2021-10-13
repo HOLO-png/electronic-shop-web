@@ -1,46 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { auth, db } from '../../../Firebase/config';
+import { auth } from '../../../Firebase/config';
 import { AuthContext } from '../../../Context/AuthProvider';
-import { humanImg } from '../../../assets/fake-data/human';
+import { renderPhotoAccout } from '../../../utils/avartarChange';
 
 function User(props) {
     const userDrawerRef = useRef(null);
-    const [displayName, setDisplayName] = useState('');
     const data = React.useContext(AuthContext);
-    const { email, photoURL, uid } = data.user;
-
-    const renderPhotoAccout = (val) => {
-        if (photoURL) {
-            return (
-                <img
-                    src={photoURL}
-                    alt={displayName}
-                    className={`rounded-circle w-${val}`}
-                ></img>
-            );
-        } else {
-            return (
-                <img
-                    src={humanImg}
-                    alt={displayName}
-                    className={`rounded-circle w-${val}`}
-                ></img>
-            );
-        }
-    };
-    React.useEffect(() => {
-        db.collection('users').onSnapshot((snapshot) => {
-            const data = snapshot.docs.map((doc) => ({
-                ...doc.data(),
-                id: doc.id,
-            }));
-            const array = { data }.data;
-            setDisplayName(array[array.length - 1].displayName);
-        });
-    }, []);
+    const { photoURL, displayName } = data.user;
 
     const someHandler = () => {
         if (userDrawerRef.current) {
@@ -80,7 +49,7 @@ function User(props) {
             >
                 <Link to="/user/all">
                     <div className="header__menu__item__user-icon">
-                        {renderPhotoAccout(50)}
+                        {renderPhotoAccout(photoURL, '', displayName)}
                     </div>
                 </Link>
                 <div
@@ -89,8 +58,13 @@ function User(props) {
                     ref={userDrawerRef}
                 >
                     <div className="header__menu__item__user-drawer-accout">
-                        {renderPhotoAccout(25)}
-                        <span className="display-name-user">{displayName}</span>
+                        {renderPhotoAccout(photoURL, 'small', displayName)}
+                        <span
+                            className="display-name-user"
+                            style={{ marginLeft: 5 }}
+                        >
+                            {displayName}
+                        </span>
                     </div>
                     <div className="header__menu__item__user-drawer-accout">
                         <i className="fad fa-calendar-week"></i>

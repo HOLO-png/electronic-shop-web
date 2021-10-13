@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Avatar, message, Upload } from 'antd';
-import { Button, Modal } from 'reactstrap';
-import { PlusOutlined, UploadOutlined, UserOutlined } from '@ant-design/icons';
+import { Avatar } from 'antd';
+import { humanImg } from '../../../../assets/fake-data/human';
 
 const FileUserEdit = styled.div`
     display: flex;
@@ -38,7 +37,7 @@ const FileUserEdit = styled.div`
 `;
 
 function UploadFileImg(props) {
-    const { photoURL, use_api, importImg } = props;
+    const { photoURL, importImg } = props;
     const [imgUser, setImgUser] = useState('');
 
     function chooseFileImg(e) {
@@ -57,10 +56,7 @@ function UploadFileImg(props) {
         <FileUserEdit className="file-user-edit">
             <Avatar
                 size={150}
-                src={
-                    imgUser ? imgUser : use_api.image ? use_api.image : photoURL
-                }
-                icon={use_api.length && !use_api[0].image && <UserOutlined />}
+                src={imgUser ? imgUser : photoURL ? photoURL : humanImg}
             />
             <input
                 type="file"
@@ -68,8 +64,8 @@ function UploadFileImg(props) {
                 accept="image/gif, image/jpeg, image/png"
                 id="file"
             />
-            <label className="file-custom" for="file">
-                <i class="fas fa-file-image"></i>Tải ảnh lên
+            <label className="file-custom" htmlFor="file">
+                <i className="fas fa-file-image"></i>Tải ảnh lên
             </label>
         </FileUserEdit>
     );

@@ -2041,26 +2041,6 @@
       "status": "searchUser"
     }
   ],
-  "user_api": [
-    {
-      "id": "wD3glPjmnuRcAEAmTfGIMiTCw0m1",
-      "name": "Long Hoàng",
-      "email": "wwwlong91@gmail.com",
-      "sex": "",
-      "date_of_birth": "",
-      "number_phone": "",
-      "image": "https://lh3.googleusercontent.com/a-/AOh14GgslMndYQab24RJUQw6TWSWFMvE4zm4cPRC-oY3BQ=s96-c"
-    },
-    {
-      "id": "S1Azj4zBZEZ9vfmOVc19WZW1pE52",
-      "name": "Long Hoàng",
-      "email": "hoanglong19015312@gmail.com",
-      "sex": "",
-      "date_of_birth": "",
-      "number_phone": "",
-      "image": "https://graph.facebook.com/209815144408052/picture"
-    }
-  ],
   "address_api": [
     {
       "tinh": "Tỉnh Hà Giang",

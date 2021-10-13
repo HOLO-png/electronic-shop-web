@@ -25,11 +25,9 @@ import cartProductsReducer from './Reducer/cart';
 import totalProductsReducer from './Reducer/totalProduct';
 import searchItemReducer from './Reducer/searchItem';
 import addressApiReducer from './Reducer/apiAddress';
-import userApiReducer from './Reducer/userApi';
 import addressUserApiReducer from './Reducer/addressUserApi';
 import themeReducer from './Reducer/setTheme';
 import searchSimilarReducer from './Reducer/searchSimilar';
-import userItemApiReducer from './Reducer/getUserItemApi';
 
 const persistConfig = {
     key: 'root',
@@ -55,11 +53,9 @@ const store = configureStore({
         persistedReducer,
         searchItemReducer,
         addressApiReducer,
-        userApiReducer,
         addressUserApiReducer,
         themeReducer,
         searchSimilarReducer,
-        userItemApiReducer,
     },
     middleware: getDefaultMiddleware({
         serializableCheck: {

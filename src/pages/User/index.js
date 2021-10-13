@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col, Avatar, Button, Menu } from 'antd';
+import { Row, Col, Button, Menu } from 'antd';
 import { Link, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Helmet from '../../Components/Helmet';
@@ -15,13 +15,9 @@ import SubMenu from 'antd/lib/menu/SubMenu';
 import { FILE_USER, NOTIFICATION_USER, ORDER_WHEEL } from '../../constans';
 import Userlayout from '../../Common/UserLayout';
 import { AuthContext } from '../../Context/AuthProvider';
-import { getUserApi, userApiSelector } from '../../Store/Reducer/userApi';
-import { useDispatch, useSelector } from 'react-redux';
-import { isArray } from '../../utils/checkArray';
-import {
-    getUserItemApi,
-    userItemApiSelector,
-} from '../../Store/Reducer/getUserItemApi';
+import { useDispatch } from 'react-redux';
+
+import { renderPhotoAccout } from '../../utils/avartarChange';
 
 const UserSetting = styled.div`
     display: flex;
@@ -40,6 +36,12 @@ const UserSetting = styled.div`
         .user-title {
             font-size: 17px;
             font-weight: 600;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
         }
     }
     ul#rc-menu-uuid-92169-1-sub3-popup {
@@ -104,22 +106,8 @@ const rootSubmenuKeys = ['sub1', 'sub2', 'sub3', 'sub4'];
 function PurchaseOrder(props) {
     const dispatch = useDispatch();
     const [openKeys, setOpenKeys] = React.useState(['sub2']);
-    const userItem = useSelector(userItemApiSelector);
     const data = React.useContext(AuthContext);
-    const [user, setUser] = useState({});
     const { email, photoURL, uid, displayName } = data.user;
-
-    console.log(user);
-
-    useEffect(() => {
-        uid && dispatch(getUserItemApi(uid));
-    }, [dispatch]);
-
-    useEffect(() => {
-        if (!isArray(userItem)) {
-            Object.keys(userItem).length !== 0 && setUser(userItem);
-        }
-    }, [userItem]);
 
     const handleClick = (e) => {
         console.log('click ', e);
@@ -144,9 +132,9 @@ function PurchaseOrder(props) {
                     style={{ background: '#fff', padding: '20px' }}
                 >
                     <UserSetting>
-                        <Avatar size={50} src={user.image} />
+                        {renderPhotoAccout(photoURL, 50, displayName)}
                         <div className="user-settings">
-                            <p className="user-title">{user.name}</p>
+                            <p className="user-title">{displayName}</p>
                             <Button type="text" icon={<EditOutlined />}>
                                 <Link to="/user/profile">Sửa Hồ Sơ</Link>
                             </Button>

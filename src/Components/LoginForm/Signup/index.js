@@ -2,12 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
-import { FastField, Form, Formik, isEmptyChildren } from 'formik';
-import { Button, FormGroup, Input, Label, Spinner } from 'reactstrap';
+import { FastField, Form, Formik } from 'formik';
+import { Button, FormGroup } from 'reactstrap';
 import InputField from '../../InputField';
 import { handleFbLogin, handleGgLogin } from '../../../Firebase/LoginConfig';
-import { auth } from '../../../Firebase/config';
-
 Signup.propTypes = {
     onSubmit: PropTypes.func,
 };

@@ -1,6 +1,6 @@
 export const isEmptyObject = (v) => {
     const data = Object.values(v);
-    const isCheck = data.some((item) => {
+    const isCheck = data.every((item) => {
         return item.length === 0;
     });
 

@@ -1,24 +1,16 @@
+/* eslint-disable no-unused-expressions */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Form, Input, Button, Radio, Row, Col, DatePicker } from 'antd';
 import { SaveOutlined } from '@ant-design/icons';
 import { AuthContext } from '../../../../Context/AuthProvider';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-    getUserApi,
-    insertUserApi,
-    updateUserApi,
-    userApiSelector,
-} from '../../../../Store/Reducer/userApi';
+
 import UploadFileImg from './UploadFileImg';
 import ChangePhoneNumber from './ChangePhoneNumber';
 import { isEmptyObject } from '../../../../utils/checkEmptyObj';
-import { isArray } from '../../../../utils/checkArray';
-import {
-    getUserItemApi,
-    userItemApiSelector,
-} from '../../../../Store/Reducer/getUserItemApi';
+import { toast } from 'react-toastify';
+import firebase from '../../../../Firebase/config';
 
 const FileUserContent = styled.div`
     .file-user-title {
@@ -45,82 +37,60 @@ const FileUserContent = styled.div`
         margin: 5px 10px;
     }
 `;
-const dateFormat = 'YYYY-MM-DD';
-
 function FileUser(props) {
     const data = React.useContext(AuthContext);
-    const dispatch = useDispatch();
-    const users = useSelector(userApiSelector);
-    const userItem = useSelector(userItemApiSelector);
     const [loadings, setLoadings] = useState(false);
     const [dataUser, setDataUser] = useState({
-        name: '',
+        displayName: '',
         email: '',
         sex: '',
         date_of_birth: '',
         number_phone: '',
-        image: '',
+        photoURL: '',
     });
-    const [user, setUser] = useState({});
-    const { email, photoURL, uid, displayName } = data.user;
-
-    useEffect(() => {
-        uid && dispatch(getUserItemApi(uid));
-        dispatch(getUserApi());
-        setDataUser({ ...dataUser, email: email });
-        handleInsertUserApi();
-    }, [dispatch, uid]);
-
-    const handleInsertUserApi = () => {
-        users.forEach((user) => {
-            if (user.id !== uid) {
-                dispatch(
-                    insertUserApi({
-                        id: uid,
-                        name: displayName,
-                        email: email,
-                        sex: '',
-                        date_of_birth: '',
-                        number_phone: '',
-                        image: photoURL,
-                    }),
-                );
-            }
-        });
-    };
-
-    useEffect(() => {
-        if (!isArray(userItem)) {
-            Object.keys(userItem).length !== 0 && setUser(userItem);
-        }
-    }, [userItem]);
-
-    console.log(users);
-    console.log(userItem);
+    const { email, photoURL, displayName, dateOfBirth, sex, phoneNumber, id } =
+        data.user;
+    const user = firebase.auth().currentUser;
 
     const enterLoading = () => {
         setLoadings(true);
         setTimeout(() => {
-            dispatch(
-                updateUserApi({
-                    id: uid,
-                    ...dataUser,
-                }),
+            let o = Object.fromEntries(
+                Object.entries(dataUser).filter(([_, v]) => v !== ''),
             );
+            if (user === null) {
+                return;
+            }
+            var db = firebase.firestore();
+
+            db.collection('users')
+                .doc(id)
+                .update({
+                    ...o,
+                })
+                .then(() => {
+                    toast.success(
+                        `Bạn đã cập nhật thành công tài khoản của mình 😂`,
+                    );
+                })
+                .catch((error) => {
+                    toast.error(`Đã xuất hiện lỗi vui lòng thực hiện lại 😓`);
+                });
+
             setDataUser({
-                name: '',
+                displayName: '',
                 email: '',
                 sex: '',
                 date_of_birth: '',
                 number_phone: '',
-                image: '',
+                photoURL: '',
             });
             setLoadings(false);
         }, 2000);
     };
 
     const onChangeDate = (date, dateString) => {
-        setDataUser({ ...dataUser, date_of_birth: dateString });
+        setDataUser({ ...dataUser, dateOfBirth: dateString });
     };
 
     const onChangeSex = (e) => {
@@ -128,18 +98,16 @@ function FileUser(props) {
     };
 
     const onChangeInputName = (e) => {
-        setDataUser({ ...dataUser, name: e.target.value });
+        setDataUser({ ...dataUser, displayName: e.target.value });
     };
 
     const importImg = (img) => {
-        setDataUser({ ...dataUser, image: img });
+        setDataUser({ ...dataUser, photoURL: img });
     };
 
     const onChangePhoneNumber = (e) => {
-        setDataUser({ ...dataUser, number_phone: e.target.value });
+        setDataUser({ ...dataUser, phoneNumber: e.target.value });
     };
-
-    console.log(user.date_of_birth);
 
     return (
         <FileUserContent>
@@ -166,7 +134,7 @@ function FileUser(props) {
                                 label="Tên Đăng Nhập"
                                 style={{ margin: 0, fontSize: '16px' }}
                             >
-                                <p className="user-name">{user.name}</p>
+                                <p className="user-name">{displayName}</p>
                             </Form.Item>
                             <Form.Item label="Tên">
                                 <Input
@@ -175,26 +143,24 @@ function FileUser(props) {
                                 />
                             </Form.Item>
                             <Form.Item label="Email">
-                                <Input value={user.email} />
+                                <Input value={email} />
                             </Form.Item>
                             <Form.Item label="Tên Shop">
                                 <Input
                                     defaultValue="Vo Danh Shop"
-                                    value={user.name + ' SHOP'}
+                                    value={displayName + ' SHOP'}
                                     placeholder="Nhập tên Shop"
                                 />
                             </Form.Item>
 
                             <ChangePhoneNumber
-                                user={user}
+                                phoneNumber={phoneNumber}
                                 onChangePhoneNumber={onChangePhoneNumber}
                             />
                             <Form.Item label="Ngày Sinh">
                                 <DatePicker onChange={onChangeDate} />
-                                {!dataUser.date_of_birth ? (
-                                    <p className="date-title">
-                                        {user.date_of_birth}
-                                    </p>
+                                {dateOfBirth ? (
+                                    <p className="date-title">{dateOfBirth}</p>
                                 ) : (
                                     ''
                                 )}
@@ -203,7 +169,7 @@ function FileUser(props) {
                             <Form.Item label="Giới Tính">
                                 <Radio.Group
                                     onChange={onChangeSex}
-                                    value={dataUser.sex}
+                                    value={sex}
                                     defaultValue="orther"
                                 >
                                     <Radio value={'male'}>Nam</Radio>
@@ -234,11 +200,7 @@ function FileUser(props) {
                         alignItems: 'center',
                     }}
                 >
-                    <UploadFileImg
-                        photoURL={photoURL}
-                        use_api={userItem}
-                        importImg={importImg}
-                    />
+                    <UploadFileImg photoURL={photoURL} importImg={importImg} />
                 </Col>
             </Row>
         </FileUserContent>

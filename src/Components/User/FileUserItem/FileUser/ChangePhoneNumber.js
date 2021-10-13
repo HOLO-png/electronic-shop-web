@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, Modal, Form, Input, Tag } from 'antd';
 
 function ChangePhoneNumber(props) {
-    const { user, onChangePhoneNumber } = props;
+    const { phoneNumber, onChangePhoneNumber } = props;
     const [visible, setVisible] = useState(false);
 
     const showModal = () => {
@@ -31,8 +31,8 @@ function ChangePhoneNumber(props) {
 
                 <Form.Item label="Số Hiện Tại">
                     <span className="user__phone-number-content">
-                        {user.number_phone
-                            ? user.number_phone
+                        {phoneNumber
+                            ? '(84+ )' + phoneNumber
                             : 'Bạn chưa có số nào cả!'}
                     </span>
                     <Tag color="green" style={{ marginLeft: 10 }}>
