@@ -28,6 +28,7 @@ import addressApiReducer from './Reducer/apiAddress';
 import addressUserApiReducer from './Reducer/addressUserApi';
 import themeReducer from './Reducer/setTheme';
 import searchSimilarReducer from './Reducer/searchSimilar';
+import addressActiveApiReducer from './Reducer/addressActiveApi';
 
 const persistConfig = {
     key: 'root',
@@ -56,6 +57,7 @@ const store = configureStore({
         addressUserApiReducer,
         themeReducer,
         searchSimilarReducer,
+        addressActiveApiReducer,
     },
     middleware: getDefaultMiddleware({
         serializableCheck: {

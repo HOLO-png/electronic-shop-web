@@ -176,7 +176,7 @@ function PurchaseOrder(props) {
                                 </Menu.Item>
                             </SubMenu>
                             <Menu.Item key="sub2" icon={<SnippetsOutlined />}>
-                                <Link to="/user/purchase/all">Đơn Mua</Link>
+                                <Link to="/user/all">Đơn Mua</Link>
                             </Menu.Item>
                             <SubMenu
                                 key="sub3"
@@ -184,27 +184,23 @@ function PurchaseOrder(props) {
                                 title="Thông báo"
                             >
                                 <Menu.Item key="5">
-                                    <Link to="/user/notification/order-update">
+                                    <Link to="/user/order-update">
                                         Cập nhật đơn hàng
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item key="6">
-                                    <Link to="/user/notification/promotion">
-                                        Khuyến mãi
-                                    </Link>
+                                    <Link to="/user/promotion">Khuyến mãi</Link>
                                 </Menu.Item>
                                 <Menu.Item key="7">
-                                    <Link to="/user/notification/wallet-update">
+                                    <Link to="/user/wallet-update">
                                         Cập nhật ví
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item key="8">
-                                    <Link to="/user/notification/work">
-                                        Hoạt động
-                                    </Link>
+                                    <Link to="/user/work">Hoạt động</Link>
                                 </Menu.Item>
                                 <Menu.Item key="9">
-                                    <Link to="/user/notification/updated-review">
+                                    <Link to="/user/updated-review">
                                         Đánh giá cập nhật
                                     </Link>
                                 </Menu.Item>

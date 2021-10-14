@@ -24,13 +24,21 @@ export const insertAddressUserApi = createAsyncThunk(
     },
 );
 
+export const deleteAddressUserApi = createAsyncThunk(
+    'addressUserApi/addressUserApiDelete',
+    async (id) => {
+        await axios.delete(`http://localhost:3000/address_api/${id}`);
+        return id;
+    },
+);
+
 export const updateAddressUserApi = createAsyncThunk(
     'addressUserApi/addressUserApiUpdate',
     async (obj) => {
         const newAddressUserApi = {
             ...obj,
         };
-        await axios.put(
+        await axios.patch(
             `http://localhost:3000/address_api/${obj.id}`,
             newAddressUserApi,
         );
@@ -64,6 +72,14 @@ const addressUserApiSlice = createSlice({
             });
         },
         [updateAddressUserApi.rejected]: (state, action) => {},
+
+        [deleteAddressUserApi.pending]: (state, action) => {},
+        [deleteAddressUserApi.fulfilled]: (state, action) => {
+            state.addressUserApi = state.addressUserApi.filter(function (item) {
+                return item.id !== action.payload;
+            });
+        },
+        [deleteAddressUserApi.rejected]: (state, action) => {},
     },
 });
 

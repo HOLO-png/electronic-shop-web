@@ -4,8 +4,13 @@ import { Col, Input, Row, Select } from 'antd';
 const { Option } = Select;
 
 function SelecteValue(props) {
-    const { active, address_api, onHandleValueImportAddress, widthInput } =
-        props;
+    const {
+        active,
+        address_api,
+        onHandleValueImportAddress,
+        widthInput,
+        objAddress,
+    } = props;
     const [stateAddress, setStateAddress] = useState([]);
     const [cities, setCities] = useState('');
 
@@ -20,6 +25,15 @@ function SelecteValue(props) {
     useEffect(() => {
         address_api && setStateAddress(address_api);
     }, [address_api]);
+
+    useEffect(() => {
+        onHandleValueImportAddress({
+            tinh: cities,
+            quan: secondCity,
+            xa: thirCity,
+            mota: input,
+        });
+    }, [cities, input, secondCity, thirCity]);
 
     const handleProvinceChange = (value) => {
         setCities(stateAddress[value].name);
@@ -39,12 +53,6 @@ function SelecteValue(props) {
 
     const handleChangeInput = (e) => {
         setInput(e.target.value);
-        onHandleValueImportAddress({
-            tinh: cities,
-            quan: secondCity,
-            xa: thirCity,
-            mota: input,
-        });
     };
 
     return (
@@ -63,7 +71,13 @@ function SelecteValue(props) {
                 >
                     <Select
                         style={{ width: widthInput, height: 40 }}
-                        value={cities ? cities : 'Tỉnh / Thành Phố'}
+                        value={
+                            cities
+                                ? cities
+                                : objAddress.tinh !== ''
+                                ? objAddress.tinh
+                                : 'Tỉnh / Thành Phố'
+                        }
                         onChange={handleProvinceChange}
                     >
                         {stateAddress.map((province, index) => (
@@ -77,7 +91,13 @@ function SelecteValue(props) {
                 >
                     <Select
                         style={{ width: widthInput, height: 40 }}
-                        value={secondCity ? secondCity : 'Quận / Huyện'}
+                        value={
+                            secondCity
+                                ? secondCity
+                                : objAddress.quan !== ''
+                                ? objAddress.quan
+                                : 'Quận / Huyện'
+                        }
                         onChange={onSecondCityChange}
                     >
                         {stateSecond.map((province, index) => (
@@ -96,7 +116,13 @@ function SelecteValue(props) {
                 >
                     <Select
                         style={{ width: widthInput, height: 40 }}
-                        value={thirCity ? thirCity : 'Phường / Xã'}
+                        value={
+                            thirCity
+                                ? thirCity
+                                : objAddress.xa !== ''
+                                ? objAddress.xa
+                                : 'Phường / Xã'
+                        }
                         onChange={onThirCityChange}
                     >
                         {stateThir.map((province, index) => (
@@ -112,6 +138,7 @@ function SelecteValue(props) {
                         placeholder="Số Nhà, Đường,..."
                         style={{ height: 40 }}
                         onChange={handleChangeInput}
+                        value={input !== '' ? input : objAddress.mota}
                     />
                 </Col>
             </Row>
