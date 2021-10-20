@@ -38,7 +38,8 @@ export const updateAddressUserApi = createAsyncThunk(
         const newAddressUserApi = {
             ...obj,
         };
-        await axios.patch(
+
+        await axios.put(
             `http://localhost:3000/address_api/${obj.id}`,
             newAddressUserApi,
         );

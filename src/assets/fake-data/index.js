@@ -383,4 +383,29 @@ export const evaluate_content = [
         icon: 'fa-grin-squint-tears',
     },
 ];
+export const pay_method_img = [
+    {
+        title: 'PayPal',
+        image: 'https://www.payvnn.com/wp-content/uploads/2010/12/Hoi-dap-Paypal.jpg',
+    },
+    {
+        title: 'MoMo',
+        image: 'https://upload.wikimedia.org/wikipedia/vi/archive/f/fe/20201011055543%21MoMo_Logo.png',
+    },
+];
+export const order_status = [
+    {
+        title: 'Đang chờ xử lý',
+        icon: 'fa-badge-check',
+    },
+    {
+        title: 'Đang xử lý',
+        icon: 'fa-check-square',
+    },
+    {
+        title: 'Đã hủy đơn hàng',
+        icon: 'fa-ban',
+    },
+];
+
 export default heroSlides;

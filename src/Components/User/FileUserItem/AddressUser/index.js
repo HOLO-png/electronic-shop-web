@@ -35,6 +35,8 @@ import {
     getAddressActiveApi,
 } from '../../../../Store/Reducer/addressActiveApi';
 import { isEmptyObjectAll } from '../../../../utils/checkEmptyObjAll';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const FileUserAddress = styled.div`
     display: flex;
@@ -146,7 +148,31 @@ function AddressUser(props) {
     };
 
     const importAddressUserItem = (data) => {
-        dispatch(updateAddressUserApi(data));
+        address_user_api.forEach((item) => {
+            if (item.id === data.id) {
+                const obj = {
+                    id_user: item.id_user,
+                    id: item.id,
+                    tinh: data.tinh || item.tinh,
+                    quan: data.quan || item.quan,
+                    xa: data.xa || item.xa,
+                    mota: data.mota || item.mota,
+                    name_user: data.name_user || item.name_user,
+                    number_phone: data.number_phone || item.number_phone,
+                };
+                console.log(obj);
+
+                const isEmpty = Object.values(obj).every(
+                    (x) => x === null || x === '',
+                );
+                if (isEmpty) {
+                    toast.error(`Có lỗi, vui lòng nhập lại địa chỉ!`);
+                } else {
+                    dispatch(updateAddressUserApi(obj));
+                    toast.success(`Bạn đã cập nhật thành công!`);
+                }
+            }
+        });
     };
 
     return (
@@ -261,23 +287,27 @@ function AddressUser(props) {
                 {address_user_api.length
                     ? address_user_api.map((item, index) => {
                           if (item.id_user === id) {
-                              return (
-                                  <AddressContentBox
-                                      item={item}
-                                      key={item.id}
-                                      index={index}
-                                      confirm={confirm}
-                                      handleSetDefaultToAddress={
-                                          handleSetDefaultToAddress
-                                      }
-                                      address_active_api={address_active_api}
-                                      address_api={address_api}
-                                      id_user={item.id_user}
-                                      importAddressUserItem={
-                                          importAddressUserItem
-                                      }
-                                  />
-                              );
+                              if (Object.keys(item).length) {
+                                  return (
+                                      <AddressContentBox
+                                          item={item}
+                                          key={item.id}
+                                          index={index}
+                                          confirm={confirm}
+                                          handleSetDefaultToAddress={
+                                              handleSetDefaultToAddress
+                                          }
+                                          address_active_api={
+                                              address_active_api
+                                          }
+                                          address_api={address_api}
+                                          id_user={item.id_user}
+                                          importAddressUserItem={
+                                              importAddressUserItem
+                                          }
+                                      />
+                                  );
+                              }
                           }
                       })
                     : ''}

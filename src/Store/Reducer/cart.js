@@ -42,7 +42,7 @@ export const deleteCartProductAllApi = createAsyncThunk(
         let arrProduct = [];
         setTimeout(async () => {
             await axios.delete(`http://localhost:3000/cart_product/${obj.id}`);
-        }, 100);
+        }, 500);
         arrProduct.push(obj);
         return arrProduct;
     },

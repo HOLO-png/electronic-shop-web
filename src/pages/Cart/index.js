@@ -123,7 +123,7 @@ const CartPage = styled.div`
         .ant-checkbox {
             transform: scale(1.5);
             .ant-checkbox-inner {
-                top: -30px;
+                ${'' /* top: -30px; */}
             }
         }
     }
@@ -151,32 +151,21 @@ function Cart(props) {
     const [cartProduct, setCartProduct] = useState([]);
     const [activeSearchSimilar, setActiveSearchSimilar] = useState(null);
     const [statusSearchSimilar, setStatusSearchSimilar] = useState(false);
-    // console.info(totalProducts);
-    console.info(cartProduct);
-
-    console.info(searchSimilarProducts);
 
     useEffect(() => {
         setLoading(true);
-        document.body.style.overflow = 'hidden';
         setCartProduct(cartProducts);
         setTimeout(() => {
             if (cartProduct.length) {
                 setLoading(false);
-                document.body.style.overflow = '';
             }
         }, 500);
+        document.body.style.overflow = '';
         !cartProduct.length && setLoading(false);
     }, [cartProduct.length, cartProducts]);
 
     useEffect(() => {
         dispatch(getCartProduct());
-        return () => {
-            dispatch(resetProductCoints([]));
-        };
-    }, [dispatch]);
-
-    useEffect(() => {
         dispatch(getMobilesApi());
         dispatch(getLaptopsApi());
         dispatch(getTabletsApi());
@@ -230,9 +219,12 @@ function Cart(props) {
     };
 
     const handleBuyProductCheck = () => {
+        totalProducts.forEach((element) => {
+            dispatch(handleRemoveCoinsProduct(element));
+        });
+
         !totalProducts.length && messageToCart(true);
     };
-
     const handleBuyProductToPay = () => {
         const linkText = totalProducts.reduce((accumulator, item) => {
             return accumulator + `${item.id}=`;
@@ -389,7 +381,7 @@ function Cart(props) {
                 <Popup
                     modal={modal}
                     setModalVisibleAlear={setModalVisibleAlear}
-                    currentproduct={currentProduct}
+                    currentProduct={currentProduct}
                     setModalVisibleCancel={setModalVisibleCancel}
                 />
 

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Button, Col, Empty, Row, Skeleton } from 'antd';
 import { Input } from 'antd';
 import Product from './Product';
+import { handleAmountProduct } from '../../../Store/Reducer/cart';
 
 const { TextArea } = Input;
 
@@ -100,7 +101,7 @@ const ProductsPayStyle = styled.div`
     }
 `;
 function ProductsPay(props) {
-    const { products_api, loading } = props;
+    const { products_api, loading, handleChangeMessage } = props;
 
     const renderProductApi = products_api.map((product) =>
         loading ? (
@@ -176,6 +177,7 @@ function ProductsPay(props) {
                             <TextArea
                                 rows={4}
                                 placeholder="Hãy để lại lời nhắn cho người bán..."
+                                onChange={handleChangeMessage}
                             />
                         </Col>
                     )}

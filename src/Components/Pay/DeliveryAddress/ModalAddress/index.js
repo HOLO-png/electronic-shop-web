@@ -17,16 +17,18 @@ function ModalAddress(props) {
         address_api,
         onHandleValueImportAddress,
         handleImportImput,
+        objAddress,
+        inputName,
+        inputNumber,
+        handleChangeInputName,
+        handleChangeInputNumber,
+        onChangeCheckbox,
     } = props;
     const [value, setValue] = useState(1);
 
     const onChangeRadio = (e) => {
         setValue(e.target.value);
     };
-
-    function onChange(e) {
-        console.log(`checked = ${e.target.checked}`);
-    }
 
     return (
         <ModalStyle>
@@ -42,7 +44,13 @@ function ModalAddress(props) {
                     <p className="">Thông Tin Khách Hàng</p>
                 </div>
 
-                <InputInfo handleImportImput={handleImportImput} />
+                <InputInfo
+                    handleImportImput={handleImportImput}
+                    inputName={inputName}
+                    inputNumber={inputNumber}
+                    handleChangeInputName={handleChangeInputName}
+                    handleChangeInputNumber={handleChangeInputNumber}
+                />
 
                 <div className="info-address">
                     <i className="far fa-map-marker-alt"></i>
@@ -64,6 +72,7 @@ function ModalAddress(props) {
 
                 <SelecteValue
                     active={value}
+                    objAddress={objAddress}
                     address_api={address_api}
                     onHandleValueImportAddress={onHandleValueImportAddress}
                     widthInput="220px"
@@ -71,7 +80,7 @@ function ModalAddress(props) {
                 <InfoAddress active={value} />
                 <SaveAddress active={value} />
 
-                <Checkbox onChange={onChange} style={{ marginTop: 20 }}>
+                <Checkbox onChange={onChangeCheckbox} style={{ marginTop: 20 }}>
                     Đặt làm địa chỉ mặc định
                 </Checkbox>
             </Modal>

@@ -1,30 +1,60 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Col, Row } from 'antd';
+import { Button, Col, Row, Tooltip } from 'antd';
 import { CheckOutlined } from '@ant-design/icons';
 import { content_pay_btn } from '../../../assets/fake-data';
 
+const handleTextInfoBtn = (i) => {
+    if (i === 2) {
+        return (
+            <span>
+                Nhấp vào để thanh toán Online{' '}
+                <i className="fad fa-hand-pointer"></i>
+            </span>
+        );
+    } else if (i === 3) {
+        return (
+            <span>
+                Nhấp vào để thanh toán khi nhận hàng{' '}
+                <i className="fad fa-hand-pointer"></i>
+            </span>
+        );
+    } else {
+        return <span>Đã vô hiệu hóa</span>;
+    }
+};
 function MethodPay(props) {
-    const [activeBtn, setActiveBtn] = useState(0);
+    const { handleChangeMethodPayProduct, handleShowPayTable } = props;
 
-    const handleBtnCheckPay = (i) => {
+    const [activeBtn, setActiveBtn] = useState(null);
+
+    const handleBtnCheckPay = (i, method) => {
         setActiveBtn(i);
+        handleChangeMethodPayProduct(method);
+        handleShowPayTable(method);
     };
+
     const handleRenderUiBtnPay = content_pay_btn.map((item, index) => (
         <Col className="gutter-row products-pay__col" span={4} key={index}>
-            <Button
-                size="large"
-                style={{
-                    width: index === 3 ? 227 : 200,
-                    background: activeBtn === index && 'rgb(0 100 172)',
-                    color: activeBtn === index && '#fff',
-                }}
-                className="btn-active"
-                disabled={index === 1 ? true : false}
-                onClick={() => handleBtnCheckPay(index)}
+            <Tooltip
+                placement="top"
+                title={() => handleTextInfoBtn(index)}
+                color={'#2db7f5'}
             >
-                {item}
-            </Button>
+                <Button
+                    size="large"
+                    style={{
+                        width: index === 3 ? 227 : 200,
+                        background: activeBtn === index && 'rgb(0 100 172)',
+                        color: activeBtn === index && '#fff',
+                    }}
+                    className="btn-active"
+                    disabled={index === 1 || index === 0 ? true : false}
+                    onClick={() => handleBtnCheckPay(index, item)}
+                >
+                    {item}
+                </Button>
+            </Tooltip>
         </Col>
     ));
     return (

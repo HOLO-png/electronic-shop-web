@@ -10,16 +10,26 @@ import {
     getAddressApi,
 } from '../../Store/Reducer/apiAddress';
 import ProductsPay from '../../Components/Pay/ProductPay';
-import { useParams } from 'react-router';
-import { cartProductsSelector, getCartProduct } from '../../Store/Reducer/cart';
+import { useHistory, useParams } from 'react-router';
 import {
-    addressUserApiSelector,
-    getAddressUserApi,
-} from '../../Store/Reducer/addressUserApi';
+    cartProductsSelector,
+    deleteCartProductAllApi,
+    getCartProduct,
+} from '../../Store/Reducer/cart';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 import Payment from '../../Components/Pay/Payment/Payment';
 import Helmet from '../../Components/Helmet';
 import { message } from 'antd';
+import {
+    addressActiveApiSelector,
+    changeAddressActiveApi,
+    getAddressActiveApi,
+} from '../../Store/Reducer/addressActiveApi';
+import PayMethod from '../../Components/Pay/PayMethod';
+import Paypal from '../../Components/Pay/Paypal';
+import { insertPayProduct } from '../../Store/Reducer/product_pay';
+import { openNotification } from '../../utils/messageAlear';
+import moment from 'moment';
 
 const PayComponent = styled.div``;
 const override = css`
@@ -28,10 +38,32 @@ const override = css`
     border-color: red;
     transition: display 0.5s ease;
 `;
+
+const messageToCart = (status, text) => {
+    if (status) {
+        message.success({
+            content: text,
+            className: 'custom-class',
+            style: {
+                marginTop: '0vh',
+            },
+        });
+    } else {
+        message.error({
+            content: text,
+            className: 'custom-class',
+            style: {
+                marginTop: '0vh',
+            },
+        });
+    }
+};
+
 function Pay(props) {
     const dispatch = useDispatch();
+    const history = useHistory();
     const address_api = useSelector(addressApiSelector);
-    const address_user_api = useSelector(addressUserApiSelector);
+    const address_user_api = useSelector(addressActiveApiSelector);
     const cartProduct = useSelector(cartProductsSelector);
     const { linkText } = useParams();
     const [sumProduct, setSumProduct] = useState('');
@@ -40,29 +72,49 @@ function Pay(props) {
     const [visible, setVisible] = React.useState(false);
     const [confirmLoading, setConfirmLoading] = React.useState(false);
     const [modalText, setModalText] = React.useState('Content of the modal');
-    const [valueAddress, setvalueAddress] = useState({});
-    const [name, setName] = useState('');
-    const [number, setNumber] = useState(0);
+    const [valueAddress, setvalueAddress] = useState();
+    const [objAddress, setObjAddress] = useState({
+        tinh: '',
+        quan: '',
+        xa: '',
+        mota: '',
+    });
+    const [inputName, setInputName] = useState('');
+    const [inputNumber, setInputNumber] = useState('');
+    const [changeCheckbox, setChangeCheckbox] = useState(false);
+    const [payMethod, setPayMethod] = useState('');
+    const [isShowTablePay, setIsShowTablePay] = useState(false);
+    const [showPayPal, setShowPayPal] = useState(false);
+    const [message, setMessage] = useState('');
 
     useEffect(() => {
         dispatch(getAddressApi());
-        dispatch(getAddressUserApi());
+        dispatch(getAddressActiveApi());
+        dispatch(getCartProduct());
     }, [dispatch]);
 
     useEffect(() => {
+        setObjAddress(address_user_api.obj);
+        setvalueAddress(address_user_api.obj);
+
+        address_user_api.obj &&
+            setInputName(address_user_api.obj.name_user || '');
+        address_user_api.obj &&
+            setInputNumber(address_user_api.obj.number_phone || '');
+    }, [address_user_api]);
+
+    useEffect(() => {
         setLoading(true);
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => {
+        const timeLoading = setTimeout(() => {
             if (cartProduct.length) {
                 setLoading(false);
-                document.body.style.overflow = '';
             }
         }, 500);
+        document.body.style.overflow = '';
+        return () => {
+            clearTimeout(timeLoading);
+        };
     }, [cartProduct]);
-
-    const ImportApiAddressNew = (obj) => {
-        console.log(obj);
-    };
 
     useEffect(() => {
         const sumValues = products.reduce(
@@ -73,20 +125,33 @@ function Pay(props) {
     }, [products]);
 
     useEffect(() => {
-        dispatch(getCartProduct());
         let arrText = linkText.split('=');
-        const products = [];
+        const payProducts = [];
         arrText.forEach((element1) => {
-            cartProduct.forEach((element2) => {
-                element1 === element2.id && products.push(element2);
-            });
+            if (element1) {
+                cartProduct.forEach((element2) => {
+                    element1 === element2.id && payProducts.push(element2);
+                });
+            }
         });
-        setProducts(products);
+        setProducts(payProducts);
     }, [dispatch, linkText]);
 
     // DeliveryAddress
+    const ImportApiAddressNew = (obj) => {
+        dispatch(changeAddressActiveApi(obj));
+    };
+
     const showModal = () => {
         setVisible(true);
+    };
+
+    const handleChangeInputName = (e) => {
+        setInputName(e.target.value);
+    };
+
+    const handleChangeInputNumber = (e) => {
+        setInputNumber(e.target.value);
     };
 
     const handleOk = () => {
@@ -96,48 +161,104 @@ function Pay(props) {
             setVisible(false);
             setConfirmLoading(false);
 
-            const isEmpty = Object.values(valueAddress).every(
+            let o = Object.fromEntries(
+                Object.entries({
+                    tinh: objAddress.tinh || valueAddress.tinh,
+                    quan: objAddress.quan || valueAddress.quan,
+                    xa: objAddress.xa || valueAddress.xa,
+                    mota: objAddress.mota || valueAddress.mota,
+                    name_user: inputName,
+                    number_phone: inputNumber,
+                }).filter(([_, v]) => v !== ''),
+            );
+
+            const isEmpty = Object.values(o).every(
                 (x) => x === null || x === '',
             );
+
             if (isEmpty) {
-                messageToCart(false);
+                messageToCart(false, 'Lỗi Khi Tải Dữ Liệu Lên!');
             } else {
-                ImportApiAddressNew(valueAddress);
-                messageToCart(true);
+                if (changeCheckbox) {
+                    ImportApiAddressNew(o);
+                    messageToCart(true, 'Đã Tải Thành Công Địa Chỉ Mặc Định');
+                } else {
+                    setvalueAddress({ ...objAddress, ...o });
+                    messageToCart(true, 'Đã Tải Thành Công Địa Chỉ Tạm Thời');
+                }
             }
         }, 1000);
     };
 
     const onHandleValueImportAddress = (obj) => {
-        setvalueAddress({ ...obj, name_user: name, number_phone: number });
-    };
-
-    const messageToCart = (status) => {
-        if (status) {
-            message.success({
-                content: 'Đã Tải Thành Công Địa Chỉ Tạm Thời',
-                className: 'custom-class',
-                style: {
-                    marginTop: '0vh',
-                },
-            });
-        } else {
-            message.error({
-                content: 'Lỗi Khi Tải Dữ Liệu Lên!',
-                className: 'custom-class',
-                style: {
-                    marginTop: '0vh',
-                },
-            });
-        }
-    };
-    const handleImportImput = (name, number) => {
-        name && setName(name);
-        number && setNumber(number);
+        setObjAddress(obj);
     };
 
     const handleCancel = () => {
         setVisible(false);
+        setInputName(address_user_api.obj.name_user || '');
+        setInputNumber(address_user_api.obj.number_phone || '');
+    };
+
+    function onChangeCheckbox(e) {
+        setChangeCheckbox(e.target.checked);
+    }
+
+    const handleChangeMethodPayProduct = (method) => {
+        setPayMethod(method);
+    };
+
+    const handleMethodPayProduct = () => {
+        if (payMethod) {
+            const obj = {
+                ...valueAddress,
+                products,
+                message: message,
+                dateTime: moment().format('YYYY-MM-DD HH:mm:ss'),
+            };
+            delete obj.id;
+
+            dispatch(insertPayProduct(obj));
+
+            setTimeout(() => {
+                openNotification(
+                    'Xin Chúc Mừng',
+                    `Bạn Đã Đặt ${products.length} sản phẩm thành Công`,
+                );
+                history.push('/user/all');
+            }, 500);
+
+            products.forEach((element) => {
+                setTimeout(async () => {
+                    await dispatch(deleteCartProductAllApi(element));
+                }, 100);
+            });
+        } else {
+            messageToCart(
+                false,
+                'Xin Lỗi, Vui Lòng Chọn Phương Thức Thanh Toán Trước Khi Đặt Hàng!',
+            );
+        }
+    };
+
+    const handleShowPayTable = (method) => {
+        if (method === 'Thanh Toán Online') {
+            setIsShowTablePay(!isShowTablePay);
+        } else {
+            setIsShowTablePay(false);
+            setShowPayPal(false);
+        }
+    };
+
+    const handleIntegrate = (key) => {
+        if (key === 'PayPal') {
+            // setIsShowTablePay(false);
+            setShowPayPal(true);
+        }
+    };
+
+    const handleChangeMessage = (e) => {
+        setMessage(e.target.value);
     };
 
     // End
@@ -157,7 +278,6 @@ function Pay(props) {
                 <DeliveryAddress
                     address_api={address_api}
                     ImportApiAddressNew={ImportApiAddressNew}
-                    address_user_api={address_user_api}
                     loading={loading}
                     visible={visible}
                     confirmLoading={confirmLoading}
@@ -167,11 +287,31 @@ function Pay(props) {
                     handleCancel={handleCancel}
                     modalText={modalText}
                     onHandleValueImportAddress={onHandleValueImportAddress}
-                    handleImportImput={handleImportImput}
+                    objAddress={objAddress}
+                    inputName={inputName}
+                    inputNumber={inputNumber}
+                    handleChangeInputName={handleChangeInputName}
+                    handleChangeInputNumber={handleChangeInputNumber}
+                    onChangeCheckbox={onChangeCheckbox}
                 />
-                <ProductsPay products_api={products} loading={loading} />
+                <ProductsPay
+                    products_api={products}
+                    loading={loading}
+                    handleChangeMessage={handleChangeMessage}
+                />
                 <Voucher loading={loading} />
-                <Payment sumProduct={sumProduct} loading={loading} />
+                <Payment
+                    sumProduct={sumProduct}
+                    loading={loading}
+                    handleMethodPayProduct={handleMethodPayProduct}
+                    handleChangeMethodPayProduct={handleChangeMethodPayProduct}
+                    handleShowPayTable={handleShowPayTable}
+                />
+                <PayMethod
+                    isShowTablePay={isShowTablePay}
+                    handleIntegrate={handleIntegrate}
+                    showPayPal={showPayPal}
+                />
             </PayComponent>
         </Helmet>
     );

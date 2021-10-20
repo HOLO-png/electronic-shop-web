@@ -23,7 +23,7 @@ function SelecteValue(props) {
     const [input, setInput] = useState('');
 
     useEffect(() => {
-        address_api && setStateAddress(address_api);
+        address_api.length && setStateAddress(address_api);
     }, [address_api]);
 
     useEffect(() => {

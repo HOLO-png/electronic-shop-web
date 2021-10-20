@@ -34,6 +34,7 @@ function ProductCart(props) {
         >
             <div className="product-cart" style={{ height: height + 'px' }}>
                 <Link to={`/${category}/${name_url}/${id}`}>
+                    {/* khi click vào thẻ sản phẩm thì nó sẽ gửi cái id, name lên url */}
                     <div className="product-cart__image">
                         <img
                             src={image[0][0]}

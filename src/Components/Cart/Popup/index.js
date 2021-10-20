@@ -8,13 +8,15 @@ function Popup(props) {
     const {
         modal,
         setModalVisibleAlear,
-        currentproduct,
+        currentProduct,
         setModalVisibleCancel,
     } = props;
 
+    console.log(currentProduct);
+
     return (
         <Modal
-            title={`Bạn chắc chắn muốn ${currentproduct.length} bỏ sản phẩm này ?`}
+            title={`Bạn chắc chắn muốn ${currentProduct.length} bỏ sản phẩm này ?`}
             centered
             icon={<CloseSquareOutlined />}
             visible={modal}
@@ -22,7 +24,7 @@ function Popup(props) {
             onCancel={() => setModalVisibleCancel()}
             className="popup-product-cart"
         >
-            {currentproduct.map((item) => (
+            {currentProduct.map((item) => (
                 <p>{item.name}</p>
             ))}
         </Modal>

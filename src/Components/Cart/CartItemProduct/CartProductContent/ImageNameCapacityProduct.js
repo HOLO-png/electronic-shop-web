@@ -13,7 +13,7 @@ function ImageNameCapacityProduct(props) {
                 onChange={onChange}
                 checked={product?.isChecked || false}
                 name={product.id}
-                className="input-product-checkbox"
+                className="input-product-checkbox nohover"
                 // style={{ top: -30, transform: 'scale(1.5)' }}
             >
                 <Image width={100} src={product.image[0]} />

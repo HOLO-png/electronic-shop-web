@@ -8,13 +8,16 @@ function CartProducts(props) {
     return (
         <div className="header__menu__item__cart-drawer__products__item">
             <div className="header__menu__item__cart-drawer__products__img">
-                <img alt={product.name} src={product.image[0]} />
+                <img
+                    alt={product ? product.name : ''}
+                    src={product ? product.image[0] : ''}
+                />
             </div>
             <div className="header__menu__item__cart-drawer__products__title">
-                {product.name}
+                {product ? product.name : ''}
             </div>
             <div className="header__menu__item__cart-drawer__products__price">
-                {numberWithCommas(product.price)} <sub>đ</sub>
+                {numberWithCommas(product ? product.price : '')} <sub>đ</sub>
             </div>
         </div>
     );

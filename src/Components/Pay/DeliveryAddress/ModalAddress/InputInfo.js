@@ -3,19 +3,12 @@ import PropTypes from 'prop-types';
 import { Col, Input, Row } from 'antd';
 
 function InputInfo(props) {
-    const { handleImportImput } = props;
-    const [inputName, setInputName] = useState('');
-    const [inputNumber, setInputNumber] = useState(0);
-
-    const handleChangeInputName = (e) => {
-        setInputName(e.target.value);
-        handleImportImput(inputName, inputNumber);
-    };
-
-    const handleChangeInputNumber = (e) => {
-        setInputNumber(e.target.value);
-        handleImportImput(inputName, inputNumber);
-    };
+    const {
+        inputName,
+        inputNumber,
+        handleChangeInputName,
+        handleChangeInputNumber,
+    } = props;
 
     return (
         <Row
@@ -27,6 +20,7 @@ function InputInfo(props) {
                 <Input
                     placeholder="Nhập Họ Và Tên"
                     style={{ height: 40 }}
+                    value={inputName}
                     onChange={handleChangeInputName}
                 />
             </Col>
@@ -34,6 +28,7 @@ function InputInfo(props) {
                 <Input
                     placeholder="Số Điện Thoại"
                     style={{ height: 40 }}
+                    value={inputNumber}
                     onChange={handleChangeInputNumber}
                 />
             </Col>

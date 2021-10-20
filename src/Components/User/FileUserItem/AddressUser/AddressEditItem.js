@@ -44,10 +44,7 @@ function AddressEditItem(props) {
                 name_user: nameUser,
                 number_phone: numberPhone,
             };
-            let o = Object.fromEntries(
-                Object.entries(addressUserObj).filter(([_, v]) => v !== ''),
-            );
-            importAddressUserItem(o);
+            importAddressUserItem(addressUserObj);
         }, 500);
         setNameUser('');
         setNumberPhone('');

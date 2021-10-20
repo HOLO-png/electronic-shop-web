@@ -46,12 +46,21 @@ const PaymentComponent = styled.div`
     }
 `;
 function Payment(props) {
-    const { sumProduct, loading } = props;
+    const {
+        sumProduct,
+        loading,
+        handleChangeMethodPayProduct,
+        handleMethodPayProduct,
+        handleShowPayTable,
+    } = props;
 
     return (
         <PaymentComponent>
             <div className="payment">
-                <MethodPay />
+                <MethodPay
+                    handleChangeMethodPayProduct={handleChangeMethodPayProduct}
+                    handleShowPayTable={handleShowPayTable}
+                />
                 <Row
                     gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
                     className="payment__row-method"
@@ -106,6 +115,7 @@ function Payment(props) {
                             <Button
                                 type="primary"
                                 style={{ width: 200, height: 50, fontSize: 18 }}
+                                onClick={handleMethodPayProduct}
                             >
                                 Đặt Hàng
                             </Button>

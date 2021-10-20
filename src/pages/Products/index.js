@@ -352,7 +352,7 @@ const override = css`
 `;
 export default function Products() {
     const dispatch = useDispatch();
-    const { id, category } = useParams();
+    const { id, category } = useParams(); //lấy id và category từ thanh địa chỉ url
     const product = useSelector(productItemSelector);
     const [loading, setLoading] = useState(false);
     const productObj = useSelector(imgImportSelector);
@@ -456,12 +456,26 @@ export default function Products() {
 
     const handleProductToBuy = (obj) => {
         obj = { ...obj, ...{ amount: amout, isChecked: true } };
-        dispatch(insertCartProduct(obj));
+        if (Object.keys(cartProduct).length !== 0) {
+            let status = cartProduct.every(function (item) {
+                return item.image[0] !== obj.image[0];
+            });
+            if (status) {
+                dispatch(insertCartProduct(obj));
+                messageToCart(true);
+            } else {
+                messageToCart(false);
+            }
+        } else {
+            dispatch(insertCartProduct(obj));
+            messageToCart(true);
+        }
     };
 
     const handleComments = (obj) => {
         dispatch(updateCmtItem(obj));
     };
+
     return (
         <Helmet title={product.category}>
             {loading && (

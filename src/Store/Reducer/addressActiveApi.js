@@ -4,7 +4,7 @@ import axios from 'axios';
 export const changeAddressActiveApi = createAsyncThunk(
     'addressActiveApi/addressActiveApiFetch',
     async (obj) => {
-        const response = await axios.post(
+        const response = await axios.patch(
             `http://localhost:3000/address_active_api`,
             { obj },
         );

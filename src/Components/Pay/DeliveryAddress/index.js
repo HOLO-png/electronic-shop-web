@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Button, Col, message, Row, Skeleton } from 'antd';
 import DeliveryAddressTitle from './DeliveryAddressTitle';
 import ModalAddress from './ModalAddress';
+import { isEmptyObjectAll } from '../../../utils/checkEmptyObjAll';
 
 const DeliveryStyle = styled.div`
     height: 120px;
@@ -42,6 +43,12 @@ const DeliveryStyle = styled.div`
             font-size: 19px;
             font-weight: 100;
             color: #7f7f7f;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
         }
         &__border-top {
             height: 3px;
@@ -73,7 +80,6 @@ const DeliveryStyle = styled.div`
 function DeliveryAddress(props) {
     const {
         address_api,
-        address_user_api,
         loading,
         valueAddress,
         showModal,
@@ -84,6 +90,11 @@ function DeliveryAddress(props) {
         confirmLoading,
         onHandleValueImportAddress,
         handleImportImput,
+        onChangeCheckbox,
+        inputName,
+        inputNumber,
+        handleChangeInputName,
+        handleChangeInputNumber,
     } = props;
 
     return (
@@ -149,13 +160,7 @@ function DeliveryAddress(props) {
                             gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
                             className="delivery-address__row"
                         >
-                            <DeliveryAddressTitle
-                                valueAddress={
-                                    Object.keys(valueAddress).length !== 0
-                                        ? valueAddress
-                                        : address_user_api[0]
-                                }
-                            />
+                            <DeliveryAddressTitle valueAddress={valueAddress} />
                             <Col
                                 className="gutter-row delivery-address__col--des"
                                 span={4}
@@ -171,10 +176,18 @@ function DeliveryAddress(props) {
                                 modalText={modalText}
                                 confirmLoading={confirmLoading}
                                 address_api={address_api}
+                                objAddress={valueAddress}
                                 onHandleValueImportAddress={
                                     onHandleValueImportAddress
                                 }
                                 handleImportImput={handleImportImput}
+                                inputName={inputName}
+                                inputNumber={inputNumber}
+                                handleChangeInputName={handleChangeInputName}
+                                handleChangeInputNumber={
+                                    handleChangeInputNumber
+                                }
+                                onChangeCheckbox={onChangeCheckbox}
                             />
                         </Row>
                     </div>

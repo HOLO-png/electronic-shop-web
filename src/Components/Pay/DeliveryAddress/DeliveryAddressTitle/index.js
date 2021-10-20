@@ -4,6 +4,7 @@ import { Col } from 'antd';
 
 function DeliveryAddressTitle(props) {
     const { valueAddress } = props;
+
     return (
         <>
             <Col className="gutter-row delivery-address__col--des" span={7}>

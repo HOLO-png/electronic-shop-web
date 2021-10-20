@@ -256,3 +256,36 @@ span.user__phone-number-content {
     margin-left: 46px;
     color: #787878;
 }
+.user-order__product-all {
+    width: 100%;
+    height: auto;
+    transform: translateY(-14px);
+    overflow-y: auto;
+    max-height: 350px;
+}
+.input-product-checkbox.nohover:hover {
+        outline: none;
+        border: none;
+        box-shadow: none;
+}
+.ant-drawer-body {
+    padding: 20px;
+}
+.order__user-status {
+    font-size: 12px;
+    margin-left: 14px;
+    font-weight: 600;
+    font-family: sans-serif;
+    & .Đang.chờ.xử.lý {
+        color: #119803;
+    }
+    & .Đã.hủy.đơn.hàng {
+        color: #d00000;
+    }
+    .Đang.xử.lý {
+        color: #e2c801;
+    }
+    span.title-status {
+        margin-right: 5px;
+    }
+}
