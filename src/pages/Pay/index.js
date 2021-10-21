@@ -213,6 +213,10 @@ function Pay(props) {
             const obj = {
                 ...valueAddress,
                 products,
+                status: {
+                    title: 'Đang chờ xử lý',
+                    icon: 'fa-badge-check',
+                },
                 message: message,
                 dateTime: moment().format('YYYY-MM-DD HH:mm:ss'),
             };

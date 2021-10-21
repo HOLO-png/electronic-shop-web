@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Badge, Button } from 'antd';
 import numberWithCommas from '../../../../utils/numberWithCommas';
-import { order_status } from '../../../../assets/fake-data';
 
 const OrderPayProductStyles = styled.div`
-    padding: 10px 0px;
+    padding: 10px 10px;
     border: 1px solid #ccc;
     margin-bottom: 20px;
     .user-order__pay-product-item {
@@ -33,7 +32,7 @@ const OrderPayProductStyles = styled.div`
             align-items: center;
             .title-product {
                 display: -webkit-box;
-                -webkit-line-clamp: 1;
+                -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -66,18 +65,18 @@ const OrderPayProductStyles = styled.div`
             font-weight: 700;
         }
         &__status {
-            font-size: 12px;
+            font-size: 10px;
             margin-left: 14px;
             font-weight: 600;
             font-family: sans-serif;
             & .Đang.chờ.xử.lý {
-                color: #119803;
+                color: #e2c801;
             }
             & .Đã.hủy.đơn.hàng {
                 color: #d00000;
             }
-            .Đang.xử.lý {
-                color: #e2c801;
+            & .Đang.giao.hàng {
+                color: #119803;
             }
             span.title-status {
                 margin-right: 5px;
@@ -89,10 +88,25 @@ const OrderPayProductStyles = styled.div`
         top: 0;
         right: 25%;
     }
+    .user-order__stt {
+        font-size: 20px;
+        font-family: 'M PLUS Rounded 1c';
+        transform: translateX(10px);
+        color: #7a7a7a;
+    }
 `;
 function OrderPayProduct(props) {
-    const { order, handleOrderActive, status, photoURL } = props;
-    console.log(order);
+    const { order, handleOrderActive, photoURL, index, handleChangeDataValue } =
+        props;
+
+    useEffect(() => {
+        const time = setTimeout(() => {
+            handleChangeDataValue(order);
+        }, 10000);
+        return () => {
+            clearTimeout(time);
+        };
+    }, []);
 
     return (
         <OrderPayProductStyles>
@@ -100,6 +114,9 @@ function OrderPayProduct(props) {
                 className="user-order__pay-product-item"
                 onDoubleClick={() => handleOrderActive(order)}
             >
+                <div className="user-order__stt">
+                    <span>{index + 1}</span>
+                </div>
                 <div className="user-order__pay-product-item__image">
                     <Badge count={order.products.length}></Badge>
                     <img alt="" src={photoURL} />

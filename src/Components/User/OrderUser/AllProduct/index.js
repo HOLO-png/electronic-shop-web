@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Button, Col, Divider, Empty, Input, Row } from 'antd';
@@ -37,7 +37,14 @@ const AllProductItem = styled.div`
     }
 `;
 function AllProduct(props) {
-    const { orders, loading, handleOrderActive, status, photoURL } = props;
+    const {
+        orders,
+        loading,
+        handleOrderActive,
+        photoURL,
+        handleChangeDataValue,
+    } = props;
+
     const onSearch = (value) => console.log(value);
 
     return (
@@ -75,8 +82,8 @@ function AllProduct(props) {
                             <OrderPayProducts
                                 orders={orders}
                                 handleOrderActive={handleOrderActive}
-                                status={status}
                                 photoURL={photoURL}
+                                handleChangeDataValue={handleChangeDataValue}
                             />
                         ) : (
                             <>

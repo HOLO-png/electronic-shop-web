@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Empty, Row } from 'antd';
 import styled from 'styled-components';
+import OrderPayProducts from '../AllProduct/OrderPayProducts';
 
 const WaitingConfirmItem = styled.div``;
 
 function WaitingConfirm(props) {
+    const { order, photoURL, handleOrderActive } = props;
+
+    const handleChangeDataValue = () => {};
     return (
         <WaitingConfirmItem>
             <Row
@@ -23,7 +27,20 @@ function WaitingConfirm(props) {
                         justifyContent: 'center',
                     }}
                 >
-                    <Empty />
+                    <div className="add-product__processing">
+                        {order.length !== 0 ? (
+                            <OrderPayProducts
+                                orders={order}
+                                handleOrderActive={handleOrderActive}
+                                photoURL={photoURL}
+                                handleChangeDataValue={handleChangeDataValue}
+                            />
+                        ) : (
+                            <>
+                                <Empty />
+                            </>
+                        )}
+                    </div>
                 </Col>
             </Row>
         </WaitingConfirmItem>

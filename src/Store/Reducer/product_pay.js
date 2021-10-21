@@ -22,19 +22,19 @@ export const insertPayProduct = createAsyncThunk(
     },
 );
 
-// export const updatePayProduct = createAsyncThunk(
-//     'payProducts/payProductUpdate',
-//     async (obj) => {
-//         const newPayProduct = {
-//             ...obj,
-//         };
-//         await axios.put(
-//             `http://localhost:3000/product_pay/${obj.id}`,
-//             newPayProduct,
-//         );
-//         return newPayProduct;
-//     },
-// );
+export const updatePayProduct = createAsyncThunk(
+    'payProducts/payProductUpdate',
+    async (obj) => {
+        const newPayProduct = {
+            ...obj,
+        };
+        await axios.put(
+            `http://localhost:3000/orders_pay/${obj.id}`,
+            newPayProduct,
+        );
+        return newPayProduct;
+    },
+);
 
 // export const deletePayProductAllApi = createAsyncThunk(
 //     'payProducts/payProductAllRemove',
@@ -70,13 +70,13 @@ const payProductsSlice = createSlice({
         [insertPayProduct.rejected]: (state, action) => {},
 
         // update Pay product
-        // [updatePayProduct.pending]: (state, action) => {},
-        // [updatePayProduct.fulfilled]: (state, action) => {
-        //     state.payProducts = state.payProducts.map(function (item) {
-        //         return item.id === action.payload.id ? action.payload : item;
-        //     });
-        // },
-        // [updatePayProduct.rejected]: (state, action) => {},
+        [updatePayProduct.pending]: (state, action) => {},
+        [updatePayProduct.fulfilled]: (state, action) => {
+            state.payProducts = state.payProducts.map(function (item) {
+                return item.id === action.payload.id ? action.payload : item;
+            });
+        },
+        [updatePayProduct.rejected]: (state, action) => {},
 
         //delete coins product all
         // [deletePayProductAllApi.pending]: (state, action) => {},

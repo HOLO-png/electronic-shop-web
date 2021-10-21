@@ -268,22 +268,20 @@ span.user__phone-number-content {
         border: none;
         box-shadow: none;
 }
-.ant-drawer-body {
-    padding: 20px;
-}
+
 .order__user-status {
     font-size: 12px;
     margin-left: 14px;
     font-weight: 600;
     font-family: sans-serif;
     & .Đang.chờ.xử.lý {
-        color: #119803;
+        color: #e2c801;
     }
     & .Đã.hủy.đơn.hàng {
         color: #d00000;
     }
-    .Đang.xử.lý {
-        color: #e2c801;
+    & .Đang.giao.hàng {
+        color: #119803;
     }
     span.title-status {
         margin-right: 5px;

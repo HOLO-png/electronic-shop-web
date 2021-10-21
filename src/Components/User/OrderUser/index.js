@@ -3,15 +3,12 @@ import PropTypes from 'prop-types';
 import { Tabs, Radio } from 'antd';
 import AllProduct from './AllProduct';
 import WaitingConfirm from './WaitingConfirm';
-import WaitFor from './WaitFor';
-import Delivering from './Delivering';
-import Delivered from './Delivered';
-import Canceled from './Canceled';
 import styled, { css } from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     getPayProduct,
     payProductsSelector,
+    updatePayProduct,
 } from '../../../Store/Reducer/product_pay';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 import Helmet from '../../Helmet';
@@ -27,7 +24,7 @@ const OrderUserConFirm = styled.div`
         transition: 2s width ease;
     }
     .ant-tabs-tab-btn {
-        margin-left: 20px;
+        margin-left: 10px;
     }
 `;
 const override = css`
@@ -43,10 +40,14 @@ function OrderUser(props) {
     const productsPay = useSelector(payProductsSelector);
     const [loading, setLoading] = useState(false);
     const [orders, setOrders] = useState([]);
-    const [status, setStatus] = useState('Đang xử lý');
     const [visible, setVisible] = useState(false);
     const [placement, setPlacement] = useState('right');
     const [dataOrder, setDataOrder] = useState();
+    const [productWaitingConfirm, setProductWaitingConfirm] = useState(null);
+    const [delivery, setDelivery] = useState(null);
+    const [delivered, setDelivered] = useState(null);
+    const [cancelOrder, setCancelOrder] = useState(null);
+
     const { photoURL } = data.user;
 
     useEffect(() => {
@@ -64,6 +65,28 @@ function OrderUser(props) {
         };
     }, [productsPay]);
 
+    useEffect(() => {
+        const orderWaitingConfirm = orders.filter(
+            (item) => item.status.title === 'Đang chờ xử lý',
+        );
+        setProductWaitingConfirm(orderWaitingConfirm);
+
+        const orderDelivery = orders.filter(
+            (item) => item.status.title === 'Đang giao hàng',
+        );
+        setDelivery(orderDelivery);
+
+        const orderDelivered = orders.filter(
+            (item) => item.status.title === 'Đã giao hàng',
+        );
+        setDelivered(orderDelivered);
+
+        const orderCancel = orders.filter(
+            (item) => item.status.title === 'Đã hủy đơn hàng',
+        );
+        setCancelOrder(orderCancel);
+    }, [orders]);
+
     const handleOrderActive = (order) => {
         setDataOrder(order);
         setVisible(true);
@@ -76,6 +99,19 @@ function OrderUser(props) {
     const onClose = () => {
         setVisible(false);
     };
+
+    function handleChangeDataValue(data) {
+        console.log('ok');
+
+        const objData = {
+            ...data,
+            status: {
+                title: 'Đang giao hàng',
+                icon: 'fa-check-square',
+            },
+        };
+        dispatch(updatePayProduct(objData));
+    }
 
     return (
         <Helmet title="Payment">
@@ -91,29 +127,42 @@ function OrderUser(props) {
             )}
             <OrderUserConFirm>
                 <Tabs defaultActiveKey="1" type="card" size={110}>
-                    <TabPane tab="Tất cả" key="1">
+                    <TabPane tab="Tất cả đơn hàng" key="1">
                         <AllProduct
                             orders={orders}
                             loading={loading}
                             handleOrderActive={handleOrderActive}
-                            status={status}
                             photoURL={photoURL}
+                            handleChangeDataValue={handleChangeDataValue}
                         />
                     </TabPane>
-                    <TabPane tab="Chờ xác nhận" key="2">
-                        <WaitingConfirm />
+                    <TabPane tab="Đang chờ xử lý" key="2">
+                        <WaitingConfirm
+                            order={productWaitingConfirm}
+                            photoURL={photoURL}
+                            handleOrderActive={handleOrderActive}
+                        />
                     </TabPane>
-                    <TabPane tab="Chờ lấy hàng" key="3">
-                        <WaitFor />
+                    <TabPane tab="Đang giao hàng" key="3">
+                        <WaitingConfirm
+                            order={delivery}
+                            photoURL={photoURL}
+                            handleOrderActive={handleOrderActive}
+                        />
                     </TabPane>
-                    <TabPane tab="Đang giao" key="4">
-                        <Delivering />
+                    <TabPane tab="Đã giao hàng" key="5">
+                        <WaitingConfirm
+                            order={delivered}
+                            photoURL={photoURL}
+                            handleOrderActive={handleOrderActive}
+                        />
                     </TabPane>
-                    <TabPane tab="Đã giao" key="5">
-                        <Delivered />
-                    </TabPane>
-                    <TabPane tab="Đã huỷ" key="6">
-                        <Canceled />
+                    <TabPane tab="Đã huỷ đơn hàng" key="6">
+                        <WaitingConfirm
+                            order={cancelOrder}
+                            photoURL={photoURL}
+                            handleOrderActive={handleOrderActive}
+                        />
                     </TabPane>
                 </Tabs>
                 <DrawerOrderPay

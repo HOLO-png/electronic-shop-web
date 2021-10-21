@@ -49,7 +49,7 @@ function OrderUserProfile(props) {
                             Thời gian:
                         </span>
                         <span className="order__user-date-time-text">
-                            2021-10-20 08:40:14
+                            {dataOrder.dateTime}
                         </span>
                     </div>
                     <div className="order__user-message">
@@ -57,7 +57,7 @@ function OrderUserProfile(props) {
                             Lời nhắn:
                         </span>
                         <span className="order__user-message-text">
-                            di chuyển cho cẩn thận nha, thank
+                            {dataOrder.message || 'Không có lời nhắn'}
                         </span>
                     </div>
                 </div>

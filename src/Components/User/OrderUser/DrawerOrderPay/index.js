@@ -31,11 +31,15 @@ function DrawerOrderPay(props) {
                     </Button>
                 </Space>
             }
+            className="drawer"
         >
             <OrderUserProfile photoURL={photoURL} dataOrder={dataOrder} />
             <hr />
             <OrderProducts dataOrder={dataOrder} />
             <div className="order__total-money">
+                <Button type="dashed" danger>
+                    Hủy Đơn Hàng
+                </Button>
                 <span className="order__total-money-title">Tổng Tiền:</span>
                 <span className="order__total-money-text">
                     {numberWithCommas(
