@@ -106,7 +106,7 @@ function OrderPayProduct(props) {
         return () => {
             clearTimeout(time);
         };
-    }, []);
+    }, [order]);
 
     return (
         <OrderPayProductStyles>

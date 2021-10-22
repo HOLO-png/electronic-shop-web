@@ -36,17 +36,17 @@ export const updatePayProduct = createAsyncThunk(
     },
 );
 
-// export const deletePayProductAllApi = createAsyncThunk(
-//     'payProducts/payProductAllRemove',
-//     async (obj) => {
-//         let arrProduct = [];
-//         setTimeout(async () => {
-//             await axios.delete(`http://localhost:3000/product_pay/${obj.id}`);
-//         }, 100);
-//         arrProduct.push(obj);
-//         return arrProduct;
-//     },
-// );
+export const deletePayProductAllApi = createAsyncThunk(
+    'payProducts/payProductAllRemove',
+    async (obj) => {
+        let arrProduct = [];
+        setTimeout(async () => {
+            await axios.delete(`http://localhost:3000/orders_pay/${obj.id}`);
+        }, 100);
+        arrProduct.push(obj);
+        return arrProduct;
+    },
+);
 
 const payProductsSlice = createSlice({
     name: 'payProducts',
@@ -79,13 +79,13 @@ const payProductsSlice = createSlice({
         [updatePayProduct.rejected]: (state, action) => {},
 
         //delete coins product all
-        // [deletePayProductAllApi.pending]: (state, action) => {},
-        // [deletePayProductAllApi.fulfilled]: (state, action) => {
-        //     state.payProducts = state.payProducts.filter(
-        //         (ar) => !action.payload.find((rm) => rm.id === ar.id),
-        //     );
-        // },
-        // [deletePayProductAllApi.rejected]: (state, action) => {},
+        [deletePayProductAllApi.pending]: (state, action) => {},
+        [deletePayProductAllApi.fulfilled]: (state, action) => {
+            state.payProducts = state.payProducts.filter(
+                (ar) => !action.payload.find((rm) => rm.id === ar.id),
+            );
+        },
+        [deletePayProductAllApi.rejected]: (state, action) => {},
     },
 });
 

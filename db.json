@@ -2118,7 +2118,7 @@
   },
   "orders_pay": [
     {
-      "id": "PbhXGrvMSBJjSXiEjFHQN",
+      "id": "HaIfJ402vtkyicVGWPVwv",
       "id_user": "Q95Y4cLkH6WlRQn0PWjr",
       "tinh": "Tỉnh Điện Biên",
       "quan": "Huyện Điện Biên",
@@ -2128,73 +2128,20 @@
       "number_phone": "01633856382",
       "products": [
         {
-          "id": "cCwskCpPRU7IMGE3BuwNN",
-          "count": 1,
-          "name": "Điện Thoại Vsmart Joy 4 - Hàng Chính Hãng",
-          "image": [
-            "https://salt.tikicdn.com/cache/100x100/ts/product/52/db/ed/250ed1f223e0711ac9f3ea93ade7074d.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/98/bc/d6/4753efd88927369b437819931b6c5c91.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/da/54/79/d8db1c46a6066637239c93bf226ec076.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/05/a9/42/88f0f0c445af5fb3a9e7d25959a15a0b.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/92/9c/56/5e03bf303e73b956e0b2d7de405f78ae.jpg.webp"
-          ],
-          "price": 1997000,
-          "priceOld": 2997000,
-          "capacity": "4GB/64GB",
-          "amount": 2,
-          "isChecked": true
-        },
-        {
-          "id": "qyoqgR-w5aKG_dX1wx6nC",
-          "name": "Apple Macbook Pro 2020 M1 - 13 Inchs (Apple M1-8GB-256GB) - Hàng Chính Hãng",
+          "id": "5rvUK6GSqir6LdfEwhjjG",
+          "name": "Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng",
           "count": 0,
           "image": [
-            "https://salt.tikicdn.com/cache/100x100/ts/product/90/c1/c8/5dd3cb13601f8a2d1ede1c6af5a18862.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/76/41/eb/b63ba12b55f04a5b3566df8fe009381e.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/1d/34/0f/da5f0bf017d275f4b0706e8d83bd442d.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/1d/34/0f/da5f0bf017d275f4b0706e8d83bd442d.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/30/f8/f4/21ba3db95e55f6bdd7fdc120430403a7.jpg.webp"
-          ],
-          "price": 30990000,
-          "priceOld": 32500000,
-          "capacity": "8GB/264GB",
-          "trademark": "Apple",
-          "category": "laptop",
-          "amount": 1
-        }
-      ],
-      "status": {
-        "title": "Đang giao hàng",
-        "icon": "fa-check-square"
-      },
-      "message": "",
-      "dateTime": "2021-10-21 16:44:06"
-    },
-    {
-      "id": "Wg4OM9g8H8I5j5b99azVW",
-      "id_user": "Q95Y4cLkH6WlRQn0PWjr",
-      "tinh": "Tỉnh Điện Biên",
-      "quan": "Huyện Điện Biên",
-      "xa": "Xã Thanh Hưng",
-      "mota": "538",
-      "name_user": "bui hoang chi",
-      "number_phone": "01633856382",
-      "products": [
-        {
-          "id": "hRUhA-zd4jBAWCbZyTjjq",
-          "name": "Điện Thoại Samsung Galaxy S21 Ultra 5G (12GB-128GB) - ĐÃ KÍCH HOẠT BẢO HÀNH ĐIỆN TỬ - Hàng Chính Hãng",
-          "count": 0,
-          "image": [
-            "https://salt.tikicdn.com/cache/100x100/ts/product/e1/0f/a2/6fbd59d964b0ae3d96f20013192abefe.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/35/38/60/fcc30897a8f72cd9493f2f9fb4a8ff6d.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/35/38/60/fcc30897a8f72cd9493f2f9fb4a8ff6d.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/87/0c/9a/de6b4d6d4339187a098a89646bb69c52.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/87/0c/9a/de6b4d6d4339187a098a89646bb69c52.jpg.webp"
+            "https://salt.tikicdn.com/cache/100x100/ts/product/b0/39/57/cdce3bcbefd3a319be3847bf73ad2f84.jpg.webp",
+            "https://salt.tikicdn.com/cache/100x100/ts/product/c4/bc/93/a6c8edf3032c5ccf50c0e82e4e4c2c8b.jpg.webp",
+            "https://salt.tikicdn.com/cache/100x100/ts/product/c5/15/ba/245ee2fafe1e5fd5cee886876a93d53f.jpg.webp",
+            "https://salt.tikicdn.com/cache/100x100/ts/product/c5/15/ba/245ee2fafe1e5fd5cee886876a93d53f.jpg.webp",
+            "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp"
           ],
           "price": 20650000,
           "priceOld": 32500000,
-          "capacity": "12GB/128GB",
-          "trademark": "Samsung",
+          "capacity": "16GB/128GB",
+          "trademark": "Apple",
           "category": "mobile",
           "amount": 1
         }
@@ -2204,44 +2151,7 @@
         "icon": "fa-check-square"
       },
       "message": "",
-      "dateTime": "2021-10-21 16:54:19"
-    },
-    {
-      "id": "UxN7AVTVUlhNKywpAEJiQ",
-      "id_user": "Q95Y4cLkH6WlRQn0PWjr",
-      "tinh": "Tỉnh Điện Biên",
-      "quan": "Huyện Điện Biên",
-      "xa": "Xã Thanh Hưng",
-      "mota": "538",
-      "name_user": "bui hoang chi",
-      "number_phone": "01633856382",
-      "products": [
-        {
-          "id": "QC7eiTCTOP7Hne11k8Rit",
-          "name": "Điện Thoại Oppo Find X3 Pro 5G (12GB-256G) - Hàng Chính Hãng",
-          "count": 0,
-          "image": [
-            "https://salt.tikicdn.com/cache/100x100/ts/product/a8/37/63/0982a662768eedee9c378caafb1b6ebf.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/c6/ab/a8/7b3d97e849d1207bd46ec4a5014e694d.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/d3/2c/35/0bffb4fe4a0feb6fdd884df97fa28b4c.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/8a/60/40/1049a92a0b8078e980fbd7825feabdb8.jpg.webp",
-            "https://salt.tikicdn.com/cache/100x100/ts/product/8c/7f/12/9c46ed5b5fcf49b7922b84a60b572178.jpg.webp"
-          ],
-          "price": 23990000,
-          "priceOld": 26990000,
-          "capacity": "16GB/128GB",
-          "trademark": "OPPO",
-          "category": "mobile",
-          "amount": 1,
-          "isChecked": true
-        }
-      ],
-      "status": {
-        "title": "Đang giao hàng",
-        "icon": "fa-check-square"
-      },
-      "message": "",
-      "dateTime": "2021-10-21 18:53:30"
+      "dateTime": "2021-10-22 10:17:07"
     }
   ]
 }

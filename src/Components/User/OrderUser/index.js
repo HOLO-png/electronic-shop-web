@@ -6,6 +6,7 @@ import WaitingConfirm from './WaitingConfirm';
 import styled, { css } from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import {
+    deletePayProductAllApi,
     getPayProduct,
     payProductsSelector,
     updatePayProduct,
@@ -14,6 +15,7 @@ import ScaleLoader from 'react-spinners/ScaleLoader';
 import Helmet from '../../Helmet';
 import { AuthContext } from '../../../Context/AuthProvider';
 import DrawerOrderPay from './DrawerOrderPay';
+import { openNotification } from '../../../utils/messageAlear';
 const { TabPane } = Tabs;
 
 const OrderUserConFirm = styled.div`
@@ -100,19 +102,61 @@ function OrderUser(props) {
         setVisible(false);
     };
 
-    function handleChangeDataValue(data) {
-        console.log('ok');
+    console.log(orders);
 
-        const objData = {
-            ...data,
-            status: {
-                title: 'Đang giao hàng',
-                icon: 'fa-check-square',
-            },
-        };
-        dispatch(updatePayProduct(objData));
+    function handleChangeDataValue(data) {
+        if (data.active === false) {
+            dispatch(deletePayProductAllApi(data));
+        } else if (data.status.title === 'Đang chờ xử lý') {
+            const objData = {
+                ...data,
+                status: {
+                    title: 'Đang giao hàng',
+                    icon: 'fa-check-square',
+                },
+            };
+            dispatch(updatePayProduct(objData));
+        }
     }
 
+    const handleCancelOrderProduct = (order) => {
+        const objData = {
+            ...order,
+            status: {
+                title: 'Đã hủy đơn hàng',
+                icon: 'fa-ban',
+            },
+            active: false,
+        };
+        setVisible(false);
+        dispatch(updatePayProduct(objData));
+        setTimeout(() => {
+            openNotification(
+                'Thông báo',
+                `Bạn đã hủy thành công đơn hàng, sản phẩm sẽ được lưu vào mục Hủy Đơn Hàng`,
+            );
+        }, 1000);
+        dispatch(getPayProduct());
+    };
+
+    const handleOrderRecovery = (order) => {
+        const objData = {
+            ...order,
+            status: {
+                title: 'Đang chờ xử lý',
+                icon: 'fa-badge-check',
+            },
+        };
+        setVisible(false);
+        dispatch(updatePayProduct(objData));
+        setTimeout(() => {
+            openNotification(
+                'Xin Chúc Mừng',
+                `Bạn đã khôi phục thành công đơn hàng, sản phẩm sẽ được lưu vào mục Xử lý đơn hàng`,
+            );
+        }, 1000);
+        dispatch(getPayProduct());
+    };
     return (
         <Helmet title="Payment">
             {loading && (
@@ -172,6 +216,8 @@ function OrderUser(props) {
                     onClose={onClose}
                     dataOrder={dataOrder}
                     photoURL={photoURL}
+                    handleCancelOrderProduct={handleCancelOrderProduct}
+                    handleOrderRecovery={handleOrderRecovery}
                 />
             </OrderUserConFirm>
         </Helmet>

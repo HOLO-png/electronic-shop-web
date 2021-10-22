@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Col, Drawer, Row, Space, List, Avatar, Image } from 'antd';
+import {
+    Button,
+    Col,
+    Drawer,
+    Row,
+    Space,
+    List,
+    Avatar,
+    Image,
+    Modal,
+} from 'antd';
 import OrderUserProfile from './OrderUserProfile';
 import OrderProducts from './OrderProducts';
 import numberWithCommas from '../../../../utils/numberWithCommas';
@@ -14,7 +24,46 @@ function DrawerOrderPay(props) {
         onClose,
         dataOrder,
         photoURL,
+        handleCancelOrderProduct,
+        handleOrderRecovery,
     } = props;
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+        handleCancelOrderProduct(dataOrder);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleRenderUI = () => {
+        if (dataOrder) {
+            if (dataOrder.status.title === 'Đang chờ xử lý') {
+                return (
+                    <Button type="dashed" danger onClick={showModal}>
+                        Hủy Đơn Hàng
+                    </Button>
+                );
+            } else if (dataOrder.status.title === 'Đã hủy đơn hàng') {
+                return (
+                    <Button
+                        type="primary"
+                        onClick={() => handleOrderRecovery(dataOrder)}
+                    >
+                        Khôi Phục Đơn Hàng
+                    </Button>
+                );
+            }
+        } else {
+            return;
+        }
+    };
 
     return (
         <Drawer
@@ -37,9 +86,7 @@ function DrawerOrderPay(props) {
             <hr />
             <OrderProducts dataOrder={dataOrder} />
             <div className="order__total-money">
-                <Button type="dashed" danger>
-                    Hủy Đơn Hàng
-                </Button>
+                {dataOrder && handleRenderUI()}
                 <span className="order__total-money-title">Tổng Tiền:</span>
                 <span className="order__total-money-text">
                     {numberWithCommas(
@@ -57,6 +104,16 @@ function DrawerOrderPay(props) {
                     </sup>
                 </span>
             </div>
+            <Modal
+                title="Thông báo"
+                visible={isModalVisible}
+                onOk={handleOk}
+                onCancel={handleCancel}
+            >
+                <h4 style={{ textAlign: 'center' }}>
+                    Bạn có chắc chắn muốn hủy đơn hàng không ?
+                </h4>
+            </Modal>
         </Drawer>
     );
 }
