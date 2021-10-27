@@ -156,40 +156,53 @@ function DeliveryAddress(props) {
                                 </p>
                             </Col>
                         </Row>
-                        <Row
-                            gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
-                            className="delivery-address__row"
-                        >
-                            <DeliveryAddressTitle valueAddress={valueAddress} />
-                            <Col
-                                className="gutter-row delivery-address__col--des"
-                                span={4}
+                        {valueAddress ? (
+                            <Row
+                                gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
+                                className="delivery-address__row"
                             >
-                                <Button type="link" onClick={showModal}>
-                                    THAY ĐỔI
-                                </Button>
-                            </Col>
-                            <ModalAddress
-                                visible={visible}
-                                handleOk={handleOk}
-                                handleCancel={handleCancel}
-                                modalText={modalText}
-                                confirmLoading={confirmLoading}
-                                address_api={address_api}
-                                objAddress={valueAddress}
-                                onHandleValueImportAddress={
-                                    onHandleValueImportAddress
-                                }
-                                handleImportImput={handleImportImput}
-                                inputName={inputName}
-                                inputNumber={inputNumber}
-                                handleChangeInputName={handleChangeInputName}
-                                handleChangeInputNumber={
-                                    handleChangeInputNumber
-                                }
-                                onChangeCheckbox={onChangeCheckbox}
-                            />
-                        </Row>
+                                <DeliveryAddressTitle
+                                    valueAddress={valueAddress}
+                                />
+                                <Col
+                                    className="gutter-row delivery-address__col--des"
+                                    span={4}
+                                >
+                                    <Button type="link" onClick={showModal}>
+                                        THAY ĐỔI
+                                    </Button>
+                                </Col>
+                                <ModalAddress
+                                    visible={visible}
+                                    handleOk={handleOk}
+                                    handleCancel={handleCancel}
+                                    modalText={modalText}
+                                    confirmLoading={confirmLoading}
+                                    address_api={address_api}
+                                    objAddress={valueAddress}
+                                    onHandleValueImportAddress={
+                                        onHandleValueImportAddress
+                                    }
+                                    handleImportImput={handleImportImput}
+                                    inputName={inputName}
+                                    inputNumber={inputNumber}
+                                    handleChangeInputName={
+                                        handleChangeInputName
+                                    }
+                                    handleChangeInputNumber={
+                                        handleChangeInputNumber
+                                    }
+                                    onChangeCheckbox={onChangeCheckbox}
+                                />
+                            </Row>
+                        ) : (
+                            <p
+                                className="text-info"
+                                style={{ fontSize: 20, textAlign: 'center' }}
+                            >
+                                Hiện tại bạn chưa có địa chỉ mặc định nào?
+                            </p>
+                        )}
                     </div>
                 </>
             )}

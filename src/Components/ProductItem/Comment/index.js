@@ -18,16 +18,18 @@ const Editor = ({
     importImg,
     img,
     video,
+    user,
 }) => (
     <>
-        <p className="comment_author-name">Bùi Hoàng Long</p>
-        <Rate tooltips={desc} onChange={handleChangeStar} defaultValue={star} />
+        {console.log(value)}
+        <p className="comment_author-name">{user.displayName}</p>
+        <Rate tooltips={desc} onChange={handleChangeStar} value={star} />
         {star ? <span className="ant-rate-text">{desc[star - 1]}</span> : ''}
         <Form.Item>
             <TextArea
                 rows={4}
                 onChange={onChange}
-                defaultValue={value}
+                value={value}
                 placeholder="Nhập bình luận của bạn..."
             />
         </Form.Item>
@@ -46,7 +48,8 @@ const Editor = ({
     </>
 );
 function Comments(props) {
-    const { commentsUser, product, handleInSertCmt, handleComments } = props;
+    const { commentsUser, product, handleInSertCmt, handleComments, user } =
+        props;
     const [comments, setComments] = useState([]);
     const [submitting, setSubmitting] = useState(false);
     const [value, setValue] = useState('');
@@ -72,14 +75,12 @@ function Comments(props) {
             handleInSertCmt({
                 star: star,
                 id_product: product.id,
-                id_user: 'BHL190101',
-                address:
-                    'Thôn Xuân Quý - Xã Tam Thăng - Tp Tam kỳ - tỉnh Quảng Nam',
+                id_user: user.id,
                 like: 0,
                 dislike: 0,
                 type_product: 'Điện Thoại Vsmast Joy 4 - Hàng Chính Hãng',
-                author: 'Bui Hoang Long',
-                avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+                author: user.displayName,
+                avatar: user.photoURL,
                 content: value,
                 datetime: moment().format('YYYY-MM-DD HH:mm:ss'),
                 orther: {
@@ -111,12 +112,7 @@ function Comments(props) {
     return (
         <>
             <Comment
-                avatar={
-                    <Avatar
-                        src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                        alt="Han Solo"
-                    />
-                }
+                avatar={<Avatar src={user.photoURL} alt={user.displayName} />}
                 content={
                     <Editor
                         onChange={handleChange}
@@ -128,10 +124,15 @@ function Comments(props) {
                         importImg={importImg}
                         img={img}
                         video={video}
+                        user={user}
                     />
                 }
             />
-            <CommentItem comments={comments} handleComments={handleComments} />
+            <CommentItem
+                comments={comments}
+                handleComments={handleComments}
+                user={user}
+            />
             <Paginations />
             <br />
         </>

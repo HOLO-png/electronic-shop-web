@@ -36,10 +36,9 @@ import { handleAddCoinsProduct } from '../../Store/Reducer/totalProduct';
 import { getMobilesApi, mobilesSelector } from '../../Store/Reducer/mobile_api';
 import { getLaptopsApi, laptopsSelector } from '../../Store/Reducer/laptop_api';
 import { getTabletsApi, tabletsSelector } from '../../Store/Reducer/tablet_api';
-import {
-    addressUserApiSelector,
-    getAddressUserApi,
-} from '../../Store/Reducer/addressUserApi';
+
+import { AuthContext } from '../../Context/AuthProvider';
+
 const ProductsItem = styled.div`
     transform: translateY(20px);
     .slick-slide {
@@ -352,13 +351,13 @@ const override = css`
 `;
 export default function Products() {
     const dispatch = useDispatch();
+    const user = React.useContext(AuthContext);
     const { id, category } = useParams(); //lấy id và category từ thanh địa chỉ url
     const product = useSelector(productItemSelector);
     const [loading, setLoading] = useState(false);
     const productObj = useSelector(imgImportSelector);
     const comments_user = useSelector(commentsUserSelector);
     const cartProduct = useSelector(cartProductsSelector);
-    const address_user_api = useSelector(addressUserApiSelector);
     const mobile_api = useSelector(mobilesSelector);
     const laptop_api = useSelector(laptopsSelector);
     const tablet_api = useSelector(tabletsSelector);
@@ -374,7 +373,6 @@ export default function Products() {
     useEffect(() => {
         dispatch(getProductItem({ id: id, category: category }));
         dispatch(getCommentsUserApi(id));
-        dispatch(getAddressUserApi());
         dispatch(getCartProduct());
         dispatch(getMobilesApi());
         dispatch(getLaptopsApi());
@@ -397,14 +395,13 @@ export default function Products() {
                 Object.keys(product).length &&
                 mobile_api.length &&
                 laptop_api.length &&
-                tablet_api.length &&
-                address_user_api.length
+                tablet_api.length
             ) {
                 await setLoading(false);
                 document.body.style.overflow = '';
             }
         }, 500);
-    }, [laptop_api, mobile_api, product, tablet_api, address_user_api]);
+    }, [laptop_api, mobile_api, product, tablet_api]);
 
     const handleImportProduct = async (product) => {
         await dispatch(handleProduct(product));
@@ -517,7 +514,7 @@ export default function Products() {
                             handleProductToBuy={handleProductToBuy}
                             loading={loading}
                             comments_user={comments_user}
-                            address_user_api={address_user_api}
+                            user={user.user}
                         />
                     </Col>
                 </Row>
@@ -541,6 +538,7 @@ export default function Products() {
                     commentsUser={comments_user}
                     handleInSertCmt={handleInSertCmt}
                     handleComments={handleComments}
+                    user={user.user}
                 />
             )}
         </Helmet>

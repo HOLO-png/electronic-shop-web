@@ -57,6 +57,7 @@ function ProductsCommans(props) {
         handleInSertCmt,
         handleComments,
         mobileProductTop,
+        user,
     } = props;
 
     console.log(commentsUser);
@@ -77,6 +78,7 @@ function ProductsCommans(props) {
                         product={product}
                         handleInSertCmt={handleInSertCmt}
                         handleComments={handleComments}
+                        user={user}
                     />
                 </Col>
                 <Col className="gutter-row" span={5}>

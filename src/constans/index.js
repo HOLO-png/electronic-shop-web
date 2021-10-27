@@ -29,6 +29,14 @@ import Search from '../pages/Search';
 import Pay from '../pages/Pay';
 import Home from '../pages/Home';
 import { DashboardFilled } from '@ant-design/icons';
+import DashBoard from '../pages/DashBoard';
+import DashboardWidgets from '../Components/DashBoard/DashboardWidgets';
+import DashboardMain from '../Components/DashBoard/DashboardMain';
+import DashboardCharts from '../Components/DashBoard/DashboardCharts';
+import DashboardCustomer from '../Components/DashBoard/DashboardCustomer';
+import DashboardOrder from '../Components/DashBoard/DashboardOrder';
+import DashboardChat from '../Components/DashBoard/DashboardChat';
+import DashboardNews from '../Components/DashBoard/DashboardNews';
 // const Home = React.lazy(() => import('../pages/Home'));
 
 export const MAIN_ROUTES = [
@@ -213,8 +221,58 @@ export const NOTIFICATION_USER = [
 export const DASHBOARD_MAIN = [
     {
         name: 'Dashboard Main',
-        path: '/dashboard/dashboard',
+        path: '/dashboard/:url',
         exact: true,
-        component: FileUser,
+        component: DashBoard,
+    },
+];
+
+export const DASHBOARD_ROUTES = [
+    {
+        name: 'Dashboard Main',
+        path: '/dashboard/main',
+        exact: false,
+        component: DashboardMain,
+    },
+    {
+        name: 'DashboardWidgets',
+        path: '/dashboard/widgets',
+        exact: false,
+        component: DashboardWidgets,
+    },
+    {
+        name: 'Dashboard Charts',
+        path: '/dashboard/charts',
+        exact: false,
+        component: DashboardCharts,
+    },
+    {
+        name: 'DashboardCustomer',
+        path: '/dashboard/customer',
+        exact: false,
+        component: DashboardCustomer,
+    },
+    {
+        name: 'Dashboard Order',
+        path: '/dashboard/order',
+        exact: false,
+        component: DashboardOrder,
+    },
+    {
+        name: 'Dashboard Chat',
+        path: '/dashboard/chat',
+        exact: false,
+        component: DashboardChat,
+    },
+    {
+        name: 'Dashboard News',
+        path: '/dashboard/news',
+        exact: false,
+        component: DashboardNews,
+    },
+    {
+        name: 'Dashboard Logout',
+        path: '/login',
+        exact: false,
     },
 ];

@@ -20,16 +20,16 @@ import ScaleLoader from 'react-spinners/ScaleLoader';
 import Payment from '../../Components/Pay/Payment/Payment';
 import Helmet from '../../Components/Helmet';
 import { message } from 'antd';
-import {
-    addressActiveApiSelector,
-    changeAddressActiveApi,
-    getAddressActiveApi,
-} from '../../Store/Reducer/addressActiveApi';
+
 import PayMethod from '../../Components/Pay/PayMethod';
 import Paypal from '../../Components/Pay/Paypal';
-import { insertPayProduct } from '../../Store/Reducer/product_pay';
 import { openNotification } from '../../utils/messageAlear';
 import moment from 'moment';
+import { AuthContext } from '../../Context/AuthProvider';
+import firebase from '../../Firebase/config';
+import { addDocument } from '../../Firebase/Services';
+import { isEmptyObject } from '../../utils/checkEmptyObj';
+import { isEmptyObjectAll } from '../../utils/checkEmptyObjAll';
 
 const PayComponent = styled.div``;
 const override = css`
@@ -62,8 +62,9 @@ const messageToCart = (status, text) => {
 function Pay(props) {
     const dispatch = useDispatch();
     const history = useHistory();
+    const data = React.useContext(AuthContext);
+    const user = firebase.auth().currentUser;
     const address_api = useSelector(addressApiSelector);
-    const address_user_api = useSelector(addressActiveApiSelector);
     const cartProduct = useSelector(cartProductsSelector);
     const { linkText } = useParams();
     const [sumProduct, setSumProduct] = useState('');
@@ -73,6 +74,7 @@ function Pay(props) {
     const [confirmLoading, setConfirmLoading] = React.useState(false);
     const [modalText, setModalText] = React.useState('Content of the modal');
     const [valueAddress, setvalueAddress] = useState();
+    var db = firebase.firestore();
     const [objAddress, setObjAddress] = useState({
         tinh: '',
         quan: '',
@@ -86,27 +88,31 @@ function Pay(props) {
     const [isShowTablePay, setIsShowTablePay] = useState(false);
     const [showPayPal, setShowPayPal] = useState(false);
     const [message, setMessage] = useState('');
+    const [address_user_api, setAddress_user_api] = useState(null);
+    const { id } = data.user;
 
     useEffect(() => {
         dispatch(getAddressApi());
-        dispatch(getAddressActiveApi());
         dispatch(getCartProduct());
     }, [dispatch]);
 
     useEffect(() => {
-        setObjAddress(address_user_api.obj);
-        setvalueAddress(address_user_api.obj);
-
-        address_user_api.obj &&
-            setInputName(address_user_api.obj.name_user || '');
-        address_user_api.obj &&
-            setInputNumber(address_user_api.obj.number_phone || '');
-    }, [address_user_api]);
+        data.user.address &&
+            data.user.address.forEach((item) => {
+                if (item.status) {
+                    setObjAddress(item);
+                    setvalueAddress(item);
+                    setAddress_user_api(item);
+                    item && setInputName(item.name_user || '');
+                    item && setInputNumber(item.number_phone || '');
+                }
+            });
+    }, [data.user.address]);
 
     useEffect(() => {
         setLoading(true);
         const timeLoading = setTimeout(() => {
-            if (cartProduct.length) {
+            if (cartProduct.length && data.user.address) {
                 setLoading(false);
             }
         }, 500);
@@ -114,7 +120,7 @@ function Pay(props) {
         return () => {
             clearTimeout(timeLoading);
         };
-    }, [cartProduct]);
+    }, [cartProduct, data.user.address]);
 
     useEffect(() => {
         const sumValues = products.reduce(
@@ -139,7 +145,24 @@ function Pay(props) {
 
     // DeliveryAddress
     const ImportApiAddressNew = (obj) => {
-        dispatch(changeAddressActiveApi(obj));
+        if (user === null) {
+            return;
+        }
+        db.collection('users')
+            .doc(id)
+            .update({
+                ...data.user,
+                address: changeAddressToObjActive(data.user.address, obj),
+            })
+            .then(() => {})
+            .catch((error) => {});
+    };
+    const changeAddressToObjActive = (array, obj) => {
+        return array.map(function (item) {
+            return item.id === obj.id
+                ? { ...obj, status: true }
+                : { ...item, status: false };
+        });
     };
 
     const showModal = () => {
@@ -163,6 +186,8 @@ function Pay(props) {
 
             let o = Object.fromEntries(
                 Object.entries({
+                    id: address_user_api.id,
+                    id_user: address_user_api.id_user,
                     tinh: objAddress.tinh || valueAddress.tinh,
                     quan: objAddress.quan || valueAddress.quan,
                     xa: objAddress.xa || valueAddress.xa,
@@ -187,6 +212,7 @@ function Pay(props) {
                     messageToCart(true, 'Đã Tải Thành Công Địa Chỉ Tạm Thời');
                 }
             }
+            setChangeCheckbox(false);
         }, 1000);
     };
 
@@ -196,8 +222,9 @@ function Pay(props) {
 
     const handleCancel = () => {
         setVisible(false);
-        setInputName(address_user_api.obj.name_user || '');
-        setInputNumber(address_user_api.obj.number_phone || '');
+        setInputName(address_user_api.name_user || '');
+        setInputNumber(address_user_api.number_phone || '');
+        setChangeCheckbox(false);
     };
 
     function onChangeCheckbox(e) {
@@ -210,33 +237,40 @@ function Pay(props) {
 
     const handleMethodPayProduct = () => {
         if (payMethod) {
-            const obj = {
-                ...valueAddress,
-                products,
-                status: {
-                    title: 'Đang chờ xử lý',
-                    icon: 'fa-badge-check',
-                },
-                message: message,
-                dateTime: moment().format('YYYY-MM-DD HH:mm:ss'),
-            };
-            delete obj.id;
+            if (!isEmptyObject(valueAddress || {})) {
+                const obj = {
+                    ...valueAddress,
+                    products,
+                    status: {
+                        title: 'Đang chờ xử lý',
+                        icon: 'fa-badge-check',
+                    },
+                    message: message,
+                    dateTime: moment().format('YYYY-MM-DD HH:mm:ss'),
+                };
+                delete obj.id;
 
-            dispatch(insertPayProduct(obj));
+                addDocument('orders', obj);
 
-            setTimeout(() => {
-                openNotification(
-                    'Xin Chúc Mừng',
-                    `Bạn Đã Đặt ${products.length} sản phẩm thành Công`,
+                setTimeout(() => {
+                    openNotification(
+                        'Xin Chúc Mừng',
+                        `Bạn Đã Đặt ${products.length} sản phẩm thành Công`,
+                    );
+                    history.push('/user/all');
+                }, 500);
+
+                products.forEach((element) => {
+                    setTimeout(async () => {
+                        await dispatch(deleteCartProductAllApi(element));
+                    }, 100);
+                });
+            } else {
+                messageToCart(
+                    false,
+                    'Xin Lỗi, Bạn Chưa Có Địa Chỉ Mặc Định, Vui Lòng Nhập Lại!',
                 );
-                history.push('/user/all');
-            }, 500);
-
-            products.forEach((element) => {
-                setTimeout(async () => {
-                    await dispatch(deleteCartProductAllApi(element));
-                }, 100);
-            });
+            }
         } else {
             messageToCart(
                 false,
@@ -281,7 +315,6 @@ function Pay(props) {
             <PayComponent>
                 <DeliveryAddress
                     address_api={address_api}
-                    ImportApiAddressNew={ImportApiAddressNew}
                     loading={loading}
                     visible={visible}
                     confirmLoading={confirmLoading}

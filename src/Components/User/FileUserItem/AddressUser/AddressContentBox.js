@@ -41,7 +41,7 @@ const FileUserInfo = styled.div`
 const AddressContentBoxStyle = styled.div`
     .address-content-box {
         width: 100%;
-        height: 250px;
+        height: 200px;
         padding: 0 30px;
         margin-top: 10px;
         .border {
@@ -78,7 +78,6 @@ function AddressContentBox(props) {
         index,
         confirm,
         handleSetDefaultToAddress,
-        address_active_api,
         address_api,
         importAddressUserItem,
     } = props;
@@ -110,9 +109,7 @@ function AddressContentBox(props) {
                                     <p className="user-name">
                                         {item.name_user}
                                     </p>
-                                    {Object.values(address_active_api.obj)
-                                        .length !== 0 &&
-                                    address_active_api.obj.id === item.id ? (
+                                    {item.status ? (
                                         <Tag color="green">Mặc Định</Tag>
                                     ) : (
                                         ''
@@ -147,7 +144,7 @@ function AddressContentBox(props) {
                                 />
                                 <Popconfirm
                                     title="Bạn có chắc muốn xóa địa chỉ này"
-                                    onConfirm={() => confirm(item.id)}
+                                    onConfirm={() => confirm(item)}
                                     onVisibleChange={() =>
                                         console.log('visible change')
                                     }
@@ -166,7 +163,7 @@ function AddressContentBox(props) {
                                 success
                                 style={{ marginTop: '10px' }}
                                 onClick={() => handleSetDefaultToAddress(item)}
-                                disabled={address_active_api.obj.id === item.id}
+                                disabled={item.status}
                             >
                                 Đặt làm Mặc Định
                             </Button>

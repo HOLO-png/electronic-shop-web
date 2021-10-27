@@ -1,92 +1,107 @@
-import React, { useCallback, useRef, useState } from 'react';
-import {
-    GoogleMap,
-    useJsApiLoader,
-    useLoadScript,
-    Marker,
-    InfoWindow,
-} from '@react-google-maps/api';
-import PropTypes from 'prop-types';
-import { formatRelative } from 'date-fns';
-import '@reach/combobox/styles.css';
-// import Search from './Search';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import L from 'leaflet';
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Button } from 'antd';
 
-const libraries = ['places'];
-function BasicMap({ coordinates }) {
-    const [marker, setMarker] = useState([]);
-    const mapRef = useRef();
-    const [selected, setSelected] = useState(null);
-    const onMapLoad = useCallback((map) => {
-        mapRef.current = map;
-    }, []);
+const markerIcon = new L.Icon({
+    iconUrl: require('../../assets/images/icon2.png').default,
+    iconSize: [35, 45],
+    iconAnchor: [17, 46],
+    popupAnchor: [0, -46],
+});
 
-    const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
-        libraries: libraries,
+const useGeoLocation = () => {
+    const [location, setLocation] = useState({
+        loaded: false,
+        coordinates: { lat: '', lng: '' },
     });
 
-    if (loadError) return 'Eroor loading maps';
+    const onSuccess = (location) => {
+        setLocation({
+            loaded: true,
+            coordinates: {
+                lat: location.coords.latitude,
+                lng: location.coords.longitude,
+            },
+        });
+    };
 
-    if (!isLoaded) return 'loading maps';
+    const onError = (error) => {
+        setLocation({
+            loaded: true,
+            error,
+        });
+    };
 
-    const containerStyle = { width: '100%', height: '200px' };
+    useEffect(() => {
+        if (!('geolocation' in navigator)) {
+            onError({
+                code: 0,
+                message: 'Không tìm thấy!',
+            });
+        }
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }, []);
 
-    const center = { lat: 16.054407, lng: 108.202164 };
+    return location;
+};
 
-    // const { isLoaded } = useJsApiLoader({
-    //     googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
-    // });
+function BasicMap() {
+    const [center, setCenter] = useState({
+        lat: 16.054407,
+        lng: 108.202164,
+    });
+    const location = useGeoLocation();
+    const ZOOM_LEVEL = 9;
+    const mapRef = useRef();
+    const position = [center.lat, center.lng];
 
-    const options = {
-        disableDefaultUI: true,
-        zoomControl: true,
+    const showMyLocation = () => {
+        if (location && !location.error) {
+            mapRef.current.leafletElement.flyTo(
+                [location.coordinates.lat, location.coordinates.lng],
+                ZOOM_LEVEL,
+                { animate: true },
+            );
+        } else {
+            alert(location.error);
+            console.log(location.error.message);
+        }
     };
 
     return (
-        <div className="map">
-            {/* <Search /> */}
-            <GoogleMap
-                mapContainerStyle={containerStyle}
-                zoom={15}
-                center={center}
-                options={options}
-                onClick={(e) => {
-                    setMarker(() => [
-                        {
-                            lat: e.latLng.lat(),
-                            lng: e.latLng.lng(),
-                            time: new Date(),
-                        },
-                    ]);
-                }}
-                onLoad={onMapLoad}
+        <>
+            <Map
+                center={position}
+                zoom={ZOOM_LEVEL}
+                style={{ height: '250px' }}
+                ref={mapRef}
             >
-                {marker.map((marker) => (
+                <TileLayer
+                    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+
+                {location.loaded && !location.error && (
                     <Marker
-                        key={marker.time.toISOString()}
-                        position={{ lat: marker.lat, lng: marker.lng }}
-                        onClick={() => {
-                            setSelected(marker);
-                        }}
-                    />
-                ))}
-                {selected ? (
-                    <InfoWindow
-                        position={{ lat: selected.lat, lng: selected.lng }}
-                        onCloseClick={() => setSelected(null)}
+                        position={[
+                            location.coordinates.lat,
+                            location.coordinates.lng,
+                        ]}
+                        icon={markerIcon}
                     >
-                        <div>
-                            <h6>My Address!</h6>
-                            <p>
-                                Spotted
-                                {formatRelative(selected.time, new Date())}
-                            </p>
-                        </div>
-                    </InfoWindow>
-                ) : null}
-            </GoogleMap>
-        </div>
+                        <Popup>
+                            <p>You is here</p>
+                        </Popup>
+                    </Marker>
+                )}
+            </Map>
+            <Button type="primary" onClick={showMyLocation}>
+                Locate
+            </Button>
+        </>
     );
 }
+
 BasicMap.propTypes = {};
 export default BasicMap;

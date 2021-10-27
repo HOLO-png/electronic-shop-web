@@ -5,17 +5,12 @@ import AllProduct from './AllProduct';
 import WaitingConfirm from './WaitingConfirm';
 import styled, { css } from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    deletePayProductAllApi,
-    getPayProduct,
-    payProductsSelector,
-    updatePayProduct,
-} from '../../../Store/Reducer/product_pay';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 import Helmet from '../../Helmet';
 import { AuthContext } from '../../../Context/AuthProvider';
 import DrawerOrderPay from './DrawerOrderPay';
 import { openNotification } from '../../../utils/messageAlear';
+import { db } from '../../../Firebase/config';
 const { TabPane } = Tabs;
 
 const OrderUserConFirm = styled.div`
@@ -39,7 +34,7 @@ function OrderUser(props) {
     const dispatch = useDispatch();
     const data = React.useContext(AuthContext);
 
-    const productsPay = useSelector(payProductsSelector);
+    // const productsPay = useSelector(payProductsSelector);
     const [loading, setLoading] = useState(false);
     const [orders, setOrders] = useState([]);
     const [visible, setVisible] = useState(false);
@@ -50,22 +45,31 @@ function OrderUser(props) {
     const [delivered, setDelivered] = useState(null);
     const [cancelOrder, setCancelOrder] = useState(null);
 
-    const { photoURL } = data.user;
-
-    useEffect(() => {
-        dispatch(getPayProduct());
-    }, [dispatch]);
+    const { photoURL, id } = data.user;
 
     useEffect(() => {
         setLoading(true);
         const timeLoading = setTimeout(() => {
             setLoading(false);
-            setOrders(productsPay);
+            db.collection('orders').onSnapshot((snapshot) => {
+                const data = snapshot.docs.map((doc) => ({
+                    ...doc.data(),
+                    id: doc.id,
+                }));
+                const array = { data }.data;
+                const ordersArray = [];
+                array.forEach((order) => {
+                    if (order.id_user === id) {
+                        ordersArray.push(order);
+                    }
+                });
+                setOrders(ordersArray);
+            });
         }, 500);
         return () => {
             clearTimeout(timeLoading);
         };
-    }, [productsPay]);
+    }, [id]);
 
     useEffect(() => {
         const orderWaitingConfirm = orders.filter(
@@ -102,11 +106,13 @@ function OrderUser(props) {
         setVisible(false);
     };
 
-    console.log(orders);
-
     function handleChangeDataValue(data) {
         if (data.active === false) {
-            dispatch(deletePayProductAllApi(data));
+            db.collection('orders')
+                .doc(data.id)
+                .delete()
+                .then(() => {})
+                .catch((error) => {});
         } else if (data.status.title === 'Đang chờ xử lý') {
             const objData = {
                 ...data,
@@ -115,7 +121,11 @@ function OrderUser(props) {
                     icon: 'fa-check-square',
                 },
             };
-            dispatch(updatePayProduct(objData));
+            db.collection('orders')
+                .doc(data.id)
+                .update(objData)
+                .then(() => {})
+                .catch((error) => {});
         }
     }
 
@@ -128,15 +138,21 @@ function OrderUser(props) {
             },
             active: false,
         };
-        setVisible(false);
-        dispatch(updatePayProduct(objData));
+
+        // dispatch(updatePayProduct(objData));
+        db.collection('orders')
+            .doc(order.id)
+            .update(objData)
+            .then(() => {})
+            .catch((error) => {});
+
         setTimeout(() => {
             openNotification(
                 'Thông báo',
                 `Bạn đã hủy thành công đơn hàng, sản phẩm sẽ được lưu vào mục Hủy Đơn Hàng`,
             );
+            setVisible(false);
         }, 1000);
-        dispatch(getPayProduct());
     };
 
     const handleOrderRecovery = (order) => {
@@ -148,14 +164,17 @@ function OrderUser(props) {
             },
         };
         setVisible(false);
-        dispatch(updatePayProduct(objData));
+        db.collection('orders')
+            .doc(order.id)
+            .update(objData)
+            .then(() => {})
+            .catch((error) => {});
         setTimeout(() => {
             openNotification(
                 'Xin Chúc Mừng',
                 `Bạn đã khôi phục thành công đơn hàng, sản phẩm sẽ được lưu vào mục Xử lý đơn hàng`,
             );
         }, 1000);
-        dispatch(getPayProduct());
     };
     return (
         <Helmet title="Payment">

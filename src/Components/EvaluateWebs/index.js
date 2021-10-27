@@ -44,9 +44,6 @@ function EvaluateWebs(props) {
         setActiveEvaluate(index);
     };
 
-    console.log(activeEvaluate);
-    console.log(active);
-
     return (
         <div className="evaluate">
             <div className="evaluate__icon" onClick={handleShowModalEvaluate}>

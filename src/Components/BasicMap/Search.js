@@ -22,7 +22,6 @@ function Search(props) {
         value,
         suggestions: { status, data },
         setValue,
-        clearSuggestion,
     } = usePlacesAutocomplete({
         requestOptions: {
             location: { lat: () => lat, lng: () => lng },

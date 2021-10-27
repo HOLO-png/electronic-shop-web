@@ -9,7 +9,7 @@ import { renderPhotoAccout } from '../../../utils/avartarChange';
 function User(props) {
     const userDrawerRef = useRef(null);
     const data = React.useContext(AuthContext);
-    const { photoURL, displayName } = data.user;
+    const { photoURL, displayName, email } = data.user;
 
     const someHandler = () => {
         if (userDrawerRef.current) {
@@ -70,6 +70,16 @@ function User(props) {
                         <i className="fad fa-calendar-week"></i>
                         <span>Đơn mua</span>
                     </div>
+                    {email === 'long47004@donga.edu.vn' ? (
+                        <Link to="/dashboard/main">
+                            <div className="header__menu__item__user-drawer-dashboard">
+                                <i className="fad fa-tachometer-slowest"></i>
+                                <span>Dashboard</span>
+                            </div>
+                        </Link>
+                    ) : (
+                        ''
+                    )}
                     <div className="header__menu__item__user-drawer-accout">
                         <i className="fad fa-sign-in-alt"></i>
                         <a onClick={() => auth.signOut()}>

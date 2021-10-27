@@ -33,7 +33,7 @@ const UploadStyle = styled.div`
     }
 `;
 function CommentItem(props) {
-    const { comments, handleComments } = props;
+    const { comments, handleComments, user } = props;
     const [index, setIndex] = useState(null);
     const [idAuthor, setIdAuthor] = useState(null);
     const [comment, setComment] = useState([]);
@@ -43,7 +43,6 @@ function CommentItem(props) {
         setIdAuthor(item.id_user);
     };
 
-    console.log(comment);
     const handleSetActiveCmt = () => {
         setIndex(null);
     };
@@ -130,8 +129,8 @@ function CommentItem(props) {
                         <Comment
                             avatar={
                                 <Avatar
-                                    src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                                    alt="Han Solo"
+                                    src={user.photoURL}
+                                    alt={user.displayName}
                                 />
                             }
                             content={
@@ -141,6 +140,7 @@ function CommentItem(props) {
                                     handleComments={handleComments}
                                     itemParent={itemParent}
                                     handleSetActiveCmt={handleSetActiveCmt}
+                                    user={user}
                                 />
                             }
                         />

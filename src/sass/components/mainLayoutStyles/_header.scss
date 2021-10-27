@@ -419,7 +419,10 @@
             align-items: flex-start;
             & i {
                 color: $txt-second-color;
-                margin: 4px 7px;
+                margin: 4px 8px;
+            }
+            &-dashboard i{
+                margin: 4px 6px;
             }
             & span {
                 cursor: pointer;

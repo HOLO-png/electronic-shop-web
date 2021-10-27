@@ -48,11 +48,15 @@ const PayMethodStyle = styled.div`
 `;
 function PayMethod(props) {
     const { isShowTablePay, handleIntegrate, showPayPal } = props;
+    console.log(showPayPal);
 
     return isShowTablePay ? (
         <PayMethodStyle>
             <div className="pay-method">
-                <div className={`row ${showPayPal ? 'hidden' : ''}`}>
+                <div
+                    className={`row ${showPayPal ? 'hidden' : ''}`}
+                    style={{ display: 'flex', alignItems: 'center' }}
+                >
                     {pay_method_img.map((item, index) => (
                         <div className="col-6" key={index}>
                             <div

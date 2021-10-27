@@ -1,17 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {
-    Form,
-    Input,
-    Button,
-    Row,
-    Col,
-    Divider,
-    Tag,
-    Cascader,
-    Empty,
-} from 'antd';
+import { Form, Input, Button, Row, Col, Divider, Empty } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Modal from 'antd/lib/modal/Modal';
 import { AuthContext } from '../../../../Context/AuthProvider';
@@ -21,22 +11,12 @@ import {
     addressApiSelector,
     getAddressApi,
 } from '../../../../Store/Reducer/apiAddress';
-import {
-    addressUserApiSelector,
-    deleteAddressUserApi,
-    getAddressUserApi,
-    insertAddressUserApi,
-    updateAddressUserApi,
-} from '../../../../Store/Reducer/addressUserApi';
+
 import AddressContentBox from './AddressContentBox';
-import {
-    addressActiveApiSelector,
-    changeAddressActiveApi,
-    getAddressActiveApi,
-} from '../../../../Store/Reducer/addressActiveApi';
 import { isEmptyObjectAll } from '../../../../utils/checkEmptyObjAll';
-import axios from 'axios';
 import { toast } from 'react-toastify';
+import firebase from '../../../../Firebase/config';
+import uuid from 'lodash';
 
 const FileUserAddress = styled.div`
     display: flex;
@@ -73,10 +53,10 @@ const FileUserTitle = styled.div`
 
 function AddressUser(props) {
     const data = React.useContext(AuthContext);
+    const user = firebase.auth().currentUser;
     const dispatch = useDispatch();
+    var db = firebase.firestore();
     const address_api = useSelector(addressApiSelector);
-    const address_user_api = useSelector(addressUserApiSelector);
-    const address_active_api = useSelector(addressActiveApiSelector);
     const [modal, setModal] = useState(false);
     const [nameUser, setNameUser] = useState('');
     const [dataAddress, setDataAddress] = useState({});
@@ -91,8 +71,6 @@ function AddressUser(props) {
     const { id } = data.user;
 
     useEffect(() => {
-        dispatch(getAddressUserApi());
-        dispatch(getAddressActiveApi());
         dispatch(getAddressApi());
     }, [dispatch]);
 
@@ -104,8 +82,26 @@ function AddressUser(props) {
         setNumberPhone(e.target.value);
     };
 
-    const handleSetDefaultToAddress = (item) => {
-        dispatch(changeAddressActiveApi(item));
+    const handleSetDefaultToAddress = (obj) => {
+        if (user === null) {
+            return;
+        }
+        db.collection('users')
+            .doc(id)
+            .update({
+                ...data.user,
+                address: changeAddressToObjActive(data.user.address, obj),
+            })
+            .then(() => {})
+            .catch((error) => {});
+    };
+
+    const changeAddressToObjActive = (array, obj) => {
+        return array.map(function (item) {
+            return item.id === obj.id
+                ? { ...obj, status: true }
+                : { ...item, status: false };
+        });
     };
 
     const setModal1Visible = (modal1Visible) => {
@@ -128,7 +124,30 @@ function AddressUser(props) {
 
     const handleImportAddressUser = () => {
         setTimeout(() => {
-            dispatch(insertAddressUserApi(dataAddress));
+            if (user === null) {
+                return;
+            }
+            let o = Object.fromEntries(
+                Object.entries({
+                    ...data.user,
+                    address: [
+                        ...data.user.address,
+                        { ...dataAddress, id: uuid.uniqueId('address_') },
+                    ],
+                }).filter(([_, v]) => v !== ''),
+            );
+
+            db.collection('users')
+                .doc(id)
+                .update({
+                    ...o,
+                })
+                .then(() => {
+                    toast.success(`Bạn đã thêm thành công địa chỉ của mình 😂`);
+                })
+                .catch((error) => {
+                    toast.error(`Đã xuất hiện lỗi vui lòng thực hiện lại 😓`);
+                });
         }, 500);
         setNameUser('');
         setNumberPhone('');
@@ -141,39 +160,70 @@ function AddressUser(props) {
         setModal(false);
     };
 
-    const confirm = (id) => {
+    const confirm = (obj) => {
         setTimeout(() => {
-            dispatch(deleteAddressUserApi(id));
+            const addressFilter = data.user.address.filter(
+                (adr) => adr.id !== obj.id,
+            );
+            db.collection('users')
+                .doc(id)
+                .update({
+                    ...data.user,
+                    address: addressFilter,
+                })
+                .then(() => {
+                    toast.success(`Bạn đã xóa thành công!`);
+                })
+                .catch((error) => {
+                    toast.error(`Có lỗi, vui lòng thực hiện lại!`);
+                });
         }, 500);
     };
 
-    const importAddressUserItem = (data) => {
-        address_user_api.forEach((item) => {
-            if (item.id === data.id) {
-                const obj = {
+    const importAddressUserItem = (obj) => {
+        data.user.address.forEach((item) => {
+            if (item.id === obj.id) {
+                const address = {
+                    status: item.status ? true : false,
                     id_user: item.id_user,
                     id: item.id,
-                    tinh: data.tinh || item.tinh,
-                    quan: data.quan || item.quan,
-                    xa: data.xa || item.xa,
-                    mota: data.mota || item.mota,
-                    name_user: data.name_user || item.name_user,
-                    number_phone: data.number_phone || item.number_phone,
+                    tinh: obj.tinh || item.tinh,
+                    quan: obj.quan || item.quan,
+                    xa: obj.xa || item.xa,
+                    mota: obj.mota || item.mota,
+                    name_user: obj.name_user || item.name_user,
+                    number_phone: obj.number_phone || item.number_phone,
                 };
-                console.log(obj);
 
-                const isEmpty = Object.values(obj).every(
+                const isEmpty = Object.values(address).every(
                     (x) => x === null || x === '',
                 );
                 if (isEmpty) {
                     toast.error(`Có lỗi, vui lòng nhập lại địa chỉ!`);
                 } else {
-                    dispatch(updateAddressUserApi(obj));
-                    toast.success(`Bạn đã cập nhật thành công!`);
+                    const addressUpdate = data.user.address.map(function (
+                        item,
+                    ) {
+                        return item.id === obj.id ? address : item;
+                    });
+                    db.collection('users')
+                        .doc(id)
+                        .update({
+                            ...data.user,
+                            address: addressUpdate,
+                        })
+                        .then(() => {
+                            toast.success(`Bạn đã cập nhật thành công!`);
+                        })
+                        .catch((error) => {
+                            toast.error(`Bạn cập nhật không thành công!`);
+                        });
                 }
             }
         });
     };
+
+    console.log(data.user.address);
 
     return (
         <FileUserAddress>
@@ -284,33 +334,30 @@ function AddressUser(props) {
                 </Divider>
             </div>
             <div className="address-content">
-                {address_user_api.length
-                    ? address_user_api.map((item, index) => {
-                          if (item.id_user === id) {
-                              if (Object.keys(item).length) {
-                                  return (
-                                      <AddressContentBox
-                                          item={item}
-                                          key={item.id}
-                                          index={index}
-                                          confirm={confirm}
-                                          handleSetDefaultToAddress={
-                                              handleSetDefaultToAddress
-                                          }
-                                          address_active_api={
-                                              address_active_api
-                                          }
-                                          address_api={address_api}
-                                          id_user={item.id_user}
-                                          importAddressUserItem={
-                                              importAddressUserItem
-                                          }
-                                      />
-                                  );
-                              }
-                          }
-                      })
-                    : ''}
+                {data.user.address.length ? (
+                    data.user.address.map((item, index) => {
+                        if (Object.keys(item).length) {
+                            return (
+                                <AddressContentBox
+                                    item={item}
+                                    key={item.id}
+                                    index={index}
+                                    confirm={confirm}
+                                    handleSetDefaultToAddress={
+                                        handleSetDefaultToAddress
+                                    }
+                                    address_api={address_api}
+                                    id_user={item.id_user}
+                                    importAddressUserItem={
+                                        importAddressUserItem
+                                    }
+                                />
+                            );
+                        }
+                    })
+                ) : (
+                    <Empty />
+                )}
             </div>
         </FileUserAddress>
     );

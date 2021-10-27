@@ -35,6 +35,7 @@ export default function Header(props) {
         insertSearchItemUser,
         removeSearchItem,
         handleChangeTheme,
+        email,
     } = props;
     const { pathname } = useLocation();
     const activeNav = mainNav.findIndex((e) => e.path === pathname);
@@ -129,7 +130,7 @@ export default function Header(props) {
                             // themeItem={themeItem}
                         />
                         <Cart cartProduct={cartProduct} />
-                        <User />
+                        <User email={email} />
                     </div>
                 </div>
             </div>

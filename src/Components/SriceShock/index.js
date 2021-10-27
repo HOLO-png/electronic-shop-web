@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Badge, Card, Progress, Row } from 'antd';
 import Slider from 'react-slick';
-import { products_price_shock } from '../../assets/fake-data/shockProduct';
 import numberWithCommas from '../../utils/numberWithCommas';
 import { openNotification } from '../../utils/messageAlear';
 import { slide_genuine } from '../../assets/fake-data';
+import { handleChangeProductPrice } from '../../utils/handlePrice';
+import { Link } from 'react-router-dom';
 const { Meta } = Card;
 
 const SriceShockComp = styled.div`
@@ -93,7 +94,7 @@ const settings2 = {
 };
 
 function SriceShock(props) {
-    const { title, slideStatus } = props;
+    const { title, slideStatus, mobile_api } = props;
     const [display, setDisplay] = useState(true);
     const [width, setWidth] = useState(950);
 
@@ -138,6 +139,22 @@ function SriceShock(props) {
             'Hiện tại thì tui chưa thêm sản phẩm này nên tạm thời lướt chỗ khác đi nha 😁',
         );
     };
+
+    const handleRenderProductUI = (products) => {
+        console.log(products);
+
+        if (products) {
+            return products
+                ? products.filter((item) => {
+                      return (
+                          handleChangeProductPrice(item.priceOld, item.price) >
+                          30
+                      );
+                  })
+                : '';
+        }
+    };
+
     return (
         <SriceShockComp>
             <div className="price-shock-title">
@@ -188,63 +205,92 @@ function SriceShock(props) {
                     }}
                 >
                     <Slider {...settings}>
-                        {products_price_shock.map((item, index) => (
-                            <div style={{ width: 247 }}>
-                                <Badge.Ribbon
-                                    text="Hot"
-                                    color="red"
-                                    style={{
-                                        right: '0px',
-                                        display:
-                                            item.util > 50 ? 'block' : 'none',
-                                    }}
-                                    key={index}
-                                >
-                                    <Card
-                                        hoverable
-                                        cover={
-                                            <img
-                                                alt="example"
-                                                src={item.image}
-                                            />
-                                        }
-                                        onClick={handleProductCheck}
-                                    >
-                                        <Meta
-                                            title={
-                                                <>
-                                                    {numberWithCommas(
-                                                        item.price,
-                                                    )}
-                                                    <sup> đ</sup>
-                                                </>
-                                            }
-                                            description={
-                                                item.util > 50
-                                                    ? 'Sắp bán hết'
-                                                    : 'Vẫn còn nhiều hàng'
-                                            }
-                                        />
-                                        <div style={{ width: 170 }}>
-                                            <Progress
-                                                percent={item.util}
-                                                size="small"
-                                                status="exception"
-                                            />
-                                            <i
-                                                class="fad fa-fire"
-                                                style={{
-                                                    color:
-                                                        item.util > 50
-                                                            ? '#ff3a0a'
-                                                            : '#fff',
-                                                }}
-                                            ></i>
-                                        </div>
-                                    </Card>
-                                </Badge.Ribbon>
-                            </div>
-                        ))}
+                        {handleRenderProductUI(mobile_api)
+                            ? handleRenderProductUI(mobile_api).map(
+                                  (item, index) => (
+                                      <div style={{ width: 247 }}>
+                                          <Link
+                                              to={`/${
+                                                  item.category
+                                              }/${item.name.replace(
+                                                  / /g,
+                                                  '-',
+                                              )}/${item.id}`}
+                                          >
+                                              <Badge.Ribbon
+                                                  text="Hot"
+                                                  color="red"
+                                                  style={{
+                                                      right: '0px',
+                                                      display:
+                                                          item.util > 50
+                                                              ? 'block'
+                                                              : 'none',
+                                                  }}
+                                                  key={index}
+                                              >
+                                                  <Card
+                                                      hoverable
+                                                      cover={
+                                                          <img
+                                                              alt="example"
+                                                              src={
+                                                                  item
+                                                                      .image[0][0]
+                                                              }
+                                                          />
+                                                      }
+                                                      onClick={
+                                                          handleProductCheck
+                                                      }
+                                                  >
+                                                      <Meta
+                                                          title={
+                                                              <>
+                                                                  {numberWithCommas(
+                                                                      item
+                                                                          .price[0],
+                                                                  )}
+                                                                  <sup> đ</sup>
+                                                              </>
+                                                          }
+                                                          description={
+                                                              item.util > 50
+                                                                  ? 'Sắp bán hết'
+                                                                  : 'Vẫn còn nhiều hàng'
+                                                          }
+                                                      />
+                                                      <div
+                                                          style={{ width: 170 }}
+                                                      >
+                                                          <Progress
+                                                              percent={handleChangeProductPrice(
+                                                                  item.priceOld,
+                                                                  item.price,
+                                                              )}
+                                                              size="small"
+                                                              status="exception"
+                                                          />
+                                                          <i
+                                                              class="fad fa-fire"
+                                                              style={{
+                                                                  color:
+                                                                      handleChangeProductPrice(
+                                                                          item.priceOld,
+                                                                          item.price,
+                                                                      ) > 40
+                                                                          ? '#ff3a0a'
+                                                                          : '#fff',
+                                                              }}
+                                                          ></i>
+                                                      </div>
+                                                  </Card>
+                                              </Badge.Ribbon>
+                                          </Link>
+                                      </div>
+                                  ),
+                              )
+                            : ''}
                     </Slider>
                 </div>
             </Row>

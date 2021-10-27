@@ -1,15 +1,14 @@
 import './App.css';
 import { BrowserRouter, Redirect, Switch } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { LOGIN_ROUTES, MAIN_ROUTES } from '../../constans';
+import { useContext, useEffect, useState } from 'react';
+import { DASHBOARD_MAIN, LOGIN_ROUTES, MAIN_ROUTES } from '../../constans';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import Layout from '../../Common/Layout';
 import Footer from '../../Components/Footer';
 import Header from '../../Components/Header';
 import LoginLayout from '../../Common/LoginLayout';
-import AuthProvider from '../../Context/AuthProvider';
+import AuthProvider, { AuthContext } from '../../Context/AuthProvider';
 import ScrollToTop from '../../utils/scroll';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartProductsSelector, getCartProduct } from '../../Store/Reducer/cart';
@@ -20,14 +19,16 @@ import {
     searchItemSelector,
 } from '../../Store/Reducer/searchItem';
 import { handleUpdateTheme } from '../../Store/Reducer/setTheme';
+import DashboardLayout from '../../Common/DashboardLayout';
 
 function App() {
     const cartProduct = useSelector(cartProductsSelector);
     const searchItem = useSelector(searchItemSelector);
     // const themeItem = useSelector(themeSelector);
-
+    const data = useContext(AuthContext);
     const [theme, setTheme] = useState(true);
     const dispatch = useDispatch();
+    const { email } = data.user;
 
     useEffect(() => {
         dispatch(getCartProduct());
@@ -47,6 +48,27 @@ function App() {
     const removeSearchItem = (id) => {
         dispatch(deleteSearchItemUserApi(id));
     };
+
+    const renderDashboardRoute = () => {
+        let xhtml = null;
+        xhtml = DASHBOARD_MAIN.map((route, index) => {
+            if (email === 'long47004@donga.edu.vn') {
+                return (
+                    <DashboardLayout
+                        name={route.name}
+                        key={index}
+                        component={route.component}
+                        exact={route.exact}
+                        path={route.path}
+                    />
+                );
+            } else {
+                return;
+            }
+        });
+        return xhtml;
+    };
+
     const renderAdminRoute = () => {
         let xhtml = null;
         xhtml = MAIN_ROUTES.map((route, index) => {
@@ -80,10 +102,6 @@ function App() {
         return xhtml;
     };
 
-    // useEffect((nextProps, nextState) => {
-    //     return nextProps.location.search === this.props.location.search;
-    // }, []);
-
     const renderMain = () => (
         <>
             <div
@@ -107,17 +125,16 @@ function App() {
     );
 
     return (
-        <BrowserRouter>
+        <>
             <ToastContainer />
-            <AuthProvider>
-                <ScrollToTop />
-                <Switch>
-                    <Redirect exact from="/" to="home" />
-                    {renderLoginRoute()}
-                    {renderMain()}
-                </Switch>
-            </AuthProvider>
-        </BrowserRouter>
+            <ScrollToTop />
+            <Switch>
+                <Redirect exact from="/" to="home" />
+                {renderDashboardRoute()}
+                {renderLoginRoute()}
+                {renderMain()}
+            </Switch>
+        </>
     );
 }
 

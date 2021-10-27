@@ -70,6 +70,7 @@ function LoginForm(props) {
                             email: val.email,
                             photoURL: null,
                             uid: val.name,
+                            address: [],
                         });
                     })
                     .catch((err) => {

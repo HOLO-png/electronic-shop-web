@@ -21,6 +21,7 @@ function EditItem(props) {
         handleComments,
         itemParent,
         handleSetActiveCmt,
+        user,
     } = props;
     const [submitting, setSubmitting] = useState(false);
     const [value, setValue] = useState('');
@@ -39,15 +40,13 @@ function EditItem(props) {
         let cmt_content = { ...cmt_user, cmt_item: [...cmt_user.cmt_item] };
 
         cmt_content.cmt_item.unshift({
-            id_user: 'BTN_DWA0192',
+            id_user: user.id,
             id_author: idAuthor,
-            Address:
-                'Thôn Xuân Quý - Xã Tam Thăng - Tp Tam kỳ - tỉnh Quảng Nam',
             like: 0,
             dislike: 0,
             type_product: 'Điện Thoại Vsmast Joy 4 - Hàng Chính Hãng',
-            author: 'Bui Hoang Long',
-            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+            author: user.displayName,
+            avatar: user.photoURL,
             content: value,
             datetime: moment().fromNow(),
         });
@@ -66,7 +65,7 @@ function EditItem(props) {
 
     return (
         <Edit>
-            <p className="comment_author-name">Bùi Hoàng Long</p>
+            <p className="comment_author-name">{user.displayName}</p>
             <Form.Item>
                 <input
                     className="input-cmt-product-chidlren"

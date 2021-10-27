@@ -17,6 +17,18 @@ export default function AuthProvider({ children }) {
                     'emailForRegistration',
                     JSON.stringify(email),
                 );
+                db.collection('users').onSnapshot((snapshot) => {
+                    const data = snapshot.docs.map((doc) => ({
+                        ...doc.data(),
+                        id: doc.id,
+                    }));
+                    const array = { data }.data;
+                    array.forEach((user) => {
+                        if (user.email === emailUser) {
+                            setUser(user);
+                        }
+                    });
+                });
                 return;
             }
             history.push('/login');
@@ -24,22 +36,7 @@ export default function AuthProvider({ children }) {
         return () => {
             unsubscribe();
         };
-    }, [history]);
-
-    React.useEffect(() => {
-        db.collection('users').onSnapshot((snapshot) => {
-            const data = snapshot.docs.map((doc) => ({
-                ...doc.data(),
-                id: doc.id,
-            }));
-            const array = { data }.data;
-            array.forEach((user) => {
-                if (user.email === emailUser) {
-                    setUser(user);
-                }
-            });
-        });
-    }, [emailUser]);
+    }, [emailUser, history]);
 
     return (
         <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>

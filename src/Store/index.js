@@ -25,7 +25,6 @@ import cartProductsReducer from './Reducer/cart';
 import totalProductsReducer from './Reducer/totalProduct';
 import searchItemReducer from './Reducer/searchItem';
 import addressApiReducer from './Reducer/apiAddress';
-import addressUserApiReducer from './Reducer/addressUserApi';
 import themeReducer from './Reducer/setTheme';
 import searchSimilarReducer from './Reducer/searchSimilar';
 import addressActiveApiReducer from './Reducer/addressActiveApi';
@@ -55,7 +54,6 @@ const store = configureStore({
         persistedReducer,
         searchItemReducer,
         addressApiReducer,
-        addressUserApiReducer,
         themeReducer,
         searchSimilarReducer,
         addressActiveApiReducer,

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Link, useParams } from 'react-router-dom';
 import numberWithCommas from '../../utils/numberWithCommas';
 import { Badge, Rate, Tag } from 'antd';
+import { handleChangeProductPrice } from '../../utils/handlePrice';
+
 function ProductCart(props) {
     const {
         id,
@@ -17,20 +19,20 @@ function ProductCart(props) {
         img_width,
         right,
     } = props;
-    const handleStatus = () => {
-        if (status) {
-            return 'block';
-        } else {
-            return 'none';
-        }
-    };
+
     const name_url = name.replace(/ /g, '-');
 
     return (
         <Badge.Ribbon
             text="Hot"
             color="red"
-            style={{ right: right, display: handleStatus() }}
+            style={{
+                right: right,
+                display:
+                    handleChangeProductPrice(priceOld, price) >= 30
+                        ? 'block'
+                        : 'none',
+            }}
         >
             <div className="product-cart" style={{ height: height + 'px' }}>
                 <Link to={`/${category}/${name_url}/${id}`}>
@@ -66,7 +68,13 @@ function ProductCart(props) {
                     </div>
                     <div className="product-cart__price">
                         {numberWithCommas(price[0])} <sup> đ</sup>
-                        <Tag color="#ff4c4c">- 40%</Tag>
+                        <Tag color="#ff4c4c">
+                            -{' '}
+                            {priceOld[0] && price[0]
+                                ? handleChangeProductPrice(priceOld, price)
+                                : ''}
+                            %
+                        </Tag>
                         <div className="product-cart__price-old">
                             <del>{numberWithCommas(priceOld[0])} đ</del>
                         </div>

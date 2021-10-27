@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Badge, Button } from 'antd';
+import { Avatar, Badge, Button } from 'antd';
 import numberWithCommas from '../../../../utils/numberWithCommas';
+import { renderPhotoAccout } from '../../../../utils/avartarChange';
 
 const OrderPayProductStyles = styled.div`
     padding: 10px 10px;
@@ -18,9 +19,13 @@ const OrderPayProductStyles = styled.div`
             justify-content: center;
             align-items: center;
             position: relative;
+            .ant-avatar-image {
+                background: transparent;
+                width: 50px;
+                height: 50px;
+            }
             img {
-                width: 58%;
-                border-radius: 50%;
+                width: 100%;
             }
         }
         &__name {
@@ -118,8 +123,11 @@ function OrderPayProduct(props) {
                     <span>{index + 1}</span>
                 </div>
                 <div className="user-order__pay-product-item__image">
-                    <Badge count={order.products.length}></Badge>
-                    <img alt="" src={photoURL} />
+                    <Badge
+                        count={order.products.length}
+                        style={{ zIndex: 1 }}
+                    ></Badge>
+                    {renderPhotoAccout(photoURL, 50, 'avatar')}
                 </div>
                 <div className="user-order__pay-product-item__content">
                     <div className="user-order__pay-product-item__title">

@@ -160,7 +160,7 @@ export default function Home() {
                     </SectionBody>
                 </Section>
                 {/* end section */}
-                <SriceShock slideStatus={true} />
+                <SriceShock slideStatus={true} mobile_api={mobile_api} />
                 <GenuineBrand />
                 {/* selling section */}
                 <Section data-aos="fade-up">

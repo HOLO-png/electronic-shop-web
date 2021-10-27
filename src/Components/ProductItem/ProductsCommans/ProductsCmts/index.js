@@ -44,7 +44,8 @@ const ProductsCmt = styled.div`
     }
 `;
 function ProductCmts(props) {
-    const { product, commentsUser, handleInSertCmt, handleComments } = props;
+    const { product, commentsUser, handleInSertCmt, handleComments, user } =
+        props;
 
     return (
         <ProductsCmt>
@@ -86,6 +87,7 @@ function ProductCmts(props) {
                     product={product}
                     handleInSertCmt={handleInSertCmt}
                     handleComments={handleComments}
+                    user={user}
                 />
             </div>
         </ProductsCmt>

@@ -5,20 +5,23 @@ import { Button, Col, Popover, Row, Skeleton } from 'antd';
 const contentMoveFee = <div>32.000</div>;
 
 function ProductMove(props) {
-    const { loading, address_user_api } = props;
+    const { loading, user } = props;
     const contentMoveAddress = (
         <div>
-            {address_user_api.map((item) => {
-                return (
-                    item.mota +
-                    '~' +
-                    item.xa +
-                    '~' +
-                    item.quan +
-                    '~' +
-                    item.tinh
-                );
-            })}
+            {user.address &&
+                user.address.map((item) => {
+                    if (item.status) {
+                        return (
+                            item.mota +
+                            '~' +
+                            item.xa +
+                            '~' +
+                            item.quan +
+                            '~' +
+                            item.tinh
+                        );
+                    }
+                })}
         </div>
     );
     return (
@@ -80,10 +83,7 @@ function ProductMove(props) {
                                                     margin: '5px 0px',
                                                 }}
                                             >
-                                                {address_user_api.length &&
-                                                    address_user_api[0].mota +
-                                                        ' - ' +
-                                                        address_user_api[0].xa}
+                                                Xem Chi Tiết
                                             </Button>
                                         </Popover>
                                     </div>

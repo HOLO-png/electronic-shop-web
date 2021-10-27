@@ -19,7 +19,7 @@ function SelectPay(props) {
         handleProductToBuy,
         loading,
         comments_user,
-        address_user_api,
+        user,
     } = props;
 
     return (
@@ -37,11 +37,7 @@ function SelectPay(props) {
                 product={product}
                 loading={loading}
             />
-            <ProductMove
-                product={product}
-                loading={loading}
-                address_user_api={address_user_api}
-            />
+            <ProductMove product={product} loading={loading} user={user} />
             <ProductSelect
                 product={product}
                 handleImportProduct={handleImportProduct}
