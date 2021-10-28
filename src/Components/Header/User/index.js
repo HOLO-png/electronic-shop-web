@@ -2,14 +2,14 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { auth } from '../../../Firebase/config';
+import { auth, db } from '../../../Firebase/config';
 import { AuthContext } from '../../../Context/AuthProvider';
 import { renderPhotoAccout } from '../../../utils/avartarChange';
 
 function User(props) {
     const userDrawerRef = useRef(null);
     const data = React.useContext(AuthContext);
-    const { photoURL, displayName, email } = data.user;
+    const { photoURL, displayName, email, id } = data.user;
 
     const someHandler = () => {
         if (userDrawerRef.current) {
@@ -38,6 +38,20 @@ function User(props) {
             window.removeEventListener('mousemove', null);
         };
     }, []);
+
+    const handleLogout = () => {
+        db.collection('users')
+            .doc(id)
+            .update({
+                isOnline: false,
+            })
+            .then((data) => {
+                auth.signOut().then(() => {
+                    localStorage.clear();
+                });
+            })
+            .catch((err) => {});
+    };
 
     return (
         <div className="header__menu__item header__menu__right__item">
@@ -82,7 +96,7 @@ function User(props) {
                     )}
                     <div className="header__menu__item__user-drawer-accout">
                         <i className="fad fa-sign-in-alt"></i>
-                        <a onClick={() => auth.signOut()}>
+                        <a onClick={() => handleLogout()}>
                             <span>Đăng xuất</span>
                         </a>
                     </div>

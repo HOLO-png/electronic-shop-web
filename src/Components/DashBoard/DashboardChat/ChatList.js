@@ -1,13 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChatItem from './ChatItem';
+import { Empty } from 'antd';
 
 function ChatList(props) {
+    const { users, initChat } = props;
     return (
         <ul>
-            <ChatItem activeClass={true} />
-            <ChatItem activeClass={false} />
-            <ChatItem activeClass={false} />
+            {users ? (
+                users.map((user) => (
+                    <ChatItem
+                        activeClass={true}
+                        user={user}
+                        key={user.id}
+                        onClick={initChat}
+                    />
+                ))
+            ) : (
+                <Empty />
+            )}
         </ul>
     );
 }

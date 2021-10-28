@@ -30,6 +30,9 @@ import { css } from 'styled-components';
 import { themeSelector } from '../../Store/Reducer/setTheme';
 import { openNotification } from '../../utils/messageAlear';
 import EvaluateWebs from '../../Components/EvaluateWebs';
+import BoxChat from '../../Components/BoxChat';
+import { useFirestore } from '../../Hooks/useFirestore';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const text = <span>Cuộn lên đầu trang</span>;
 
@@ -52,6 +55,11 @@ const override = css`
 `;
 
 export default function Home() {
+    const {
+        user: { uid },
+    } = React.useContext(AuthContext);
+
+    const dispatch = useDispatch();
     const [height, setHeight] = useState(760);
     const [productAll, setProductAll] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -60,7 +68,18 @@ export default function Home() {
     const tablet_api = useSelector(tabletsSelector);
     // const theme = useSelector(themeSelector);
     const [minHeight, setMinHeight] = useState(0);
-    const dispatch = useDispatch();
+
+    const roomsCondition = React.useMemo(() => {
+        return {
+            fieldName: 'members',
+            operator: 'array-contains',
+            compareValue: uid,
+        };
+    }, [uid]);
+
+    const rooms = useFirestore('rooms', roomsCondition);
+
+    console.log({ rooms });
 
     useEffect(() => {
         const min = loadingProductHome(productAll);
@@ -323,6 +342,7 @@ export default function Home() {
                     </Col>
                 </Row>
                 <EvaluateWebs />
+                <BoxChat />
             </div>
         </Helmet>
     );

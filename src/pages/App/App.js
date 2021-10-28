@@ -28,7 +28,7 @@ function App() {
     const data = useContext(AuthContext);
     const [theme, setTheme] = useState(true);
     const dispatch = useDispatch();
-    const { email } = data.user;
+    const { email, id } = data.user;
 
     useEffect(() => {
         dispatch(getCartProduct());
@@ -36,8 +36,6 @@ function App() {
     }, [dispatch]);
 
     const handleChangeTheme = () => {
-        console.log(theme);
-
         dispatch(handleUpdateTheme(theme));
         theme ? setTheme(!theme) : setTheme(!theme);
     };

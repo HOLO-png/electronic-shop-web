@@ -1,12 +1,79 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ChatList from './ChatList';
 import ChatBox from './ChatBox';
 import ChatBoxContent from './ChatBoxContent';
 import ChatMessing from './ChatMessing';
+import { useGetUsers } from '../../../Hooks/useGetUsers';
+import { AuthContext } from '../../../Context/AuthProvider';
+import { db } from '../../../Firebase/config';
 
 function DashboardChat(props) {
+    const users = useGetUsers();
+    const data = useContext(AuthContext);
+    const [chatStarted, setChatStarted] = useState(false);
+    const [chatUser, setChatUser] = useState(null);
+    const [message, setMessage] = useState('');
+    const [conversationsArray, setConversationsArray] = useState(null);
+    const [userId, setUserId] = useState(null);
+
+    const { uid } = data.user;
+
+    const initChat = (user) => {
+        setChatUser(user);
+        setUserId(user.uid);
+        setChatStarted(true);
+        handleGetRealtimeConversation({ uid_1: uid, uid_2: user.uid });
+    };
+
+    const handleSubmitMessage = () => {
+        const msgObj = {
+            user_uid_1: uid,
+            user_uid_2: userId,
+            message,
+        };
+        if (message !== '') {
+            db.collection('conversations')
+                .add({
+                    ...msgObj,
+                    isView: true,
+                    createAt: new Date(),
+                })
+                .then((data) => {
+                    console.log(data);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
+        setMessage('');
+    };
+
+    const handleGetRealtimeConversation = async (user) => {
+        await db
+            .collection('conversations')
+            .where('user_uid_1', 'in', [user.uid_1, user.uid_2])
+            .orderBy('createAt', 'asc')
+            .onSnapshot((querySnapshot) => {
+                const conversations = [];
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    if (
+                        (data.user_uid_1 === user.uid_1 &&
+                            data.user_uid_2 === user.uid_2) ||
+                        (data.user_uid_1 === user.uid_2 &&
+                            data.user_uid_2 === user.uid_1)
+                    ) {
+                        conversations.push(doc.data());
+                    }
+                });
+                setConversationsArray(conversations);
+            });
+    };
+
+    console.log();
+
     return (
         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
             <div className="row">
@@ -82,7 +149,7 @@ function DashboardChat(props) {
                             </span>
                         </div>
                         <div className="panel-body articles-container container-chat-box">
-                            <ChatList />
+                            <ChatList users={users} initChat={initChat} />
                         </div>
                     </div>
                 </div>
@@ -141,9 +208,26 @@ function DashboardChat(props) {
                             </span>
                         </div>
                         <div className="panel-body articles-container">
-                            <ChatBox />
-                            <ChatBoxContent />
-                            <ChatMessing />
+                            {chatStarted && (
+                                <>
+                                    <ChatBox
+                                        chatStarted={chatStarted}
+                                        chatUser={chatUser}
+                                    />
+                                    <ChatBoxContent
+                                        chatUser={chatUser}
+                                        conversationsArray={conversationsArray}
+                                        uid={uid}
+                                    />
+                                    <ChatMessing
+                                        handleSubmitMessage={
+                                            handleSubmitMessage
+                                        }
+                                        message={message}
+                                        setMessage={setMessage}
+                                    />
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>

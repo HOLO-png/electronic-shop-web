@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from '../../Components/Helmet';
 import DashboardHeader from '../../Components/DashBoard/DashboardHeader';
@@ -26,6 +26,7 @@ const renderDashboardRender = () => {
 
 function DashBoard(props) {
     const data = useContext(AuthContext);
+
     return (
         <Helmet title="dashboard">
             <div className="dashboard">

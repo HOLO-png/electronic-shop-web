@@ -1630,7 +1630,42 @@
       }
     }
   ],
-  "cart_product": [],
+  "cart_product": [
+    {
+      "id": "2R4m-8X9tCRjIBDkyLU6g",
+      "count": 1,
+      "name": "Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng",
+      "image": [
+        "https://salt.tikicdn.com/cache/100x100/ts/product/27/55/4e/de17f04656c5cbfd86eb49dbbfb3fe3a.jpg.webp",
+        "https://salt.tikicdn.com/cache/100x100/ts/product/ce/fb/33/59195cb31738541fa62c30cd1c7c6455.jpg.webp",
+        "https://salt.tikicdn.com/cache/100x100/ts/product/56/83/a1/e6e674363af14993fbf21a9d556cb9f6.jpg.webp",
+        "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp",
+        "https://salt.tikicdn.com/cache/100x100/ts/review/6a/9c/c4/f3eec6d74faeca76dcb8478008db567d.jpg.webp"
+      ],
+      "price": 21900000,
+      "priceOld": 29970000,
+      "capacity": "12GB/128GB",
+      "amount": 1
+    },
+    {
+      "id": "KRLsVUooiswRggkLSfbGK",
+      "name": "Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng",
+      "count": 0,
+      "image": [
+        "https://salt.tikicdn.com/cache/100x100/ts/product/b0/39/57/cdce3bcbefd3a319be3847bf73ad2f84.jpg.webp",
+        "https://salt.tikicdn.com/cache/100x100/ts/product/c4/bc/93/a6c8edf3032c5ccf50c0e82e4e4c2c8b.jpg.webp",
+        "https://salt.tikicdn.com/cache/100x100/ts/product/c5/15/ba/245ee2fafe1e5fd5cee886876a93d53f.jpg.webp",
+        "https://salt.tikicdn.com/cache/100x100/ts/product/c5/15/ba/245ee2fafe1e5fd5cee886876a93d53f.jpg.webp",
+        "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp"
+      ],
+      "price": 20650000,
+      "priceOld": 32500000,
+      "capacity": "16GB/128GB",
+      "trademark": "Apple",
+      "category": "mobile",
+      "amount": 1
+    }
+  ],
   "comments_user": [
     {
       "id_product": 1,

@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
 import Signin from './Signin';
 import Signup from './Signup';
-import firebase, { auth } from '../../Firebase/config';
+import firebase, { auth, db } from '../../Firebase/config';
 import { addDocument } from '../../Firebase/Services';
-
+import { AuthContext } from '../../Context/AuthProvider';
 function LoginForm(props) {
     const [isActive, setIsActive] = useState(false);
+    const data = useContext(AuthContext);
+    const { id } = data.user;
+
     const isShowSignup = () => {
         setIsActive(!isActive);
     };
@@ -16,14 +19,23 @@ function LoginForm(props) {
 
     const handleLoginSignin = async (val) => {
         return new Promise((resolve) => {
-            console.log('Form Submit:', val);
-
             setTimeout(() => {
                 firebase
                     .auth()
                     .signInWithEmailAndPassword(val.email, val.password)
                     .then((data) => {
                         toast.success(`Chào mừng bạn quay lại 🥰`);
+                        window.localStorage.setItem(
+                            'emailForRegistration',
+                            JSON.stringify(val.email),
+                        );
+                        db.collection('users')
+                            .doc(id)
+                            .update({
+                                isOnline: true,
+                            })
+                            .then((data) => {})
+                            .catch((err) => {});
                         history.push('/home');
                     })
                     .catch((err) => {
@@ -71,6 +83,7 @@ function LoginForm(props) {
                             photoURL: null,
                             uid: val.name,
                             address: [],
+                            isOnline: false,
                         });
                     })
                     .catch((err) => {

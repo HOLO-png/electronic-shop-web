@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function ChatMessing(props) {
+    const { handleSubmitMessage, message, setMessage } = props;
     return (
         <div className="row chat-messing">
             <div className="col-lg-1">
@@ -15,10 +16,14 @@ function ChatMessing(props) {
             </div>
             <div className="col-lg-8">
                 <div className="input-form">
-                    <input placeholder="Nhập tin nhắn của bạn ..." />
+                    <input
+                        placeholder="Nhập tin nhắn của bạn ..."
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                    />
                 </div>
             </div>
-            <div className="col-lg-1">
+            <div className="col-lg-1" onClick={handleSubmitMessage}>
                 <i class="fad fa-paper-plane"></i>
             </div>
         </div>

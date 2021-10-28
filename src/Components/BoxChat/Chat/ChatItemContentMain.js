@@ -1,0 +1,21 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { renderPhotoAccout } from '../../../utils/avartarChange';
+
+function ChatItemContentMain(props) {
+    const { data, con } = props;
+    return (
+        <div className="chat-msg left" style={{ justifyContent: 'end' }}>
+            <div className="chat-content-text">
+                <p>{con.message}</p>
+            </div>
+            <div className="chat-image-user">
+                {renderPhotoAccout(data.user.photoURL, 30, 'ok')}
+            </div>
+        </div>
+    );
+}
+
+ChatItemContentMain.propTypes = {};
+
+export default ChatItemContentMain;

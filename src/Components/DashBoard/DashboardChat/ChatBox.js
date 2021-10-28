@@ -1,25 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import moment from 'moment';
+import { renderPhotoAccout } from '../../../utils/avartarChange';
 function ChatBox(props) {
+    const { chatStarted, chatUser } = props;
     return (
         <div className="row chat-box-active">
             <div className="col-lg-8">
                 <div className="col-lg-2" style={{ marginTop: 8 }}>
-                    <span class="chat-img pull-left">
-                        <img
-                            src="https://pdp.edu.vn/wp-content/uploads/2021/06/hinh-anh-gai-xinh-deo-kinh-1.jpg"
-                            alt="User Avatar"
-                            class="img-circle"
-                        />
+                    <span
+                        class="chat-img pull-left"
+                        style={{ marginBottom: 9 }}
+                    >
+                        {renderPhotoAccout(
+                            chatUser.photoURL,
+                            50,
+                            chatUser.displayName,
+                        )}
                     </span>
                 </div>
                 <div className="col-lg-9">
                     <div class="chat-body clearfix">
                         <div class="clearfix-header">
-                            <strong class="primary-font">John Doe</strong>
+                            <strong class="primary-font">
+                                {chatStarted ? chatUser.displayName : ''}
+                            </strong>
                             <br />
-                            <small class="text-muted">32 mins ago</small>
+                            {chatUser.isOnline ? (
+                                <div className="active-acount">
+                                    <div className="active-acount-check"></div>
+                                    <small class="text-muted">
+                                        Đang hoạt động
+                                    </small>
+                                </div>
+                            ) : (
+                                <small>
+                                    {moment().format('YYYY-MM-DD HH:mm:ss')}
+                                </small>
+                            )}
                         </div>
                     </div>
                 </div>

@@ -4,21 +4,24 @@ import ChatContentItem from './ChatContentItem';
 import ChatContentItemMain from './ChatContentItemMain';
 
 function ChatBoxContent(props) {
+    const { conversationsArray, chatUser, uid } = props;
     return (
         <div className="row chat-content">
-            <ChatContentItem />
-            <ChatContentItem />
-            <ChatContentItemMain />
-            <ChatContentItem />
-            <ChatContentItem />
-            <ChatContentItem />
-            <ChatContentItemMain />
-            <ChatContentItem />
-            <ChatContentItem />
-            <ChatContentItem />
-            <ChatContentItemMain />
-            <ChatContentItem />
-            <ChatContentItemMain />
+            {conversationsArray
+                ? conversationsArray.map((con, index) => {
+                      if (con.user_uid_1 === uid) {
+                          return <ChatContentItemMain con={con} key={index} />;
+                      } else {
+                          return (
+                              <ChatContentItem
+                                  con={con}
+                                  chatUser={chatUser}
+                                  key={index}
+                              />
+                          );
+                      }
+                  })
+                : ''}
         </div>
     );
 }

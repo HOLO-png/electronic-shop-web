@@ -1,31 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
+import { renderPhotoAccout } from '../../../utils/avartarChange';
 
 function ChatItem(props) {
-    const { activeClass } = props;
+    const { activeClass, user, onClick } = props;
     return (
-        <div className={activeClass ? 'row active-chat' : 'row'}>
-            <li class="left clearfix">
+        <div
+            className={activeClass ? 'row active-chat' : 'row'}
+            onClick={() => onClick(user)}
+        >
+            <li class="left clearfix" style={{ display: 'flex' }}>
                 <div className="col-lg-2" style={{ marginTop: 8 }}>
                     <span class="chat-img pull-left">
-                        <img
-                            src="https://pdp.edu.vn/wp-content/uploads/2021/06/hinh-anh-gai-xinh-deo-kinh-1.jpg"
-                            alt="User Avatar"
-                            class="img-circle"
-                        />
+                        {renderPhotoAccout(user.photoURL, 50, user.displayName)}
                     </span>
                 </div>
                 <div className="col-lg-9">
                     <div class="chat-body clearfix">
                         <div class="clearfix-header">
-                            <strong class="primary-font">John Doe</strong>{' '}
-                            <small class="text-muted">32 mins ago</small>
+                            <strong class="primary-font">
+                                {user.displayName}
+                            </strong>{' '}
+                            {user.isOnline ? (
+                                <div className="active-acount">
+                                    <div className="active-acount-check"></div>
+                                    <small class="text-muted">
+                                        Đang hoạt động
+                                    </small>
+                                </div>
+                            ) : (
+                                <small>
+                                    {moment().format('YYYY-MM-DD HH:mm:ss')}
+                                </small>
+                            )}
                         </div>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Nulla ante turpis, rutrum ut ullamcorper sed,
-                            dapibus ac nunc.
-                        </p>
+                        <p>{'chưa có tin nhắn'}</p>
                     </div>
                 </div>
                 <div className="col-lg-1">

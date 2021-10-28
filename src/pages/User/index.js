@@ -104,7 +104,6 @@ const renderNotificationUser = () => {
 };
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub3', 'sub4'];
 function PurchaseOrder(props) {
-    const dispatch = useDispatch();
     const [openKeys, setOpenKeys] = React.useState(['sub2']);
     const data = React.useContext(AuthContext);
     const { email, photoURL, uid, displayName } = data.user;
