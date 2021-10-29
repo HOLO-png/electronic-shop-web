@@ -107,7 +107,7 @@ function OrderUser(props) {
     };
 
     function handleChangeDataValue(data) {
-        if (data.active === false) {
+        if (data.status.title === 'Đã hủy đơn hàng') {
             db.collection('orders')
                 .doc(data.id)
                 .delete()
@@ -139,7 +139,6 @@ function OrderUser(props) {
             active: false,
         };
 
-        // dispatch(updatePayProduct(objData));
         db.collection('orders')
             .doc(order.id)
             .update(objData)

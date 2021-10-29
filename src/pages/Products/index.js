@@ -141,7 +141,7 @@ const ProductsItem = styled.div`
     .ant-col.ant-col-18.gutter-row {
         .product-move-title {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             p {
                 margin: 0 10px;
             }

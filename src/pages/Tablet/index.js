@@ -17,7 +17,7 @@ import CategoryPage from '../../Components/Product/Mobile/CategoryPage';
 import { getTabletsApi, tabletsSelector } from '../../Store/Reducer/tablet_api';
 
 function Tablet(props) {
-    const mobile_api = useSelector(tabletsSelector);
+    const tablet_api = useSelector(tabletsSelector);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -26,7 +26,7 @@ function Tablet(props) {
 
     return (
         <CategoryPage
-            mobile_api={mobile_api}
+            mobile_api={tablet_api}
             data1={data1_03}
             data10={data10}
             data2={data2}

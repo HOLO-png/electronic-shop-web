@@ -97,8 +97,8 @@
     }
     .chat-box-body {
         position: relative;
-        height: 370px;
         height: auto;
+        min-height: 370px;
         border: 1px solid #ccc;
         overflow: hidden;
     }

@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import TableCustomer from './TableCustomer';
 import NavigationCustomer from './NavigationCustomer';
 import TopUser from './TopUser';
+import { useGetUsers } from '../../../Hooks/useGetUsers';
 
 function DashboardCustomer(props) {
     const [visible, setVisible] = useState(false);
+    const users = useGetUsers();
 
     const handleSetVisible = () => {
         setVisible(false);
@@ -95,7 +97,7 @@ function DashboardCustomer(props) {
                             </span>
                         </div>
                         <div className="panel-body articles-container">
-                            <TableCustomer />
+                            <TableCustomer users={users} />
                             <NavigationCustomer
                                 visible={visible}
                                 handleSetVisible={handleSetVisible}

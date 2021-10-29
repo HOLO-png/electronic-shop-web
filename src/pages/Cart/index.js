@@ -140,17 +140,17 @@ function Cart(props) {
     const cartProducts = useSelector(cartProductsSelector);
     const totalProducts = useSelector(totalProductsSelector);
     const searchSimilarProducts = useSelector(searchSimilarSelector);
-
     const mobile_api = useSelector(mobilesSelector);
     const tablet_api = useSelector(tabletsSelector);
     const laptop_api = useSelector(laptopsSelector);
-
     const [modal, setModal] = useState(false);
     const [currentProduct, setCurrentProduct] = useState([]);
     const [loading, setLoading] = useState(false);
     const [cartProduct, setCartProduct] = useState([]);
     const [activeSearchSimilar, setActiveSearchSimilar] = useState(null);
     const [statusSearchSimilar, setStatusSearchSimilar] = useState(false);
+
+    console.log();
 
     useEffect(() => {
         setLoading(true);
@@ -385,7 +385,11 @@ function Cart(props) {
                     setModalVisibleCancel={setModalVisibleCancel}
                 />
 
-                <SriceShock title="CÓ THỂ BẠN CŨNG THÍCH" slideStatus={false} />
+                <SriceShock
+                    title="CÓ THỂ BẠN CŨNG THÍCH"
+                    slideStatus={false}
+                    mobile_api={mobile_api}
+                />
             </CartPage>
         </Helmet>
     );

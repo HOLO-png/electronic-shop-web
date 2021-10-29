@@ -5,6 +5,7 @@ import ChatList from './ChatList';
 import ChatBox from './ChatBox';
 import ChatBoxContent from './ChatBoxContent';
 import ChatMessing from './ChatMessing';
+import moment from 'moment';
 import { useGetUsers } from '../../../Hooks/useGetUsers';
 import { AuthContext } from '../../../Context/AuthProvider';
 import { db } from '../../../Firebase/config';
@@ -38,6 +39,7 @@ function DashboardChat(props) {
                 .add({
                     ...msgObj,
                     isView: true,
+                    created: moment().format('YYYY-MM-DD HH:mm:ss'),
                     createAt: new Date(),
                 })
                 .then((data) => {
@@ -71,8 +73,6 @@ function DashboardChat(props) {
                 setConversationsArray(conversations);
             });
     };
-
-    console.log();
 
     return (
         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">

@@ -1,13 +1,39 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import PropTypes from 'prop-types';
-import OverviewChart from './OverviewChart';
-import { Progress } from 'antd';
+import React, { useEffect, useState } from 'react';
 import TotalCate from './TotalCate';
 import PercentProduct from './PercentProduct';
 import Chart from './Chart';
+import { useDispatch, useSelector } from 'react-redux';
+import { db } from '../../../Firebase/config';
+import {
+    commentsUserSelector,
+    getCommentsAllApi,
+} from '../../../Store/Reducer/comments_user';
+import { useGetUsers } from '../../../Hooks/useGetUsers';
 
 function DashboardMain(props) {
+    const [order, setOrder] = useState([]);
+    const dispatch = useDispatch();
+    const comments_user = useSelector(commentsUserSelector);
+    const users = useGetUsers();
+
+    useEffect(() => {
+        dispatch(getCommentsAllApi());
+    }, [dispatch]);
+
+    useEffect(() => {
+        const unsubscribe = db
+            .collection('orders')
+            .onSnapshot((querySnapshot) => {
+                const orders = [];
+                querySnapshot.forEach((doc) => {
+                    orders.push(doc.data());
+                });
+                setOrder(orders);
+            });
+        return unsubscribe;
+    }, []);
+
     return (
         <div className="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
             <div className="row">
@@ -29,7 +55,11 @@ function DashboardMain(props) {
             {/*/.row*/}
             <div className="panel panel-container">
                 <div className="row">
-                    <TotalCate />
+                    <TotalCate
+                        order={order}
+                        comments_user={comments_user}
+                        users={users}
+                    />
                     <PercentProduct />
                 </div>
                 <Chart />

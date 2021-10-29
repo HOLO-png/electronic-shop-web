@@ -11,6 +11,14 @@ export const getCommentsUserApi = createAsyncThunk(
     },
 );
 
+export const getCommentsAllApi = createAsyncThunk(
+    'commentsUsers/commentsUserAllFetch',
+    async () => {
+        const response = await axios.get(`http://localhost:3000/comments_user`);
+        return response.data;
+    },
+);
+
 export const insertCmt = createAsyncThunk(
     'commentsUser/commentsUserInsert',
     async (obj) => {
@@ -53,6 +61,13 @@ const commentsUserSlice = createSlice({
             state.comments = action.payload;
         },
         [getCommentsUserApi.rejected]: (state, action) => {},
+
+        // get cmts all
+        [getCommentsAllApi.pending]: (state, action) => {},
+        [getCommentsAllApi.fulfilled]: (state, action) => {
+            state.comments = action.payload;
+        },
+        [getCommentsAllApi.rejected]: (state, action) => {},
         // insert cmt
         [insertCmt.pending]: (state, action) => {},
         [insertCmt.fulfilled]: (state, action) => {

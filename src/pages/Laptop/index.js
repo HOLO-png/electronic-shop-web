@@ -18,7 +18,7 @@ import {
 import { getLaptopsApi, laptopsSelector } from '../../Store/Reducer/laptop_api';
 
 function Laptop(props) {
-    const mobile_api = useSelector(laptopsSelector);
+    const laptop_api = useSelector(laptopsSelector);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -27,7 +27,7 @@ function Laptop(props) {
 
     return (
         <CategoryPage
-            mobile_api={mobile_api}
+            mobile_api={laptop_api}
             data1={data1_02}
             data10={data10}
             data2={data2}
