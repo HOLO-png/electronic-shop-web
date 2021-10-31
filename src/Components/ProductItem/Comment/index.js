@@ -6,6 +6,7 @@ import moment from 'moment';
 import UploadItem from './Upload';
 import CommentItem from './CommentItem';
 import { desc } from '../../../assets/fake-data';
+import { renderPhotoAccout } from '../../../utils/avartarChange';
 const { TextArea } = Input;
 
 const Editor = ({
@@ -112,7 +113,7 @@ function Comments(props) {
     return (
         <>
             <Comment
-                avatar={<Avatar src={user.photoURL} alt={user.displayName} />}
+                avatar={renderPhotoAccout(user.photoURL, 30, user.displayName)}
                 content={
                     <Editor
                         onChange={handleChange}

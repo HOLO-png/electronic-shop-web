@@ -148,6 +148,7 @@ function Pay(props) {
         if (user === null) {
             return;
         }
+
         db.collection('users')
             .doc(id)
             .update({
@@ -157,6 +158,7 @@ function Pay(props) {
             .then(() => {})
             .catch((error) => {});
     };
+
     const changeAddressToObjActive = (array, obj) => {
         return array.map(function (item) {
             return item.id === obj.id

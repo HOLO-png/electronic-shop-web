@@ -28,7 +28,13 @@ const trademark = ['Apple', 'Oppo', 'SamSung', 'Nokia'];
 const star = ['5', '4', '3', '2', '1'];
 
 function ProductsDescription(props) {
-    const { showTabletProduct } = props;
+    const {
+        showTabletProduct,
+        products,
+        productsPerPage,
+        totalProduct,
+        paginate,
+    } = props;
     return (
         <div className="col-md-8">
             <div className="panel panel-default">
@@ -115,7 +121,12 @@ function ProductsDescription(props) {
                                 Sản Phẩm Trong Kho
                             </div>
                             <div className="col-lg-12">
-                                <TableProduct />
+                                <TableProduct
+                                    products={products}
+                                    productsPerPage={productsPerPage}
+                                    totalProduct={totalProduct}
+                                    paginate={paginate}
+                                />
                             </div>
                         </div>
                     </div>

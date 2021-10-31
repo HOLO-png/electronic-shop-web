@@ -1815,7 +1815,49 @@
         }
     }
     span.ant-avatar.ant-avatar-circle.ant-avatar-image.img-responsive {
-      width: 100%;
-      height: 100%;
-  }
+        width: 100%;
+        height: 100%;
+    }
 }
+.product-switching {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 680px;
+    height: 100px;
+    margin-top: 35px;
+    padding: 3px;
+    .drawer-product-dashboard {
+        width: 100%;
+        max-height: 100vh;
+        height: auto;
+        background: aliceblue;
+    }
+
+    .product-image-item {
+        width: 60px;
+        transition: 0.25s ease-in-out;
+        padding: 3px;
+        img {
+            width: 90%;
+        }
+    }
+    .product-image-item.active {
+        box-shadow: 1px 1px 15px 1px #9e9e9e;
+        transform: scale(1.2);
+        border: 1px solid #2a5d74;
+    }
+    .col-lg-12 nav {
+        display: flex;
+        justify-content: center;
+    }
+    
+}
+td.table-img {
+        width: 60px;
+        height: 60px !important;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }

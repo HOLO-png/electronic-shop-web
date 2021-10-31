@@ -14,7 +14,6 @@ import {
     handleAddCoinsProduct,
     handleRemoveCoinsProduct,
     handleUpdateCoinsProduct,
-    resetProductCoints,
     totalProductsSelector,
 } from '../../Store/Reducer/totalProduct';
 import Popup from '../../Components/Cart/Popup';
@@ -27,9 +26,7 @@ import { getMobilesApi, mobilesSelector } from '../../Store/Reducer/mobile_api';
 import { getTabletsApi, tabletsSelector } from '../../Store/Reducer/tablet_api';
 import { getLaptopsApi, laptopsSelector } from '../../Store/Reducer/laptop_api';
 import {
-    handleSearchLaptopSimilar,
-    handleSearchMobileSimilar,
-    handleSearchTabletSimilar,
+    handleSearchSimilar,
     searchSimilarSelector,
 } from '../../Store/Reducer/searchSimilar';
 
@@ -150,8 +147,7 @@ function Cart(props) {
     const [activeSearchSimilar, setActiveSearchSimilar] = useState(null);
     const [statusSearchSimilar, setStatusSearchSimilar] = useState(false);
 
-    console.log();
-
+    const dataSearch = [...mobile_api, ...tablet_api, ...laptop_api];
     useEffect(() => {
         setLoading(true);
         setCartProduct(cartProducts);
@@ -225,6 +221,7 @@ function Cart(props) {
 
         !totalProducts.length && messageToCart(true);
     };
+
     const handleBuyProductToPay = () => {
         const linkText = totalProducts.reduce((accumulator, item) => {
             return accumulator + `${item.id}=`;
@@ -299,40 +296,17 @@ function Cart(props) {
             trademark: product.trademark,
             name: product.name,
         };
+        console.log(product);
+        // dataSearch.length &&
+        //     dispatch(
+        //         handleSearchSimilar({
+        //             dataSearch,
+        //             dataSearchToObj,
+        //         }),
+        //     );
 
-        switch (dataSearchToObj.category) {
-            case 'tablet':
-                tablet_api.length &&
-                    dispatch(
-                        handleSearchTabletSimilar({
-                            tablet_api,
-                            dataSearchToObj,
-                        }),
-                    );
-                break;
-            case 'mobile':
-                mobile_api.length &&
-                    dispatch(
-                        handleSearchMobileSimilar({
-                            mobile_api,
-                            dataSearchToObj,
-                        }),
-                    );
-                break;
-            case 'laptop':
-                laptop_api.length &&
-                    dispatch(
-                        handleSearchLaptopSimilar({
-                            laptop_api,
-                            dataSearchToObj,
-                        }),
-                    );
-                break;
-            default:
-                break;
-        }
-        setActiveSearchSimilar(index);
-        setStatusSearchSimilar(!statusSearchSimilar);
+        // setActiveSearchSimilar(index);
+        // setStatusSearchSimilar(!statusSearchSimilar);
     };
 
     return (

@@ -60,8 +60,6 @@ function ProductsCommans(props) {
         user,
     } = props;
 
-    console.log(commentsUser);
-
     return (
         <ProductsComman>
             <Row

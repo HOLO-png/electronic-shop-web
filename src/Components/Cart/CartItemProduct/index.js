@@ -34,7 +34,6 @@ function CartItemProduct(props) {
 
     const onChange = (e) => {
         const { name, checked } = e.target;
-
         handleStatusChange(name, checked);
     };
 

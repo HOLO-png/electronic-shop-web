@@ -11,10 +11,25 @@ const DescriptionItem = ({ title, content }) => (
 );
 
 function Navigation(props) {
-    const { visible, handleSetVisible } = props;
+    const { visible, handleSetVisible, product } = props;
+    const [active, setActive] = useState(null);
     const onClose = () => {
         handleSetVisible(false);
     };
+
+    const arrayImages = () => {
+        const arrayImage = [];
+        product &&
+            product.image.forEach((element) => {
+                arrayImage.push(element[0]);
+            });
+        return arrayImage;
+    };
+
+    const handleSetProduct = (index) => {
+        setActive(index);
+    };
+
     return (
         <>
             <Drawer
@@ -24,114 +39,23 @@ function Navigation(props) {
                 onClose={onClose}
                 visible={visible}
             >
-                <p
-                    className="site-description-item-profile-p"
-                    style={{ marginBottom: 24 }}
-                >
-                    User Profile
-                </p>
-                <p className="site-description-item-profile-p">Personal</p>
-                <Row>
-                    <Col span={12}>
-                        <DescriptionItem title="Full Name" content="Lily" />
-                    </Col>
-                    <Col span={12}>
-                        <DescriptionItem
-                            title="Account"
-                            content="AntDesign@example.com"
-                        />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col span={12}>
-                        <DescriptionItem title="City" content="HangZhou" />
-                    </Col>
-                    <Col span={12}>
-                        <DescriptionItem title="Country" content="China🇨🇳" />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col span={12}>
-                        <DescriptionItem
-                            title="Birthday"
-                            content="February 2,1900"
-                        />
-                    </Col>
-                    <Col span={12}>
-                        <DescriptionItem title="Website" content="-" />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col span={24}>
-                        <DescriptionItem
-                            title="Message"
-                            content="Make things as simple as possible but no simpler."
-                        />
-                    </Col>
-                </Row>
-                <Divider />
-                <p className="site-description-item-profile-p">Company</p>
-                <Row>
-                    <Col span={12}>
-                        <DescriptionItem
-                            title="Position"
-                            content="Programmer"
-                        />
-                    </Col>
-                    <Col span={12}>
-                        <DescriptionItem
-                            title="Responsibilities"
-                            content="Coding"
-                        />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col span={12}>
-                        <DescriptionItem title="Department" content="XTech" />
-                    </Col>
-                    <Col span={12}>
-                        <DescriptionItem
-                            title="Supervisor"
-                            content={<a>Lin</a>}
-                        />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col span={24}>
-                        <DescriptionItem
-                            title="Skills"
-                            content="C / C + +, data structures, software engineering, operating systems, computer networks, databases, compiler theory, computer architecture, Microcomputer Principle and Interface Technology, Computer English, Java, ASP, etc."
-                        />
-                    </Col>
-                </Row>
-                <Divider />
-                <p className="site-description-item-profile-p">Contacts</p>
-                <Row>
-                    <Col span={12}>
-                        <DescriptionItem
-                            title="Email"
-                            content="AntDesign@example.com"
-                        />
-                    </Col>
-                    <Col span={12}>
-                        <DescriptionItem
-                            title="Phone Number"
-                            content="+86 181 0000 0000"
-                        />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col span={24}>
-                        <DescriptionItem
-                            title="Github"
-                            content={
-                                <a href="http://github.com/ant-design/ant-design/">
-                                    github.com/ant-design/ant-design/
-                                </a>
-                            }
-                        />
-                    </Col>
-                </Row>
+                <div className="drawer-product-dashboard">
+                    <div className="row" style={{ paddingTop: 5 }}>
+                        <div className="product-switching">
+                            {arrayImages().map((item, index) => (
+                                <div
+                                    className={`product-image-item ${
+                                        active === index ? 'active' : ''
+                                    }`}
+                                    key={item}
+                                    onClick={() => handleSetProduct(index)}
+                                >
+                                    <img alt="" src={item} />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </Drawer>
         </>
     );

@@ -79,8 +79,6 @@ export default function Home() {
 
     const rooms = useFirestore('rooms', roomsCondition);
 
-    console.log({ rooms });
-
     useEffect(() => {
         const min = loadingProductHome(productAll);
         setMinHeight(min);

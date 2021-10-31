@@ -287,4 +287,8 @@ span.user__phone-number-content {
         margin-right: 5px;
     }
 }
-#googleMap{position: absolute; top: 0; bottom: 0; width: 100%;}
+
+.invalid-feedback {
+    color: red;
+    font-family: system-ui;
+}

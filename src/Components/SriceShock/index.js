@@ -141,8 +141,6 @@ function SriceShock(props) {
     };
 
     const handleRenderProductUI = (products) => {
-        console.log(products);
-
         if (products) {
             return products
                 ? products.filter((item) => {

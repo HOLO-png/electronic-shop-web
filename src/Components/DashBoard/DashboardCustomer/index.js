@@ -5,6 +5,8 @@ import TableCustomer from './TableCustomer';
 import NavigationCustomer from './NavigationCustomer';
 import TopUser from './TopUser';
 import { useGetUsers } from '../../../Hooks/useGetUsers';
+import { db } from '../../../Firebase/config';
+import { toast } from 'react-toastify';
 
 function DashboardCustomer(props) {
     const [visible, setVisible] = useState(false);
@@ -16,6 +18,20 @@ function DashboardCustomer(props) {
 
     const handleShowNavigation = () => {
         setVisible(true);
+    };
+
+    const confirm = (item) => {
+        setTimeout(() => {
+            db.collection('users')
+                .doc(item.id)
+                .delete()
+                .then(() => {
+                    toast.success(`Bạn đã xóa thành công!`);
+                })
+                .catch((error) => {
+                    toast.error(`Có lỗi, vui lòng thực hiện lại!`);
+                });
+        }, 500);
     };
 
     return (
@@ -97,7 +113,7 @@ function DashboardCustomer(props) {
                             </span>
                         </div>
                         <div className="panel-body articles-container">
-                            <TableCustomer users={users} />
+                            <TableCustomer users={users} confirm={confirm} />
                             <NavigationCustomer
                                 visible={visible}
                                 handleSetVisible={handleSetVisible}
