@@ -2,7 +2,7 @@
   "name": "npm",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://HOLO-png.github.io/electronic-shop-web",
+  "homepage": "http://HOLO-png.github.io/electronic-shop-web",
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@reach/combobox": "^0.16.3",
