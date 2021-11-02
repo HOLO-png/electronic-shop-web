@@ -61,8 +61,6 @@ function PasswordUser(props) {
         confirm_password: '',
     };
 
-    console.log(providerId);
-
     const onSubmitForm = (val) => {
         if (val.password_old === val.password) {
             toast.error(

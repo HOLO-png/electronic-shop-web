@@ -8,8 +8,9 @@ function ChatMessing(props) {
             <div className="col-lg-1">
                 <i class="fad fa-plus-circle"></i>
             </div>
-            <div className="col-lg-1">
+            <div className="col-lg-1 image-file">
                 <i class="fad fa-file-image"></i>
+                <input type="file" className="image-file-input" />
             </div>
             <div className="col-lg-1">
                 <i class="fad fa-photo-video"></i>

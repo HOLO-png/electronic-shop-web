@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Collapse, Input, Select } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
@@ -19,15 +19,13 @@ const genExtra = () => (
     />
 );
 
-function callback(key) {
-    console.log(key);
-}
+function callback(key) {}
 
 const category_product = ['All', 'Mobile', 'Laptop', 'Tablet'];
 const trademark = ['Apple', 'Oppo', 'SamSung', 'Nokia'];
 const star = ['5', '4', '3', '2', '1'];
 
-function ProductsDescription(props) {
+const ProductsDescription = forwardRef((props, ref) => {
     const {
         showTabletProduct,
         products,
@@ -35,6 +33,7 @@ function ProductsDescription(props) {
         totalProduct,
         paginate,
     } = props;
+
     return (
         <div className="col-md-8">
             <div className="panel panel-default">
@@ -126,6 +125,7 @@ function ProductsDescription(props) {
                                     productsPerPage={productsPerPage}
                                     totalProduct={totalProduct}
                                     paginate={paginate}
+                                    ref={ref}
                                 />
                             </div>
                         </div>
@@ -136,7 +136,7 @@ function ProductsDescription(props) {
             </div>
         </div>
     );
-}
+});
 
 ProductsDescription.propTypes = {};
 

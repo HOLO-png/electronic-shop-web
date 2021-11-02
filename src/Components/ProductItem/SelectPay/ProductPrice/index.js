@@ -9,8 +9,6 @@ function ProductPrice(props) {
     const url_price = productPrice ? productPrice.slice() : '';
     const url_price_old = productPriceOld ? productPriceOld.slice() : '';
 
-    console.info(productObj, product);
-
     return (
         <>
             {loading ? (

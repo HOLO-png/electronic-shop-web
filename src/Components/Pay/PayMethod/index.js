@@ -8,7 +8,7 @@ const PayMethodStyle = styled.div`
     .pay-method {
         position: absolute;
         width: 300px;
-        top: 100%;
+        top: 88%;
         right: 30%;
         height: auto;
         background: #fff;

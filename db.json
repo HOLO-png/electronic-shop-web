@@ -1630,74 +1630,7 @@
       }
     }
   ],
-  "cart_product": [
-    {
-      "id": "oWyUaeuSOl8fshcffes5w",
-      "name": "Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng",
-      "count": 0,
-      "image": [
-        "https://salt.tikicdn.com/cache/100x100/ts/product/b0/39/57/cdce3bcbefd3a319be3847bf73ad2f84.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/product/c4/bc/93/a6c8edf3032c5ccf50c0e82e4e4c2c8b.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/product/c5/15/ba/245ee2fafe1e5fd5cee886876a93d53f.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/product/c5/15/ba/245ee2fafe1e5fd5cee886876a93d53f.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp"
-      ],
-      "price": 20650000,
-      "priceOld": 32500000,
-      "capacity": "16GB/128GB",
-      "trademark": "Apple",
-      "category": "mobile",
-      "amount": 1
-    },
-    {
-      "id": "kpkHgmqySMj9pBgJRCAc3",
-      "count": 1,
-      "name": "Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng",
-      "image": [
-        "https://salt.tikicdn.com/cache/100x100/ts/product/27/55/4e/de17f04656c5cbfd86eb49dbbfb3fe3a.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/product/ce/fb/33/59195cb31738541fa62c30cd1c7c6455.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/product/56/83/a1/e6e674363af14993fbf21a9d556cb9f6.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/review/6a/9c/c4/f3eec6d74faeca76dcb8478008db567d.jpg.webp"
-      ],
-      "price": 21900000,
-      "priceOld": 29970000,
-      "capacity": "12GB/128GB",
-      "amount": 1
-    },
-    {
-      "id": "ELsQpZBpl2zvDsUdWfNPv",
-      "count": 3,
-      "name": "Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng",
-      "image": [
-        "https://salt.tikicdn.com/cache/100x100/ts/product/86/dd/0c/8948ec0e37381d80d7daf5f8c24062ed.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/product/af/4b/5c/98095f0153935d70891d1d9126700f42.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/product/1b/b0/9c/35a4702db7224b37eba549ef54f0b1d0.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/review/08/12/2d/688ff4d89749eb224a7770059edfeb7f.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/review/6a/9c/c4/f3eec6d74faeca76dcb8478008db567d.jpg.webp"
-      ],
-      "price": 24990000,
-      "priceOld": 32990000,
-      "capacity": "12GB/128GB",
-      "amount": 1
-    },
-    {
-      "id": "tBN_KhhaRnEcwz_z2LMqp",
-      "count": 2,
-      "name": "Điện Thoại iPhone 12 Pro 128GB - Hàng Chính Hãng",
-      "image": [
-        "https://salt.tikicdn.com/cache/100x100/ts/product/14/f0/60/eb03fe0d4f10f4d445b7904cff260794.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/product/18/4e/cb/3560a26e2710caf52b0881dc4659c157.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/product/a0/ed/8a/fd1be88001380ae25706b93b984eeca5.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/product/59/ed/cc/087d1b2f50e7d8b3b8138bdfd5fde6a4.jpg.webp",
-        "https://salt.tikicdn.com/cache/100x100/ts/product/59/ed/cc/087d1b2f50e7d8b3b8138bdfd5fde6a4.jpg.webp"
-      ],
-      "price": 25990000,
-      "priceOld": 30000000,
-      "capacity": "8GB/128GB",
-      "amount": 1
-    }
-  ],
+  "cart_product": [],
   "comments_user": [
     {
       "id_product": 1,
@@ -2184,6 +2117,36 @@
   "search_item": [
     {
       "id": "yDAONSiTO9OLLc5GWoE_X",
+      "content": "Điện thoại IPhone",
+      "status": "searchUser"
+    },
+    {
+      "id": "fR5QR8jfv0_vT2A8usPoN",
+      "content": "Điện thoại IPhone",
+      "status": "searchUser"
+    },
+    {
+      "id": "uqhwoiQ-THWdclhHSB4c7",
+      "content": "Ipad Ari",
+      "status": "searchUser"
+    },
+    {
+      "id": "YWxPm-J0CR4eeuJjfINbp",
+      "content": "Ipad",
+      "status": "searchUser"
+    },
+    {
+      "id": "uByWQGHKezr-FyOM2gCoe",
+      "content": "Ipad",
+      "status": "searchUser"
+    },
+    {
+      "id": "qGiCslobwEEBW188oQOLX",
+      "content": "Ipad",
+      "status": "searchUser"
+    },
+    {
+      "id": "8Dsngsh8PoQYLuaq7jzb_",
       "content": "Điện thoại IPhone",
       "status": "searchUser"
     }

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Navigation from './Navigation';
 import Pagination from './Pagination';
 import { products_dashboard } from '../../../assets/fake-data';
 import numberWithCommas from '../../../utils/numberWithCommas';
 
-function TableProduct(props) {
+const TableProduct = forwardRef((props, ref) => {
     const { products, productsPerPage, totalProduct, paginate } = props;
     const [visible, setVisible] = useState(false);
     const [product, setProduct] = useState(null);
@@ -19,6 +19,11 @@ function TableProduct(props) {
 
     const handleSetVisible = () => {
         setVisible(false);
+    };
+
+    const handleSetActiveProductDetail = () => {
+        setProduct(null);
+        setActive(null);
     };
 
     const handleRenderUITableItem =
@@ -65,15 +70,17 @@ function TableProduct(props) {
                 visible={visible}
                 handleSetVisible={handleSetVisible}
                 product={product}
+                handleSetActiveProductDetail={handleSetActiveProductDetail}
             />
             <Pagination
                 productsPerPage={productsPerPage}
                 totalProducts={totalProduct}
                 paginate={paginate}
+                ref={ref}
             />
         </>
     );
-}
+});
 
 TableProduct.propTypes = {};
 

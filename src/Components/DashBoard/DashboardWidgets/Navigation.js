@@ -11,10 +11,13 @@ const DescriptionItem = ({ title, content }) => (
 );
 
 function Navigation(props) {
-    const { visible, handleSetVisible, product } = props;
+    const { visible, handleSetVisible, product, handleSetActiveProductDetail } =
+        props;
     const [active, setActive] = useState(null);
+
     const onClose = () => {
         handleSetVisible(false);
+        handleSetActiveProductDetail();
     };
 
     const arrayImages = () => {

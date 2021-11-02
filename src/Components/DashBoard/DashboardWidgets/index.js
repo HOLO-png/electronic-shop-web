@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import ProductOptions from './ProductOptions';
 import ProductsDescription from './ProductsDescription';
@@ -37,6 +37,7 @@ function DashboardWidgets(props) {
     const tablet_api = useSelector(tabletsSelector);
     const [currentPage, setCurrentPage] = useState(1);
     const [productsPerPage, setProductsPerPage] = useState(5);
+    const paginateRef = useRef(null);
 
     const indexOfLastProducts = currentPage * productsPerPage;
     const indexOfFirstProducts = indexOfLastProducts - productsPerPage;
@@ -47,7 +48,7 @@ function DashboardWidgets(props) {
         dispatch(getMobilesApi());
         dispatch(getLaptopsApi());
         dispatch(getTabletsApi());
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         setLoading(true);
@@ -65,23 +66,28 @@ function DashboardWidgets(props) {
         setShowTabletProduct(true);
         switch (item) {
             case 'Mobile':
-                dispatch(getMobilesApi());
-                setProducts(mobile_api);
+                mobile_api.length && setProducts(mobile_api);
+                setCurrentPage(1);
                 break;
             case 'Laptop':
-                dispatch(getLaptopsApi());
-                setProducts(laptop_api);
+                laptop_api.length && setProducts(laptop_api);
+                setCurrentPage(1);
                 break;
             case 'Tablet':
-                dispatch(getTabletsApi());
-                setProducts(tablet_api);
+                tablet_api.length && setProducts(tablet_api);
+                setCurrentPage(1);
                 break;
             default:
                 break;
         }
     };
 
-    const paginate = (number) => setCurrentPage(number);
+    const paginate = (number) => {
+        setCurrentPage(number);
+        setTimeout(() => {
+            window.scrollBy(0, -10);
+        }, 500);
+    };
 
     return (
         <>
@@ -121,6 +127,7 @@ function DashboardWidgets(props) {
                         totalProduct={products}
                         productsPerPage={productsPerPage}
                         paginate={paginate}
+                        ref={paginateRef}
                     />
                 </div>
             </div>

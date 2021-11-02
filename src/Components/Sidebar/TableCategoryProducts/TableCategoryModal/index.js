@@ -55,6 +55,7 @@ function TableCategoryModal(props) {
 
     useEffect(() => {
         handleShowCategoryProduct(data, showTable);
+        return () => handleShowCategoryProduct();
     }, [data, showTable]);
 
     return (
@@ -72,6 +73,7 @@ function TableCategoryModal(props) {
                                         ? 'Iphone'
                                         : item.name_category)
                                 }`}
+                                key={index}
                             >
                                 <div
                                     className="category-product-item"

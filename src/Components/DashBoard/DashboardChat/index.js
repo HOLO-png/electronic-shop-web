@@ -49,6 +49,7 @@ function DashboardChat(props) {
                     console.log(error);
                 });
         }
+
         setMessage('');
     };
 

@@ -11,6 +11,7 @@ function ProductBuy(props) {
         product,
         handleProductToBuy,
         loading,
+        productObjChange,
     } = props;
     const [productCart, setproductCart] = useState({});
 
@@ -28,13 +29,13 @@ function ProductBuy(props) {
                       category: product.category,
                   }
                 : {};
-        Object.keys(productObj).length !== 0
-            ? setproductCart(productObj)
+        productObjChange && Object.keys(productObjChange).length !== 0
+            ? setproductCart(productObjChange)
             : setproductCart(productItem);
         return () => {
             setproductCart({});
         };
-    }, [product, productObj]);
+    }, [product, productObjChange]);
 
     return (
         <>

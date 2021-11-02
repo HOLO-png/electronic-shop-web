@@ -13,7 +13,10 @@ export function useGetMessage(uid) {
             .onSnapshot((querySnapshot) => {
                 const messageArray = [];
                 querySnapshot.forEach((doc) => {
-                    if (doc.data().user_uid_2 === uid) {
+                    if (
+                        doc.data().user_uid_2 === uid ||
+                        doc.data().user_uid_1 === uid
+                    ) {
                         messageArray.push(doc.data());
                     }
                 });

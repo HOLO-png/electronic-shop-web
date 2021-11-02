@@ -148,6 +148,7 @@ function Cart(props) {
     const [statusSearchSimilar, setStatusSearchSimilar] = useState(false);
 
     const dataSearch = [...mobile_api, ...tablet_api, ...laptop_api];
+
     useEffect(() => {
         setLoading(true);
         setCartProduct(cartProducts);
@@ -179,7 +180,9 @@ function Cart(props) {
 
     const setModalVisibleAlear = () => {
         currentProduct.forEach(async (element) => {
-            await dispatch(deleteCartProductAllApi(element));
+            await setTimeout(() => {
+                dispatch(deleteCartProductAllApi(element));
+            }, 500);
             await dispatch(handleRemoveCoinsProduct(element));
         });
         setModal(false);
@@ -218,7 +221,6 @@ function Cart(props) {
         totalProducts.forEach((element) => {
             dispatch(handleRemoveCoinsProduct(element));
         });
-
         !totalProducts.length && messageToCart(true);
     };
 
@@ -296,17 +298,16 @@ function Cart(props) {
             trademark: product.trademark,
             name: product.name,
         };
-        console.log(product);
-        // dataSearch.length &&
-        //     dispatch(
-        //         handleSearchSimilar({
-        //             dataSearch,
-        //             dataSearchToObj,
-        //         }),
-        //     );
+        dataSearch.length &&
+            dispatch(
+                handleSearchSimilar({
+                    dataSearch,
+                    dataSearchToObj,
+                }),
+            );
 
-        // setActiveSearchSimilar(index);
-        // setStatusSearchSimilar(!statusSearchSimilar);
+        setActiveSearchSimilar(index);
+        setStatusSearchSimilar(!statusSearchSimilar);
     };
 
     return (

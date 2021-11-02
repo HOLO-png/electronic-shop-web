@@ -103,7 +103,7 @@ const ProductsPayStyle = styled.div`
 function ProductsPay(props) {
     const { products_api, loading, handleChangeMessage } = props;
 
-    const renderProductApi = products_api.map((product) =>
+    const renderProductApi = products_api.map((product, index) =>
         loading ? (
             <Skeleton.Button
                 active={true}
@@ -118,6 +118,7 @@ function ProductsPay(props) {
                     marginTop: 20,
                 }}
                 className="cart-seklentor"
+                key={index}
             />
         ) : (
             <Product key={product.id} product={product} />

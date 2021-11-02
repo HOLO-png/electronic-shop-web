@@ -22,7 +22,6 @@ const Editor = ({
     user,
 }) => (
     <>
-        {console.log(value)}
         <p className="comment_author-name">{user.displayName}</p>
         <Rate tooltips={desc} onChange={handleChangeStar} value={star} />
         {star ? <span className="ant-rate-text">{desc[star - 1]}</span> : ''}

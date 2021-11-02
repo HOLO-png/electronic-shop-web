@@ -8,8 +8,6 @@ function ButtonLoading(props) {
     const [loadings, setLoadings] = useState(false);
 
     const enterLoading = () => {
-        console.log('ok');
-
         setLoadings(true);
         setTimeout(() => {
             setLoadings(false);

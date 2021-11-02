@@ -20,6 +20,7 @@ function SelectPay(props) {
         loading,
         comments_user,
         user,
+        productObjChange,
     } = props;
 
     return (
@@ -55,6 +56,7 @@ function SelectPay(props) {
                 handleProductToCart={handleProductToCart}
                 handleProductToBuy={handleProductToBuy}
                 loading={loading}
+                productObjChange={productObjChange}
             />
             <ProductAccompanied loading={loading} />
         </>

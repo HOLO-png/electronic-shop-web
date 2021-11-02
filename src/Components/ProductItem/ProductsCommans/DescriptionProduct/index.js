@@ -10,8 +10,6 @@ function DescriptionProduct(props) {
         setDisplay(!display);
     };
 
-    console.log(display);
-
     return (
         <>
             <Descriptions

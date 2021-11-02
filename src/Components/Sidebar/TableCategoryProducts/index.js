@@ -47,7 +47,7 @@ function TableCategoryProducts(props) {
                 <span className="table-title-name">Phân Loại Sản Phẩm</span>
             </div>
             <div className="table-content">
-                <div class="row">
+                <div className="row">
                     <TableCategoryModal
                         handleShowCategoryProduct={handleShowCategoryProduct}
                         changeDataCategory={changeDataCategory}

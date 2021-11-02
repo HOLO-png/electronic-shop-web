@@ -119,7 +119,10 @@ function ProductCartCategoryProduct(props) {
                         <Slider {...settings}>
                             {searchSimilarProducts.length
                                 ? searchSimilarProducts.map((item, index) => (
-                                      <div className="product-cart-similar">
+                                      <div
+                                          className="product-cart-similar"
+                                          key={index}
+                                      >
                                           <ProductCart
                                               key={index}
                                               id={item.id}

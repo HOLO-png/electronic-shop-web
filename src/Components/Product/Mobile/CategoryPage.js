@@ -263,6 +263,7 @@ function CategoryPage(props) {
             setProductAll(productTrademarkEvoder);
         }
     };
+
     return (
         <Helmet title={title}>
             <MobileLayout>

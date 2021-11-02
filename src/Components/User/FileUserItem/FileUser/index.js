@@ -50,6 +50,7 @@ function FileUser(props) {
     });
     const { email, photoURL, displayName, dateOfBirth, sex, phoneNumber, id } =
         data.user;
+
     const user = firebase.auth().currentUser;
 
     const enterLoading = () => {

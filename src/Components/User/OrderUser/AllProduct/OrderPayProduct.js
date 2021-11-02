@@ -173,7 +173,7 @@ function OrderPayProduct(props) {
                         <span className="title-status">
                             {order.status.title}
                         </span>
-                        <i class={`fad ${order.status.icon}`}></i>
+                        <i className={`fad ${order.status.icon}`}></i>
                     </div>
                 </div>
             </div>

@@ -12,8 +12,6 @@ function Popup(props) {
         setModalVisibleCancel,
     } = props;
 
-    console.log(currentProduct);
-
     return (
         <Modal
             title={`Bạn chắc chắn muốn ${currentProduct.length} bỏ sản phẩm này ?`}
@@ -25,7 +23,7 @@ function Popup(props) {
             className="popup-product-cart"
         >
             {currentProduct.map((item) => (
-                <p>{item.name}</p>
+                <p key={item.id}>{item.name}</p>
             ))}
         </Modal>
     );

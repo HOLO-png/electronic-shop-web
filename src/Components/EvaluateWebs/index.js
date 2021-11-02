@@ -47,11 +47,11 @@ function EvaluateWebs(props) {
     return (
         <div className="evaluate">
             <div className="evaluate__icon" onClick={handleShowModalEvaluate}>
-                <i class="fad fa-sticky-note"></i>
+                <i className="fad fa-sticky-note"></i>
                 {status ? (
-                    <i class="fad fa-times"></i>
+                    <i className="fad fa-times"></i>
                 ) : (
-                    <i class="fad fa-heart"></i>
+                    <i className="fad fa-heart"></i>
                 )}
             </div>
             <div
@@ -63,7 +63,7 @@ function EvaluateWebs(props) {
                     className="evaluate__table__close"
                     onClick={handleHiddenTable}
                 >
-                    <i class="fal fa-times"></i>
+                    <i className="fal fa-times"></i>
                 </div>
                 <div className="evaluate__table__title">
                     <span>Cho em xin cái đánh giá với ạ! Love you </span>
@@ -75,6 +75,7 @@ function EvaluateWebs(props) {
                                 status ? 'active' : ''
                             }`}
                             onClick={() => handleShowFormEvaluate(index)}
+                            key={index}
                         >
                             <span
                                 className={`evaluate__table__content-item-des ${
@@ -88,7 +89,7 @@ function EvaluateWebs(props) {
                                 {item.name}
                             </span>
                             <i
-                                class={`fad ${item.icon}`}
+                                className={`fad ${item.icon}`}
                                 style={{
                                     color: statusForm
                                         ? activeEvaluate === index
@@ -121,7 +122,7 @@ function EvaluateWebs(props) {
                 {statusForm ? (
                     <div className="evaluate__table__fromInput">
                         <TextArea placeholder="Cho em xin cái đánh giá với ạ! Love you" />
-                        <i class="fad fa-paper-plane"></i>
+                        <i className="fad fa-paper-plane"></i>
                     </div>
                 ) : (
                     ''

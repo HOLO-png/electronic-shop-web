@@ -1,17 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
-function Pagination(props) {
+const Pagination = forwardRef((props, ref) => {
     const { productsPerPage, totalProducts, paginate } = props;
-
-    console.log(productsPerPage, totalProducts);
 
     const pageNumbers = [];
 
     for (
         let i = 1;
-        i < Math.ceil(totalProducts.length / productsPerPage);
+        i <= Math.ceil(totalProducts.length / productsPerPage);
         i++
     ) {
         pageNumbers.push(i);
@@ -21,6 +19,7 @@ function Pagination(props) {
         <nav
             aria-label="Page navigation example"
             style={{ display: 'flex', justifyContent: 'center' }}
+            ref={ref}
         >
             <ul class="pagination justify-content-center">
                 {pageNumbers.map((number, index) => (
@@ -37,7 +36,7 @@ function Pagination(props) {
             </ul>
         </nav>
     );
-}
+});
 
 Pagination.propTypes = {};
 

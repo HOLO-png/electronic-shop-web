@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ButtonToggle from './ButtonToggle';
 import Chat from './Chat';
+import moment from 'moment';
 import { AuthContext } from '../../Context/AuthProvider';
 import { db } from '../../Firebase/config';
 
@@ -28,19 +29,14 @@ function BoxChat(props) {
                 .add({
                     ...msgObj,
                     isView: true,
+                    created: moment().format('YYYY-MM-DD HH:mm:ss'),
                     createAt: new Date(),
                 })
-                .then((data) => {
-                    console.log(data);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+                .then((data) => {})
+                .catch((error) => {});
         }
         setMessage('');
     };
-
-    // console.log(conversationsArray);
 
     const handleGetRealtimeConversation = async (user) => {
         await db
@@ -51,7 +47,6 @@ function BoxChat(props) {
                 const conversations = [];
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
-                    console.log(data);
                     if (
                         (data.user_uid_1 === user.uid_1 &&
                             data.user_uid_2 === user.uid_2) ||

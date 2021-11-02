@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ProductOptionItem from './ProductOptionItem';
 import { product_options_demo } from '../../../assets/fake-data';
+import CategorySetting from './CategorySetting';
 
 function ProductOptions(props) {
     const { handleShowTableProduct } = props;
@@ -27,32 +28,6 @@ function ProductOptions(props) {
                             >
                                 <em className="fa fa-cogs" />
                             </a>
-                            <ul className="dropdown-menu dropdown-menu-right">
-                                <li>
-                                    <ul className="dropdown-settings">
-                                        <li>
-                                            <a>
-                                                <em className="fa fa-cog" />{' '}
-                                                Settings 1
-                                            </a>
-                                        </li>
-                                        <li className="divider" />
-                                        <li>
-                                            <a>
-                                                <em className="fa fa-cog" />{' '}
-                                                Settings 2
-                                            </a>
-                                        </li>
-                                        <li className="divider" />
-                                        <li>
-                                            <a>
-                                                <em className="fa fa-cog" />{' '}
-                                                Settings 3
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                     <span className="pull-right clickable panel-toggle panel-button-tab-left">
@@ -61,6 +36,14 @@ function ProductOptions(props) {
                 </div>
                 <div className="panel-body articles-container">
                     <div className="article border-bottom">
+                        <div className="col-xs-12">
+                            <div
+                                className="row product-hunt"
+                                style={{ alignItems: 'flex-start' }}
+                            >
+                                <CategorySetting />
+                            </div>
+                        </div>
                         <div className="col-xs-12">{renderProductOptions}</div>
                         <div className="clear" />
                     </div>

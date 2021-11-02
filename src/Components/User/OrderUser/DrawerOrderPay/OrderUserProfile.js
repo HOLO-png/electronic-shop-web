@@ -14,7 +14,7 @@ function OrderUserProfile(props) {
                             <span className="title-status">
                                 {dataOrder.status.title}
                             </span>
-                            <i class={`fad ${dataOrder.status.icon}`}></i>
+                            <i className={`fad ${dataOrder.status.icon}`}></i>
                         </div>
                     </div>
                 </div>

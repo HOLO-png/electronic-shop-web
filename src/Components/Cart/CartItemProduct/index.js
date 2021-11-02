@@ -16,7 +16,6 @@ function CartItemProduct(props) {
     const {
         product,
         handleAmount,
-        statusAll,
         activeSearchSimilar,
         index,
         handleShowSearchProductActive,
@@ -30,7 +29,7 @@ function CartItemProduct(props) {
 
     useEffect(() => {
         setAmout(product.amount);
-    }, [product, statusAll]);
+    }, [product]);
 
     const onChange = (e) => {
         const { name, checked } = e.target;
@@ -52,20 +51,6 @@ function CartItemProduct(props) {
         setAmout(amout + 1);
         handleAmount({ ...product, amount: amout + 1 });
     };
-
-    // const handleChangeStatusBuy = () => {
-    //     if (totalProducts.length) {
-    //         for (let i = 0; i < totalProducts.length; i++) {
-    //             if (totalProducts[i].image[0] === product.image[0]) {
-    //                 return true;
-    //             } else {
-    //                 return status;
-    //             }
-    //         }
-    //     } else {
-    //         return status;
-    //     }
-    // };
 
     return (
         <CartItem>

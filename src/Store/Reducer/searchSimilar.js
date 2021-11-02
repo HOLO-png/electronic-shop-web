@@ -8,10 +8,11 @@ const searchSimilarSlice = createSlice({
     reducers: {
         handleSearchSimilar: (state, action) => {
             const { dataSearch, dataSearchToObj } = action.payload;
-            console.log(dataSearch, dataSearchToObj);
-
             state.searchSimilar = dataSearch.filter((item) => {
-                return item.description.trademark === dataSearchToObj.trademark;
+                return (
+                    item.description.trademark === dataSearchToObj.trademark ||
+                    item.name === dataSearchToObj.name
+                );
             });
         },
     },

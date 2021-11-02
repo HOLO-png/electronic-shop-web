@@ -71,19 +71,24 @@ function User(props) {
                     id="userDrawerId"
                     ref={userDrawerRef}
                 >
-                    <div className="header__menu__item__user-drawer-accout">
-                        {renderPhotoAccout(photoURL, 'small', displayName)}
-                        <span
-                            className="display-name-user"
-                            style={{ marginLeft: 5 }}
-                        >
-                            {displayName}
-                        </span>
-                    </div>
-                    <div className="header__menu__item__user-drawer-accout">
-                        <i className="fad fa-calendar-week"></i>
-                        <span>Đơn mua</span>
-                    </div>
+                    <Link to="/user/profile">
+                        <div className="header__menu__item__user-drawer-accout">
+                            {renderPhotoAccout(photoURL, 'small', displayName)}
+                            <span
+                                className="display-name-user"
+                                style={{ marginLeft: 5 }}
+                            >
+                                {displayName}
+                            </span>
+                        </div>
+                    </Link>
+                    <Link to="/user/all">
+                        <div className="header__menu__item__user-drawer-accout">
+                            <i className="fad fa-calendar-week"></i>
+                            <span>Đơn mua</span>
+                        </div>
+                    </Link>
+
                     {email === 'long47004@donga.edu.vn' ? (
                         <Link to="/dashboard/main">
                             <div className="header__menu__item__user-drawer-dashboard">

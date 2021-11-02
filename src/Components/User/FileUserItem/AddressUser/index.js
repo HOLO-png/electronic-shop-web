@@ -198,6 +198,7 @@ function AddressUser(props) {
                 const isEmpty = Object.values(address).every(
                     (x) => x === null || x === '',
                 );
+
                 if (isEmpty) {
                     toast.error(`Có lỗi, vui lòng nhập lại địa chỉ!`);
                 } else {
@@ -223,8 +224,6 @@ function AddressUser(props) {
         });
     };
 
-    console.log(data.user.address);
-
     return (
         <FileUserAddress>
             <div className="address-title">
@@ -242,7 +241,7 @@ function AddressUser(props) {
                     >
                         <FileUserTitle>
                             <p className="file-user-address-title">
-                                Thẻ Tín Dụng / Thẻ Ghi Nợ
+                                Địa chỉ người dùng
                             </p>
                             <Button
                                 type="primary"
@@ -334,7 +333,7 @@ function AddressUser(props) {
                 </Divider>
             </div>
             <div className="address-content">
-                {data.user.address.length ? (
+                {data.user.address && data.user.address.length ? (
                     data.user.address.map((item, index) => {
                         if (Object.keys(item).length) {
                             return (

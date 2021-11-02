@@ -37,7 +37,7 @@ function TableCategoryHighlights(props) {
                 {isShow ? (
                     <div className="table-highlight">
                         {data.map((item, index) => (
-                            <Link to={`/search/${item}`}>
+                            <Link to={`/search/${item}`} key={index}>
                                 <div
                                     className="category-product-item"
                                     key={index}

@@ -206,7 +206,7 @@ function SriceShock(props) {
                         {handleRenderProductUI(mobile_api)
                             ? handleRenderProductUI(mobile_api).map(
                                   (item, index) => (
-                                      <div style={{ width: 247 }}>
+                                      <div style={{ width: 247 }} key={index}>
                                           <Link
                                               to={`/${
                                                   item.category
@@ -270,7 +270,7 @@ function SriceShock(props) {
                                                               status="exception"
                                                           />
                                                           <i
-                                                              class="fad fa-fire"
+                                                              className="fad fa-fire"
                                                               style={{
                                                                   color:
                                                                       handleChangeProductPrice(

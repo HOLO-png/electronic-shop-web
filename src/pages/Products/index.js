@@ -361,6 +361,7 @@ export default function Products() {
     const mobile_api = useSelector(mobilesSelector);
     const laptop_api = useSelector(laptopsSelector);
     const tablet_api = useSelector(tabletsSelector);
+    const [productObjChange, setProductObjChange] = useState(null);
 
     const [productStatus, setproductStatus] = useState({});
     const [amout, setAmout] = useState(1);
@@ -369,6 +370,15 @@ export default function Products() {
         setAmout(num);
     };
     const mobileProductTop = [...mobile_api, ...tablet_api, ...laptop_api];
+
+    useEffect(() => {
+        Object.keys(productObj).length !== 0 &&
+            setProductObjChange({
+                ...productObj,
+                trademark: product.description.trademark,
+                category: product.category,
+            });
+    }, [productObj]);
 
     useEffect(() => {
         dispatch(getProductItem({ id: id, category: category }));
@@ -414,6 +424,7 @@ export default function Products() {
 
     const handleProductToCart = (obj) => {
         obj = { ...obj, ...{ amount: amout } };
+
         if (Object.keys(cartProduct).length !== 0) {
             let status = cartProduct.every(function (item) {
                 return item.image[0] !== obj.image[0];
@@ -515,6 +526,7 @@ export default function Products() {
                             loading={loading}
                             comments_user={comments_user}
                             user={user.user}
+                            productObjChange={productObjChange}
                         />
                     </Col>
                 </Row>

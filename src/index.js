@@ -17,13 +17,13 @@ import 'leaflet/dist/leaflet.css';
 ReactDOM.render(
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-            <React.StrictMode>
-                <BrowserRouter>
-                    <AuthProvider>
-                        <App />
-                    </AuthProvider>
-                </BrowserRouter>
-            </React.StrictMode>
+            {/* <React.StrictMode> */}
+            <BrowserRouter>
+                <AuthProvider>
+                    <App />
+                </AuthProvider>
+            </BrowserRouter>
+            {/* </React.StrictMode> */}
         </PersistGate>
     </Provider>,
     document.getElementById('root'),
